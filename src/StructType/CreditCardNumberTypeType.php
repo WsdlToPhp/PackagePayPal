@@ -1,0 +1,110 @@
+<?php
+
+namespace PayPal\StructType;
+
+use \WsdlToPhp\PackageBase\AbstractStructBase;
+
+/**
+ * This class stands for CreditCardNumberTypeType StructType
+ * @subpackage Structs
+ * @author WsdlToPhp <contact@wsdltophp.com>
+ */
+class CreditCardNumberTypeType extends AbstractStructBase
+{
+    /**
+     * The CreditCardType
+     * Meta informations extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
+     */
+    public $CreditCardType;
+    /**
+     * The CreditCardNumber
+     * Meta informations extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
+     */
+    public $CreditCardNumber;
+    /**
+     * Constructor method for CreditCardNumberTypeType
+     * @uses CreditCardNumberTypeType::setCreditCardType()
+     * @uses CreditCardNumberTypeType::setCreditCardNumber()
+     * @param string $creditCardType
+     * @param string $creditCardNumber
+     */
+    public function __construct($creditCardType = null, $creditCardNumber = null)
+    {
+        $this
+            ->setCreditCardType($creditCardType)
+            ->setCreditCardNumber($creditCardNumber);
+    }
+    /**
+     * Get CreditCardType value
+     * @return string|null
+     */
+    public function getCreditCardType()
+    {
+        return $this->CreditCardType;
+    }
+    /**
+     * Set CreditCardType value
+     * @uses \PayPal\EnumType\CreditCardTypeType::valueIsValid()
+     * @uses \PayPal\EnumType\CreditCardTypeType::getValidValues()
+     * @throws \InvalidArgumentException
+     * @param string $creditCardType
+     * @return \PayPal\StructType\CreditCardNumberTypeType
+     */
+    public function setCreditCardType($creditCardType = null)
+    {
+        // validation for constraint: enumeration
+        if (!\PayPal\EnumType\CreditCardTypeType::valueIsValid($creditCardType)) {
+            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $creditCardType, implode(', ', \PayPal\EnumType\CreditCardTypeType::getValidValues())), __LINE__);
+        }
+        $this->CreditCardType = $creditCardType;
+        return $this;
+    }
+    /**
+     * Get CreditCardNumber value
+     * @return string|null
+     */
+    public function getCreditCardNumber()
+    {
+        return $this->CreditCardNumber;
+    }
+    /**
+     * Set CreditCardNumber value
+     * @param string $creditCardNumber
+     * @return \PayPal\StructType\CreditCardNumberTypeType
+     */
+    public function setCreditCardNumber($creditCardNumber = null)
+    {
+        // validation for constraint: string
+        if (!is_null($creditCardNumber) && !is_string($creditCardNumber)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($creditCardNumber)), __LINE__);
+        }
+        $this->CreditCardNumber = $creditCardNumber;
+        return $this;
+    }
+    /**
+     * Method called when an object has been exported with var_export() functions
+     * It allows to return an object instantiated with the values
+     * @see AbstractStructBase::__set_state()
+     * @uses AbstractStructBase::__set_state()
+     * @param array $array the exported values
+     * @return \PayPal\StructType\CreditCardNumberTypeType
+     */
+    public static function __set_state(array $array)
+    {
+        return parent::__set_state($array);
+    }
+    /**
+     * Method returning the class name
+     * @return string __CLASS__
+     */
+    public function __toString()
+    {
+        return __CLASS__;
+    }
+}
