@@ -100,18 +100,36 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     public $PageStyle;
     /**
      * The cpp_header_image
+     * Meta informations extracted from the WSDL
+     * - documentation: A URL for the image you want to appear at the top left of the flow page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server.
+     * Optional Character length and limitations: 127
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_header_image;
     /**
      * The cpp_header_border_color
+     * Meta informations extracted from the WSDL
+     * - documentation: Sets the border color around the header of the flow page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. Optional Character length and limitations: Six character HTML
+     * hexadecimal color code in ASCII
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_header_border_color;
     /**
      * The cpp_header_back_color
+     * Meta informations extracted from the WSDL
+     * - documentation: Sets the background color for the header of the flow page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_header_back_color;
     /**
      * The cpp_payflow_color
+     * Meta informations extracted from the WSDL
+     * - documentation: Sets the background color for the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_payflow_color;
     /**
@@ -444,7 +462,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_header_image value
-     * @return cpp_header_image
+     * @return string|null
      */
     public function getCpp_header_image()
     {
@@ -452,7 +470,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_header_image value
-     * @param cpp_header_image $cpp_header_image
+     * @param string $cpp_header_image
      * @return \PayPal\StructType\SetAuthFlowParamRequestDetailsType
      */
     public function setCpp_header_image($cpp_header_image = null)
@@ -466,7 +484,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_header_border_color value
-     * @return cpp_header_border_color
+     * @return string|null
      */
     public function getCpp_header_border_color()
     {
@@ -474,7 +492,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_header_border_color value
-     * @param cpp_header_border_color $cpp_header_border_color
+     * @param string $cpp_header_border_color
      * @return \PayPal\StructType\SetAuthFlowParamRequestDetailsType
      */
     public function setCpp_header_border_color($cpp_header_border_color = null)
@@ -488,7 +506,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_header_back_color value
-     * @return cpp_header_back_color
+     * @return string|null
      */
     public function getCpp_header_back_color()
     {
@@ -496,7 +514,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_header_back_color value
-     * @param cpp_header_back_color $cpp_header_back_color
+     * @param string $cpp_header_back_color
      * @return \PayPal\StructType\SetAuthFlowParamRequestDetailsType
      */
     public function setCpp_header_back_color($cpp_header_back_color = null)
@@ -510,7 +528,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_payflow_color value
-     * @return cpp_payflow_color
+     * @return string|null
      */
     public function getCpp_payflow_color()
     {
@@ -518,7 +536,7 @@ class SetAuthFlowParamRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_payflow_color value
-     * @param cpp_payflow_color $cpp_payflow_color
+     * @param string $cpp_payflow_color
      * @return \PayPal\StructType\SetAuthFlowParamRequestDetailsType
      */
     public function setCpp_payflow_color($cpp_payflow_color = null)
