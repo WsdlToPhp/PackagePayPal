@@ -53,18 +53,34 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $PageStyle;
     /**
      * The cpp_header_image
+     * Meta informations extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_header_image;
     /**
      * The cpp_header_border_color
+     * Meta informations extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_header_border_color;
     /**
      * The cpp_header_back_color
+     * Meta informations extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_header_back_color;
     /**
      * The cpp_payflow_color
+     * Meta informations extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
      */
     public $cpp_payflow_color;
     /**
@@ -231,7 +247,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_header_image value
-     * @return cpp_header_image
+     * @return string|null
      */
     public function getCpp_header_image()
     {
@@ -239,7 +255,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_header_image value
-     * @param cpp_header_image $cpp_header_image
+     * @param string $cpp_header_image
      * @return \PayPal\StructType\SetCustomerBillingAgreementRequestDetailsType
      */
     public function setCpp_header_image($cpp_header_image = null)
@@ -253,7 +269,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_header_border_color value
-     * @return cpp_header_border_color
+     * @return string|null
      */
     public function getCpp_header_border_color()
     {
@@ -261,7 +277,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_header_border_color value
-     * @param cpp_header_border_color $cpp_header_border_color
+     * @param string $cpp_header_border_color
      * @return \PayPal\StructType\SetCustomerBillingAgreementRequestDetailsType
      */
     public function setCpp_header_border_color($cpp_header_border_color = null)
@@ -275,7 +291,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_header_back_color value
-     * @return cpp_header_back_color
+     * @return string|null
      */
     public function getCpp_header_back_color()
     {
@@ -283,7 +299,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_header_back_color value
-     * @param cpp_header_back_color $cpp_header_back_color
+     * @param string $cpp_header_back_color
      * @return \PayPal\StructType\SetCustomerBillingAgreementRequestDetailsType
      */
     public function setCpp_header_back_color($cpp_header_back_color = null)
@@ -297,7 +313,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get cpp_payflow_color value
-     * @return cpp_payflow_color
+     * @return string|null
      */
     public function getCpp_payflow_color()
     {
@@ -305,7 +321,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set cpp_payflow_color value
-     * @param cpp_payflow_color $cpp_payflow_color
+     * @param string $cpp_payflow_color
      * @return \PayPal\StructType\SetCustomerBillingAgreementRequestDetailsType
      */
     public function setCpp_payflow_color($cpp_payflow_color = null)
