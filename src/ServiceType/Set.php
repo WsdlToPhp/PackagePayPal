@@ -27,10 +27,10 @@ class Set extends SoapClientBase
     /**
      * Method to call the operation originally named SetMobileCheckout
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()
@@ -51,10 +51,10 @@ class Set extends SoapClientBase
     /**
      * Method to call the operation originally named SetAuthFlowParam
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()
@@ -75,10 +75,10 @@ class Set extends SoapClientBase
     /**
      * Method to call the operation originally named SetAccessPermissions
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()
@@ -99,10 +99,10 @@ class Set extends SoapClientBase
     /**
      * Method to call the operation originally named SetExpressCheckout
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()
@@ -123,10 +123,10 @@ class Set extends SoapClientBase
     /**
      * Method to call the operation originally named SetCustomerBillingAgreement
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()

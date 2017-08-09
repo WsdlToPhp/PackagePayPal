@@ -643,6 +643,10 @@ class ItemType extends AbstractStructBase
      */
     public function setAutoPay($autoPay = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($autoPay) && !is_bool($autoPay)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($autoPay)), __LINE__);
+        }
         $this->AutoPay = $autoPay;
         return $this;
     }
@@ -1239,6 +1243,10 @@ class ItemType extends AbstractStructBase
      */
     public function setPrivateListing($privateListing = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($privateListing) && !is_bool($privateListing)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($privateListing)), __LINE__);
+        }
         $this->PrivateListing = $privateListing;
         return $this;
     }
@@ -1301,6 +1309,10 @@ class ItemType extends AbstractStructBase
      */
     public function setRelistLink($relistLink = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($relistLink) && !is_bool($relistLink)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($relistLink)), __LINE__);
+        }
         $this->RelistLink = $relistLink;
         return $this;
     }

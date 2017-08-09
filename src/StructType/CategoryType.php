@@ -167,6 +167,10 @@ class CategoryType extends AbstractStructBase
      */
     public function setAutoPayEnabled($autoPayEnabled = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($autoPayEnabled) && !is_bool($autoPayEnabled)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($autoPayEnabled)), __LINE__);
+        }
         $this->AutoPayEnabled = $autoPayEnabled;
         return $this;
     }
@@ -185,6 +189,10 @@ class CategoryType extends AbstractStructBase
      */
     public function setB2BVATEnabled($b2BVATEnabled = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($b2BVATEnabled) && !is_bool($b2BVATEnabled)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($b2BVATEnabled)), __LINE__);
+        }
         $this->B2BVATEnabled = $b2BVATEnabled;
         return $this;
     }
@@ -203,6 +211,10 @@ class CategoryType extends AbstractStructBase
      */
     public function setCatalogEnabled($catalogEnabled = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($catalogEnabled) && !is_bool($catalogEnabled)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($catalogEnabled)), __LINE__);
+        }
         $this->CatalogEnabled = $catalogEnabled;
         return $this;
     }
@@ -407,6 +419,10 @@ class CategoryType extends AbstractStructBase
      */
     public function setExpired($expired = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($expired) && !is_bool($expired)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($expired)), __LINE__);
+        }
         $this->Expired = $expired;
         return $this;
     }
@@ -425,6 +441,10 @@ class CategoryType extends AbstractStructBase
      */
     public function setIntlAutosFixedCat($intlAutosFixedCat = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($intlAutosFixedCat) && !is_bool($intlAutosFixedCat)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($intlAutosFixedCat)), __LINE__);
+        }
         $this->IntlAutosFixedCat = $intlAutosFixedCat;
         return $this;
     }
@@ -443,6 +463,10 @@ class CategoryType extends AbstractStructBase
      */
     public function setLeafCategory($leafCategory = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($leafCategory) && !is_bool($leafCategory)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($leafCategory)), __LINE__);
+        }
         $this->LeafCategory = $leafCategory;
         return $this;
     }
@@ -461,6 +485,10 @@ class CategoryType extends AbstractStructBase
      */
     public function setVirtual($virtual = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($virtual) && !is_bool($virtual)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($virtual)), __LINE__);
+        }
         $this->Virtual = $virtual;
         return $this;
     }

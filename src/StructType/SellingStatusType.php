@@ -301,6 +301,10 @@ class SellingStatusType extends AbstractStructBase
      */
     public function setReserveMet($reserveMet = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($reserveMet) && !is_bool($reserveMet)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reserveMet)), __LINE__);
+        }
         $this->ReserveMet = $reserveMet;
         return $this;
     }
@@ -319,6 +323,10 @@ class SellingStatusType extends AbstractStructBase
      */
     public function setSecondChanceEligible($secondChanceEligible = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($secondChanceEligible) && !is_bool($secondChanceEligible)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($secondChanceEligible)), __LINE__);
+        }
         $this->SecondChanceEligible = $secondChanceEligible;
         return $this;
     }

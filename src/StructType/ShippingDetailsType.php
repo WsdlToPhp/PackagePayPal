@@ -135,6 +135,10 @@ class ShippingDetailsType extends AbstractStructBase
      */
     public function setAllowPaymentEdit($allowPaymentEdit = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($allowPaymentEdit) && !is_bool($allowPaymentEdit)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($allowPaymentEdit)), __LINE__);
+        }
         $this->AllowPaymentEdit = $allowPaymentEdit;
         return $this;
     }
@@ -171,6 +175,10 @@ class ShippingDetailsType extends AbstractStructBase
      */
     public function setChangePaymentInstructions($changePaymentInstructions = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($changePaymentInstructions) && !is_bool($changePaymentInstructions)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($changePaymentInstructions)), __LINE__);
+        }
         $this->ChangePaymentInstructions = $changePaymentInstructions;
         return $this;
     }
@@ -247,6 +255,10 @@ class ShippingDetailsType extends AbstractStructBase
      */
     public function setInsuranceWanted($insuranceWanted = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($insuranceWanted) && !is_bool($insuranceWanted)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($insuranceWanted)), __LINE__);
+        }
         $this->InsuranceWanted = $insuranceWanted;
         return $this;
     }

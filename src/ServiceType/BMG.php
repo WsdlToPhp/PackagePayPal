@@ -27,10 +27,10 @@ class BMG extends SoapClientBase
     /**
      * Method to call the operation originally named BMGetButtonDetails
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()
@@ -51,10 +51,10 @@ class BMG extends SoapClientBase
     /**
      * Method to call the operation originally named BMGetInventory
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()

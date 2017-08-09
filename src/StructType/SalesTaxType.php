@@ -106,6 +106,10 @@ class SalesTaxType extends AbstractStructBase
      */
     public function setShippingIncludedInTax($shippingIncludedInTax = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($shippingIncludedInTax) && !is_bool($shippingIncludedInTax)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($shippingIncludedInTax)), __LINE__);
+        }
         $this->ShippingIncludedInTax = $shippingIncludedInTax;
         return $this;
     }

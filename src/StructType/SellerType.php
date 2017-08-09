@@ -157,6 +157,10 @@ class SellerType extends AbstractStructBase
      */
     public function setAllowPaymentEdit($allowPaymentEdit = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($allowPaymentEdit) && !is_bool($allowPaymentEdit)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($allowPaymentEdit)), __LINE__);
+        }
         $this->AllowPaymentEdit = $allowPaymentEdit;
         return $this;
     }
@@ -200,6 +204,10 @@ class SellerType extends AbstractStructBase
      */
     public function setCheckoutEnabled($checkoutEnabled = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($checkoutEnabled) && !is_bool($checkoutEnabled)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($checkoutEnabled)), __LINE__);
+        }
         $this->CheckoutEnabled = $checkoutEnabled;
         return $this;
     }
@@ -218,6 +226,10 @@ class SellerType extends AbstractStructBase
      */
     public function setCIPBankAccountStored($cIPBankAccountStored = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($cIPBankAccountStored) && !is_bool($cIPBankAccountStored)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($cIPBankAccountStored)), __LINE__);
+        }
         $this->CIPBankAccountStored = $cIPBankAccountStored;
         return $this;
     }
@@ -236,6 +248,10 @@ class SellerType extends AbstractStructBase
      */
     public function setGoodStanding($goodStanding = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($goodStanding) && !is_bool($goodStanding)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($goodStanding)), __LINE__);
+        }
         $this->GoodStanding = $goodStanding;
         return $this;
     }
@@ -254,6 +270,10 @@ class SellerType extends AbstractStructBase
      */
     public function setLiveAuctionAuthorized($liveAuctionAuthorized = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($liveAuctionAuthorized) && !is_bool($liveAuctionAuthorized)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($liveAuctionAuthorized)), __LINE__);
+        }
         $this->LiveAuctionAuthorized = $liveAuctionAuthorized;
         return $this;
     }
@@ -297,6 +317,10 @@ class SellerType extends AbstractStructBase
      */
     public function setQualifiesForB2BVAT($qualifiesForB2BVAT = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($qualifiesForB2BVAT) && !is_bool($qualifiesForB2BVAT)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($qualifiesForB2BVAT)), __LINE__);
+        }
         $this->QualifiesForB2BVAT = $qualifiesForB2BVAT;
         return $this;
     }
@@ -376,6 +400,10 @@ class SellerType extends AbstractStructBase
      */
     public function setStoreOwner($storeOwner = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($storeOwner) && !is_bool($storeOwner)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($storeOwner)), __LINE__);
+        }
         $this->StoreOwner = $storeOwner;
         return $this;
     }

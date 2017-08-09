@@ -435,6 +435,10 @@ class RefundTransactionRequestType extends AbstractRequestType
      */
     public function setRefundAdvice($refundAdvice = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($refundAdvice) && !is_bool($refundAdvice)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($refundAdvice)), __LINE__);
+        }
         $this->RefundAdvice = $refundAdvice;
         return $this;
     }

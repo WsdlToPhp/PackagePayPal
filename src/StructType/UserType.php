@@ -224,6 +224,10 @@ class UserType extends AbstractStructBase
      */
     public function setAboutMePage($aboutMePage = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($aboutMePage) && !is_bool($aboutMePage)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($aboutMePage)), __LINE__);
+        }
         $this->AboutMePage = $aboutMePage;
         return $this;
     }
@@ -308,6 +312,10 @@ class UserType extends AbstractStructBase
      */
     public function setFeedbackPrivate($feedbackPrivate = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($feedbackPrivate) && !is_bool($feedbackPrivate)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($feedbackPrivate)), __LINE__);
+        }
         $this->FeedbackPrivate = $feedbackPrivate;
         return $this;
     }
@@ -351,6 +359,10 @@ class UserType extends AbstractStructBase
      */
     public function setIDVerified($iDVerified = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($iDVerified) && !is_bool($iDVerified)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($iDVerified)), __LINE__);
+        }
         $this->IDVerified = $iDVerified;
         return $this;
     }
@@ -369,6 +381,10 @@ class UserType extends AbstractStructBase
      */
     public function setNewUser($newUser = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($newUser) && !is_bool($newUser)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($newUser)), __LINE__);
+        }
         $this->NewUser = $newUser;
         return $this;
     }
@@ -503,6 +519,10 @@ class UserType extends AbstractStructBase
      */
     public function setUserIDChanged($userIDChanged = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($userIDChanged) && !is_bool($userIDChanged)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($userIDChanged)), __LINE__);
+        }
         $this->UserIDChanged = $userIDChanged;
         return $this;
     }

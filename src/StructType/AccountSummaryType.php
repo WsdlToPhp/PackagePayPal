@@ -543,6 +543,10 @@ class AccountSummaryType extends AbstractStructBase
      */
     public function setPastDue($pastDue = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($pastDue) && !is_bool($pastDue)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($pastDue)), __LINE__);
+        }
         $this->PastDue = $pastDue;
         return $this;
     }

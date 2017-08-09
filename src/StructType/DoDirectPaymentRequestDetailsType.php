@@ -229,6 +229,10 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
      */
     public function setReturnFMFDetails($returnFMFDetails = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($returnFMFDetails) && !is_bool($returnFMFDetails)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($returnFMFDetails)), __LINE__);
+        }
         $this->ReturnFMFDetails = $returnFMFDetails;
         return $this;
     }

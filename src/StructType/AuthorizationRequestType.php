@@ -44,6 +44,10 @@ class AuthorizationRequestType extends AbstractStructBase
      */
     public function setIsRequested($isRequested = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($isRequested) && !is_bool($isRequested)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($isRequested)), __LINE__);
+        }
         $this->IsRequested = $isRequested;
         return $this;
     }
