@@ -174,6 +174,10 @@ class ListingDetailsType extends AbstractStructBase
      */
     public function setAdult($adult = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($adult) && !is_bool($adult)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($adult)), __LINE__);
+        }
         $this->Adult = $adult;
         return $this;
     }
@@ -192,6 +196,10 @@ class ListingDetailsType extends AbstractStructBase
      */
     public function setBindingAuction($bindingAuction = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($bindingAuction) && !is_bool($bindingAuction)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($bindingAuction)), __LINE__);
+        }
         $this->BindingAuction = $bindingAuction;
         return $this;
     }
@@ -210,6 +218,10 @@ class ListingDetailsType extends AbstractStructBase
      */
     public function setCheckoutEnabled($checkoutEnabled = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($checkoutEnabled) && !is_bool($checkoutEnabled)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($checkoutEnabled)), __LINE__);
+        }
         $this->CheckoutEnabled = $checkoutEnabled;
         return $this;
     }
@@ -282,6 +294,10 @@ class ListingDetailsType extends AbstractStructBase
      */
     public function setHasReservePrice($hasReservePrice = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($hasReservePrice) && !is_bool($hasReservePrice)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($hasReservePrice)), __LINE__);
+        }
         $this->HasReservePrice = $hasReservePrice;
         return $this;
     }

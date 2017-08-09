@@ -218,6 +218,10 @@ class SetDataRequestType extends AbstractStructBase
      */
     public function setRetrieveShippingAddress($retrieveShippingAddress = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($retrieveShippingAddress) && !is_bool($retrieveShippingAddress)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($retrieveShippingAddress)), __LINE__);
+        }
         $this->RetrieveShippingAddress = $retrieveShippingAddress;
         return $this;
     }
@@ -261,6 +265,10 @@ class SetDataRequestType extends AbstractStructBase
      */
     public function setReqConfirmShipping($reqConfirmShipping = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($reqConfirmShipping) && !is_bool($reqConfirmShipping)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reqConfirmShipping)), __LINE__);
+        }
         $this->ReqConfirmShipping = $reqConfirmShipping;
         return $this;
     }

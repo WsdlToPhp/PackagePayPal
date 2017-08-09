@@ -494,6 +494,10 @@ class InvoiceItemType extends AbstractStructBase
      */
     public function setTaxable($taxable = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($taxable) && !is_bool($taxable)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($taxable)), __LINE__);
+        }
         $this->Taxable = $taxable;
         return $this;
     }
@@ -570,6 +574,10 @@ class InvoiceItemType extends AbstractStructBase
      */
     public function setReimbursable($reimbursable = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($reimbursable) && !is_bool($reimbursable)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reimbursable)), __LINE__);
+        }
         $this->Reimbursable = $reimbursable;
         return $this;
     }

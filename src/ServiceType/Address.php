@@ -27,10 +27,10 @@ class Address extends SoapClientBase
     /**
      * Method to call the operation originally named AddressVerify
      * Meta informations extracted from the WSDL
-     * - SOAPHeaderNames : RequesterCredentials
-     * - SOAPHeaderNamespaces : urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes : \PayPal\StructType\CustomSecurityHeaderType
-     * - SOAPHeaders : required
+     * - SOAPHeaderNames: RequesterCredentials
+     * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
+     * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
+     * - SOAPHeaders: required
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
      * @uses SoapClientBase::getResult()

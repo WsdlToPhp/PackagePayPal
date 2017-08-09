@@ -65,6 +65,10 @@ class VATDetailsType extends AbstractStructBase
      */
     public function setBusinessSeller($businessSeller = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($businessSeller) && !is_bool($businessSeller)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($businessSeller)), __LINE__);
+        }
         $this->BusinessSeller = $businessSeller;
         return $this;
     }
@@ -83,6 +87,10 @@ class VATDetailsType extends AbstractStructBase
      */
     public function setRestrictedToBusiness($restrictedToBusiness = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($restrictedToBusiness) && !is_bool($restrictedToBusiness)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($restrictedToBusiness)), __LINE__);
+        }
         $this->RestrictedToBusiness = $restrictedToBusiness;
         return $this;
     }

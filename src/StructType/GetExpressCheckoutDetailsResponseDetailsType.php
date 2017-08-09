@@ -455,6 +455,10 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setBillingAgreementAcceptedStatus($billingAgreementAcceptedStatus = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($billingAgreementAcceptedStatus) && !is_bool($billingAgreementAcceptedStatus)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($billingAgreementAcceptedStatus)), __LINE__);
+        }
         $this->BillingAgreementAcceptedStatus = $billingAgreementAcceptedStatus;
         return $this;
     }

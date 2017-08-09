@@ -90,6 +90,10 @@ class ListingDesignerType extends AbstractStructBase
      */
     public function setOptimalPictureSize($optimalPictureSize = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($optimalPictureSize) && !is_bool($optimalPictureSize)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($optimalPictureSize)), __LINE__);
+        }
         $this->OptimalPictureSize = $optimalPictureSize;
         return $this;
     }

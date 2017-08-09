@@ -90,6 +90,10 @@ class ReviseStatusType extends AbstractStructBase
      */
     public function setItemRevised($itemRevised = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($itemRevised) && !is_bool($itemRevised)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($itemRevised)), __LINE__);
+        }
         $this->ItemRevised = $itemRevised;
         return $this;
     }
@@ -108,6 +112,10 @@ class ReviseStatusType extends AbstractStructBase
      */
     public function setBuyItNowAdded($buyItNowAdded = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($buyItNowAdded) && !is_bool($buyItNowAdded)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($buyItNowAdded)), __LINE__);
+        }
         $this->BuyItNowAdded = $buyItNowAdded;
         return $this;
     }
@@ -126,6 +134,10 @@ class ReviseStatusType extends AbstractStructBase
      */
     public function setBuyItNowLowered($buyItNowLowered = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($buyItNowLowered) && !is_bool($buyItNowLowered)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($buyItNowLowered)), __LINE__);
+        }
         $this->BuyItNowLowered = $buyItNowLowered;
         return $this;
     }
@@ -144,6 +156,10 @@ class ReviseStatusType extends AbstractStructBase
      */
     public function setReserveLowered($reserveLowered = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($reserveLowered) && !is_bool($reserveLowered)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reserveLowered)), __LINE__);
+        }
         $this->ReserveLowered = $reserveLowered;
         return $this;
     }
@@ -162,6 +178,10 @@ class ReviseStatusType extends AbstractStructBase
      */
     public function setReserveRemoved($reserveRemoved = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($reserveRemoved) && !is_bool($reserveRemoved)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reserveRemoved)), __LINE__);
+        }
         $this->ReserveRemoved = $reserveRemoved;
         return $this;
     }

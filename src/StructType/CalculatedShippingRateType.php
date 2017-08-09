@@ -123,6 +123,10 @@ class CalculatedShippingRateType extends AbstractStructBase
      */
     public function setShippingIrregular($shippingIrregular = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($shippingIrregular) && !is_bool($shippingIrregular)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($shippingIrregular)), __LINE__);
+        }
         $this->ShippingIrregular = $shippingIrregular;
         return $this;
     }

@@ -767,6 +767,10 @@ class DoExpressCheckoutPaymentRequestDetailsType extends AbstractStructBase
      */
     public function setSkipBACreation($skipBACreation = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($skipBACreation) && !is_bool($skipBACreation)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($skipBACreation)), __LINE__);
+        }
         $this->SkipBACreation = $skipBACreation;
         return $this;
     }

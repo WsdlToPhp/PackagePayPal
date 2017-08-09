@@ -207,6 +207,10 @@ class CrossPromotionsType extends AbstractStructBase
      */
     public function setShippingDiscount($shippingDiscount = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($shippingDiscount) && !is_bool($shippingDiscount)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($shippingDiscount)), __LINE__);
+        }
         $this->ShippingDiscount = $shippingDiscount;
         return $this;
     }

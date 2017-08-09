@@ -285,6 +285,10 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
      */
     public function setOtherPaymentMethodHideLabel($otherPaymentMethodHideLabel = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($otherPaymentMethodHideLabel) && !is_bool($otherPaymentMethodHideLabel)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($otherPaymentMethodHideLabel)), __LINE__);
+        }
         $this->OtherPaymentMethodHideLabel = $otherPaymentMethodHideLabel;
         return $this;
     }
