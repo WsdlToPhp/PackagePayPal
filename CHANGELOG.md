@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 204.2.0
+- Update generated classes thanks to PackageGenerator release [2.8.0](https://github.com/WsdlToPhp/PackageGenerator/releases/tag/2.8.0)
+- Review release naming:
+    - major: the paypal WSDL version
+    - minor: backwards-compatible-version (normally)
+    - patch: mainly php doc updates or readme
+
+## 204.1.1
+- Update generated classes thanks to PackageGenerator release [2.8.0](https://github.com/WsdlToPhp/PackageGenerator/releases/tag/2.8.0)
+- Review release naming:
+    - major is releated
+
 ## 204.1
 - Update struct classes thanks to PackageGenerator fixed issues:
     - SetAccessPermissionsRequestDetailsType.php
