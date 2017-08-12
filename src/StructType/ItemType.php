@@ -869,7 +869,7 @@ class ItemType extends AbstractStructBase
         $invalidValues = array();
         foreach ($giftServices as $itemTypeGiftServicesItem) {
             if (!\PayPal\EnumType\GiftServicesCodeType::valueIsValid($itemTypeGiftServicesItem)) {
-                $invalidValues[] = var_export($itemTypeGiftServicesItem);
+                $invalidValues[] = var_export($itemTypeGiftServicesItem, true);
             }
         }
         if (!empty($invalidValues)) {
@@ -1024,7 +1024,7 @@ class ItemType extends AbstractStructBase
         $invalidValues = array();
         foreach ($listingEnhancement as $itemTypeListingEnhancementItem) {
             if (!\PayPal\EnumType\ListingEnhancementsCodeType::valueIsValid($itemTypeListingEnhancementItem)) {
-                $invalidValues[] = var_export($itemTypeListingEnhancementItem);
+                $invalidValues[] = var_export($itemTypeListingEnhancementItem, true);
             }
         }
         if (!empty($invalidValues)) {
@@ -1162,7 +1162,7 @@ class ItemType extends AbstractStructBase
         $invalidValues = array();
         foreach ($paymentMethods as $itemTypePaymentMethodsItem) {
             if (!\PayPal\EnumType\BuyerPaymentMethodCodeType::valueIsValid($itemTypePaymentMethodsItem)) {
-                $invalidValues[] = var_export($itemTypePaymentMethodsItem);
+                $invalidValues[] = var_export($itemTypePaymentMethodsItem, true);
             }
         }
         if (!empty($invalidValues)) {
@@ -1510,7 +1510,7 @@ class ItemType extends AbstractStructBase
         $invalidValues = array();
         foreach ($shippingRegions as $itemTypeShippingRegionsItem) {
             if (!\PayPal\EnumType\ShippingRegionCodeType::valueIsValid($itemTypeShippingRegionsItem)) {
-                $invalidValues[] = var_export($itemTypeShippingRegionsItem);
+                $invalidValues[] = var_export($itemTypeShippingRegionsItem, true);
             }
         }
         if (!empty($invalidValues)) {

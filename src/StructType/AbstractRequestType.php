@@ -83,7 +83,7 @@ abstract class AbstractRequestType extends AbstractStructBase
         $invalidValues = array();
         foreach ($detailLevel as $abstractRequestTypeDetailLevelItem) {
             if (!\PayPal\EnumType\DetailLevelCodeType::valueIsValid($abstractRequestTypeDetailLevelItem)) {
-                $invalidValues[] = var_export($abstractRequestTypeDetailLevelItem);
+                $invalidValues[] = var_export($abstractRequestTypeDetailLevelItem, true);
             }
         }
         if (!empty($invalidValues)) {
