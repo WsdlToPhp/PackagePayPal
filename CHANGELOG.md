@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 204.3.0
+- update generated classes using latest PackageGeneration version [3.2.3](https://github.com/WsdlToPhp/PackageGenerator/releases/tag/3.2.3)
+
 ## 204.2.1
 - update generated classes using latest PackageGeneration version [2.8.1](https://github.com/WsdlToPhp/PackageGenerator/releases/tag/2.8.1)
 
