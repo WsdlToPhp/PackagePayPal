@@ -14,7 +14,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
 {
     /**
      * The ProfileID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Recurring Billing Profile ID
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -23,7 +23,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $ProfileID;
     /**
      * The ProfileStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -31,7 +31,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $ProfileStatus;
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -39,7 +39,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $Description;
     /**
      * The AutoBillOutstandingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -47,7 +47,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $AutoBillOutstandingAmount;
     /**
      * The MaxFailedPayments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var int
@@ -55,7 +55,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $MaxFailedPayments;
     /**
      * The RecurringPaymentsProfileDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\RecurringPaymentsProfileDetailsType
@@ -63,7 +63,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $RecurringPaymentsProfileDetails;
     /**
      * The RecurringPaymentsSummary
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\RecurringPaymentsSummaryType
@@ -71,7 +71,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $RecurringPaymentsSummary;
     /**
      * The CurrentRecurringPaymentsPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BillingPeriodDetailsType
@@ -79,7 +79,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $CurrentRecurringPaymentsPeriod;
     /**
      * The CreditCard
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\CreditCardDetailsType
@@ -87,7 +87,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $CreditCard;
     /**
      * The TrialRecurringPaymentsPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BillingPeriodDetailsType
@@ -95,7 +95,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $TrialRecurringPaymentsPeriod;
     /**
      * The RegularRecurringPaymentsPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BillingPeriodDetailsType
@@ -103,7 +103,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $RegularRecurringPaymentsPeriod;
     /**
      * The TrialAmountPaid
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -111,7 +111,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $TrialAmountPaid;
     /**
      * The RegularAmountPaid
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -119,7 +119,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $RegularAmountPaid;
     /**
      * The AggregateAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -127,7 +127,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $AggregateAmount;
     /**
      * The AggregateOptionalAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -135,7 +135,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $AggregateOptionalAmount;
     /**
      * The FinalPaymentDueDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -143,7 +143,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $FinalPaymentDueDate;
     /**
      * The SoftDescriptor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Use this optional parameter to pass in your business name and other data describing the transaction. Optional This information is usually displayed in the account holder's statement. Example: RedCross Haiti, RedCross Uganda,
      * Realtor.com dues, Realtor.com list fee Length 25 characters. Alphanumeric characters and dash(-), dot(.), asterisk(*), space( ) On the customer's statement, an asterisk is used to separate the DBA name and product name. The asterisk delimiter can
      * appear in position 4, 8, or 13.
@@ -154,7 +154,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public $SoftDescriptor;
     /**
      * The SoftDescriptorCity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Use this optional parameter to pass information about how consumer should contact the merchant. Optional This information is usually displayed in the account holder's statement. For Ecom trx: phone, email or URL is allowed For Retail
      * trx: only the actual city is allowed For details on allowed characters in Soft Descriptor City refer to the API documentation.
      * - maxOccurs: 1
@@ -240,7 +240,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     {
         // validation for constraint: string
         if (!is_null($profileID) && !is_string($profileID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($profileID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
         }
         $this->ProfileID = $profileID;
         return $this;
@@ -265,7 +265,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\RecurringPaymentsProfileStatusType::valueIsValid($profileStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $profileStatus, implode(', ', \PayPal\EnumType\RecurringPaymentsProfileStatusType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\RecurringPaymentsProfileStatusType', is_array($profileStatus) ? implode(', ', $profileStatus) : var_export($profileStatus, true), implode(', ', \PayPal\EnumType\RecurringPaymentsProfileStatusType::getValidValues())), __LINE__);
         }
         $this->ProfileStatus = $profileStatus;
         return $this;
@@ -287,7 +287,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;
@@ -312,7 +312,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AutoBillType::valueIsValid($autoBillOutstandingAmount)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $autoBillOutstandingAmount, implode(', ', \PayPal\EnumType\AutoBillType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AutoBillType', is_array($autoBillOutstandingAmount) ? implode(', ', $autoBillOutstandingAmount) : var_export($autoBillOutstandingAmount, true), implode(', ', \PayPal\EnumType\AutoBillType::getValidValues())), __LINE__);
         }
         $this->AutoBillOutstandingAmount = $autoBillOutstandingAmount;
         return $this;
@@ -333,8 +333,8 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     public function setMaxFailedPayments($maxFailedPayments = null)
     {
         // validation for constraint: int
-        if (!is_null($maxFailedPayments) && !is_numeric($maxFailedPayments)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($maxFailedPayments)), __LINE__);
+        if (!is_null($maxFailedPayments) && !(is_int($maxFailedPayments) || ctype_digit($maxFailedPayments))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxFailedPayments, true), gettype($maxFailedPayments)), __LINE__);
         }
         $this->MaxFailedPayments = $maxFailedPayments;
         return $this;
@@ -536,7 +536,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     {
         // validation for constraint: string
         if (!is_null($finalPaymentDueDate) && !is_string($finalPaymentDueDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($finalPaymentDueDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($finalPaymentDueDate, true), gettype($finalPaymentDueDate)), __LINE__);
         }
         $this->FinalPaymentDueDate = $finalPaymentDueDate;
         return $this;
@@ -558,7 +558,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     {
         // validation for constraint: string
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptor)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
         $this->SoftDescriptor = $softDescriptor;
         return $this;
@@ -580,7 +580,7 @@ class GetRecurringPaymentsProfileDetailsResponseDetailsType extends AbstractStru
     {
         // validation for constraint: string
         if (!is_null($softDescriptorCity) && !is_string($softDescriptorCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptorCity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptorCity, true), gettype($softDescriptorCity)), __LINE__);
         }
         $this->SoftDescriptorCity = $softDescriptorCity;
         return $this;

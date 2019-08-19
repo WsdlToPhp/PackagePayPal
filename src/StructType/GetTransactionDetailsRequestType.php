@@ -13,9 +13,10 @@ class GetTransactionDetailsRequestType extends AbstractRequestType
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique identifier of a transaction. RequiredThe details for some kinds of transactions cannot be retrieved with GetTransactionDetailsRequest. You cannot obtain details of bank transfer withdrawals, for example. Character length and
      * limitations: 17 single-byte alphanumeric characters | TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * @var string
      */
     public $TransactionID;
@@ -46,7 +47,7 @@ class GetTransactionDetailsRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for UATPDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: UATP Card Details Type
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class UATPDetailsType extends AbstractStructBase
 {
     /**
      * The UATPNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: UATP Card Number
      * @var string
      */
     public $UATPNumber;
     /**
      * The ExpMonth
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: UATP Card expirty month
      * @var int
      */
     public $ExpMonth;
     /**
      * The ExpYear
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: UATP Card expirty year
      * @var int
      */
@@ -67,7 +67,7 @@ class UATPDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($uATPNumber) && !is_string($uATPNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uATPNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uATPNumber, true), gettype($uATPNumber)), __LINE__);
         }
         $this->UATPNumber = $uATPNumber;
         return $this;
@@ -88,8 +88,8 @@ class UATPDetailsType extends AbstractStructBase
     public function setExpMonth($expMonth = null)
     {
         // validation for constraint: int
-        if (!is_null($expMonth) && !is_numeric($expMonth)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($expMonth)), __LINE__);
+        if (!is_null($expMonth) && !(is_int($expMonth) || ctype_digit($expMonth))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($expMonth, true), gettype($expMonth)), __LINE__);
         }
         $this->ExpMonth = $expMonth;
         return $this;
@@ -110,8 +110,8 @@ class UATPDetailsType extends AbstractStructBase
     public function setExpYear($expYear = null)
     {
         // validation for constraint: int
-        if (!is_null($expYear) && !is_numeric($expYear)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($expYear)), __LINE__);
+        if (!is_null($expYear) && !(is_int($expYear) || ctype_digit($expYear))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($expYear, true), gettype($expYear)), __LINE__);
         }
         $this->ExpYear = $expYear;
         return $this;

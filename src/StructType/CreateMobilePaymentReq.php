@@ -13,7 +13,7 @@ class CreateMobilePaymentReq extends AbstractStructBase
 {
     /**
      * The CreateMobilePaymentRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:CreateMobilePaymentRequest
      * @var \PayPal\StructType\CreateMobilePaymentRequestType
      */

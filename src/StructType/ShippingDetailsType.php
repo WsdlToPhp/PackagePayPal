@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ShippingDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Specifies the shipping payment details.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class ShippingDetailsType extends AbstractStructBase
 {
     /**
      * The AllowPaymentEdit
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the buyer edited the payment amount.
      * - minOccurs: 0
      * @var bool
@@ -23,7 +23,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $AllowPaymentEdit;
     /**
      * The CalculatedShippingRate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Calculated shipping rate details. If present, then the calculated shipping rate option was used.
      * - minOccurs: 0
      * @var \PayPal\StructType\CalculatedShippingRateType
@@ -31,7 +31,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $CalculatedShippingRate;
     /**
      * The ChangePaymentInstructions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the payment instructions are included (e.g., for updating the details of a transaction).
      * - minOccurs: 0
      * @var bool
@@ -39,7 +39,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $ChangePaymentInstructions;
     /**
      * The FlatShippingRate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Flat shipping rate details. If present, then the flat shipping rate option was used.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -48,7 +48,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $FlatShippingRate;
     /**
      * The InsuranceTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Total cost of insurance for the transaction.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -56,7 +56,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $InsuranceTotal;
     /**
      * The InsuranceWanted
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether buyer selected to have insurance.
      * - minOccurs: 0
      * @var bool
@@ -64,7 +64,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $InsuranceWanted;
     /**
      * The PaymentInstructions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Payment instuctions.
      * - minOccurs: 0
      * @var string
@@ -72,7 +72,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $PaymentInstructions;
     /**
      * The SalesTax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sales tax details. Sales tax applicable for only US sites. For non-US sites this sub-element should not be used.
      * - minOccurs: 0
      * @var \PayPal\StructType\SalesTaxType
@@ -80,7 +80,7 @@ class ShippingDetailsType extends AbstractStructBase
     public $SalesTax;
     /**
      * The SellerPostalCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Postal/Zip code from where the seller will ship the item.
      * - minOccurs: 0
      * @var string
@@ -137,7 +137,7 @@ class ShippingDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($allowPaymentEdit) && !is_bool($allowPaymentEdit)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($allowPaymentEdit)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($allowPaymentEdit, true), gettype($allowPaymentEdit)), __LINE__);
         }
         $this->AllowPaymentEdit = $allowPaymentEdit;
         return $this;
@@ -177,7 +177,7 @@ class ShippingDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($changePaymentInstructions) && !is_bool($changePaymentInstructions)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($changePaymentInstructions)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($changePaymentInstructions, true), gettype($changePaymentInstructions)), __LINE__);
         }
         $this->ChangePaymentInstructions = $changePaymentInstructions;
         return $this;
@@ -191,6 +191,28 @@ class ShippingDetailsType extends AbstractStructBase
         return $this->FlatShippingRate;
     }
     /**
+     * This method is responsible for validating the values passed to the setFlatShippingRate method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setFlatShippingRate method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateFlatShippingRateForArrayConstraintsFromSetFlatShippingRate(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $shippingDetailsTypeFlatShippingRateItem) {
+            // validation for constraint: itemType
+            if (!$shippingDetailsTypeFlatShippingRateItem instanceof \PayPal\StructType\FlatShippingRateType) {
+                $invalidValues[] = is_object($shippingDetailsTypeFlatShippingRateItem) ? get_class($shippingDetailsTypeFlatShippingRateItem) : sprintf('%s(%s)', gettype($shippingDetailsTypeFlatShippingRateItem), var_export($shippingDetailsTypeFlatShippingRateItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The FlatShippingRate property can only contain items of type \PayPal\StructType\FlatShippingRateType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set FlatShippingRate value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\FlatShippingRateType[] $flatShippingRate
@@ -198,11 +220,9 @@ class ShippingDetailsType extends AbstractStructBase
      */
     public function setFlatShippingRate(array $flatShippingRate = array())
     {
-        foreach ($flatShippingRate as $shippingDetailsTypeFlatShippingRateItem) {
-            // validation for constraint: itemType
-            if (!$shippingDetailsTypeFlatShippingRateItem instanceof \PayPal\StructType\FlatShippingRateType) {
-                throw new \InvalidArgumentException(sprintf('The FlatShippingRate property can only contain items of \PayPal\StructType\FlatShippingRateType, "%s" given', is_object($shippingDetailsTypeFlatShippingRateItem) ? get_class($shippingDetailsTypeFlatShippingRateItem) : gettype($shippingDetailsTypeFlatShippingRateItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($flatShippingRateArrayErrorMessage = self::validateFlatShippingRateForArrayConstraintsFromSetFlatShippingRate($flatShippingRate))) {
+            throw new \InvalidArgumentException($flatShippingRateArrayErrorMessage, __LINE__);
         }
         $this->FlatShippingRate = $flatShippingRate;
         return $this;
@@ -217,7 +237,7 @@ class ShippingDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\FlatShippingRateType) {
-            throw new \InvalidArgumentException(sprintf('The FlatShippingRate property can only contain items of \PayPal\StructType\FlatShippingRateType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The FlatShippingRate property can only contain items of type \PayPal\StructType\FlatShippingRateType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->FlatShippingRate[] = $item;
         return $this;
@@ -257,7 +277,7 @@ class ShippingDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($insuranceWanted) && !is_bool($insuranceWanted)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($insuranceWanted)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($insuranceWanted, true), gettype($insuranceWanted)), __LINE__);
         }
         $this->InsuranceWanted = $insuranceWanted;
         return $this;
@@ -279,7 +299,7 @@ class ShippingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($paymentInstructions) && !is_string($paymentInstructions)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentInstructions)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentInstructions, true), gettype($paymentInstructions)), __LINE__);
         }
         $this->PaymentInstructions = $paymentInstructions;
         return $this;
@@ -319,7 +339,7 @@ class ShippingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($sellerPostalCode) && !is_string($sellerPostalCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sellerPostalCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sellerPostalCode, true), gettype($sellerPostalCode)), __LINE__);
         }
         $this->SellerPostalCode = $sellerPostalCode;
         return $this;

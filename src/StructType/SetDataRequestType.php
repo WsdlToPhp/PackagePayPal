@@ -13,7 +13,7 @@ class SetDataRequestType extends AbstractStructBase
 {
     /**
      * The BillingApprovalDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about Billing Agreements requested to be created.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class SetDataRequestType extends AbstractStructBase
     public $BillingApprovalDetails;
     /**
      * The BuyerDetail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Only needed if Auto Authorization is requested. The authentication session token will be passed in here.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class SetDataRequestType extends AbstractStructBase
     public $BuyerDetail;
     /**
      * The InfoSharingDirectives
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Requests for specific buyer information like Billing Address to be returned through GetExpressCheckoutDetails should be specified under this.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -40,7 +40,7 @@ class SetDataRequestType extends AbstractStructBase
     public $InfoSharingDirectives;
     /**
      * The RetrieveShippingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that you require to retrieve the customer's shipping address on file with PayPal. Any value other than 1 indicates that no such requirement.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -49,7 +49,7 @@ class SetDataRequestType extends AbstractStructBase
     public $RetrieveShippingAddress;
     /**
      * The UserChannel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: the value is required by ACS team to specify the channel which the partners are in. the channel will be used for risk assessment the value is defined in biz/User/value_object/Channel.oml Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -58,7 +58,7 @@ class SetDataRequestType extends AbstractStructBase
     public $UserChannel;
     /**
      * The ReqConfirmShipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that you require that the customer's shipping address on file with PayPal be a confirmed address. Any value other than 1 indicates that the customer's shipping address on file with PayPal need NOT be a confirmed
      * address. Setting this element overrides the setting you have specified in the recipient's Merchant Account Profile. Optional
      * - maxOccurs: 1
@@ -68,7 +68,7 @@ class SetDataRequestType extends AbstractStructBase
     public $ReqConfirmShipping;
     /**
      * The PaymentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the payment.
      * - maxOccurs: 10
      * - minOccurs: 0
@@ -77,7 +77,7 @@ class SetDataRequestType extends AbstractStructBase
     public $PaymentDetails;
     /**
      * The ExternalPartnerTrackingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An optional set of values related to tracking for external partner.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -86,7 +86,7 @@ class SetDataRequestType extends AbstractStructBase
     public $ExternalPartnerTrackingDetails;
     /**
      * The URI
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URI(uniform resource identifier), the source from which the request is initiated.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -136,6 +136,28 @@ class SetDataRequestType extends AbstractStructBase
         return $this->BillingApprovalDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setBillingApprovalDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setBillingApprovalDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateBillingApprovalDetailsForArrayConstraintsFromSetBillingApprovalDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $setDataRequestTypeBillingApprovalDetailsItem) {
+            // validation for constraint: itemType
+            if (!$setDataRequestTypeBillingApprovalDetailsItem instanceof \PayPal\StructType\BillingApprovalDetailsType) {
+                $invalidValues[] = is_object($setDataRequestTypeBillingApprovalDetailsItem) ? get_class($setDataRequestTypeBillingApprovalDetailsItem) : sprintf('%s(%s)', gettype($setDataRequestTypeBillingApprovalDetailsItem), var_export($setDataRequestTypeBillingApprovalDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The BillingApprovalDetails property can only contain items of type \PayPal\StructType\BillingApprovalDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set BillingApprovalDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\BillingApprovalDetailsType[] $billingApprovalDetails
@@ -143,11 +165,9 @@ class SetDataRequestType extends AbstractStructBase
      */
     public function setBillingApprovalDetails(array $billingApprovalDetails = array())
     {
-        foreach ($billingApprovalDetails as $setDataRequestTypeBillingApprovalDetailsItem) {
-            // validation for constraint: itemType
-            if (!$setDataRequestTypeBillingApprovalDetailsItem instanceof \PayPal\StructType\BillingApprovalDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The BillingApprovalDetails property can only contain items of \PayPal\StructType\BillingApprovalDetailsType, "%s" given', is_object($setDataRequestTypeBillingApprovalDetailsItem) ? get_class($setDataRequestTypeBillingApprovalDetailsItem) : gettype($setDataRequestTypeBillingApprovalDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($billingApprovalDetailsArrayErrorMessage = self::validateBillingApprovalDetailsForArrayConstraintsFromSetBillingApprovalDetails($billingApprovalDetails))) {
+            throw new \InvalidArgumentException($billingApprovalDetailsArrayErrorMessage, __LINE__);
         }
         $this->BillingApprovalDetails = $billingApprovalDetails;
         return $this;
@@ -162,7 +182,7 @@ class SetDataRequestType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\BillingApprovalDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The BillingApprovalDetails property can only contain items of \PayPal\StructType\BillingApprovalDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The BillingApprovalDetails property can only contain items of type \PayPal\StructType\BillingApprovalDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->BillingApprovalDetails[] = $item;
         return $this;
@@ -220,7 +240,7 @@ class SetDataRequestType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($retrieveShippingAddress) && !is_bool($retrieveShippingAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($retrieveShippingAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($retrieveShippingAddress, true), gettype($retrieveShippingAddress)), __LINE__);
         }
         $this->RetrieveShippingAddress = $retrieveShippingAddress;
         return $this;
@@ -245,7 +265,7 @@ class SetDataRequestType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\UserChannelCodeType::valueIsValid($userChannel)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $userChannel, implode(', ', \PayPal\EnumType\UserChannelCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\UserChannelCodeType', is_array($userChannel) ? implode(', ', $userChannel) : var_export($userChannel, true), implode(', ', \PayPal\EnumType\UserChannelCodeType::getValidValues())), __LINE__);
         }
         $this->UserChannel = $userChannel;
         return $this;
@@ -267,7 +287,7 @@ class SetDataRequestType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($reqConfirmShipping) && !is_bool($reqConfirmShipping)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reqConfirmShipping)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reqConfirmShipping, true), gettype($reqConfirmShipping)), __LINE__);
         }
         $this->ReqConfirmShipping = $reqConfirmShipping;
         return $this;
@@ -281,6 +301,28 @@ class SetDataRequestType extends AbstractStructBase
         return $this->PaymentDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $setDataRequestTypePaymentDetailsItem) {
+            // validation for constraint: itemType
+            if (!$setDataRequestTypePaymentDetailsItem instanceof \PayPal\StructType\PaymentDetailsType) {
+                $invalidValues[] = is_object($setDataRequestTypePaymentDetailsItem) ? get_class($setDataRequestTypePaymentDetailsItem) : sprintf('%s(%s)', gettype($setDataRequestTypePaymentDetailsItem), var_export($setDataRequestTypePaymentDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentDetails property can only contain items of type \PayPal\StructType\PaymentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentDetailsType[] $paymentDetails
@@ -288,11 +330,13 @@ class SetDataRequestType extends AbstractStructBase
      */
     public function setPaymentDetails(array $paymentDetails = array())
     {
-        foreach ($paymentDetails as $setDataRequestTypePaymentDetailsItem) {
-            // validation for constraint: itemType
-            if (!$setDataRequestTypePaymentDetailsItem instanceof \PayPal\StructType\PaymentDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of \PayPal\StructType\PaymentDetailsType, "%s" given', is_object($setDataRequestTypePaymentDetailsItem) ? get_class($setDataRequestTypePaymentDetailsItem) : gettype($setDataRequestTypePaymentDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentDetailsArrayErrorMessage = self::validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails($paymentDetails))) {
+            throw new \InvalidArgumentException($paymentDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($paymentDetails) && count($paymentDetails) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentDetails)), __LINE__);
         }
         $this->PaymentDetails = $paymentDetails;
         return $this;
@@ -307,7 +351,11 @@ class SetDataRequestType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of \PayPal\StructType\PaymentDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of type \PayPal\StructType\PaymentDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->PaymentDetails) && count($this->PaymentDetails) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->PaymentDetails)), __LINE__);
         }
         $this->PaymentDetails[] = $item;
         return $this;
@@ -347,7 +395,7 @@ class SetDataRequestType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($uRI) && !is_string($uRI)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uRI)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uRI, true), gettype($uRI)), __LINE__);
         }
         $this->URI = $uRI;
         return $this;

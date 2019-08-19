@@ -13,8 +13,9 @@ class GetAuthDetailsRequestType extends AbstractRequestType
 {
     /**
      * The Token
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A timestamped token, the value of which was returned by SetAuthFlowParam Response. RequiredCharacter length and limitations: 20 single-byte characters
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -47,7 +48,7 @@ class GetAuthDetailsRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($token) && !is_string($token)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($token)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->Token = $token;
         return $this;

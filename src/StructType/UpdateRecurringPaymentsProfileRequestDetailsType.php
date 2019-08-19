@@ -14,7 +14,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
 {
     /**
      * The ProfileID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -22,7 +22,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $ProfileID;
     /**
      * The Note
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -30,7 +30,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $Note;
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -38,7 +38,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $Description;
     /**
      * The SubscriberName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -46,7 +46,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $SubscriberName;
     /**
      * The SubscriberShippingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\AddressType
@@ -54,7 +54,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $SubscriberShippingAddress;
     /**
      * The ProfileReference
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -62,7 +62,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $ProfileReference;
     /**
      * The AdditionalBillingCycles
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var int
@@ -70,7 +70,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $AdditionalBillingCycles;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -78,7 +78,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $Amount;
     /**
      * The ShippingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -86,7 +86,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $ShippingAmount;
     /**
      * The TaxAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -94,7 +94,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $TaxAmount;
     /**
      * The OutstandingBalance
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -102,7 +102,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $OutstandingBalance;
     /**
      * The AutoBillOutstandingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -110,7 +110,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $AutoBillOutstandingAmount;
     /**
      * The MaxFailedPayments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var int
@@ -118,7 +118,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $MaxFailedPayments;
     /**
      * The CreditCard
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the credit card to be charged (required if Direct Payment)
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -127,7 +127,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $CreditCard;
     /**
      * The BillingStartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: When does this Profile begin billing?
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -136,7 +136,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $BillingStartDate;
     /**
      * The TrialPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Trial period of this schedule
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -145,7 +145,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $TrialPeriod;
     /**
      * The PaymentPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BillingPeriodDetailsType_Update
@@ -226,7 +226,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($profileID) && !is_string($profileID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($profileID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
         }
         $this->ProfileID = $profileID;
         return $this;
@@ -248,7 +248,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($note) && !is_string($note)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($note)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($note, true), gettype($note)), __LINE__);
         }
         $this->Note = $note;
         return $this;
@@ -270,7 +270,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;
@@ -292,7 +292,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($subscriberName) && !is_string($subscriberName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($subscriberName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subscriberName, true), gettype($subscriberName)), __LINE__);
         }
         $this->SubscriberName = $subscriberName;
         return $this;
@@ -332,7 +332,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($profileReference) && !is_string($profileReference)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($profileReference)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileReference, true), gettype($profileReference)), __LINE__);
         }
         $this->ProfileReference = $profileReference;
         return $this;
@@ -353,8 +353,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public function setAdditionalBillingCycles($additionalBillingCycles = null)
     {
         // validation for constraint: int
-        if (!is_null($additionalBillingCycles) && !is_numeric($additionalBillingCycles)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($additionalBillingCycles)), __LINE__);
+        if (!is_null($additionalBillingCycles) && !(is_int($additionalBillingCycles) || ctype_digit($additionalBillingCycles))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($additionalBillingCycles, true), gettype($additionalBillingCycles)), __LINE__);
         }
         $this->AdditionalBillingCycles = $additionalBillingCycles;
         return $this;
@@ -451,7 +451,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AutoBillType::valueIsValid($autoBillOutstandingAmount)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $autoBillOutstandingAmount, implode(', ', \PayPal\EnumType\AutoBillType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AutoBillType', is_array($autoBillOutstandingAmount) ? implode(', ', $autoBillOutstandingAmount) : var_export($autoBillOutstandingAmount, true), implode(', ', \PayPal\EnumType\AutoBillType::getValidValues())), __LINE__);
         }
         $this->AutoBillOutstandingAmount = $autoBillOutstandingAmount;
         return $this;
@@ -472,8 +472,8 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public function setMaxFailedPayments($maxFailedPayments = null)
     {
         // validation for constraint: int
-        if (!is_null($maxFailedPayments) && !is_numeric($maxFailedPayments)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($maxFailedPayments)), __LINE__);
+        if (!is_null($maxFailedPayments) && !(is_int($maxFailedPayments) || ctype_digit($maxFailedPayments))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxFailedPayments, true), gettype($maxFailedPayments)), __LINE__);
         }
         $this->MaxFailedPayments = $maxFailedPayments;
         return $this;
@@ -513,7 +513,7 @@ class UpdateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($billingStartDate) && !is_string($billingStartDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingStartDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingStartDate, true), gettype($billingStartDate)), __LINE__);
         }
         $this->BillingStartDate = $billingStartDate;
         return $this;

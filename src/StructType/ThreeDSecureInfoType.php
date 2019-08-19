@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ThreeDSecureInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: 3DSecureInfoType Information about 3D Secure parameters.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,14 +15,14 @@ class ThreeDSecureInfoType extends AbstractStructBase
 {
     /**
      * The ThreeDSecureRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\ThreeDSecureRequestType
      */
     public $ThreeDSecureRequest;
     /**
      * The ThreeDSecureResponse
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\ThreeDSecureResponseType
      */

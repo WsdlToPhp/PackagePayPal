@@ -13,7 +13,7 @@ class DoUATPExpressCheckoutPaymentResponseType extends DoExpressCheckoutPaymentR
 {
     /**
      * The UATPDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:UATPDetails

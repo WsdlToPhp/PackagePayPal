@@ -13,7 +13,7 @@ class DoVoidResponseType extends AbstractResponseType
 {
     /**
      * The AuthorizationID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The authorization identification number you specified in the request. Character length and limits: 19 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class DoVoidResponseType extends AbstractResponseType
     public $AuthorizationID;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return msgsubid back to merchant
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -59,7 +59,7 @@ class DoVoidResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($authorizationID) && !is_string($authorizationID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authorizationID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizationID, true), gettype($authorizationID)), __LINE__);
         }
         $this->AuthorizationID = $authorizationID;
         return $this;
@@ -81,7 +81,7 @@ class DoVoidResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

@@ -26,7 +26,7 @@ class Execute extends SoapClientBase
     }
     /**
      * Method to call the operation originally named ExecuteCheckoutOperations
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Execute extends SoapClientBase
     public function ExecuteCheckoutOperations(\PayPal\StructType\ExecuteCheckoutOperationsReq $executeCheckoutOperationsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->ExecuteCheckoutOperations($executeCheckoutOperationsRequest));
+            $this->setResult($this->getSoapClient()->ExecuteCheckoutOperations($executeCheckoutOperationsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

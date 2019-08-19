@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AbstractRequestType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Base type definition of request payload that can carry any type of payload content with optional versioning information and detail level requirements.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ abstract class AbstractRequestType extends AbstractStructBase
 {
     /**
      * The DetailLevel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This specifies the required detail level that is needed by a client application pertaining to a particular data component (e.g., Item, Transaction, etc.). The detail level is specified in the DetailLevelCodeType which has all the
      * enumerated values of the detail level for each component.
      * - maxOccurs: unbounded
@@ -25,7 +25,7 @@ abstract class AbstractRequestType extends AbstractStructBase
     public $DetailLevel;
     /**
      * The ErrorLanguage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This should be the standard RFC 3066 language identification tag, e.g., en_US.
      * - minOccurs: 0
      * @var string
@@ -33,7 +33,7 @@ abstract class AbstractRequestType extends AbstractStructBase
     public $ErrorLanguage;
     /**
      * The Version
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This refers to the version of the request payload schema.
      * @var string
      */
@@ -71,6 +71,28 @@ abstract class AbstractRequestType extends AbstractStructBase
         return $this->DetailLevel;
     }
     /**
+     * This method is responsible for validating the values passed to the setDetailLevel method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setDetailLevel method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateDetailLevelForArrayConstraintsFromSetDetailLevel(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $abstractRequestTypeDetailLevelItem) {
+            // validation for constraint: enumeration
+            if (!\PayPal\EnumType\DetailLevelCodeType::valueIsValid($abstractRequestTypeDetailLevelItem)) {
+                $invalidValues[] = is_object($abstractRequestTypeDetailLevelItem) ? get_class($abstractRequestTypeDetailLevelItem) : sprintf('%s(%s)', gettype($abstractRequestTypeDetailLevelItem), var_export($abstractRequestTypeDetailLevelItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\DetailLevelCodeType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PayPal\EnumType\DetailLevelCodeType::getValidValues()));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set DetailLevel value
      * @uses \PayPal\EnumType\DetailLevelCodeType::valueIsValid()
      * @uses \PayPal\EnumType\DetailLevelCodeType::getValidValues()
@@ -80,14 +102,9 @@ abstract class AbstractRequestType extends AbstractStructBase
      */
     public function setDetailLevel(array $detailLevel = array())
     {
-        $invalidValues = array();
-        foreach ($detailLevel as $abstractRequestTypeDetailLevelItem) {
-            if (!\PayPal\EnumType\DetailLevelCodeType::valueIsValid($abstractRequestTypeDetailLevelItem)) {
-                $invalidValues[] = var_export($abstractRequestTypeDetailLevelItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \PayPal\EnumType\DetailLevelCodeType::getValidValues())), __LINE__);
+        // validation for constraint: array
+        if ('' !== ($detailLevelArrayErrorMessage = self::validateDetailLevelForArrayConstraintsFromSetDetailLevel($detailLevel))) {
+            throw new \InvalidArgumentException($detailLevelArrayErrorMessage, __LINE__);
         }
         $this->DetailLevel = $detailLevel;
         return $this;
@@ -104,7 +121,7 @@ abstract class AbstractRequestType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\DetailLevelCodeType::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \PayPal\EnumType\DetailLevelCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\DetailLevelCodeType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PayPal\EnumType\DetailLevelCodeType::getValidValues())), __LINE__);
         }
         $this->DetailLevel[] = $item;
         return $this;
@@ -126,7 +143,7 @@ abstract class AbstractRequestType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($errorLanguage) && !is_string($errorLanguage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($errorLanguage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorLanguage, true), gettype($errorLanguage)), __LINE__);
         }
         $this->ErrorLanguage = $errorLanguage;
         return $this;
@@ -148,7 +165,7 @@ abstract class AbstractRequestType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($version) && !is_string($version)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($version)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
         $this->Version = $version;
         return $this;
@@ -156,33 +173,29 @@ abstract class AbstractRequestType extends AbstractStructBase
     /**
      * Get any value
      * @uses \DOMDocument::loadXML()
-     * @uses \DOMDocument::hasChildNodes()
-     * @uses \DOMDocument::saveXML()
-     * @uses \DOMNode::item()
-     * @uses \PayPal\StructType\AbstractRequestType::setAny()
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
      * @return \DOMDocument|null
      */
     public function getAny($asString = true)
     {
-        if (!empty($this->any) && !($this->any instanceof \DOMDocument)) {
-            $dom = new \DOMDocument('1.0', 'UTF-8');
-            $dom->formatOutput = true;
-            if ($dom->loadXML($this->any)) {
-                $this->setAny($dom);
-            }
-            unset($dom);
+        $domDocument = null;
+        if (!empty($this->any) && !$asString) {
+            $domDocument = new \DOMDocument('1.0', 'UTF-8');
+            $domDocument->loadXML($this->any);
         }
-        return ($asString && ($this->any instanceof \DOMDocument) && $this->any->hasChildNodes()) ? $this->any->saveXML($this->any->childNodes->item(0)) : $this->any;
+        return $asString ? $this->any : $domDocument;
     }
     /**
      * Set any value
+     * @uses \DOMDocument::hasChildNodes()
+     * @uses \DOMDocument::saveXML()
+     * @uses \DOMNode::item()
      * @param \DOMDocument $any
      * @return \PayPal\StructType\AbstractRequestType
      */
     public function setAny(\DOMDocument $any = null)
     {
-        $this->any = $any;
+        $this->any = ($any instanceof \DOMDocument) && $any->hasChildNodes() ? $any->saveXML($any->childNodes->item(0)) : $any;
         return $this;
     }
     /**

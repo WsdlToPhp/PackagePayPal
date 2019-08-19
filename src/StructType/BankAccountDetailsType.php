@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for BankAccountDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: BankAccountDetailsType
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,28 +15,28 @@ class BankAccountDetailsType extends AbstractStructBase
 {
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Name of bank Character length and limitations: 192 alphanumeric characters
      * @var string
      */
     public $Name;
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of bank account: Checking or Savings
      * @var string
      */
     public $Type;
     /**
      * The RoutingNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs bank routing number Character length and limitations: 23 alphanumeric characters
      * @var string
      */
     public $RoutingNumber;
     /**
      * The AccountNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs bank account number Character length and limitations: 256 alphanumeric characters
      * @var string
      */
@@ -77,7 +77,7 @@ class BankAccountDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($name) && !is_string($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
         $this->Name = $name;
         return $this;
@@ -102,7 +102,7 @@ class BankAccountDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BankAccountTypeType::valueIsValid($type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $type, implode(', ', \PayPal\EnumType\BankAccountTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BankAccountTypeType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \PayPal\EnumType\BankAccountTypeType::getValidValues())), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -124,7 +124,7 @@ class BankAccountDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($routingNumber) && !is_string($routingNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($routingNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($routingNumber, true), gettype($routingNumber)), __LINE__);
         }
         $this->RoutingNumber = $routingNumber;
         return $this;
@@ -146,7 +146,7 @@ class BankAccountDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($accountNumber) && !is_string($accountNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($accountNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
         }
         $this->AccountNumber = $accountNumber;
         return $this;

@@ -6,8 +6,8 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for DoAuthorizationRequestType StructType
- * Meta informations extracted from the WSDL
- * - documentation: Address the order will be shipped to. Optional | Information about the individual purchased items
+ * Meta information extracted from the WSDL
+ * - documentation: Information about the individual purchased items | Address the order will be shipped to. Optional
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -15,7 +15,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value of the order’s transaction identification number returned by a PayPal product. Required Character length and limits: 19 single-byte characters maximum
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -24,7 +24,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $TransactionID;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount to authorize. Required Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -33,7 +33,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $Amount;
     /**
      * The TransactionEntity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of transaction to authorize. The only allowable value is Order, which means that the transaction represents a customer order that can be fulfilled over 29 days. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $TransactionEntity;
     /**
      * The ShipToAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:ShipToAddress
@@ -51,7 +51,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $ShipToAddress;
     /**
      * The PaymentDetailsItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - ref: ebl:PaymentDetailsItem
@@ -60,7 +60,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $PaymentDetailsItem;
     /**
      * The ItemTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sum of cost of all items in this order. You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Optional Limitations: Must not exceed $10,000 USD in any currency.
      * No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - maxOccurs: 1
@@ -70,7 +70,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $ItemTotal;
     /**
      * The ShippingTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Total shipping costs for this order. You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Optional Limitations: Must not exceed $10,000 USD in any currency. No
      * currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - maxOccurs: 1
@@ -80,7 +80,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $ShippingTotal;
     /**
      * The HandlingTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Total handling costs for this order. You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Optional Limitations: Must not exceed $10,000 USD in any currency. No
      * currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - maxOccurs: 1
@@ -90,7 +90,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $HandlingTotal;
     /**
      * The TaxTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sum of tax for all items in this order. You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Optional Limitations: Must not exceed $10,000 USD in any currency.
      * No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - maxOccurs: 1
@@ -100,7 +100,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $TaxTotal;
     /**
      * The InsuranceTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Total shipping insurance costs for this order. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -109,7 +109,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $InsuranceTotal;
     /**
      * The ShippingDiscount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shipping discount for this order, specified as a negative number. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -118,7 +118,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $ShippingDiscount;
     /**
      * The OrderDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Description of items the customer is purchasing. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -127,7 +127,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $OrderDescription;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A free-form field for your own use. Optional Character length and limitations: 256 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -136,7 +136,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $Custom;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -145,7 +145,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $MsgSubID;
     /**
      * The IPAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IP Address of the buyer
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -154,7 +154,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     public $IPAddress;
     /**
      * The ShipToStore
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A flag indicating that this transaction is a Ship to Store transaction. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -233,7 +233,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -276,7 +276,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\TransactionEntityType::valueIsValid($transactionEntity)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $transactionEntity, implode(', ', \PayPal\EnumType\TransactionEntityType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\TransactionEntityType', is_array($transactionEntity) ? implode(', ', $transactionEntity) : var_export($transactionEntity, true), implode(', ', \PayPal\EnumType\TransactionEntityType::getValidValues())), __LINE__);
         }
         $this->TransactionEntity = $transactionEntity;
         return $this;
@@ -308,6 +308,28 @@ class DoAuthorizationRequestType extends AbstractRequestType
         return $this->PaymentDetailsItem;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentDetailsItem method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentDetailsItem method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentDetailsItemForArrayConstraintsFromSetPaymentDetailsItem(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $doAuthorizationRequestTypePaymentDetailsItemItem) {
+            // validation for constraint: itemType
+            if (!$doAuthorizationRequestTypePaymentDetailsItemItem instanceof \PayPal\StructType\PaymentDetailsItemType) {
+                $invalidValues[] = is_object($doAuthorizationRequestTypePaymentDetailsItemItem) ? get_class($doAuthorizationRequestTypePaymentDetailsItemItem) : sprintf('%s(%s)', gettype($doAuthorizationRequestTypePaymentDetailsItemItem), var_export($doAuthorizationRequestTypePaymentDetailsItemItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentDetailsItem property can only contain items of type \PayPal\StructType\PaymentDetailsItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentDetailsItem value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentDetailsItemType[] $paymentDetailsItem
@@ -315,11 +337,9 @@ class DoAuthorizationRequestType extends AbstractRequestType
      */
     public function setPaymentDetailsItem(array $paymentDetailsItem = array())
     {
-        foreach ($paymentDetailsItem as $doAuthorizationRequestTypePaymentDetailsItemItem) {
-            // validation for constraint: itemType
-            if (!$doAuthorizationRequestTypePaymentDetailsItemItem instanceof \PayPal\StructType\PaymentDetailsItemType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentDetailsItem property can only contain items of \PayPal\StructType\PaymentDetailsItemType, "%s" given', is_object($doAuthorizationRequestTypePaymentDetailsItemItem) ? get_class($doAuthorizationRequestTypePaymentDetailsItemItem) : gettype($doAuthorizationRequestTypePaymentDetailsItemItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentDetailsItemArrayErrorMessage = self::validatePaymentDetailsItemForArrayConstraintsFromSetPaymentDetailsItem($paymentDetailsItem))) {
+            throw new \InvalidArgumentException($paymentDetailsItemArrayErrorMessage, __LINE__);
         }
         $this->PaymentDetailsItem = $paymentDetailsItem;
         return $this;
@@ -334,7 +354,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentDetailsItemType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentDetailsItem property can only contain items of \PayPal\StructType\PaymentDetailsItemType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentDetailsItem property can only contain items of type \PayPal\StructType\PaymentDetailsItemType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->PaymentDetailsItem[] = $item;
         return $this;
@@ -464,7 +484,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($orderDescription) && !is_string($orderDescription)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($orderDescription)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderDescription, true), gettype($orderDescription)), __LINE__);
         }
         $this->OrderDescription = $orderDescription;
         return $this;
@@ -486,7 +506,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -508,7 +528,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;
@@ -530,7 +550,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($iPAddress) && !is_string($iPAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iPAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iPAddress, true), gettype($iPAddress)), __LINE__);
         }
         $this->IPAddress = $iPAddress;
         return $this;
@@ -552,7 +572,7 @@ class DoAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($shipToStore) && !is_string($shipToStore)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shipToStore)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shipToStore, true), gettype($shipToStore)), __LINE__);
         }
         $this->ShipToStore = $shipToStore;
         return $this;

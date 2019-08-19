@@ -13,7 +13,7 @@ class TransactionSearchRequestType extends AbstractRequestType
 {
     /**
      * The StartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The earliest transaction date at which to start the search. No wildcards are allowed. Required
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $StartDate;
     /**
      * The EndDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The latest transaction date to be included in the search Optional
      * - minOccurs: 0
      * @var string
@@ -30,8 +30,9 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $EndDate;
     /**
      * The Payer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by the buyer's email address OptionalCharacter length and limitations: 127 single-byte alphanumeric characters
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -39,8 +40,9 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $Payer;
     /**
      * The Receiver
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by the receiver's email address. If the merchant account has only one email, this is the primary email. Can also be a non-primary email.Optional
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -48,7 +50,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $Receiver;
     /**
      * The ReceiptID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by the PayPal Account Optional receipt IDOptional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -57,8 +59,9 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $ReceiptID;
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by the transaction ID. OptionalThe returned results are from the merchant's transaction records. Character length and limitations: 19 single-byte characters maximum | TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -66,7 +69,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $TransactionID;
     /**
      * The ProfileID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by Recurring Payment Profile id. The ProfileID is returned as part of the CreateRecurringPaymentsProfile API response. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -75,7 +78,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $ProfileID;
     /**
      * The PayerName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by the buyer's name OptionalSalutation: 20 single-byte character limit.FirstName: 25 single-byte character limit.MiddleName: 25 single-byte character limit.LastName: 25 single-byte character limit.Suffix: 12 single-byte
      * character limit.
      * - maxOccurs: 1
@@ -85,7 +88,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $PayerName;
     /**
      * The AuctionItemNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by item number of the purchased goods.OptionalTo search for purchased items not related to auctions, set the AuctionItemNumber element to the value of the HTML item_number variable set in the shopping cart for the original
      * transaction.
      * - maxOccurs: 1
@@ -95,7 +98,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $AuctionItemNumber;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by invoice identification key, as set by you for the original transaction. InvoiceID searches the invoice records for items sold by the merchant, not the items purchased. OptionalThe value for InvoiceID must exactly match an
      * invoice identification number. No wildcards are allowed. Character length and limitations: 127 single-byte characters maximum
      * - maxOccurs: 1
@@ -105,7 +108,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $InvoiceID;
     /**
      * The CardNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -113,7 +116,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $CardNumber;
     /**
      * The TransactionClass
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by classification of transaction. Some kinds of possible classes of transactions are not searchable with TransactionSearchRequest. You cannot search for bank transfer withdrawals, for example. OptionalAll: all transaction
      * classifications.Sent: only payments sent.Received: only payments received.MassPay: only mass payments.MoneyRequest: only money requests.FundsAdded: only funds added to balance.FundsWithdrawn: only funds withdrawn from balance.Referral: only
      * transactions involving referrals.Fee: only transactions involving fees.Subscription: only transactions involving subscriptions.Dividend: only transactions involving dividends.Billpay: only transactions involving BillPay Transactions.Refund: only
@@ -126,7 +129,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $TransactionClass;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by transaction amount OptionalYou must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -135,7 +138,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $Amount;
     /**
      * The CurrencyCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by currency codeOptional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -144,7 +147,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     public $CurrencyCode;
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Search by transaction status OptionalPending: The payment is pending. The specific reason the payment is pending is returned by the GetTransactionDetails APIPendingReason element. For more information, see PendingReason.Processing:
      * The payment is being processed.Success: The payment has been completed and the funds have been added successfully to your account balance.Denied: You denied the payment. This happens only if the payment was previously pending.Reversed: A payment was
      * reversed due to a chargeback or other type of reversal. The funds have been removed from your account balance and returned to the buyer.
@@ -222,7 +225,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($startDate) && !is_string($startDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($startDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->StartDate = $startDate;
         return $this;
@@ -244,7 +247,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($endDate) && !is_string($endDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($endDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
         }
         $this->EndDate = $endDate;
         return $this;
@@ -266,7 +269,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($payer) && !is_string($payer)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payer)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payer, true), gettype($payer)), __LINE__);
         }
         $this->Payer = $payer;
         return $this;
@@ -288,7 +291,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($receiver) && !is_string($receiver)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiver)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiver, true), gettype($receiver)), __LINE__);
         }
         $this->Receiver = $receiver;
         return $this;
@@ -310,7 +313,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($receiptID) && !is_string($receiptID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiptID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiptID, true), gettype($receiptID)), __LINE__);
         }
         $this->ReceiptID = $receiptID;
         return $this;
@@ -332,7 +335,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -354,7 +357,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($profileID) && !is_string($profileID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($profileID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
         }
         $this->ProfileID = $profileID;
         return $this;
@@ -394,7 +397,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($auctionItemNumber) && !is_string($auctionItemNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($auctionItemNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($auctionItemNumber, true), gettype($auctionItemNumber)), __LINE__);
         }
         $this->AuctionItemNumber = $auctionItemNumber;
         return $this;
@@ -416,7 +419,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -438,7 +441,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($cardNumber) && !is_string($cardNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cardNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardNumber, true), gettype($cardNumber)), __LINE__);
         }
         $this->CardNumber = $cardNumber;
         return $this;
@@ -463,7 +466,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentTransactionClassCodeType::valueIsValid($transactionClass)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $transactionClass, implode(', ', \PayPal\EnumType\PaymentTransactionClassCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentTransactionClassCodeType', is_array($transactionClass) ? implode(', ', $transactionClass) : var_export($transactionClass, true), implode(', ', \PayPal\EnumType\PaymentTransactionClassCodeType::getValidValues())), __LINE__);
         }
         $this->TransactionClass = $transactionClass;
         return $this;
@@ -506,7 +509,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CurrencyCodeType::valueIsValid($currencyCode)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $currencyCode, implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CurrencyCodeType', is_array($currencyCode) ? implode(', ', $currencyCode) : var_export($currencyCode, true), implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
         }
         $this->CurrencyCode = $currencyCode;
         return $this;
@@ -531,7 +534,7 @@ class TransactionSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentTransactionStatusCodeType::valueIsValid($status)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $status, implode(', ', \PayPal\EnumType\PaymentTransactionStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentTransactionStatusCodeType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PayPal\EnumType\PaymentTransactionStatusCodeType::getValidValues())), __LINE__);
         }
         $this->Status = $status;
         return $this;

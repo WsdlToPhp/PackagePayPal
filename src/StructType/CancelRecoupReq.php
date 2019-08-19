@@ -13,7 +13,7 @@ class CancelRecoupReq extends AbstractStructBase
 {
     /**
      * The CancelRecoupRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:CancelRecoupRequest
      * @var \PayPal\StructType\CancelRecoupRequestType
      */

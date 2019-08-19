@@ -13,7 +13,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
 {
     /**
      * The BillingAgreementID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     public $BillingAgreementID;
     /**
      * The PaymentInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\PaymentInfoType
@@ -29,7 +29,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     public $PaymentInfo;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -37,7 +37,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     public $Amount;
     /**
      * The AVSCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -45,7 +45,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     public $AVSCode;
     /**
      * The CVV2Code
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -53,16 +53,17 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     public $CVV2Code;
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
+     * - documentation: TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - documentation: TransactionId - Type for a PayPal Transaction ID.
      * @var string
      */
     public $TransactionID;
     /**
      * The PaymentAdviceCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Response code from the processor when a recurring transaction is declined
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -71,7 +72,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     public $PaymentAdviceCode;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return msgsubid back to merchant
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -80,7 +81,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     public $MsgSubID;
     /**
      * The PendingReason
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: pending reason for IC+ interchange plus
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -138,7 +139,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($billingAgreementID) && !is_string($billingAgreementID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementID, true), gettype($billingAgreementID)), __LINE__);
         }
         $this->BillingAgreementID = $billingAgreementID;
         return $this;
@@ -196,7 +197,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($aVSCode) && !is_string($aVSCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($aVSCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($aVSCode, true), gettype($aVSCode)), __LINE__);
         }
         $this->AVSCode = $aVSCode;
         return $this;
@@ -218,7 +219,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cVV2Code) && !is_string($cVV2Code)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cVV2Code)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cVV2Code, true), gettype($cVV2Code)), __LINE__);
         }
         $this->CVV2Code = $cVV2Code;
         return $this;
@@ -240,7 +241,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -262,7 +263,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($paymentAdviceCode) && !is_string($paymentAdviceCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentAdviceCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentAdviceCode, true), gettype($paymentAdviceCode)), __LINE__);
         }
         $this->PaymentAdviceCode = $paymentAdviceCode;
         return $this;
@@ -284,7 +285,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;
@@ -306,7 +307,7 @@ class DoReferenceTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($pendingReason) && !is_string($pendingReason)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($pendingReason)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pendingReason, true), gettype($pendingReason)), __LINE__);
         }
         $this->PendingReason = $pendingReason;
         return $this;

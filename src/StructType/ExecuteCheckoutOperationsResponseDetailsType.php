@@ -13,14 +13,14 @@ class ExecuteCheckoutOperationsResponseDetailsType extends AbstractStructBase
 {
     /**
      * The SetDataResponse
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 1
      * @var \PayPal\StructType\SetDataResponseType
      */
     public $SetDataResponse;
     /**
      * The AuthorizationResponse
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\AuthorizationResponseType
      */

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PaymentItemType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentItemType Information about a Payment Item.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class PaymentItemType extends AbstractStructBase
 {
     /**
      * The EbayItemTxnId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: eBay Auction Transaction ID of the Item Optional Character length and limitations: 255 single-byte characters
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class PaymentItemType extends AbstractStructBase
     public $EbayItemTxnId;
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item name set by you or entered by the customer. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -31,7 +31,7 @@ class PaymentItemType extends AbstractStructBase
     public $Name;
     /**
      * The Number
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item number set by you. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -39,7 +39,7 @@ class PaymentItemType extends AbstractStructBase
     public $Number;
     /**
      * The Quantity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Quantity set by you or entered by the customer. Character length and limitations: no limit
      * - minOccurs: 0
      * @var string
@@ -47,7 +47,7 @@ class PaymentItemType extends AbstractStructBase
     public $Quantity;
     /**
      * The SalesTax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of tax charged on payment
      * - minOccurs: 0
      * @var string
@@ -55,7 +55,7 @@ class PaymentItemType extends AbstractStructBase
     public $SalesTax;
     /**
      * The ShippingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of shipping charged on payment
      * - minOccurs: 0
      * @var string
@@ -63,7 +63,7 @@ class PaymentItemType extends AbstractStructBase
     public $ShippingAmount;
     /**
      * The HandlingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of handling charged on payment
      * - minOccurs: 0
      * @var string
@@ -71,7 +71,7 @@ class PaymentItemType extends AbstractStructBase
     public $HandlingAmount;
     /**
      * The InvoiceItemDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Invoice item details
      * - minOccurs: 0
      * @var \PayPal\StructType\InvoiceItemType
@@ -79,7 +79,7 @@ class PaymentItemType extends AbstractStructBase
     public $InvoiceItemDetails;
     /**
      * The CouponID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Coupon ID Number
      * - minOccurs: 0
      * @var string
@@ -87,7 +87,7 @@ class PaymentItemType extends AbstractStructBase
     public $CouponID;
     /**
      * The CouponAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount Value of The Coupon
      * - minOccurs: 0
      * @var string
@@ -95,7 +95,7 @@ class PaymentItemType extends AbstractStructBase
     public $CouponAmount;
     /**
      * The CouponAmountCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Currency of the Coupon Amount
      * - minOccurs: 0
      * @var string
@@ -103,7 +103,7 @@ class PaymentItemType extends AbstractStructBase
     public $CouponAmountCurrency;
     /**
      * The LoyaltyCardDiscountAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of Discount on this Loyalty Card
      * - minOccurs: 0
      * @var string
@@ -111,7 +111,7 @@ class PaymentItemType extends AbstractStructBase
     public $LoyaltyCardDiscountAmount;
     /**
      * The LoyaltyCardDiscountCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Currency of the Discount
      * - minOccurs: 0
      * @var string
@@ -119,7 +119,7 @@ class PaymentItemType extends AbstractStructBase
     public $LoyaltyCardDiscountCurrency;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cost of item
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -127,7 +127,7 @@ class PaymentItemType extends AbstractStructBase
     public $Amount;
     /**
      * The Options
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item options selected in PayPal shopping cart
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -203,7 +203,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($ebayItemTxnId) && !is_string($ebayItemTxnId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($ebayItemTxnId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ebayItemTxnId, true), gettype($ebayItemTxnId)), __LINE__);
         }
         $this->EbayItemTxnId = $ebayItemTxnId;
         return $this;
@@ -225,7 +225,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($name) && !is_string($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
         $this->Name = $name;
         return $this;
@@ -247,7 +247,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($number) && !is_string($number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($number)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
         }
         $this->Number = $number;
         return $this;
@@ -269,7 +269,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($quantity) && !is_string($quantity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($quantity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
         }
         $this->Quantity = $quantity;
         return $this;
@@ -291,7 +291,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($salesTax) && !is_string($salesTax)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($salesTax)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($salesTax, true), gettype($salesTax)), __LINE__);
         }
         $this->SalesTax = $salesTax;
         return $this;
@@ -313,7 +313,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingAmount) && !is_string($shippingAmount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingAmount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingAmount, true), gettype($shippingAmount)), __LINE__);
         }
         $this->ShippingAmount = $shippingAmount;
         return $this;
@@ -335,7 +335,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($handlingAmount) && !is_string($handlingAmount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($handlingAmount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($handlingAmount, true), gettype($handlingAmount)), __LINE__);
         }
         $this->HandlingAmount = $handlingAmount;
         return $this;
@@ -375,7 +375,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($couponID) && !is_string($couponID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($couponID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponID, true), gettype($couponID)), __LINE__);
         }
         $this->CouponID = $couponID;
         return $this;
@@ -397,7 +397,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($couponAmount) && !is_string($couponAmount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($couponAmount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponAmount, true), gettype($couponAmount)), __LINE__);
         }
         $this->CouponAmount = $couponAmount;
         return $this;
@@ -419,7 +419,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($couponAmountCurrency) && !is_string($couponAmountCurrency)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($couponAmountCurrency)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponAmountCurrency, true), gettype($couponAmountCurrency)), __LINE__);
         }
         $this->CouponAmountCurrency = $couponAmountCurrency;
         return $this;
@@ -441,7 +441,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($loyaltyCardDiscountAmount) && !is_string($loyaltyCardDiscountAmount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($loyaltyCardDiscountAmount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($loyaltyCardDiscountAmount, true), gettype($loyaltyCardDiscountAmount)), __LINE__);
         }
         $this->LoyaltyCardDiscountAmount = $loyaltyCardDiscountAmount;
         return $this;
@@ -463,7 +463,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($loyaltyCardDiscountCurrency) && !is_string($loyaltyCardDiscountCurrency)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($loyaltyCardDiscountCurrency)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($loyaltyCardDiscountCurrency, true), gettype($loyaltyCardDiscountCurrency)), __LINE__);
         }
         $this->LoyaltyCardDiscountCurrency = $loyaltyCardDiscountCurrency;
         return $this;
@@ -495,6 +495,28 @@ class PaymentItemType extends AbstractStructBase
         return $this->Options;
     }
     /**
+     * This method is responsible for validating the values passed to the setOptions method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setOptions method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateOptionsForArrayConstraintsFromSetOptions(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $paymentItemTypeOptionsItem) {
+            // validation for constraint: itemType
+            if (!$paymentItemTypeOptionsItem instanceof \PayPal\StructType\OptionType) {
+                $invalidValues[] = is_object($paymentItemTypeOptionsItem) ? get_class($paymentItemTypeOptionsItem) : sprintf('%s(%s)', gettype($paymentItemTypeOptionsItem), var_export($paymentItemTypeOptionsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The Options property can only contain items of type \PayPal\StructType\OptionType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set Options value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\OptionType[] $options
@@ -502,11 +524,9 @@ class PaymentItemType extends AbstractStructBase
      */
     public function setOptions(array $options = array())
     {
-        foreach ($options as $paymentItemTypeOptionsItem) {
-            // validation for constraint: itemType
-            if (!$paymentItemTypeOptionsItem instanceof \PayPal\StructType\OptionType) {
-                throw new \InvalidArgumentException(sprintf('The Options property can only contain items of \PayPal\StructType\OptionType, "%s" given', is_object($paymentItemTypeOptionsItem) ? get_class($paymentItemTypeOptionsItem) : gettype($paymentItemTypeOptionsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($optionsArrayErrorMessage = self::validateOptionsForArrayConstraintsFromSetOptions($options))) {
+            throw new \InvalidArgumentException($optionsArrayErrorMessage, __LINE__);
         }
         $this->Options = $options;
         return $this;
@@ -521,7 +541,7 @@ class PaymentItemType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\OptionType) {
-            throw new \InvalidArgumentException(sprintf('The Options property can only contain items of \PayPal\StructType\OptionType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Options property can only contain items of type \PayPal\StructType\OptionType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Options[] = $item;
         return $this;

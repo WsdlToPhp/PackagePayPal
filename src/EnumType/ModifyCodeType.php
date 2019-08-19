@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ModifyCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ModifyCodeType This code identifies the types of modification you can make on an object. account.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,16 +13,22 @@ class ModifyCodeType
 {
     /**
      * Constant for value 'Dropped'
+     * Meta information extracted from the WSDL
+     * - documentation: Indicate filed is to be dropped.
      * @return string 'Dropped'
      */
     const VALUE_DROPPED = 'Dropped';
     /**
      * Constant for value 'Modify'
+     * Meta information extracted from the WSDL
+     * - documentation: Indicate filed is to be modified.
      * @return string 'Modify'
      */
     const VALUE_MODIFY = 'Modify';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

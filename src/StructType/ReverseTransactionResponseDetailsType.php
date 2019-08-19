@@ -13,7 +13,7 @@ class ReverseTransactionResponseDetailsType extends AbstractStructBase
 {
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Status of reversal request. Required
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,8 +22,9 @@ class ReverseTransactionResponseDetailsType extends AbstractStructBase
     public $Status;
     /**
      * The ReverseTransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique transaction identifier of the reversal transaction created. Character length and limitations:17 single-byte characters | TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -60,7 +61,7 @@ class ReverseTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($status) && !is_string($status)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($status)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
         }
         $this->Status = $status;
         return $this;
@@ -87,7 +88,7 @@ class ReverseTransactionResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reverseTransactionID) && !is_string($reverseTransactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reverseTransactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reverseTransactionID, true), gettype($reverseTransactionID)), __LINE__);
         }
         if (is_null($reverseTransactionID) || (is_array($reverseTransactionID) && empty($reverseTransactionID))) {
             unset($this->ReverseTransactionID);

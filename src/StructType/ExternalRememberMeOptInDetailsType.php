@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ExternalRememberMeOptInDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: This element contains information that allows the merchant to request to opt into external remember me on behalf of the buyer or to request login bypass using external remember me.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class ExternalRememberMeOptInDetailsType extends AbstractStructBase
 {
     /**
      * The ExternalRememberMeOptIn
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: 1 = opt in to external remember me. 0 or omitted = no opt-in Other values are invalid
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -24,7 +24,7 @@ class ExternalRememberMeOptInDetailsType extends AbstractStructBase
     public $ExternalRememberMeOptIn;
     /**
      * The ExternalRememberMeOwnerDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: E-mail address or secure merchant account ID of merchant to associate with new external remember-me. Currently, the owner must be either the API actor or omitted/none. In the future, we may allow the owner to be a 3rd party merchant
      * account.
      * - maxOccurs: 1
@@ -62,7 +62,7 @@ class ExternalRememberMeOptInDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($externalRememberMeOptIn) && !is_string($externalRememberMeOptIn)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($externalRememberMeOptIn)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalRememberMeOptIn, true), gettype($externalRememberMeOptIn)), __LINE__);
         }
         $this->ExternalRememberMeOptIn = $externalRememberMeOptIn;
         return $this;

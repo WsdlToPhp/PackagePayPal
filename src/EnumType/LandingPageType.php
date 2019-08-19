@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for LandingPageType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: LandingPageType This is the PayPal payment Landing Page details type (used by Express Checkout)
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

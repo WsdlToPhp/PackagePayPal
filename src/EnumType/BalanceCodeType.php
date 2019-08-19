@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for BalanceCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: BalanceCodeType This code identifies the types of balances in an account, e.g., a PayPal account.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,11 +13,15 @@ class BalanceCodeType
 {
     /**
      * Constant for value 'Other'
+     * Meta information extracted from the WSDL
+     * - documentation: Custom Code
      * @return string 'Other'
      */
     const VALUE_OTHER = 'Other';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

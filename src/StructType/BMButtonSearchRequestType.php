@@ -13,7 +13,7 @@ class BMButtonSearchRequestType extends AbstractRequestType
 {
     /**
      * The StartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The earliest transaction date at which to start the search. No wildcards are allowed. Required
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class BMButtonSearchRequestType extends AbstractRequestType
     public $StartDate;
     /**
      * The EndDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The latest transaction date to be included in the search Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -59,7 +59,7 @@ class BMButtonSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($startDate) && !is_string($startDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($startDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->StartDate = $startDate;
         return $this;
@@ -81,7 +81,7 @@ class BMButtonSearchRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($endDate) && !is_string($endDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($endDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
         }
         $this->EndDate = $endDate;
         return $this;

@@ -13,7 +13,7 @@ class CompleteRecoupReq extends AbstractStructBase
 {
     /**
      * The CompleteRecoupRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:CompleteRecoupRequest
      * @var \PayPal\StructType\CompleteRecoupRequestType
      */

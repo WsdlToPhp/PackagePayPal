@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for FlightDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Details of leg information
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,119 +15,119 @@ class FlightDetailsType extends AbstractStructBase
 {
     /**
      * The ConjuctionTicket
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ConjuctionTicket;
     /**
      * The ExchangeTicket
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ExchangeTicket;
     /**
      * The CouponNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CouponNumber;
     /**
      * The ServiceClass
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ServiceClass;
     /**
      * The TravelDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $TravelDate;
     /**
      * The CarrierCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CarrierCode;
     /**
      * The StopOverPermitted
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $StopOverPermitted;
     /**
      * The DepartureAirport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $DepartureAirport;
     /**
      * The ArrivalAirport
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ArrivalAirport;
     /**
      * The FlightNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $FlightNumber;
     /**
      * The DepartureTime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $DepartureTime;
     /**
      * The ArrivalTime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ArrivalTime;
     /**
      * The FareBasisCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $FareBasisCode;
     /**
      * The Fare
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $Fare;
     /**
      * The Taxes
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $Taxes;
     /**
      * The Fee
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $Fee;
     /**
      * The EndorsementOrRestrictions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -207,7 +207,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($conjuctionTicket) && !is_string($conjuctionTicket)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($conjuctionTicket)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($conjuctionTicket, true), gettype($conjuctionTicket)), __LINE__);
         }
         $this->ConjuctionTicket = $conjuctionTicket;
         return $this;
@@ -229,7 +229,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($exchangeTicket) && !is_string($exchangeTicket)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($exchangeTicket)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exchangeTicket, true), gettype($exchangeTicket)), __LINE__);
         }
         $this->ExchangeTicket = $exchangeTicket;
         return $this;
@@ -251,7 +251,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($couponNumber) && !is_string($couponNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($couponNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponNumber, true), gettype($couponNumber)), __LINE__);
         }
         $this->CouponNumber = $couponNumber;
         return $this;
@@ -273,7 +273,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($serviceClass) && !is_string($serviceClass)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($serviceClass)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceClass, true), gettype($serviceClass)), __LINE__);
         }
         $this->ServiceClass = $serviceClass;
         return $this;
@@ -295,7 +295,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($travelDate) && !is_string($travelDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($travelDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelDate, true), gettype($travelDate)), __LINE__);
         }
         $this->TravelDate = $travelDate;
         return $this;
@@ -317,7 +317,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($carrierCode) && !is_string($carrierCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($carrierCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrierCode, true), gettype($carrierCode)), __LINE__);
         }
         $this->CarrierCode = $carrierCode;
         return $this;
@@ -339,7 +339,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($stopOverPermitted) && !is_string($stopOverPermitted)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($stopOverPermitted)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($stopOverPermitted, true), gettype($stopOverPermitted)), __LINE__);
         }
         $this->StopOverPermitted = $stopOverPermitted;
         return $this;
@@ -361,7 +361,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($departureAirport) && !is_string($departureAirport)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($departureAirport)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureAirport, true), gettype($departureAirport)), __LINE__);
         }
         $this->DepartureAirport = $departureAirport;
         return $this;
@@ -383,7 +383,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($arrivalAirport) && !is_string($arrivalAirport)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($arrivalAirport)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($arrivalAirport, true), gettype($arrivalAirport)), __LINE__);
         }
         $this->ArrivalAirport = $arrivalAirport;
         return $this;
@@ -405,7 +405,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($flightNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
         }
         $this->FlightNumber = $flightNumber;
         return $this;
@@ -427,7 +427,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($departureTime) && !is_string($departureTime)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($departureTime)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureTime, true), gettype($departureTime)), __LINE__);
         }
         $this->DepartureTime = $departureTime;
         return $this;
@@ -449,7 +449,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($arrivalTime) && !is_string($arrivalTime)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($arrivalTime)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($arrivalTime, true), gettype($arrivalTime)), __LINE__);
         }
         $this->ArrivalTime = $arrivalTime;
         return $this;
@@ -471,7 +471,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($fareBasisCode) && !is_string($fareBasisCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($fareBasisCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasisCode, true), gettype($fareBasisCode)), __LINE__);
         }
         $this->FareBasisCode = $fareBasisCode;
         return $this;
@@ -547,7 +547,7 @@ class FlightDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($endorsementOrRestrictions) && !is_string($endorsementOrRestrictions)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($endorsementOrRestrictions)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endorsementOrRestrictions, true), gettype($endorsementOrRestrictions)), __LINE__);
         }
         $this->EndorsementOrRestrictions = $endorsementOrRestrictions;
         return $this;

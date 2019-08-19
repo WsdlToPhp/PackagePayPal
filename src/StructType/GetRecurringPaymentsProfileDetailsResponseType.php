@@ -13,7 +13,7 @@ class GetRecurringPaymentsProfileDetailsResponseType extends AbstractResponseTyp
 {
     /**
      * The GetRecurringPaymentsProfileDetailsResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:GetRecurringPaymentsProfileDetailsResponseDetails
      * @var \PayPal\StructType\GetRecurringPaymentsProfileDetailsResponseDetailsType
      */

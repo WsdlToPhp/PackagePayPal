@@ -13,7 +13,7 @@ class ButtonSearchResultType extends AbstractStructBase
 {
     /**
      * The HostedButtonID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class ButtonSearchResultType extends AbstractStructBase
     public $HostedButtonID;
     /**
      * The ButtonType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class ButtonSearchResultType extends AbstractStructBase
     public $ButtonType;
     /**
      * The ItemName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -37,7 +37,7 @@ class ButtonSearchResultType extends AbstractStructBase
     public $ItemName;
     /**
      * The ModifyDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -79,7 +79,7 @@ class ButtonSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($hostedButtonID) && !is_string($hostedButtonID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hostedButtonID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostedButtonID, true), gettype($hostedButtonID)), __LINE__);
         }
         $this->HostedButtonID = $hostedButtonID;
         return $this;
@@ -101,7 +101,7 @@ class ButtonSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buttonType) && !is_string($buttonType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buttonType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buttonType, true), gettype($buttonType)), __LINE__);
         }
         $this->ButtonType = $buttonType;
         return $this;
@@ -123,7 +123,7 @@ class ButtonSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemName) && !is_string($itemName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemName, true), gettype($itemName)), __LINE__);
         }
         $this->ItemName = $itemName;
         return $this;
@@ -145,7 +145,7 @@ class ButtonSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($modifyDate) && !is_string($modifyDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($modifyDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifyDate, true), gettype($modifyDate)), __LINE__);
         }
         $this->ModifyDate = $modifyDate;
         return $this;

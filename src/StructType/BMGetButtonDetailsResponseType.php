@@ -13,7 +13,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
 {
     /**
      * The Website
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $Website;
     /**
      * The Email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $Email;
     /**
      * The Mobile
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -37,7 +37,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $Mobile;
     /**
      * The HostedButtonID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -45,7 +45,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $HostedButtonID;
     /**
      * The ButtonType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of button. One of the following: BUYNOW, CART, GIFTCERTIFICATE. SUBSCRIBE, PAYMENTPLAN, AUTOBILLING, DONATE, VIEWCART or UNSUBSCRIBE
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -54,7 +54,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $ButtonType;
     /**
      * The ButtonCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of button code. One of the following: hosted, encrypted or cleartext
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -63,7 +63,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $ButtonCode;
     /**
      * The ButtonSubType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button sub type. optional for button types buynow and cart only Either PRODUCTS or SERVICES
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -72,7 +72,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $ButtonSubType;
     /**
      * The ButtonVar
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button Variable information Character length and limitations: 63 single-byte alphanumeric characters
      * - maxOccurs: 1000
      * - minOccurs: 0
@@ -81,7 +81,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $ButtonVar;
     /**
      * The OptionDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 5
      * - minOccurs: 0
      * @var \PayPal\StructType\OptionDetailsType[]
@@ -89,7 +89,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $OptionDetails;
     /**
      * The TextBox
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Text field
      * - maxOccurs: 2
      * - minOccurs: 0
@@ -98,7 +98,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $TextBox;
     /**
      * The ButtonImage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button image to use. One of: REG, SML, or CC
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -107,7 +107,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $ButtonImage;
     /**
      * The ButtonImageURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button URL for custom button image.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -116,7 +116,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $ButtonImageURL;
     /**
      * The BuyNowText
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Text to use on Buy Now Button. Either BUYNOW or PAYNOW
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -125,7 +125,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $BuyNowText;
     /**
      * The SubscribeText
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Text to use on Subscribe button. Must be either BUYNOW or SUBSCRIBE
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -134,7 +134,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $SubscribeText;
     /**
      * The ButtonCountry
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button Country. Valid ISO country code or 'International'
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -143,7 +143,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     public $ButtonCountry;
     /**
      * The ButtonLanguage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button language code. Character length and limitations: 3 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -222,7 +222,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($website) && !is_string($website)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($website)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($website, true), gettype($website)), __LINE__);
         }
         $this->Website = $website;
         return $this;
@@ -244,7 +244,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->Email = $email;
         return $this;
@@ -266,7 +266,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($mobile) && !is_string($mobile)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($mobile)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobile, true), gettype($mobile)), __LINE__);
         }
         $this->Mobile = $mobile;
         return $this;
@@ -288,7 +288,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($hostedButtonID) && !is_string($hostedButtonID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hostedButtonID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostedButtonID, true), gettype($hostedButtonID)), __LINE__);
         }
         $this->HostedButtonID = $hostedButtonID;
         return $this;
@@ -313,7 +313,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ButtonTypeType::valueIsValid($buttonType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buttonType, implode(', ', \PayPal\EnumType\ButtonTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ButtonTypeType', is_array($buttonType) ? implode(', ', $buttonType) : var_export($buttonType, true), implode(', ', \PayPal\EnumType\ButtonTypeType::getValidValues())), __LINE__);
         }
         $this->ButtonType = $buttonType;
         return $this;
@@ -338,7 +338,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ButtonCodeType::valueIsValid($buttonCode)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buttonCode, implode(', ', \PayPal\EnumType\ButtonCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ButtonCodeType', is_array($buttonCode) ? implode(', ', $buttonCode) : var_export($buttonCode, true), implode(', ', \PayPal\EnumType\ButtonCodeType::getValidValues())), __LINE__);
         }
         $this->ButtonCode = $buttonCode;
         return $this;
@@ -363,7 +363,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ButtonSubTypeType::valueIsValid($buttonSubType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buttonSubType, implode(', ', \PayPal\EnumType\ButtonSubTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ButtonSubTypeType', is_array($buttonSubType) ? implode(', ', $buttonSubType) : var_export($buttonSubType, true), implode(', ', \PayPal\EnumType\ButtonSubTypeType::getValidValues())), __LINE__);
         }
         $this->ButtonSubType = $buttonSubType;
         return $this;
@@ -377,6 +377,28 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
         return $this->ButtonVar;
     }
     /**
+     * This method is responsible for validating the values passed to the setButtonVar method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setButtonVar method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateButtonVarForArrayConstraintsFromSetButtonVar(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $bMGetButtonDetailsResponseTypeButtonVarItem) {
+            // validation for constraint: itemType
+            if (!is_string($bMGetButtonDetailsResponseTypeButtonVarItem)) {
+                $invalidValues[] = is_object($bMGetButtonDetailsResponseTypeButtonVarItem) ? get_class($bMGetButtonDetailsResponseTypeButtonVarItem) : sprintf('%s(%s)', gettype($bMGetButtonDetailsResponseTypeButtonVarItem), var_export($bMGetButtonDetailsResponseTypeButtonVarItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The ButtonVar property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set ButtonVar value
      * @throws \InvalidArgumentException
      * @param string[] $buttonVar
@@ -384,11 +406,13 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
      */
     public function setButtonVar(array $buttonVar = array())
     {
-        foreach ($buttonVar as $bMGetButtonDetailsResponseTypeButtonVarItem) {
-            // validation for constraint: itemType
-            if (!is_string($bMGetButtonDetailsResponseTypeButtonVarItem)) {
-                throw new \InvalidArgumentException(sprintf('The ButtonVar property can only contain items of string, "%s" given', is_object($bMGetButtonDetailsResponseTypeButtonVarItem) ? get_class($bMGetButtonDetailsResponseTypeButtonVarItem) : gettype($bMGetButtonDetailsResponseTypeButtonVarItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($buttonVarArrayErrorMessage = self::validateButtonVarForArrayConstraintsFromSetButtonVar($buttonVar))) {
+            throw new \InvalidArgumentException($buttonVarArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($buttonVar) && count($buttonVar) > 1000) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 1000', count($buttonVar)), __LINE__);
         }
         $this->ButtonVar = $buttonVar;
         return $this;
@@ -403,7 +427,11 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The ButtonVar property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The ButtonVar property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($this->ButtonVar) && count($this->ButtonVar) >= 1000) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 1000', count($this->ButtonVar)), __LINE__);
         }
         $this->ButtonVar[] = $item;
         return $this;
@@ -417,6 +445,28 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
         return $this->OptionDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setOptionDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setOptionDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateOptionDetailsForArrayConstraintsFromSetOptionDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $bMGetButtonDetailsResponseTypeOptionDetailsItem) {
+            // validation for constraint: itemType
+            if (!$bMGetButtonDetailsResponseTypeOptionDetailsItem instanceof \PayPal\StructType\OptionDetailsType) {
+                $invalidValues[] = is_object($bMGetButtonDetailsResponseTypeOptionDetailsItem) ? get_class($bMGetButtonDetailsResponseTypeOptionDetailsItem) : sprintf('%s(%s)', gettype($bMGetButtonDetailsResponseTypeOptionDetailsItem), var_export($bMGetButtonDetailsResponseTypeOptionDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The OptionDetails property can only contain items of type \PayPal\StructType\OptionDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set OptionDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\OptionDetailsType[] $optionDetails
@@ -424,11 +474,13 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
      */
     public function setOptionDetails(array $optionDetails = array())
     {
-        foreach ($optionDetails as $bMGetButtonDetailsResponseTypeOptionDetailsItem) {
-            // validation for constraint: itemType
-            if (!$bMGetButtonDetailsResponseTypeOptionDetailsItem instanceof \PayPal\StructType\OptionDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The OptionDetails property can only contain items of \PayPal\StructType\OptionDetailsType, "%s" given', is_object($bMGetButtonDetailsResponseTypeOptionDetailsItem) ? get_class($bMGetButtonDetailsResponseTypeOptionDetailsItem) : gettype($bMGetButtonDetailsResponseTypeOptionDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($optionDetailsArrayErrorMessage = self::validateOptionDetailsForArrayConstraintsFromSetOptionDetails($optionDetails))) {
+            throw new \InvalidArgumentException($optionDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($optionDetails) && count($optionDetails) > 5) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($optionDetails)), __LINE__);
         }
         $this->OptionDetails = $optionDetails;
         return $this;
@@ -443,7 +495,11 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\OptionDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The OptionDetails property can only contain items of \PayPal\StructType\OptionDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The OptionDetails property can only contain items of type \PayPal\StructType\OptionDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(5)
+        if (is_array($this->OptionDetails) && count($this->OptionDetails) >= 5) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->OptionDetails)), __LINE__);
         }
         $this->OptionDetails[] = $item;
         return $this;
@@ -457,6 +513,28 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
         return $this->TextBox;
     }
     /**
+     * This method is responsible for validating the values passed to the setTextBox method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setTextBox method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateTextBoxForArrayConstraintsFromSetTextBox(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $bMGetButtonDetailsResponseTypeTextBoxItem) {
+            // validation for constraint: itemType
+            if (!is_string($bMGetButtonDetailsResponseTypeTextBoxItem)) {
+                $invalidValues[] = is_object($bMGetButtonDetailsResponseTypeTextBoxItem) ? get_class($bMGetButtonDetailsResponseTypeTextBoxItem) : sprintf('%s(%s)', gettype($bMGetButtonDetailsResponseTypeTextBoxItem), var_export($bMGetButtonDetailsResponseTypeTextBoxItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The TextBox property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set TextBox value
      * @throws \InvalidArgumentException
      * @param string[] $textBox
@@ -464,11 +542,13 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
      */
     public function setTextBox(array $textBox = array())
     {
-        foreach ($textBox as $bMGetButtonDetailsResponseTypeTextBoxItem) {
-            // validation for constraint: itemType
-            if (!is_string($bMGetButtonDetailsResponseTypeTextBoxItem)) {
-                throw new \InvalidArgumentException(sprintf('The TextBox property can only contain items of string, "%s" given', is_object($bMGetButtonDetailsResponseTypeTextBoxItem) ? get_class($bMGetButtonDetailsResponseTypeTextBoxItem) : gettype($bMGetButtonDetailsResponseTypeTextBoxItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($textBoxArrayErrorMessage = self::validateTextBoxForArrayConstraintsFromSetTextBox($textBox))) {
+            throw new \InvalidArgumentException($textBoxArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(2)
+        if (is_array($textBox) && count($textBox) > 2) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($textBox)), __LINE__);
         }
         $this->TextBox = $textBox;
         return $this;
@@ -483,7 +563,11 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The TextBox property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The TextBox property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(2)
+        if (is_array($this->TextBox) && count($this->TextBox) >= 2) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->TextBox)), __LINE__);
         }
         $this->TextBox[] = $item;
         return $this;
@@ -508,7 +592,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ButtonImageType::valueIsValid($buttonImage)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buttonImage, implode(', ', \PayPal\EnumType\ButtonImageType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ButtonImageType', is_array($buttonImage) ? implode(', ', $buttonImage) : var_export($buttonImage, true), implode(', ', \PayPal\EnumType\ButtonImageType::getValidValues())), __LINE__);
         }
         $this->ButtonImage = $buttonImage;
         return $this;
@@ -530,7 +614,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($buttonImageURL) && !is_string($buttonImageURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buttonImageURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buttonImageURL, true), gettype($buttonImageURL)), __LINE__);
         }
         $this->ButtonImageURL = $buttonImageURL;
         return $this;
@@ -555,7 +639,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BuyNowTextType::valueIsValid($buyNowText)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buyNowText, implode(', ', \PayPal\EnumType\BuyNowTextType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BuyNowTextType', is_array($buyNowText) ? implode(', ', $buyNowText) : var_export($buyNowText, true), implode(', ', \PayPal\EnumType\BuyNowTextType::getValidValues())), __LINE__);
         }
         $this->BuyNowText = $buyNowText;
         return $this;
@@ -580,7 +664,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\SubscribeTextType::valueIsValid($subscribeText)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $subscribeText, implode(', ', \PayPal\EnumType\SubscribeTextType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\SubscribeTextType', is_array($subscribeText) ? implode(', ', $subscribeText) : var_export($subscribeText, true), implode(', ', \PayPal\EnumType\SubscribeTextType::getValidValues())), __LINE__);
         }
         $this->SubscribeText = $subscribeText;
         return $this;
@@ -605,7 +689,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CountryCodeType::valueIsValid($buttonCountry)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buttonCountry, implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CountryCodeType', is_array($buttonCountry) ? implode(', ', $buttonCountry) : var_export($buttonCountry, true), implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
         }
         $this->ButtonCountry = $buttonCountry;
         return $this;
@@ -627,7 +711,7 @@ class BMGetButtonDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($buttonLanguage) && !is_string($buttonLanguage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buttonLanguage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buttonLanguage, true), gettype($buttonLanguage)), __LINE__);
         }
         $this->ButtonLanguage = $buttonLanguage;
         return $this;

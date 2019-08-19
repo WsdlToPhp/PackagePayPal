@@ -13,7 +13,7 @@ class ExecuteCheckoutOperationsReq extends AbstractStructBase
 {
     /**
      * The ExecuteCheckoutOperationsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:ExecuteCheckoutOperationsRequest
      * @var \PayPal\StructType\ExecuteCheckoutOperationsRequestType
      */

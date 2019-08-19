@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for VATStatusCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: VATStatusCodeType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,21 +13,29 @@ class VATStatusCodeType
 {
     /**
      * Constant for value 'NoVATTax'
+     * Meta information extracted from the WSDL
+     * - documentation: No VAT Tax
      * @return string 'NoVATTax'
      */
     const VALUE_NO_VATTAX = 'NoVATTax';
     /**
      * Constant for value 'VATTax'
+     * Meta information extracted from the WSDL
+     * - documentation: VAT Tax
      * @return string 'VATTax'
      */
     const VALUE_VATTAX = 'VATTax';
     /**
      * Constant for value 'VATExempt'
+     * Meta information extracted from the WSDL
+     * - documentation: VAT Exempt
      * @return string 'VATExempt'
      */
     const VALUE_VATEXEMPT = 'VATExempt';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

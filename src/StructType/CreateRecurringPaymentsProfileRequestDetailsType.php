@@ -14,7 +14,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
 {
     /**
      * The RecurringPaymentsProfileDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Customer Information for this Recurring Payments
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -23,7 +23,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $RecurringPaymentsProfileDetails;
     /**
      * The ScheduleDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Schedule Information for this Recurring Payments
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -32,7 +32,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $ScheduleDetails;
     /**
      * The Token
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Billing Agreement token (required if Express Checkout)
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -41,7 +41,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $Token;
     /**
      * The CreditCard
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the credit card to be charged (required if Direct Payment)
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -50,7 +50,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $CreditCard;
     /**
      * The PaymentDetailsItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Item Details.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -59,7 +59,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $PaymentDetailsItem;
     /**
      * The SoftDescriptor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Use this optional parameter to pass in your business name and other data describing the transaction. Optional This information is usually displayed in the CC account holder's statement. Example: RedCross Haiti, RedCross Uganda,
      * Realtor.com dues, Realtor.com list fee Length 25 characters. Alphanumeric characters and dash(-), dot(.), asterisk(*), space( ) On the customer's statement, an asterisk is used to separate the DBA name and product name. The asterisk delimiter can
      * appear in position 4, 8, or 13.
@@ -70,7 +70,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     public $SoftDescriptor;
     /**
      * The SoftDescriptorCity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Use this optional parameter to pass information about how consumer should contact the merchant. Optional This information is usually displayed in the CC account holder's statement. For Ecom trx: phone, email or URL is allowed For
      * Retail trx: only the actual city is allowed For details on allowed characters in Soft Descriptor City refer to the API documentation.
      * - maxOccurs: 1
@@ -159,7 +159,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($token) && !is_string($token)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($token)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->Token = $token;
         return $this;
@@ -191,6 +191,28 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
         return $this->PaymentDetailsItem;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentDetailsItem method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentDetailsItem method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentDetailsItemForArrayConstraintsFromSetPaymentDetailsItem(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem) {
+            // validation for constraint: itemType
+            if (!$createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem instanceof \PayPal\StructType\PaymentDetailsItemType) {
+                $invalidValues[] = is_object($createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem) ? get_class($createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem) : sprintf('%s(%s)', gettype($createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem), var_export($createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentDetailsItem property can only contain items of type \PayPal\StructType\PaymentDetailsItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentDetailsItem value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentDetailsItemType[] $paymentDetailsItem
@@ -198,11 +220,9 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
      */
     public function setPaymentDetailsItem(array $paymentDetailsItem = array())
     {
-        foreach ($paymentDetailsItem as $createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem) {
-            // validation for constraint: itemType
-            if (!$createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem instanceof \PayPal\StructType\PaymentDetailsItemType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentDetailsItem property can only contain items of \PayPal\StructType\PaymentDetailsItemType, "%s" given', is_object($createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem) ? get_class($createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem) : gettype($createRecurringPaymentsProfileRequestDetailsTypePaymentDetailsItemItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentDetailsItemArrayErrorMessage = self::validatePaymentDetailsItemForArrayConstraintsFromSetPaymentDetailsItem($paymentDetailsItem))) {
+            throw new \InvalidArgumentException($paymentDetailsItemArrayErrorMessage, __LINE__);
         }
         $this->PaymentDetailsItem = $paymentDetailsItem;
         return $this;
@@ -217,7 +237,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentDetailsItemType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentDetailsItem property can only contain items of \PayPal\StructType\PaymentDetailsItemType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentDetailsItem property can only contain items of type \PayPal\StructType\PaymentDetailsItemType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->PaymentDetailsItem[] = $item;
         return $this;
@@ -239,7 +259,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptor)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
         $this->SoftDescriptor = $softDescriptor;
         return $this;
@@ -261,7 +281,7 @@ class CreateRecurringPaymentsProfileRequestDetailsType extends AbstractStructBas
     {
         // validation for constraint: string
         if (!is_null($softDescriptorCity) && !is_string($softDescriptorCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptorCity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptorCity, true), gettype($softDescriptorCity)), __LINE__);
         }
         $this->SoftDescriptorCity = $softDescriptorCity;
         return $this;

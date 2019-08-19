@@ -13,14 +13,14 @@ class PaginationType extends AbstractStructBase
 {
     /**
      * The EntriesPerPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $EntriesPerPage;
     /**
      * The PageNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
@@ -54,8 +54,8 @@ class PaginationType extends AbstractStructBase
     public function setEntriesPerPage($entriesPerPage = null)
     {
         // validation for constraint: int
-        if (!is_null($entriesPerPage) && !is_numeric($entriesPerPage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($entriesPerPage)), __LINE__);
+        if (!is_null($entriesPerPage) && !(is_int($entriesPerPage) || ctype_digit($entriesPerPage))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($entriesPerPage, true), gettype($entriesPerPage)), __LINE__);
         }
         $this->EntriesPerPage = $entriesPerPage;
         return $this;
@@ -76,8 +76,8 @@ class PaginationType extends AbstractStructBase
     public function setPageNumber($pageNumber = null)
     {
         // validation for constraint: int
-        if (!is_null($pageNumber) && !is_numeric($pageNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($pageNumber)), __LINE__);
+        if (!is_null($pageNumber) && !(is_int($pageNumber) || ctype_digit($pageNumber))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($pageNumber, true), gettype($pageNumber)), __LINE__);
         }
         $this->PageNumber = $pageNumber;
         return $this;

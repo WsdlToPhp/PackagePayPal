@@ -13,7 +13,7 @@ class EnterBoardingReq extends AbstractStructBase
 {
     /**
      * The EnterBoardingRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:EnterBoardingRequest
      * @var \PayPal\StructType\EnterBoardingRequestType
      */

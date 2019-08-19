@@ -13,14 +13,14 @@ class GetTransactionDetailsResponseType extends AbstractResponseType
 {
     /**
      * The PaymentTransactionDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:PaymentTransactionDetails
      * @var \PayPal\StructType\PaymentTransactionType
      */
     public $PaymentTransactionDetails;
     /**
      * The ThreeDSecureDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:ThreeDSecureDetails
      * @var \PayPal\StructType\ThreeDSecureInfoType
      */

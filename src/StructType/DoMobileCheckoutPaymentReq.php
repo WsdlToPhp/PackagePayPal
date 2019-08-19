@@ -13,7 +13,7 @@ class DoMobileCheckoutPaymentReq extends AbstractStructBase
 {
     /**
      * The DoMobileCheckoutPaymentRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoMobileCheckoutPaymentRequest
      * @var \PayPal\StructType\DoMobileCheckoutPaymentRequestType
      */

@@ -13,7 +13,7 @@ class BillOutstandingAmountRequestType extends AbstractRequestType
 {
     /**
      * The BillOutstandingAmountRequestDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:BillOutstandingAmountRequestDetails
      * @var \PayPal\StructType\BillOutstandingAmountRequestDetailsType
      */

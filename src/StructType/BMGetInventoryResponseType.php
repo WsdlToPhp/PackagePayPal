@@ -13,7 +13,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
 {
     /**
      * The HostedButtonID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $HostedButtonID;
     /**
      * The TrackInv
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -29,7 +29,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $TrackInv;
     /**
      * The TrackPnl
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -37,7 +37,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $TrackPnl;
     /**
      * The ItemTrackingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:ItemTrackingDetails
@@ -46,7 +46,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $ItemTrackingDetails;
     /**
      * The OptionIndex
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -54,7 +54,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $OptionIndex;
     /**
      * The OptionName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -62,7 +62,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $OptionName;
     /**
      * The OptionTrackingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 10
      * - minOccurs: 0
      * - ref: ebl:OptionTrackingDetails
@@ -71,7 +71,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $OptionTrackingDetails;
     /**
      * The SoldoutURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -79,7 +79,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     public $SoldoutURL;
     /**
      * The DigitalDownloadKeys
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1000
      * - minOccurs: 0
      * @var string[]
@@ -136,7 +136,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($hostedButtonID) && !is_string($hostedButtonID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hostedButtonID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostedButtonID, true), gettype($hostedButtonID)), __LINE__);
         }
         $this->HostedButtonID = $hostedButtonID;
         return $this;
@@ -158,7 +158,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($trackInv) && !is_string($trackInv)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($trackInv)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trackInv, true), gettype($trackInv)), __LINE__);
         }
         $this->TrackInv = $trackInv;
         return $this;
@@ -180,7 +180,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($trackPnl) && !is_string($trackPnl)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($trackPnl)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trackPnl, true), gettype($trackPnl)), __LINE__);
         }
         $this->TrackPnl = $trackPnl;
         return $this;
@@ -220,7 +220,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($optionIndex) && !is_string($optionIndex)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionIndex)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionIndex, true), gettype($optionIndex)), __LINE__);
         }
         $this->OptionIndex = $optionIndex;
         return $this;
@@ -242,7 +242,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($optionName) && !is_string($optionName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionName, true), gettype($optionName)), __LINE__);
         }
         $this->OptionName = $optionName;
         return $this;
@@ -256,6 +256,28 @@ class BMGetInventoryResponseType extends AbstractResponseType
         return $this->OptionTrackingDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setOptionTrackingDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setOptionTrackingDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateOptionTrackingDetailsForArrayConstraintsFromSetOptionTrackingDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $bMGetInventoryResponseTypeOptionTrackingDetailsItem) {
+            // validation for constraint: itemType
+            if (!$bMGetInventoryResponseTypeOptionTrackingDetailsItem instanceof \PayPal\StructType\OptionTrackingDetailsType) {
+                $invalidValues[] = is_object($bMGetInventoryResponseTypeOptionTrackingDetailsItem) ? get_class($bMGetInventoryResponseTypeOptionTrackingDetailsItem) : sprintf('%s(%s)', gettype($bMGetInventoryResponseTypeOptionTrackingDetailsItem), var_export($bMGetInventoryResponseTypeOptionTrackingDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The OptionTrackingDetails property can only contain items of type \PayPal\StructType\OptionTrackingDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set OptionTrackingDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\OptionTrackingDetailsType[] $optionTrackingDetails
@@ -263,11 +285,13 @@ class BMGetInventoryResponseType extends AbstractResponseType
      */
     public function setOptionTrackingDetails(array $optionTrackingDetails = array())
     {
-        foreach ($optionTrackingDetails as $bMGetInventoryResponseTypeOptionTrackingDetailsItem) {
-            // validation for constraint: itemType
-            if (!$bMGetInventoryResponseTypeOptionTrackingDetailsItem instanceof \PayPal\StructType\OptionTrackingDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The OptionTrackingDetails property can only contain items of \PayPal\StructType\OptionTrackingDetailsType, "%s" given', is_object($bMGetInventoryResponseTypeOptionTrackingDetailsItem) ? get_class($bMGetInventoryResponseTypeOptionTrackingDetailsItem) : gettype($bMGetInventoryResponseTypeOptionTrackingDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($optionTrackingDetailsArrayErrorMessage = self::validateOptionTrackingDetailsForArrayConstraintsFromSetOptionTrackingDetails($optionTrackingDetails))) {
+            throw new \InvalidArgumentException($optionTrackingDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($optionTrackingDetails) && count($optionTrackingDetails) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($optionTrackingDetails)), __LINE__);
         }
         $this->OptionTrackingDetails = $optionTrackingDetails;
         return $this;
@@ -282,7 +306,11 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\OptionTrackingDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The OptionTrackingDetails property can only contain items of \PayPal\StructType\OptionTrackingDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The OptionTrackingDetails property can only contain items of type \PayPal\StructType\OptionTrackingDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->OptionTrackingDetails) && count($this->OptionTrackingDetails) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->OptionTrackingDetails)), __LINE__);
         }
         $this->OptionTrackingDetails[] = $item;
         return $this;
@@ -304,7 +332,7 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($soldoutURL) && !is_string($soldoutURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($soldoutURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($soldoutURL, true), gettype($soldoutURL)), __LINE__);
         }
         $this->SoldoutURL = $soldoutURL;
         return $this;
@@ -318,6 +346,28 @@ class BMGetInventoryResponseType extends AbstractResponseType
         return $this->DigitalDownloadKeys;
     }
     /**
+     * This method is responsible for validating the values passed to the setDigitalDownloadKeys method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setDigitalDownloadKeys method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateDigitalDownloadKeysForArrayConstraintsFromSetDigitalDownloadKeys(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $bMGetInventoryResponseTypeDigitalDownloadKeysItem) {
+            // validation for constraint: itemType
+            if (!is_string($bMGetInventoryResponseTypeDigitalDownloadKeysItem)) {
+                $invalidValues[] = is_object($bMGetInventoryResponseTypeDigitalDownloadKeysItem) ? get_class($bMGetInventoryResponseTypeDigitalDownloadKeysItem) : sprintf('%s(%s)', gettype($bMGetInventoryResponseTypeDigitalDownloadKeysItem), var_export($bMGetInventoryResponseTypeDigitalDownloadKeysItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The DigitalDownloadKeys property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set DigitalDownloadKeys value
      * @throws \InvalidArgumentException
      * @param string[] $digitalDownloadKeys
@@ -325,11 +375,13 @@ class BMGetInventoryResponseType extends AbstractResponseType
      */
     public function setDigitalDownloadKeys(array $digitalDownloadKeys = array())
     {
-        foreach ($digitalDownloadKeys as $bMGetInventoryResponseTypeDigitalDownloadKeysItem) {
-            // validation for constraint: itemType
-            if (!is_string($bMGetInventoryResponseTypeDigitalDownloadKeysItem)) {
-                throw new \InvalidArgumentException(sprintf('The DigitalDownloadKeys property can only contain items of string, "%s" given', is_object($bMGetInventoryResponseTypeDigitalDownloadKeysItem) ? get_class($bMGetInventoryResponseTypeDigitalDownloadKeysItem) : gettype($bMGetInventoryResponseTypeDigitalDownloadKeysItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($digitalDownloadKeysArrayErrorMessage = self::validateDigitalDownloadKeysForArrayConstraintsFromSetDigitalDownloadKeys($digitalDownloadKeys))) {
+            throw new \InvalidArgumentException($digitalDownloadKeysArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($digitalDownloadKeys) && count($digitalDownloadKeys) > 1000) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 1000', count($digitalDownloadKeys)), __LINE__);
         }
         $this->DigitalDownloadKeys = $digitalDownloadKeys;
         return $this;
@@ -344,7 +396,11 @@ class BMGetInventoryResponseType extends AbstractResponseType
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The DigitalDownloadKeys property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The DigitalDownloadKeys property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($this->DigitalDownloadKeys) && count($this->DigitalDownloadKeys) >= 1000) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 1000', count($this->DigitalDownloadKeys)), __LINE__);
         }
         $this->DigitalDownloadKeys[] = $item;
         return $this;

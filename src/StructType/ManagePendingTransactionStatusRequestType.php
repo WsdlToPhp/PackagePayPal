@@ -13,16 +13,17 @@ class ManagePendingTransactionStatusRequestType extends AbstractRequestType
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
+     * - documentation: TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 1
-     * - documentation: TransactionId - Type for a PayPal Transaction ID.
      * @var string
      */
     public $TransactionID;
     /**
      * The Action
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -58,7 +59,7 @@ class ManagePendingTransactionStatusRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -83,7 +84,7 @@ class ManagePendingTransactionStatusRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\FMFPendingTransactionActionType::valueIsValid($action)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $action, implode(', ', \PayPal\EnumType\FMFPendingTransactionActionType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\FMFPendingTransactionActionType', is_array($action) ? implode(', ', $action) : var_export($action, true), implode(', ', \PayPal\EnumType\FMFPendingTransactionActionType::getValidValues())), __LINE__);
         }
         $this->Action = $action;
         return $this;

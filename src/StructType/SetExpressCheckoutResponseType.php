@@ -13,9 +13,10 @@ class SetExpressCheckoutResponseType extends AbstractResponseType
 {
     /**
      * The Token
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A timestamped token by which you identify to PayPal that you are processing this payment with Express Checkout. The token expires after three hours. If you set Token in the SetExpressCheckoutRequest, the value of Token in the
      * response is identical to the value in the request. Character length and limitations: 20 single-byte characters
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -48,7 +49,7 @@ class SetExpressCheckoutResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($token) && !is_string($token)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($token)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->Token = $token;
         return $this;

@@ -13,7 +13,7 @@ class OptionDetailsType extends AbstractStructBase
 {
     /**
      * The OptionName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Name. Optional
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class OptionDetailsType extends AbstractStructBase
     public $OptionName;
     /**
      * The OptionSelectionDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 100
      * - minOccurs: 0
      * @var \PayPal\StructType\OptionSelectionDetailsType[]
@@ -58,7 +58,7 @@ class OptionDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionName) && !is_string($optionName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionName, true), gettype($optionName)), __LINE__);
         }
         $this->OptionName = $optionName;
         return $this;
@@ -72,6 +72,28 @@ class OptionDetailsType extends AbstractStructBase
         return $this->OptionSelectionDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setOptionSelectionDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setOptionSelectionDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateOptionSelectionDetailsForArrayConstraintsFromSetOptionSelectionDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $optionDetailsTypeOptionSelectionDetailsItem) {
+            // validation for constraint: itemType
+            if (!$optionDetailsTypeOptionSelectionDetailsItem instanceof \PayPal\StructType\OptionSelectionDetailsType) {
+                $invalidValues[] = is_object($optionDetailsTypeOptionSelectionDetailsItem) ? get_class($optionDetailsTypeOptionSelectionDetailsItem) : sprintf('%s(%s)', gettype($optionDetailsTypeOptionSelectionDetailsItem), var_export($optionDetailsTypeOptionSelectionDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The OptionSelectionDetails property can only contain items of type \PayPal\StructType\OptionSelectionDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set OptionSelectionDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\OptionSelectionDetailsType[] $optionSelectionDetails
@@ -79,11 +101,13 @@ class OptionDetailsType extends AbstractStructBase
      */
     public function setOptionSelectionDetails(array $optionSelectionDetails = array())
     {
-        foreach ($optionSelectionDetails as $optionDetailsTypeOptionSelectionDetailsItem) {
-            // validation for constraint: itemType
-            if (!$optionDetailsTypeOptionSelectionDetailsItem instanceof \PayPal\StructType\OptionSelectionDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The OptionSelectionDetails property can only contain items of \PayPal\StructType\OptionSelectionDetailsType, "%s" given', is_object($optionDetailsTypeOptionSelectionDetailsItem) ? get_class($optionDetailsTypeOptionSelectionDetailsItem) : gettype($optionDetailsTypeOptionSelectionDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($optionSelectionDetailsArrayErrorMessage = self::validateOptionSelectionDetailsForArrayConstraintsFromSetOptionSelectionDetails($optionSelectionDetails))) {
+            throw new \InvalidArgumentException($optionSelectionDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(100)
+        if (is_array($optionSelectionDetails) && count($optionSelectionDetails) > 100) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 100', count($optionSelectionDetails)), __LINE__);
         }
         $this->OptionSelectionDetails = $optionSelectionDetails;
         return $this;
@@ -98,7 +122,11 @@ class OptionDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\OptionSelectionDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The OptionSelectionDetails property can only contain items of \PayPal\StructType\OptionSelectionDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The OptionSelectionDetails property can only contain items of type \PayPal\StructType\OptionSelectionDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(100)
+        if (is_array($this->OptionSelectionDetails) && count($this->OptionSelectionDetails) >= 100) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 100', count($this->OptionSelectionDetails)), __LINE__);
         }
         $this->OptionSelectionDetails[] = $item;
         return $this;

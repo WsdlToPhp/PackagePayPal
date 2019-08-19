@@ -13,7 +13,7 @@ class BMManageButtonStatusReq extends AbstractStructBase
 {
     /**
      * The BMManageButtonStatusRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BMManageButtonStatusRequest
      * @var \PayPal\StructType\BMManageButtonStatusRequestType
      */

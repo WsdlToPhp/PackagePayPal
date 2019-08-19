@@ -13,7 +13,7 @@ class VendorHostedPictureType extends AbstractStructBase
 {
     /**
      * The PictureURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URLs for item picture that are stored/hosted at eBay site.
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class VendorHostedPictureType extends AbstractStructBase
     public $PictureURL;
     /**
      * The GalleryURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL for a picture for the gallery. If the GalleryFeatured argument is true, a value must be supplied for either the GalleryURL or the PictureURL argument. In either case: (a) If a URL is provided for only PictureURL, it is used as
      * the Gallery thumbnail. (b) If a URL is provided for both GalleryURL and PictureURL, then the picture indicated in GalleryURL is used as the thumbnail. The image used for the Gallery thumbnail (specified in the GalleryURL or PictureURL argument) must
      * be in one of the graphics formats JPEG, BMP, TIF, or GIF.
@@ -31,7 +31,7 @@ class VendorHostedPictureType extends AbstractStructBase
     public $GalleryURL;
     /**
      * The GalleryType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This will be either "Featured" or "Gallery".
      * - minOccurs: 0
      * @var string
@@ -70,7 +70,7 @@ class VendorHostedPictureType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($pictureURL) && !is_string($pictureURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($pictureURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pictureURL, true), gettype($pictureURL)), __LINE__);
         }
         $this->PictureURL = $pictureURL;
         return $this;
@@ -92,7 +92,7 @@ class VendorHostedPictureType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($galleryURL) && !is_string($galleryURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($galleryURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($galleryURL, true), gettype($galleryURL)), __LINE__);
         }
         $this->GalleryURL = $galleryURL;
         return $this;
@@ -117,7 +117,7 @@ class VendorHostedPictureType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\GalleryTypeCodeType::valueIsValid($galleryType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $galleryType, implode(', ', \PayPal\EnumType\GalleryTypeCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\GalleryTypeCodeType', is_array($galleryType) ? implode(', ', $galleryType) : var_export($galleryType, true), implode(', ', \PayPal\EnumType\GalleryTypeCodeType::getValidValues())), __LINE__);
         }
         $this->GalleryType = $galleryType;
         return $this;

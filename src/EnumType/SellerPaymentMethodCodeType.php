@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for SellerPaymentMethodCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: SellerPaymentMethodCodeType These are payment methods that sellers can use to pay eBay.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,41 +13,57 @@ class SellerPaymentMethodCodeType
 {
     /**
      * Constant for value 'Other'
+     * Meta information extracted from the WSDL
+     * - documentation: No payment method specified - some other payment method.
      * @return string 'Other'
      */
     const VALUE_OTHER = 'Other';
     /**
      * Constant for value 'Amex'
+     * Meta information extracted from the WSDL
+     * - documentation: Amex
      * @return string 'Amex'
      */
     const VALUE_AMEX = 'Amex';
     /**
      * Constant for value 'Visa'
+     * Meta information extracted from the WSDL
+     * - documentation: Visa
      * @return string 'Visa'
      */
     const VALUE_VISA = 'Visa';
     /**
      * Constant for value 'Mastercard'
+     * Meta information extracted from the WSDL
+     * - documentation: Mastercard
      * @return string 'Mastercard'
      */
     const VALUE_MASTERCARD = 'Mastercard';
     /**
      * Constant for value 'Discover'
+     * Meta information extracted from the WSDL
+     * - documentation: Discover
      * @return string 'Discover'
      */
     const VALUE_DISCOVER = 'Discover';
     /**
      * Constant for value 'JCB'
+     * Meta information extracted from the WSDL
+     * - documentation: JCB
      * @return string 'JCB'
      */
     const VALUE_JCB = 'JCB';
     /**
      * Constant for value 'Diners'
+     * Meta information extracted from the WSDL
+     * - documentation: Diners
      * @return string 'Diners'
      */
     const VALUE_DINERS = 'Diners';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

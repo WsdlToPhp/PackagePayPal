@@ -13,7 +13,7 @@ class CreateBillingAgreementResponseType extends AbstractResponseType
 {
     /**
      * The BillingAgreementID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -46,7 +46,7 @@ class CreateBillingAgreementResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($billingAgreementID) && !is_string($billingAgreementID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementID, true), gettype($billingAgreementID)), __LINE__);
         }
         $this->BillingAgreementID = $billingAgreementID;
         return $this;

@@ -11,11 +11,15 @@ class ItemCategoryType
 {
     /**
      * Constant for value 'Physical'
+     * Meta information extracted from the WSDL
+     * - documentation: Physical
      * @return string 'Physical'
      */
     const VALUE_PHYSICAL = 'Physical';
     /**
      * Constant for value 'Digital'
+     * Meta information extracted from the WSDL
+     * - documentation: Digital
      * @return string 'Digital'
      */
     const VALUE_DIGITAL = 'Digital';

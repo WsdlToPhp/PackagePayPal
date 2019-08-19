@@ -13,7 +13,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
 {
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The amount of the payment as specified by you on DoDirectPaymentRequest.
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $Amount;
     /**
      * The AVSCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Address Verification System response code. Character limit: One single-byte alphanumeric character AVS CodeMeaningMatched Details A AddressAddress only (no ZIP) B International “A”Address only (no ZIP) CInternational “N” None
      * DInternational “X” Address and Postal Code E Not allowed for MOTO (Internet/Phone) transactions Not applicable F UK-specific “X”Address and Postal Code G Global Unavailable Not applicable I International UnavailableNot applicable N NoNone
      * PPostal (International “Z”)Postal Code only (no Address) RRetryNot applicable S Service not Supported Not applicable U UnavailableNot applicable W Whole ZIPNine-digit ZIP code (no Address) X Exact match Address and nine-digit ZIP code Y
@@ -34,7 +34,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $AVSCode;
     /**
      * The CVV2Code
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Result of the CVV2 check by PayPal. CVV2 CodeMeaningMatched Details M MatchCVV2 N No match None P Not ProcessedNot applicable SService not SupportedNot applicable U UnavailableNot applicable XNo response Not applicable All others
      * ErrorNot applicable
      * - maxOccurs: 1
@@ -44,8 +44,9 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $CVV2Code;
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Transaction identification number. Character length and limitations: 19 characters maximum. | TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -53,7 +54,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $TransactionID;
     /**
      * The TransactionPendingReason
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: pending reason for IC+ interchange plus
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -62,7 +63,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $TransactionPendingReason;
     /**
      * The PendingReason
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The reason why a particular transaction went in pending.
      * - minOccurs: 0
      * @var string
@@ -70,7 +71,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $PendingReason;
     /**
      * The PaymentStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This will identify the actual transaction status.
      * - minOccurs: 0
      * @var string
@@ -78,7 +79,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $PaymentStatus;
     /**
      * The FMFDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\FMFDetailsType
@@ -86,7 +87,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $FMFDetails;
     /**
      * The ThreeDSecureResponse
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\ThreeDSecureResponseType
@@ -94,7 +95,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     public $ThreeDSecureResponse;
     /**
      * The PaymentAdviceCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Response code from the processor when a recurring transaction is declined.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -173,7 +174,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($aVSCode) && !is_string($aVSCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($aVSCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($aVSCode, true), gettype($aVSCode)), __LINE__);
         }
         $this->AVSCode = $aVSCode;
         return $this;
@@ -195,7 +196,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($cVV2Code) && !is_string($cVV2Code)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cVV2Code)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cVV2Code, true), gettype($cVV2Code)), __LINE__);
         }
         $this->CVV2Code = $cVV2Code;
         return $this;
@@ -217,7 +218,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -239,7 +240,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($transactionPendingReason) && !is_string($transactionPendingReason)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionPendingReason)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionPendingReason, true), gettype($transactionPendingReason)), __LINE__);
         }
         $this->TransactionPendingReason = $transactionPendingReason;
         return $this;
@@ -264,7 +265,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PendingStatusCodeType::valueIsValid($pendingReason)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $pendingReason, implode(', ', \PayPal\EnumType\PendingStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PendingStatusCodeType', is_array($pendingReason) ? implode(', ', $pendingReason) : var_export($pendingReason, true), implode(', ', \PayPal\EnumType\PendingStatusCodeType::getValidValues())), __LINE__);
         }
         $this->PendingReason = $pendingReason;
         return $this;
@@ -289,7 +290,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentStatusCodeType::valueIsValid($paymentStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentStatus, implode(', ', \PayPal\EnumType\PaymentStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentStatusCodeType', is_array($paymentStatus) ? implode(', ', $paymentStatus) : var_export($paymentStatus, true), implode(', ', \PayPal\EnumType\PaymentStatusCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentStatus = $paymentStatus;
         return $this;
@@ -347,7 +348,7 @@ class DoDirectPaymentResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($paymentAdviceCode) && !is_string($paymentAdviceCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentAdviceCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentAdviceCode, true), gettype($paymentAdviceCode)), __LINE__);
         }
         $this->PaymentAdviceCode = $paymentAdviceCode;
         return $this;

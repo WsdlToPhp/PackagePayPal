@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for BoardingStatusType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Boarding Status
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

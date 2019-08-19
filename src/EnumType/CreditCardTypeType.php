@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for CreditCardTypeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Type declaration to be used by other schemas. This is the credit card type
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

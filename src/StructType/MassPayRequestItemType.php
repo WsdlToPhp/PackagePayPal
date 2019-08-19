@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for MassPayRequestItemType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MassPayRequestItemType
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class MassPayRequestItemType extends AbstractStructBase
 {
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Payment amount. You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Required You cannot mix currencies in a single MassPayRequest. A single request must
      * include items that are of the same currency.
      * - maxOccurs: 1
@@ -25,9 +25,10 @@ class MassPayRequestItemType extends AbstractStructBase
     public $Amount;
     /**
      * The ReceiverEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address of recipient. Required You must specify ReceiverEmail, ReceiverPhone, or ReceiverID, but all MassPayItems in a request must use the same field to specify recipients. Character length and limitations: 127 single-byte
      * characters maximum.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -35,7 +36,7 @@ class MassPayRequestItemType extends AbstractStructBase
     public $ReceiverEmail;
     /**
      * The ReceiverPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Phone number of recipient. Required You must specify ReceiverEmail, ReceiverPhone, or ReceiverID, but all MassPayItems in a request must use the same field to specify recipients.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -44,18 +45,19 @@ class MassPayRequestItemType extends AbstractStructBase
     public $ReceiverPhone;
     /**
      * The ReceiverID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique PayPal customer account number. This value corresponds to the value of PayerID returned by GetTransactionDetails. Required You must specify ReceiverEmail, ReceiverPhone, or ReceiverID, but all MassPayItems in a request must
      * use the same field to specify recipients. Character length and limitations: 17 single-byte characters maximum.
+     * - base: xs:string
+     * - maxLength: 127
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - maxLength: 127
      * @var string
      */
     public $ReceiverID;
     /**
      * The UniqueId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Transaction-specific identification number for tracking in an accounting system. Optional Character length and limitations: 30 single-byte characters. No whitespace allowed.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -64,7 +66,7 @@ class MassPayRequestItemType extends AbstractStructBase
     public $UniqueId;
     /**
      * The Note
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Custom note for each recipient. Optional Character length and limitations: 4,000 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -131,7 +133,7 @@ class MassPayRequestItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($receiverEmail) && !is_string($receiverEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiverEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiverEmail, true), gettype($receiverEmail)), __LINE__);
         }
         $this->ReceiverEmail = $receiverEmail;
         return $this;
@@ -153,7 +155,7 @@ class MassPayRequestItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($receiverPhone) && !is_string($receiverPhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiverPhone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiverPhone, true), gettype($receiverPhone)), __LINE__);
         }
         $this->ReceiverPhone = $receiverPhone;
         return $this;
@@ -173,13 +175,13 @@ class MassPayRequestItemType extends AbstractStructBase
      */
     public function setReceiverID($receiverID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($receiverID) && strlen($receiverID) > 127) || (is_array($receiverID) && count($receiverID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($receiverID) ? strlen($receiverID) : count($receiverID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($receiverID) && !is_string($receiverID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiverID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiverID, true), gettype($receiverID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($receiverID) && mb_strlen($receiverID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($receiverID)), __LINE__);
         }
         $this->ReceiverID = $receiverID;
         return $this;
@@ -201,7 +203,7 @@ class MassPayRequestItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($uniqueId) && !is_string($uniqueId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uniqueId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uniqueId, true), gettype($uniqueId)), __LINE__);
         }
         $this->UniqueId = $uniqueId;
         return $this;
@@ -223,7 +225,7 @@ class MassPayRequestItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($note) && !is_string($note)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($note)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($note, true), gettype($note)), __LINE__);
         }
         $this->Note = $note;
         return $this;

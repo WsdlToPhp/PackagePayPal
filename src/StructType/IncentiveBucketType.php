@@ -13,7 +13,7 @@ class IncentiveBucketType extends AbstractStructBase
 {
     /**
      * The Items
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var \PayPal\StructType\IncentiveItemType[]
@@ -21,56 +21,56 @@ class IncentiveBucketType extends AbstractStructBase
     public $Items;
     /**
      * The BucketId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $BucketId;
     /**
      * The SellerId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $SellerId;
     /**
      * The ExternalSellerId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ExternalSellerId;
     /**
      * The BucketSubtotalAmt
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $BucketSubtotalAmt;
     /**
      * The BucketShippingAmt
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $BucketShippingAmt;
     /**
      * The BucketInsuranceAmt
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $BucketInsuranceAmt;
     /**
      * The BucketSalesTaxAmt
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $BucketSalesTaxAmt;
     /**
      * The BucketTotalAmt
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
@@ -118,6 +118,28 @@ class IncentiveBucketType extends AbstractStructBase
         return $this->Items;
     }
     /**
+     * This method is responsible for validating the values passed to the setItems method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setItems method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateItemsForArrayConstraintsFromSetItems(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $incentiveBucketTypeItemsItem) {
+            // validation for constraint: itemType
+            if (!$incentiveBucketTypeItemsItem instanceof \PayPal\StructType\IncentiveItemType) {
+                $invalidValues[] = is_object($incentiveBucketTypeItemsItem) ? get_class($incentiveBucketTypeItemsItem) : sprintf('%s(%s)', gettype($incentiveBucketTypeItemsItem), var_export($incentiveBucketTypeItemsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The Items property can only contain items of type \PayPal\StructType\IncentiveItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set Items value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\IncentiveItemType[] $items
@@ -125,11 +147,9 @@ class IncentiveBucketType extends AbstractStructBase
      */
     public function setItems(array $items = array())
     {
-        foreach ($items as $incentiveBucketTypeItemsItem) {
-            // validation for constraint: itemType
-            if (!$incentiveBucketTypeItemsItem instanceof \PayPal\StructType\IncentiveItemType) {
-                throw new \InvalidArgumentException(sprintf('The Items property can only contain items of \PayPal\StructType\IncentiveItemType, "%s" given', is_object($incentiveBucketTypeItemsItem) ? get_class($incentiveBucketTypeItemsItem) : gettype($incentiveBucketTypeItemsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($itemsArrayErrorMessage = self::validateItemsForArrayConstraintsFromSetItems($items))) {
+            throw new \InvalidArgumentException($itemsArrayErrorMessage, __LINE__);
         }
         $this->Items = $items;
         return $this;
@@ -144,7 +164,7 @@ class IncentiveBucketType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\IncentiveItemType) {
-            throw new \InvalidArgumentException(sprintf('The Items property can only contain items of \PayPal\StructType\IncentiveItemType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Items property can only contain items of type \PayPal\StructType\IncentiveItemType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Items[] = $item;
         return $this;
@@ -166,7 +186,7 @@ class IncentiveBucketType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($bucketId) && !is_string($bucketId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($bucketId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bucketId, true), gettype($bucketId)), __LINE__);
         }
         $this->BucketId = $bucketId;
         return $this;
@@ -188,7 +208,7 @@ class IncentiveBucketType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($sellerId) && !is_string($sellerId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sellerId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sellerId, true), gettype($sellerId)), __LINE__);
         }
         $this->SellerId = $sellerId;
         return $this;
@@ -210,7 +230,7 @@ class IncentiveBucketType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($externalSellerId) && !is_string($externalSellerId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($externalSellerId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalSellerId, true), gettype($externalSellerId)), __LINE__);
         }
         $this->ExternalSellerId = $externalSellerId;
         return $this;

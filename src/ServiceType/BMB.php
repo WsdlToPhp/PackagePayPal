@@ -26,7 +26,7 @@ class BMB extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BMButtonSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class BMB extends SoapClientBase
     public function BMButtonSearch(\PayPal\StructType\BMButtonSearchReq $bMButtonSearchRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BMButtonSearch($bMButtonSearchRequest));
+            $this->setResult($this->getSoapClient()->BMButtonSearch($bMButtonSearchRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

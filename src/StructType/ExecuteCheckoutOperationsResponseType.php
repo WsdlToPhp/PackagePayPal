@@ -13,7 +13,7 @@ class ExecuteCheckoutOperationsResponseType extends AbstractResponseType
 {
     /**
      * The ExecuteCheckoutOperationsResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:ExecuteCheckoutOperationsResponseDetails

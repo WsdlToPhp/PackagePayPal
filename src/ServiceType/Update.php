@@ -26,7 +26,7 @@ class Update extends SoapClientBase
     }
     /**
      * Method to call the operation originally named UpdateAccessPermissions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Update extends SoapClientBase
     public function UpdateAccessPermissions(\PayPal\StructType\UpdateAccessPermissionsReq $updateAccessPermissionsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->UpdateAccessPermissions($updateAccessPermissionsRequest));
+            $this->setResult($this->getSoapClient()->UpdateAccessPermissions($updateAccessPermissionsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -50,7 +50,7 @@ class Update extends SoapClientBase
     }
     /**
      * Method to call the operation originally named UpdateAuthorization
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -65,7 +65,7 @@ class Update extends SoapClientBase
     public function UpdateAuthorization(\PayPal\StructType\UpdateAuthorizationReq $updateAuthorizationRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->UpdateAuthorization($updateAuthorizationRequest));
+            $this->setResult($this->getSoapClient()->UpdateAuthorization($updateAuthorizationRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -74,7 +74,7 @@ class Update extends SoapClientBase
     }
     /**
      * Method to call the operation originally named UpdateRecurringPaymentsProfile
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -89,7 +89,7 @@ class Update extends SoapClientBase
     public function UpdateRecurringPaymentsProfile(\PayPal\StructType\UpdateRecurringPaymentsProfileReq $updateRecurringPaymentsProfileRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileRequest));
+            $this->setResult($this->getSoapClient()->UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

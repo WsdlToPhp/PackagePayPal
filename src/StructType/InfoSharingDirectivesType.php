@@ -13,7 +13,7 @@ class InfoSharingDirectivesType extends AbstractStructBase
 {
     /**
      * The ReqBillingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If Billing Address should be returned in GetExpressCheckoutDetails response, this parameter should be set to yes here
      * - minOccurs: 0
      * @var string
@@ -46,7 +46,7 @@ class InfoSharingDirectivesType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reqBillingAddress) && !is_string($reqBillingAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reqBillingAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqBillingAddress, true), gettype($reqBillingAddress)), __LINE__);
         }
         $this->ReqBillingAddress = $reqBillingAddress;
         return $this;

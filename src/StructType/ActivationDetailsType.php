@@ -13,7 +13,7 @@ class ActivationDetailsType extends AbstractStructBase
 {
     /**
      * The InitialAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\BasicAmountType
@@ -21,7 +21,7 @@ class ActivationDetailsType extends AbstractStructBase
     public $InitialAmount;
     /**
      * The FailedInitialAmountAction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -78,7 +78,7 @@ class ActivationDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\FailedPaymentActionType::valueIsValid($failedInitialAmountAction)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $failedInitialAmountAction, implode(', ', \PayPal\EnumType\FailedPaymentActionType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\FailedPaymentActionType', is_array($failedInitialAmountAction) ? implode(', ', $failedInitialAmountAction) : var_export($failedInitialAmountAction, true), implode(', ', \PayPal\EnumType\FailedPaymentActionType::getValidValues())), __LINE__);
         }
         $this->FailedInitialAmountAction = $failedInitialAmountAction;
         return $this;

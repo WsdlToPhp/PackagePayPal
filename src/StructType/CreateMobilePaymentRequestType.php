@@ -13,7 +13,7 @@ class CreateMobilePaymentRequestType extends AbstractRequestType
 {
     /**
      * The CreateMobilePaymentRequestDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:CreateMobilePaymentRequestDetails

@@ -13,7 +13,7 @@ class GetAccessPermissionDetailsReq extends AbstractStructBase
 {
     /**
      * The GetAccessPermissionDetailsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:GetAccessPermissionDetailsRequest
      * @var \PayPal\StructType\GetAccessPermissionDetailsRequestType
      */

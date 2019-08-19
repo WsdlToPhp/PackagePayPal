@@ -13,7 +13,7 @@ class RefundTransactionReq extends AbstractStructBase
 {
     /**
      * The RefundTransactionRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:RefundTransactionRequest
      * @var \PayPal\StructType\RefundTransactionRequestType
      */

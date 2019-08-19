@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ShippingOptionType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Fallback shipping options type.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class ShippingOptionType extends AbstractStructBase
 {
     /**
      * The ShippingOptionIsDefault
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class ShippingOptionType extends AbstractStructBase
     public $ShippingOptionIsDefault;
     /**
      * The ShippingOptionAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -31,7 +31,7 @@ class ShippingOptionType extends AbstractStructBase
     public $ShippingOptionAmount;
     /**
      * The ShippingOptionName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -70,7 +70,7 @@ class ShippingOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingOptionIsDefault) && !is_string($shippingOptionIsDefault)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingOptionIsDefault)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingOptionIsDefault, true), gettype($shippingOptionIsDefault)), __LINE__);
         }
         $this->ShippingOptionIsDefault = $shippingOptionIsDefault;
         return $this;
@@ -110,7 +110,7 @@ class ShippingOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingOptionName) && !is_string($shippingOptionName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingOptionName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingOptionName, true), gettype($shippingOptionName)), __LINE__);
         }
         $this->ShippingOptionName = $shippingOptionName;
         return $this;

@@ -13,7 +13,7 @@ class UpdateAccessPermissionsReq extends AbstractStructBase
 {
     /**
      * The UpdateAccessPermissionsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:UpdateAccessPermissionsRequest
      * @var \PayPal\StructType\UpdateAccessPermissionsRequestType
      */

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AuthorizationInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Authorization details
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,14 +15,14 @@ class AuthorizationInfoType extends AbstractStructBase
 {
     /**
      * The PaymentStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The status of the payment: Pending: The payment is pending. See "PendingReason" for more information.
      * @var string
      */
     public $PaymentStatus;
     /**
      * The PendingReason
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The reason the payment is pending:none: No pending reason address: The payment is pending because your customer did not include a confirmed shipping address and your Payment Receiving Preferences is set such that you want to manually
      * accept or deny each of these payments. To change your preference, go to the Preferences section of your Profile. authorization: The authorization is pending at time of creation if payment is not under review echeck: The payment is pending because it
      * was made by an eCheck that has not yet cleared. intl: The payment is pending because you hold a non-U.S. account and do not have a withdrawal mechanism. You must manually accept or deny this payment from your Account Overview. multi-currency: You do
@@ -36,7 +36,7 @@ class AuthorizationInfoType extends AbstractStructBase
     public $PendingReason;
     /**
      * The ProtectionEligibility
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Protection Eligibility for this Transaction - None, SPP or ESPP
      * - minOccurs: 0
      * @var string
@@ -44,7 +44,7 @@ class AuthorizationInfoType extends AbstractStructBase
     public $ProtectionEligibility;
     /**
      * The ProtectionEligibilityType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Protection Eligibility Type for this Transaction
      * - minOccurs: 0
      * @var string
@@ -89,7 +89,7 @@ class AuthorizationInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentStatusCodeType::valueIsValid($paymentStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentStatus, implode(', ', \PayPal\EnumType\PaymentStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentStatusCodeType', is_array($paymentStatus) ? implode(', ', $paymentStatus) : var_export($paymentStatus, true), implode(', ', \PayPal\EnumType\PaymentStatusCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentStatus = $paymentStatus;
         return $this;
@@ -114,7 +114,7 @@ class AuthorizationInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PendingStatusCodeType::valueIsValid($pendingReason)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $pendingReason, implode(', ', \PayPal\EnumType\PendingStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PendingStatusCodeType', is_array($pendingReason) ? implode(', ', $pendingReason) : var_export($pendingReason, true), implode(', ', \PayPal\EnumType\PendingStatusCodeType::getValidValues())), __LINE__);
         }
         $this->PendingReason = $pendingReason;
         return $this;
@@ -136,7 +136,7 @@ class AuthorizationInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($protectionEligibility) && !is_string($protectionEligibility)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($protectionEligibility)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($protectionEligibility, true), gettype($protectionEligibility)), __LINE__);
         }
         $this->ProtectionEligibility = $protectionEligibility;
         return $this;
@@ -158,7 +158,7 @@ class AuthorizationInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($protectionEligibilityType) && !is_string($protectionEligibilityType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($protectionEligibilityType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($protectionEligibilityType, true), gettype($protectionEligibilityType)), __LINE__);
         }
         $this->ProtectionEligibilityType = $protectionEligibilityType;
         return $this;

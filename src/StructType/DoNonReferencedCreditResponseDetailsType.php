@@ -18,8 +18,9 @@ class DoNonReferencedCreditResponseDetailsType extends AbstractStructBase
     public $Amount;
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * @var string
      */
     public $TransactionID;
@@ -71,7 +72,7 @@ class DoNonReferencedCreditResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;

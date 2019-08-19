@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for InsuranceOptionCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: InsuranceOptionCodeType These are the possible codes to describe insurance option as part of shipping service.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,26 +13,36 @@ class InsuranceOptionCodeType
 {
     /**
      * Constant for value 'Optional'
+     * Meta information extracted from the WSDL
+     * - documentation: Insurance optional.
      * @return string 'Optional'
      */
     const VALUE_OPTIONAL = 'Optional';
     /**
      * Constant for value 'Required'
+     * Meta information extracted from the WSDL
+     * - documentation: Insurance required.
      * @return string 'Required'
      */
     const VALUE_REQUIRED = 'Required';
     /**
      * Constant for value 'NotOffered'
+     * Meta information extracted from the WSDL
+     * - documentation: Insurance not offered.
      * @return string 'NotOffered'
      */
     const VALUE_NOT_OFFERED = 'NotOffered';
     /**
      * Constant for value 'IncludedInShippingHandling'
+     * Meta information extracted from the WSDL
+     * - documentation: Insurance included in Shipping and Handling costs.
      * @return string 'IncludedInShippingHandling'
      */
     const VALUE_INCLUDED_IN_SHIPPING_HANDLING = 'IncludedInShippingHandling';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

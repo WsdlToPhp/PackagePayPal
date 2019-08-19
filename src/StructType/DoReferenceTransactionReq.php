@@ -13,7 +13,7 @@ class DoReferenceTransactionReq extends AbstractStructBase
 {
     /**
      * The DoReferenceTransactionRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoReferenceTransactionRequest
      * @var \PayPal\StructType\DoReferenceTransactionRequestType
      */

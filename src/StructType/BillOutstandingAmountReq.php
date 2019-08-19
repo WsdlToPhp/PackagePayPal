@@ -13,7 +13,7 @@ class BillOutstandingAmountReq extends AbstractStructBase
 {
     /**
      * The BillOutstandingAmountRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BillOutstandingAmountRequest
      * @var \PayPal\StructType\BillOutstandingAmountRequestType
      */

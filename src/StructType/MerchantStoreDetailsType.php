@@ -13,7 +13,7 @@ class MerchantStoreDetailsType extends AbstractStructBase
 {
     /**
      * The StoreID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Store IDOptional Character length and limits: 50 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class MerchantStoreDetailsType extends AbstractStructBase
     public $StoreID;
     /**
      * The TerminalID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Terminal IDOptional Character length and limits: 50 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -59,7 +59,7 @@ class MerchantStoreDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($storeID) && !is_string($storeID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($storeID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($storeID, true), gettype($storeID)), __LINE__);
         }
         $this->StoreID = $storeID;
         return $this;
@@ -81,7 +81,7 @@ class MerchantStoreDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($terminalID) && !is_string($terminalID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($terminalID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($terminalID, true), gettype($terminalID)), __LINE__);
         }
         $this->TerminalID = $terminalID;
         return $this;

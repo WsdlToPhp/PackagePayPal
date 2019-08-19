@@ -13,28 +13,28 @@ class IncentiveAppliedToType extends AbstractStructBase
 {
     /**
      * The BucketId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $BucketId;
     /**
      * The ItemId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ItemId;
     /**
      * The IncentiveAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $IncentiveAmount;
     /**
      * The SubType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -75,7 +75,7 @@ class IncentiveAppliedToType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($bucketId) && !is_string($bucketId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($bucketId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bucketId, true), gettype($bucketId)), __LINE__);
         }
         $this->BucketId = $bucketId;
         return $this;
@@ -97,7 +97,7 @@ class IncentiveAppliedToType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemId) && !is_string($itemId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemId, true), gettype($itemId)), __LINE__);
         }
         $this->ItemId = $itemId;
         return $this;
@@ -137,7 +137,7 @@ class IncentiveAppliedToType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($subType) && !is_string($subType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($subType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subType, true), gettype($subType)), __LINE__);
         }
         $this->SubType = $subType;
         return $this;

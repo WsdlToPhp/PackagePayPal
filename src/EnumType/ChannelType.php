@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ChannelType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ChannelType - Type declaration to be used by other schemas. This is the PayPal Channel type (used by Express Checkout)
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

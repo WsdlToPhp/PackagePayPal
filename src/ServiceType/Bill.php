@@ -26,7 +26,7 @@ class Bill extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BillUser
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Bill extends SoapClientBase
     public function BillUser(\PayPal\StructType\BillUserReq $billUserRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BillUser($billUserRequest));
+            $this->setResult($this->getSoapClient()->BillUser($billUserRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -50,7 +50,7 @@ class Bill extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BillAgreementUpdate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -65,7 +65,7 @@ class Bill extends SoapClientBase
     public function BillAgreementUpdate(\PayPal\StructType\BillAgreementUpdateReq $billAgreementUpdateRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BillAgreementUpdate($billAgreementUpdateRequest));
+            $this->setResult($this->getSoapClient()->BillAgreementUpdate($billAgreementUpdateRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -74,7 +74,7 @@ class Bill extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BillOutstandingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -89,7 +89,7 @@ class Bill extends SoapClientBase
     public function BillOutstandingAmount(\PayPal\StructType\BillOutstandingAmountReq $billOutstandingAmountRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BillOutstandingAmount($billOutstandingAmountRequest));
+            $this->setResult($this->getSoapClient()->BillOutstandingAmount($billOutstandingAmountRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

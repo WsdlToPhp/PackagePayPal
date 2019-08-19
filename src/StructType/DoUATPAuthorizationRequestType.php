@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for DoUATPAuthorizationRequestType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: UATP card details Required
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
 {
     /**
      * The UATPDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:UATPDetails
@@ -24,7 +24,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
     public $UATPDetails;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount to authorize. Required Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -33,7 +33,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
     public $Amount;
     /**
      * The TransactionEntity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of transaction to authorize. The only allowable value is Order, which means that the transaction represents a customer order that can be fulfilled over 29 days. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
     public $TransactionEntity;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Invoice ID. A pass through.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -51,7 +51,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
     public $InvoiceID;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -136,7 +136,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\TransactionEntityType::valueIsValid($transactionEntity)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $transactionEntity, implode(', ', \PayPal\EnumType\TransactionEntityType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\TransactionEntityType', is_array($transactionEntity) ? implode(', ', $transactionEntity) : var_export($transactionEntity, true), implode(', ', \PayPal\EnumType\TransactionEntityType::getValidValues())), __LINE__);
         }
         $this->TransactionEntity = $transactionEntity;
         return $this;
@@ -158,7 +158,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -180,7 +180,7 @@ class DoUATPAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

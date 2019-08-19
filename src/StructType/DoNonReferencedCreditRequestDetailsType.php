@@ -18,21 +18,21 @@ class DoNonReferencedCreditRequestDetailsType extends AbstractStructBase
     public $Amount;
     /**
      * The NetAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $NetAmount;
     /**
      * The TaxAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $TaxAmount;
     /**
      * The ShippingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
@@ -44,14 +44,14 @@ class DoNonReferencedCreditRequestDetailsType extends AbstractStructBase
     public $CreditCard;
     /**
      * The ReceiverEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ReceiverEmail;
     /**
      * The Comment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -191,7 +191,7 @@ class DoNonReferencedCreditRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($receiverEmail) && !is_string($receiverEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiverEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiverEmail, true), gettype($receiverEmail)), __LINE__);
         }
         $this->ReceiverEmail = $receiverEmail;
         return $this;
@@ -213,7 +213,7 @@ class DoNonReferencedCreditRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($comment) && !is_string($comment)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($comment)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comment, true), gettype($comment)), __LINE__);
         }
         $this->Comment = $comment;
         return $this;

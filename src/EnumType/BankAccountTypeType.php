@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for BankAccountTypeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: BankAccountTypeType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

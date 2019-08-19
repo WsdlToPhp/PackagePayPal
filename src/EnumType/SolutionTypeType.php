@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for SolutionTypeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: SolutionTypeType This is the PayPal payment Solution details type (used by Express Checkout)
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

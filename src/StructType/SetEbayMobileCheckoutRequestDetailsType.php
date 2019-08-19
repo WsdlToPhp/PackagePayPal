@@ -13,7 +13,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
 {
     /**
      * The CheckoutType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 'Auction' indicates that user is coming to checkout after an auction ended. A value of 'BuyItNow' indicates if the user is coming to checkout by clicking on the 'buy it now' button in a chinese auction. A value of
      * 'FixedPriceItem' indicates that user clicked on 'Buy it now' on a fixed price item. A value of Autopay indicates autopay (or immediate pay) which is not supported at the moment. Required
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $CheckoutType;
     /**
      * The ItemId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An item number assigned to the item in eBay database. Required Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 1
      * @var string
@@ -30,7 +30,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ItemId;
     /**
      * The TransactionId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An Transaction id assigned to the item in eBay database. In case of Chinese auction Item Id itself indicates Transaction Id. Transaction Id in this case is Zero. Required Character length and limitations: 127 single-byte alphanumeric
      * characters
      * - minOccurs: 1
@@ -39,7 +39,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $TransactionId;
     /**
      * The SiteId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An id indicating the site on which the item was listed. Required Character length and limitations: 2 alphanumeric characters
      * - minOccurs: 1
      * @var string
@@ -47,7 +47,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $SiteId;
     /**
      * The BuyerId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Buyers ebay Id. Required Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 1
      * @var string
@@ -55,7 +55,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $BuyerId;
     /**
      * The ClientType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicating the client type. Weather it is WAP or J2ME. A value of 'WAP' indicates WAP. A value of 'J2MEClient' indicates J2ME client. Required
      * - minOccurs: 1
      * @var string
@@ -63,7 +63,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ClientType;
     /**
      * The BuyerPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The phone number of the buyer's mobile device, if available. Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\PhoneNumberType
@@ -71,7 +71,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $BuyerPhone;
     /**
      * The ReturnURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. Optional Character length
      * and limitations: no limit.
      * - minOccurs: 0
@@ -80,7 +80,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ReturnURL;
     /**
      * The CancelURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. Optional Character length
      * and limitations: no limit
      * - minOccurs: 0
@@ -89,7 +89,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $CancelURL;
     /**
      * The Quantity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Specify quantity in case it is an immediate pay (or autopay) item. Optional
      * - minOccurs: 0
      * @var int
@@ -97,7 +97,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $Quantity;
     /**
      * The ItemAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cost of this item before tax and shipping.You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.Used only for autopay items. Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -163,7 +163,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\EbayCheckoutType::valueIsValid($checkoutType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $checkoutType, implode(', ', \PayPal\EnumType\EbayCheckoutType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\EbayCheckoutType', is_array($checkoutType) ? implode(', ', $checkoutType) : var_export($checkoutType, true), implode(', ', \PayPal\EnumType\EbayCheckoutType::getValidValues())), __LINE__);
         }
         $this->CheckoutType = $checkoutType;
         return $this;
@@ -185,7 +185,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemId) && !is_string($itemId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemId, true), gettype($itemId)), __LINE__);
         }
         $this->ItemId = $itemId;
         return $this;
@@ -207,7 +207,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($transactionId) && !is_string($transactionId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
         }
         $this->TransactionId = $transactionId;
         return $this;
@@ -229,7 +229,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($siteId) && !is_string($siteId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($siteId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($siteId, true), gettype($siteId)), __LINE__);
         }
         $this->SiteId = $siteId;
         return $this;
@@ -251,7 +251,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerId) && !is_string($buyerId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerId, true), gettype($buyerId)), __LINE__);
         }
         $this->BuyerId = $buyerId;
         return $this;
@@ -276,7 +276,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\DyneticClientType::valueIsValid($clientType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $clientType, implode(', ', \PayPal\EnumType\DyneticClientType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\DyneticClientType', is_array($clientType) ? implode(', ', $clientType) : var_export($clientType, true), implode(', ', \PayPal\EnumType\DyneticClientType::getValidValues())), __LINE__);
         }
         $this->ClientType = $clientType;
         return $this;
@@ -316,7 +316,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($returnURL) && !is_string($returnURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($returnURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->ReturnURL = $returnURL;
         return $this;
@@ -338,7 +338,7 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cancelURL) && !is_string($cancelURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cancelURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->CancelURL = $cancelURL;
         return $this;
@@ -359,8 +359,8 @@ class SetEbayMobileCheckoutRequestDetailsType extends AbstractStructBase
     public function setQuantity($quantity = null)
     {
         // validation for constraint: int
-        if (!is_null($quantity) && !is_numeric($quantity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($quantity)), __LINE__);
+        if (!is_null($quantity) && !(is_int($quantity) || ctype_digit($quantity))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
         }
         $this->Quantity = $quantity;
         return $this;

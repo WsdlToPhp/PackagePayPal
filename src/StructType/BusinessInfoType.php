@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for BusinessInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: BusinessInfoType
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class BusinessInfoType extends AbstractStructBase
 {
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of business, such as corporation or sole proprietorship
      * - minOccurs: 0
      * @var string
@@ -23,16 +23,17 @@ class BusinessInfoType extends AbstractStructBase
     public $Type;
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Official name of business Character length and limitations: 75 alphanumeric characters
-     * - minOccurs: 0
+     * - base: xs:string
      * - maxLength: 25
+     * - minOccurs: 0
      * @var string
      */
     public $Name;
     /**
      * The Address
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs business postal address
      * - minOccurs: 0
      * @var \PayPal\StructType\AddressType
@@ -40,7 +41,7 @@ class BusinessInfoType extends AbstractStructBase
     public $Address;
     /**
      * The WorkPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Businessâs primary telephone number Character length and limitations: 20 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -48,7 +49,7 @@ class BusinessInfoType extends AbstractStructBase
     public $WorkPhone;
     /**
      * The Category
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Line of business, as defined in the enumerations
      * - minOccurs: 0
      * @var string
@@ -56,7 +57,7 @@ class BusinessInfoType extends AbstractStructBase
     public $Category;
     /**
      * The SubCategory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Business sub-category, as defined in the enumerations
      * - minOccurs: 0
      * @var string
@@ -64,7 +65,7 @@ class BusinessInfoType extends AbstractStructBase
     public $SubCategory;
     /**
      * The AveragePrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Average transaction price, as defined by the enumerations. Enumeration Meaning AverageTransactionPrice-Not-Applicable AverageTransactionPrice-Range1 Less than $25 USD AverageTransactionPrice-Range2 $25 USD to $50 USD
      * AverageTransactionPrice-Range3 $50 USD to $100 USD AverageTransactionPrice-Range4 $100 USD to $250 USD AverageTransactionPrice-Range5 $250 USD to $500 USD AverageTransactionPrice-Range6 $500 USD to $1,000 USD AverageTransactionPrice-Range7 $1,000 USD
      * to $2,000 USD AverageTransactionPrice-Range8 $2,000 USD to $5,000 USD AverageTransactionPrice-Range9 $5,000 USD to $10,000 USD AverageTransactionPrice-Range10 More than $10,000 USD
@@ -74,7 +75,7 @@ class BusinessInfoType extends AbstractStructBase
     public $AveragePrice;
     /**
      * The AverageMonthlyVolume
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Average monthly sales volume, as defined by the enumerations. Enumeration Meaning AverageMonthlyVolume-Not-Applicable AverageMonthlyVolume-Range1 Less than $1,000 USD AverageMonthlyVolume-Range2 $1,000 USD to $5,000 USD
      * AverageMonthlyVolume-Range3 $5,000 USD to $25,000 USD AverageMonthlyVolume-Range4 $25,000 USD to $100,000 USD AverageMonthlyVolume-Range5 $100,000 USD to $1,000,000 USD AverageMonthlyVolume-Range6 More than $1,000,000 USD
      * - minOccurs: 0
@@ -83,7 +84,7 @@ class BusinessInfoType extends AbstractStructBase
     public $AverageMonthlyVolume;
     /**
      * The SalesVenue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Main sales venue, such as eBay
      * - minOccurs: 0
      * @var string
@@ -91,7 +92,7 @@ class BusinessInfoType extends AbstractStructBase
     public $SalesVenue;
     /**
      * The Website
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Primary URL of business Character length and limitations: 2,048 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -99,7 +100,7 @@ class BusinessInfoType extends AbstractStructBase
     public $Website;
     /**
      * The RevenueFromOnlineSales
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Percentage of revenue attributable to online sales, as defined by the enumerations Enumeration Meaning PercentageRevenueFromOnlineSales-Not-Applicable PercentageRevenueFromOnlineSales-Range1 Less than 25%
      * PercentageRevenueFromOnlineSales-Range2 25% to 50% PercentageRevenueFromOnlineSales-Range3 50% to 75% PercentageRevenueFromOnlineSales-Range4 75% to 100%
      * - minOccurs: 0
@@ -108,7 +109,7 @@ class BusinessInfoType extends AbstractStructBase
     public $RevenueFromOnlineSales;
     /**
      * The BusinessEstablished
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Date the merchantâs business was established
      * - minOccurs: 0
      * @var string
@@ -116,15 +117,16 @@ class BusinessInfoType extends AbstractStructBase
     public $BusinessEstablished;
     /**
      * The CustomerServiceEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address to contact businessâs customer service Character length and limitations: 127 alphanumeric characters
+     * - base: xs:string
      * - minOccurs: 0
      * @var string
      */
     public $CustomerServiceEmail;
     /**
      * The CustomerServicePhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Telephone number to contact businessâs customer service Character length and limitations: 32 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -199,7 +201,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BusinessTypeType::valueIsValid($type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $type, implode(', ', \PayPal\EnumType\BusinessTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BusinessTypeType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \PayPal\EnumType\BusinessTypeType::getValidValues())), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -219,13 +221,13 @@ class BusinessInfoType extends AbstractStructBase
      */
     public function setName($name = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($name) && strlen($name) > 25) || (is_array($name) && count($name) > 25)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 25 element(s) or a scalar of 25 character(s) at most, "%d" length given', is_scalar($name) ? strlen($name) : count($name)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($name) && !is_string($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
+        }
+        // validation for constraint: maxLength(25)
+        if (!is_null($name) && mb_strlen($name) > 25) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen($name)), __LINE__);
         }
         $this->Name = $name;
         return $this;
@@ -265,7 +267,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($workPhone) && !is_string($workPhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($workPhone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($workPhone, true), gettype($workPhone)), __LINE__);
         }
         $this->WorkPhone = $workPhone;
         return $this;
@@ -290,7 +292,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BusinessCategoryType::valueIsValid($category)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $category, implode(', ', \PayPal\EnumType\BusinessCategoryType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BusinessCategoryType', is_array($category) ? implode(', ', $category) : var_export($category, true), implode(', ', \PayPal\EnumType\BusinessCategoryType::getValidValues())), __LINE__);
         }
         $this->Category = $category;
         return $this;
@@ -315,7 +317,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BusinessSubCategoryType::valueIsValid($subCategory)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $subCategory, implode(', ', \PayPal\EnumType\BusinessSubCategoryType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BusinessSubCategoryType', is_array($subCategory) ? implode(', ', $subCategory) : var_export($subCategory, true), implode(', ', \PayPal\EnumType\BusinessSubCategoryType::getValidValues())), __LINE__);
         }
         $this->SubCategory = $subCategory;
         return $this;
@@ -340,7 +342,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AverageTransactionPriceType::valueIsValid($averagePrice)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $averagePrice, implode(', ', \PayPal\EnumType\AverageTransactionPriceType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AverageTransactionPriceType', is_array($averagePrice) ? implode(', ', $averagePrice) : var_export($averagePrice, true), implode(', ', \PayPal\EnumType\AverageTransactionPriceType::getValidValues())), __LINE__);
         }
         $this->AveragePrice = $averagePrice;
         return $this;
@@ -365,7 +367,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AverageMonthlyVolumeType::valueIsValid($averageMonthlyVolume)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $averageMonthlyVolume, implode(', ', \PayPal\EnumType\AverageMonthlyVolumeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AverageMonthlyVolumeType', is_array($averageMonthlyVolume) ? implode(', ', $averageMonthlyVolume) : var_export($averageMonthlyVolume, true), implode(', ', \PayPal\EnumType\AverageMonthlyVolumeType::getValidValues())), __LINE__);
         }
         $this->AverageMonthlyVolume = $averageMonthlyVolume;
         return $this;
@@ -390,7 +392,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\SalesVenueType::valueIsValid($salesVenue)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $salesVenue, implode(', ', \PayPal\EnumType\SalesVenueType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\SalesVenueType', is_array($salesVenue) ? implode(', ', $salesVenue) : var_export($salesVenue, true), implode(', ', \PayPal\EnumType\SalesVenueType::getValidValues())), __LINE__);
         }
         $this->SalesVenue = $salesVenue;
         return $this;
@@ -412,7 +414,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($website) && !is_string($website)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($website)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($website, true), gettype($website)), __LINE__);
         }
         $this->Website = $website;
         return $this;
@@ -437,7 +439,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PercentageRevenueFromOnlineSalesType::valueIsValid($revenueFromOnlineSales)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $revenueFromOnlineSales, implode(', ', \PayPal\EnumType\PercentageRevenueFromOnlineSalesType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PercentageRevenueFromOnlineSalesType', is_array($revenueFromOnlineSales) ? implode(', ', $revenueFromOnlineSales) : var_export($revenueFromOnlineSales, true), implode(', ', \PayPal\EnumType\PercentageRevenueFromOnlineSalesType::getValidValues())), __LINE__);
         }
         $this->RevenueFromOnlineSales = $revenueFromOnlineSales;
         return $this;
@@ -459,7 +461,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($businessEstablished) && !is_string($businessEstablished)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($businessEstablished)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($businessEstablished, true), gettype($businessEstablished)), __LINE__);
         }
         $this->BusinessEstablished = $businessEstablished;
         return $this;
@@ -481,7 +483,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($customerServiceEmail) && !is_string($customerServiceEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($customerServiceEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerServiceEmail, true), gettype($customerServiceEmail)), __LINE__);
         }
         $this->CustomerServiceEmail = $customerServiceEmail;
         return $this;
@@ -503,7 +505,7 @@ class BusinessInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($customerServicePhone) && !is_string($customerServicePhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($customerServicePhone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerServicePhone, true), gettype($customerServicePhone)), __LINE__);
         }
         $this->CustomerServicePhone = $customerServicePhone;
         return $this;

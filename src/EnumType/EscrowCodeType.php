@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for EscrowCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: EscrowCodeType These are the possible codes to describe Escrow options.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,21 +13,29 @@ class EscrowCodeType
 {
     /**
      * Constant for value 'ByBuyer'
+     * Meta information extracted from the WSDL
+     * - documentation: By Buyer
      * @return string 'ByBuyer'
      */
     const VALUE_BY_BUYER = 'ByBuyer';
     /**
      * Constant for value 'BySeller'
+     * Meta information extracted from the WSDL
+     * - documentation: By Seller.
      * @return string 'BySeller'
      */
     const VALUE_BY_SELLER = 'BySeller';
     /**
      * Constant for value 'None'
+     * Meta information extracted from the WSDL
+     * - documentation: None.
      * @return string 'None'
      */
     const VALUE_NONE = 'None';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

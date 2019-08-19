@@ -13,7 +13,7 @@ class BMButtonSearchReq extends AbstractStructBase
 {
     /**
      * The BMButtonSearchRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BMButtonSearchRequest
      * @var \PayPal\StructType\BMButtonSearchRequestType
      */

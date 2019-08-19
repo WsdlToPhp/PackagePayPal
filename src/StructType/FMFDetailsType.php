@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for FMFDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Thes are filters that could result in accept/deny/pending action.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class FMFDetailsType extends AbstractStructBase
 {
     /**
      * The AcceptFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\RiskFilterListType
@@ -23,7 +23,7 @@ class FMFDetailsType extends AbstractStructBase
     public $AcceptFilters;
     /**
      * The PendingFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\RiskFilterListType
@@ -31,7 +31,7 @@ class FMFDetailsType extends AbstractStructBase
     public $PendingFilters;
     /**
      * The DenyFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\RiskFilterListType
@@ -39,7 +39,7 @@ class FMFDetailsType extends AbstractStructBase
     public $DenyFilters;
     /**
      * The ReportFilters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\RiskFilterListType

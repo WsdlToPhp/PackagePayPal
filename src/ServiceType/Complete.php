@@ -26,7 +26,7 @@ class Complete extends SoapClientBase
     }
     /**
      * Method to call the operation originally named CompleteRecoup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Complete extends SoapClientBase
     public function CompleteRecoup(\PayPal\StructType\CompleteRecoupReq $completeRecoupRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->CompleteRecoup($completeRecoupRequest));
+            $this->setResult($this->getSoapClient()->CompleteRecoup($completeRecoupRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

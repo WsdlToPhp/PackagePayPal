@@ -13,7 +13,7 @@ class CategoryArrayType extends AbstractStructArrayBase
 {
     /**
      * The Category
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - ref: ns:Category
@@ -39,6 +39,28 @@ class CategoryArrayType extends AbstractStructArrayBase
         return $this->Category;
     }
     /**
+     * This method is responsible for validating the values passed to the setCategory method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setCategory method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateCategoryForArrayConstraintsFromSetCategory(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $categoryArrayTypeCategoryItem) {
+            // validation for constraint: itemType
+            if (!$categoryArrayTypeCategoryItem instanceof \PayPal\StructType\CategoryType) {
+                $invalidValues[] = is_object($categoryArrayTypeCategoryItem) ? get_class($categoryArrayTypeCategoryItem) : sprintf('%s(%s)', gettype($categoryArrayTypeCategoryItem), var_export($categoryArrayTypeCategoryItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The Category property can only contain items of type \PayPal\StructType\CategoryType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set Category value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\CategoryType[] $category
@@ -46,11 +68,9 @@ class CategoryArrayType extends AbstractStructArrayBase
      */
     public function setCategory(array $category = array())
     {
-        foreach ($category as $categoryArrayTypeCategoryItem) {
-            // validation for constraint: itemType
-            if (!$categoryArrayTypeCategoryItem instanceof \PayPal\StructType\CategoryType) {
-                throw new \InvalidArgumentException(sprintf('The Category property can only contain items of \PayPal\StructType\CategoryType, "%s" given', is_object($categoryArrayTypeCategoryItem) ? get_class($categoryArrayTypeCategoryItem) : gettype($categoryArrayTypeCategoryItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($categoryArrayErrorMessage = self::validateCategoryForArrayConstraintsFromSetCategory($category))) {
+            throw new \InvalidArgumentException($categoryArrayErrorMessage, __LINE__);
         }
         $this->Category = $category;
         return $this;
@@ -65,7 +85,7 @@ class CategoryArrayType extends AbstractStructArrayBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\CategoryType) {
-            throw new \InvalidArgumentException(sprintf('The Category property can only contain items of \PayPal\StructType\CategoryType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Category property can only contain items of type \PayPal\StructType\CategoryType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Category[] = $item;
         return $this;

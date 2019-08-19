@@ -13,7 +13,7 @@ class GetBalanceRequestType extends AbstractRequestType
 {
     /**
      * The ReturnAllCurrencies
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -46,7 +46,7 @@ class GetBalanceRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($returnAllCurrencies) && !is_string($returnAllCurrencies)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($returnAllCurrencies)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnAllCurrencies, true), gettype($returnAllCurrencies)), __LINE__);
         }
         $this->ReturnAllCurrencies = $returnAllCurrencies;
         return $this;

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for BasicAmountType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: On requests, you must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal
  * separator must be a period (.), and the thousands separator must be a comma (,).
  * @subpackage Structs
@@ -16,7 +16,7 @@ class BasicAmountType extends AbstractStructBase
 {
     /**
      * The currencyID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
@@ -59,7 +59,7 @@ class BasicAmountType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CurrencyCodeType::valueIsValid($currencyID)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $currencyID, implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CurrencyCodeType', is_array($currencyID) ? implode(', ', $currencyID) : var_export($currencyID, true), implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
         }
         $this->currencyID = $currencyID;
         return $this;
@@ -81,7 +81,7 @@ class BasicAmountType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($_) && !is_string($_)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($_)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
         }
         $this->_ = $_;
         return $this;

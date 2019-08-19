@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for IncentiveAppliedDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Details of incentive application on individual bucket/item.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
 {
     /**
      * The PaymentRequestID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: PaymentRequestID uniquely identifies a bucket. It is the "bucket id" in the world of EC API.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -24,7 +24,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     public $PaymentRequestID;
     /**
      * The ItemId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The item id passed through by the merchant.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -33,7 +33,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     public $ItemId;
     /**
      * The ExternalTxnId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The item transaction id passed through by the merchant.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     public $ExternalTxnId;
     /**
      * The DiscountAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Discount offerred for this bucket or item.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -51,7 +51,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     public $DiscountAmount;
     /**
      * The SubType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: SubType for coupon.
      * - minOccurs: 0
      * @var string
@@ -96,7 +96,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($paymentRequestID) && !is_string($paymentRequestID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentRequestID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRequestID, true), gettype($paymentRequestID)), __LINE__);
         }
         $this->PaymentRequestID = $paymentRequestID;
         return $this;
@@ -118,7 +118,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemId) && !is_string($itemId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemId, true), gettype($itemId)), __LINE__);
         }
         $this->ItemId = $itemId;
         return $this;
@@ -140,7 +140,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($externalTxnId) && !is_string($externalTxnId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($externalTxnId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalTxnId, true), gettype($externalTxnId)), __LINE__);
         }
         $this->ExternalTxnId = $externalTxnId;
         return $this;
@@ -180,7 +180,7 @@ class IncentiveAppliedDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($subType) && !is_string($subType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($subType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subType, true), gettype($subType)), __LINE__);
         }
         $this->SubType = $subType;
         return $this;

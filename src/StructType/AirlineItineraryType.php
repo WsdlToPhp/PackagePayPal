@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AirlineItineraryType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: AID for Airlines
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,98 +15,98 @@ class AirlineItineraryType extends AbstractStructBase
 {
     /**
      * The PassengerName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $PassengerName;
     /**
      * The IssueDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $IssueDate;
     /**
      * The TravelAgencyName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $TravelAgencyName;
     /**
      * The TravelAgencyCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $TravelAgencyCode;
     /**
      * The TicketNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $TicketNumber;
     /**
      * The IssuingCarrierCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $IssuingCarrierCode;
     /**
      * The CustomerCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CustomerCode;
     /**
      * The TotalFare
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $TotalFare;
     /**
      * The TotalTaxes
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $TotalTaxes;
     /**
      * The TotalFee
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $TotalFee;
     /**
      * The RestrictedTicket
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $RestrictedTicket;
     /**
      * The ClearingSequence
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ClearingSequence;
     /**
      * The ClearingCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ClearingCount;
     /**
      * The FlightDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var \PayPal\StructType\FlightDetailsType[]
@@ -178,7 +178,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($passengerName) && !is_string($passengerName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($passengerName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerName, true), gettype($passengerName)), __LINE__);
         }
         $this->PassengerName = $passengerName;
         return $this;
@@ -200,7 +200,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($issueDate) && !is_string($issueDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($issueDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueDate, true), gettype($issueDate)), __LINE__);
         }
         $this->IssueDate = $issueDate;
         return $this;
@@ -222,7 +222,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($travelAgencyName) && !is_string($travelAgencyName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($travelAgencyName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelAgencyName, true), gettype($travelAgencyName)), __LINE__);
         }
         $this->TravelAgencyName = $travelAgencyName;
         return $this;
@@ -244,7 +244,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($travelAgencyCode) && !is_string($travelAgencyCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($travelAgencyCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelAgencyCode, true), gettype($travelAgencyCode)), __LINE__);
         }
         $this->TravelAgencyCode = $travelAgencyCode;
         return $this;
@@ -266,7 +266,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($ticketNumber) && !is_string($ticketNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($ticketNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketNumber, true), gettype($ticketNumber)), __LINE__);
         }
         $this->TicketNumber = $ticketNumber;
         return $this;
@@ -288,7 +288,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($issuingCarrierCode) && !is_string($issuingCarrierCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($issuingCarrierCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issuingCarrierCode, true), gettype($issuingCarrierCode)), __LINE__);
         }
         $this->IssuingCarrierCode = $issuingCarrierCode;
         return $this;
@@ -310,7 +310,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($customerCode) && !is_string($customerCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($customerCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerCode, true), gettype($customerCode)), __LINE__);
         }
         $this->CustomerCode = $customerCode;
         return $this;
@@ -386,7 +386,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($restrictedTicket) && !is_string($restrictedTicket)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($restrictedTicket)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($restrictedTicket, true), gettype($restrictedTicket)), __LINE__);
         }
         $this->RestrictedTicket = $restrictedTicket;
         return $this;
@@ -408,7 +408,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($clearingSequence) && !is_string($clearingSequence)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($clearingSequence)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clearingSequence, true), gettype($clearingSequence)), __LINE__);
         }
         $this->ClearingSequence = $clearingSequence;
         return $this;
@@ -430,7 +430,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($clearingCount) && !is_string($clearingCount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($clearingCount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clearingCount, true), gettype($clearingCount)), __LINE__);
         }
         $this->ClearingCount = $clearingCount;
         return $this;
@@ -444,6 +444,28 @@ class AirlineItineraryType extends AbstractStructBase
         return $this->FlightDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setFlightDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setFlightDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateFlightDetailsForArrayConstraintsFromSetFlightDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $airlineItineraryTypeFlightDetailsItem) {
+            // validation for constraint: itemType
+            if (!$airlineItineraryTypeFlightDetailsItem instanceof \PayPal\StructType\FlightDetailsType) {
+                $invalidValues[] = is_object($airlineItineraryTypeFlightDetailsItem) ? get_class($airlineItineraryTypeFlightDetailsItem) : sprintf('%s(%s)', gettype($airlineItineraryTypeFlightDetailsItem), var_export($airlineItineraryTypeFlightDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The FlightDetails property can only contain items of type \PayPal\StructType\FlightDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set FlightDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\FlightDetailsType[] $flightDetails
@@ -451,11 +473,9 @@ class AirlineItineraryType extends AbstractStructBase
      */
     public function setFlightDetails(array $flightDetails = array())
     {
-        foreach ($flightDetails as $airlineItineraryTypeFlightDetailsItem) {
-            // validation for constraint: itemType
-            if (!$airlineItineraryTypeFlightDetailsItem instanceof \PayPal\StructType\FlightDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The FlightDetails property can only contain items of \PayPal\StructType\FlightDetailsType, "%s" given', is_object($airlineItineraryTypeFlightDetailsItem) ? get_class($airlineItineraryTypeFlightDetailsItem) : gettype($airlineItineraryTypeFlightDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($flightDetailsArrayErrorMessage = self::validateFlightDetailsForArrayConstraintsFromSetFlightDetails($flightDetails))) {
+            throw new \InvalidArgumentException($flightDetailsArrayErrorMessage, __LINE__);
         }
         $this->FlightDetails = $flightDetails;
         return $this;
@@ -470,7 +490,7 @@ class AirlineItineraryType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\FlightDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The FlightDetails property can only contain items of \PayPal\StructType\FlightDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The FlightDetails property can only contain items of type \PayPal\StructType\FlightDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->FlightDetails[] = $item;
         return $this;

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for OfferDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: OfferDetailsType Specific information for an offer.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class OfferDetailsType extends AbstractStructBase
 {
     /**
      * The OfferCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Code used to identify the promotion offer.
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class OfferDetailsType extends AbstractStructBase
     public $OfferCode;
     /**
      * The BMLOfferInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Specific infromation for BML, Similar structure could be added for sepcific promotion needs like CrossPromotions
      * - minOccurs: 0
      * @var \PayPal\StructType\BMLOfferInfoType
@@ -59,7 +59,7 @@ class OfferDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($offerCode) && !is_string($offerCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($offerCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offerCode, true), gettype($offerCode)), __LINE__);
         }
         $this->OfferCode = $offerCode;
         return $this;

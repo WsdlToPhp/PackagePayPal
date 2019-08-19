@@ -13,7 +13,7 @@ class BMUpdateButtonReq extends AbstractStructBase
 {
     /**
      * The BMUpdateButtonRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BMUpdateButtonRequest
      * @var \PayPal\StructType\BMUpdateButtonRequestType
      */

@@ -26,7 +26,7 @@ class Enter extends SoapClientBase
     }
     /**
      * Method to call the operation originally named EnterBoarding
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Enter extends SoapClientBase
     public function EnterBoarding(\PayPal\StructType\EnterBoardingReq $enterBoardingRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->EnterBoarding($enterBoardingRequest));
+            $this->setResult($this->getSoapClient()->EnterBoarding($enterBoardingRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

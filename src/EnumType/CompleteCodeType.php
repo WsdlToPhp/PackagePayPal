@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for CompleteCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: CompleteCodeType This is the PayPal DoCapture CompleteType code
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

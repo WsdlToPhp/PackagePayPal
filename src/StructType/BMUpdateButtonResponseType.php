@@ -13,7 +13,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
 {
     /**
      * The Website
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
     public $Website;
     /**
      * The Email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
     public $Email;
     /**
      * The Mobile
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -37,7 +37,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
     public $Mobile;
     /**
      * The HostedButtonID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -79,7 +79,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($website) && !is_string($website)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($website)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($website, true), gettype($website)), __LINE__);
         }
         $this->Website = $website;
         return $this;
@@ -101,7 +101,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->Email = $email;
         return $this;
@@ -123,7 +123,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($mobile) && !is_string($mobile)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($mobile)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobile, true), gettype($mobile)), __LINE__);
         }
         $this->Mobile = $mobile;
         return $this;
@@ -145,7 +145,7 @@ class BMUpdateButtonResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($hostedButtonID) && !is_string($hostedButtonID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hostedButtonID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostedButtonID, true), gettype($hostedButtonID)), __LINE__);
         }
         $this->HostedButtonID = $hostedButtonID;
         return $this;

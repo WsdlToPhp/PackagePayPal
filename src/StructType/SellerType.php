@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for SellerType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Information about user used by selling applications there are number of required elements - they will always show up for seller node there is not such a call to do revise seller info. only added minoccur=0 to elements that will not
  * show up in every type of request/responce
  * @subpackage Structs
@@ -21,14 +21,14 @@ class SellerType extends AbstractStructBase
     public $AllowPaymentEdit;
     /**
      * The BillingCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $BillingCurrency;
     /**
      * The CheckoutEnabled
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:CheckoutEnabled
      * @var bool
      */
@@ -50,7 +50,7 @@ class SellerType extends AbstractStructBase
     public $LiveAuctionAuthorized;
     /**
      * The MerchandizingPref
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the user has elected to participate as a seller in the Merchandising Manager feature.
      * @var string
      */
@@ -62,14 +62,14 @@ class SellerType extends AbstractStructBase
     public $QualifiesForB2BVAT;
     /**
      * The SellerLevel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:SellerLevel
      * @var string
      */
     public $SellerLevel;
     /**
      * The SellerPaymentAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:SellerPaymentAddress
      * @var \PayPal\StructType\AddressType
@@ -77,21 +77,21 @@ class SellerType extends AbstractStructBase
     public $SellerPaymentAddress;
     /**
      * The SchedulingInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\SchedulingInfoType
      */
     public $SchedulingInfo;
     /**
      * The StoreOwner
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:StoreOwner
      * @var bool
      */
     public $StoreOwner;
     /**
      * The StoreURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -159,7 +159,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($allowPaymentEdit) && !is_bool($allowPaymentEdit)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($allowPaymentEdit)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($allowPaymentEdit, true), gettype($allowPaymentEdit)), __LINE__);
         }
         $this->AllowPaymentEdit = $allowPaymentEdit;
         return $this;
@@ -184,7 +184,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CurrencyCodeType::valueIsValid($billingCurrency)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $billingCurrency, implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CurrencyCodeType', is_array($billingCurrency) ? implode(', ', $billingCurrency) : var_export($billingCurrency, true), implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
         }
         $this->BillingCurrency = $billingCurrency;
         return $this;
@@ -206,7 +206,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($checkoutEnabled) && !is_bool($checkoutEnabled)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($checkoutEnabled)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($checkoutEnabled, true), gettype($checkoutEnabled)), __LINE__);
         }
         $this->CheckoutEnabled = $checkoutEnabled;
         return $this;
@@ -228,7 +228,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($cIPBankAccountStored) && !is_bool($cIPBankAccountStored)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($cIPBankAccountStored)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cIPBankAccountStored, true), gettype($cIPBankAccountStored)), __LINE__);
         }
         $this->CIPBankAccountStored = $cIPBankAccountStored;
         return $this;
@@ -250,7 +250,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($goodStanding) && !is_bool($goodStanding)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($goodStanding)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($goodStanding, true), gettype($goodStanding)), __LINE__);
         }
         $this->GoodStanding = $goodStanding;
         return $this;
@@ -272,7 +272,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($liveAuctionAuthorized) && !is_bool($liveAuctionAuthorized)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($liveAuctionAuthorized)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($liveAuctionAuthorized, true), gettype($liveAuctionAuthorized)), __LINE__);
         }
         $this->LiveAuctionAuthorized = $liveAuctionAuthorized;
         return $this;
@@ -297,7 +297,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchandizingPrefCodeType::valueIsValid($merchandizingPref)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $merchandizingPref, implode(', ', \PayPal\EnumType\MerchandizingPrefCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchandizingPrefCodeType', is_array($merchandizingPref) ? implode(', ', $merchandizingPref) : var_export($merchandizingPref, true), implode(', ', \PayPal\EnumType\MerchandizingPrefCodeType::getValidValues())), __LINE__);
         }
         $this->MerchandizingPref = $merchandizingPref;
         return $this;
@@ -319,7 +319,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($qualifiesForB2BVAT) && !is_bool($qualifiesForB2BVAT)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($qualifiesForB2BVAT)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($qualifiesForB2BVAT, true), gettype($qualifiesForB2BVAT)), __LINE__);
         }
         $this->QualifiesForB2BVAT = $qualifiesForB2BVAT;
         return $this;
@@ -344,7 +344,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\SellerLevelCodeType::valueIsValid($sellerLevel)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $sellerLevel, implode(', ', \PayPal\EnumType\SellerLevelCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\SellerLevelCodeType', is_array($sellerLevel) ? implode(', ', $sellerLevel) : var_export($sellerLevel, true), implode(', ', \PayPal\EnumType\SellerLevelCodeType::getValidValues())), __LINE__);
         }
         $this->SellerLevel = $sellerLevel;
         return $this;
@@ -402,7 +402,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($storeOwner) && !is_bool($storeOwner)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($storeOwner)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($storeOwner, true), gettype($storeOwner)), __LINE__);
         }
         $this->StoreOwner = $storeOwner;
         return $this;
@@ -424,7 +424,7 @@ class SellerType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($storeURL) && !is_string($storeURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($storeURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($storeURL, true), gettype($storeURL)), __LINE__);
         }
         $this->StoreURL = $storeURL;
         return $this;

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for SubscribeTextType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: values for subscribe button text
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,11 +13,15 @@ class SubscribeTextType
 {
     /**
      * Constant for value 'BUYNOW'
+     * Meta information extracted from the WSDL
+     * - documentation: button wording is BUYNOW
      * @return string 'BUYNOW'
      */
     const VALUE_BUYNOW = 'BUYNOW';
     /**
      * Constant for value 'SUBSCRIBE'
+     * Meta information extracted from the WSDL
+     * - documentation: button wording is SUBSCRIBE
      * @return string 'SUBSCRIBE'
      */
     const VALUE_SUBSCRIBE = 'SUBSCRIBE';

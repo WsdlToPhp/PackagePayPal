@@ -14,7 +14,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType extends AbstractStr
 {
     /**
      * The ProfileID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -22,7 +22,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType extends AbstractStr
     public $ProfileID;
     /**
      * The Action
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -30,7 +30,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType extends AbstractStr
     public $Action;
     /**
      * The Note
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -69,7 +69,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType extends AbstractStr
     {
         // validation for constraint: string
         if (!is_null($profileID) && !is_string($profileID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($profileID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
         }
         $this->ProfileID = $profileID;
         return $this;
@@ -94,7 +94,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType extends AbstractStr
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\StatusChangeActionType::valueIsValid($action)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $action, implode(', ', \PayPal\EnumType\StatusChangeActionType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\StatusChangeActionType', is_array($action) ? implode(', ', $action) : var_export($action, true), implode(', ', \PayPal\EnumType\StatusChangeActionType::getValidValues())), __LINE__);
         }
         $this->Action = $action;
         return $this;
@@ -116,7 +116,7 @@ class ManageRecurringPaymentsProfileStatusRequestDetailsType extends AbstractStr
     {
         // validation for constraint: string
         if (!is_null($note) && !is_string($note)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($note)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($note, true), gettype($note)), __LINE__);
         }
         $this->Note = $note;
         return $this;

@@ -13,7 +13,7 @@ class GetIncentiveEvaluationReq extends AbstractStructBase
 {
     /**
      * The GetIncentiveEvaluationRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:GetIncentiveEvaluationRequest
      * @var \PayPal\StructType\GetIncentiveEvaluationRequestType
      */

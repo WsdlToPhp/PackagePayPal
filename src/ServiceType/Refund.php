@@ -26,7 +26,7 @@ class Refund extends SoapClientBase
     }
     /**
      * Method to call the operation originally named RefundTransaction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Refund extends SoapClientBase
     public function RefundTransaction(\PayPal\StructType\RefundTransactionReq $refundTransactionRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->RefundTransaction($refundTransactionRequest));
+            $this->setResult($this->getSoapClient()->RefundTransaction($refundTransactionRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

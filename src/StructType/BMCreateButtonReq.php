@@ -13,7 +13,7 @@ class BMCreateButtonReq extends AbstractStructBase
 {
     /**
      * The BMCreateButtonRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BMCreateButtonRequest
      * @var \PayPal\StructType\BMCreateButtonRequestType
      */

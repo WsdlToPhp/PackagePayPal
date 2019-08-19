@@ -13,28 +13,28 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
 {
     /**
      * The ReturnURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser is returned after choosing to login with PayPal. Required Character length and limitations: no limit.
      * @var string
      */
     public $ReturnURL;
     /**
      * The CancelURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer is returned if he does not approve the use of PayPal login. Required Character length and limitations: no limit
      * @var string
      */
     public $CancelURL;
     /**
      * The LogoutURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser is returned after user logs out from PayPal. Required Character length and limitations: no limit.
      * @var string
      */
     public $LogoutURL;
     /**
      * The InitFlowType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The type of the flow. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -42,7 +42,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $InitFlowType;
     /**
      * The SkipLoginPage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The used to decide SkipLogin allowed or not. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -50,7 +50,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $SkipLoginPage;
     /**
      * The RequiredAccessPermissions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: contains information about API Services
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -59,7 +59,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $RequiredAccessPermissions;
     /**
      * The OptionalAccessPermissions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: contains information about API Services
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -68,7 +68,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $OptionalAccessPermissions;
     /**
      * The LocaleCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Locale of pages displayed by PayPal during Authentication Login. Optional Character length and limitations: Five single-byte alphabetic characters, upper- or lowercase. Allowable values: AU or en_AUDE or de_DEFR or fr_FRGB or en_GBIT
      * or it_ITJP or ja_JPUS or en_US
      * - minOccurs: 0
@@ -77,7 +77,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $LocaleCode;
     /**
      * The PageStyle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the Custom Payment Page Style for flow pages associated with this button/link. PageStyle corresponds to the HTML variable page_style for customizing flow pages. The value is the same as the Page Style Name you chose when adding
      * or editing the page style from the Profile subtab of the My Account tab of your PayPal account. Optional Character length and limitations: 30 single-byte alphabetic characters.
      * - minOccurs: 0
@@ -86,7 +86,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $PageStyle;
     /**
      * The cpp_header_image
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A URL for the image you want to appear at the top left of the flow page. The image has a maximum size of 750 pixels wide by 90 pixels high. PayPal recommends that you provide an image that is stored on a secure (https) server.
      * Optional Character length and limitations: 127
      * - minOccurs: 0
@@ -95,7 +95,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $cpp_header_image;
     /**
      * The cpp_header_border_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the border color around the header of the flow page. The border is a 2-pixel perimeter around the header space, which is 750 pixels wide by 90 pixels high. Optional Character length and limitations: Six character HTML
      * hexadecimal color code in ASCII
      * - minOccurs: 0
@@ -104,7 +104,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $cpp_header_border_color;
     /**
      * The cpp_header_back_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the background color for the header of the flow page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
      * - minOccurs: 0
      * @var string
@@ -112,7 +112,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $cpp_header_back_color;
     /**
      * The cpp_payflow_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sets the background color for the payment page. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
      * - minOccurs: 0
      * @var string
@@ -120,7 +120,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $cpp_payflow_color;
     /**
      * The FirstName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: First Name of the user, this information is used if user chooses to signup with PayPal. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
      * - minOccurs: 0
      * @var string
@@ -128,7 +128,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $FirstName;
     /**
      * The LastName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Last Name of the user, this information is used if user chooses to signup with PayPal. Optional Character length and limitation: Six character HTML hexadecimal color code in ASCII
      * - minOccurs: 0
      * @var string
@@ -136,7 +136,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     public $LastName;
     /**
      * The Address
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: User address, this information is used when user chooses to signup for PayPal. Optional If you include a shipping address and set the AddressOverride element on the request, PayPal returns this same address in
      * GetExpressCheckoutDetailsResponse.
      * - minOccurs: 0
@@ -215,7 +215,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($returnURL) && !is_string($returnURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($returnURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->ReturnURL = $returnURL;
         return $this;
@@ -237,7 +237,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cancelURL) && !is_string($cancelURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cancelURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->CancelURL = $cancelURL;
         return $this;
@@ -259,7 +259,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($logoutURL) && !is_string($logoutURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($logoutURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($logoutURL, true), gettype($logoutURL)), __LINE__);
         }
         $this->LogoutURL = $logoutURL;
         return $this;
@@ -281,7 +281,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($initFlowType) && !is_string($initFlowType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($initFlowType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($initFlowType, true), gettype($initFlowType)), __LINE__);
         }
         $this->InitFlowType = $initFlowType;
         return $this;
@@ -303,7 +303,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($skipLoginPage) && !is_string($skipLoginPage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($skipLoginPage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($skipLoginPage, true), gettype($skipLoginPage)), __LINE__);
         }
         $this->SkipLoginPage = $skipLoginPage;
         return $this;
@@ -317,6 +317,28 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
         return $this->RequiredAccessPermissions;
     }
     /**
+     * This method is responsible for validating the values passed to the setRequiredAccessPermissions method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setRequiredAccessPermissions method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateRequiredAccessPermissionsForArrayConstraintsFromSetRequiredAccessPermissions(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem) {
+            // validation for constraint: itemType
+            if (!is_string($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem)) {
+                $invalidValues[] = is_object($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem) ? get_class($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem) : sprintf('%s(%s)', gettype($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem), var_export($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The RequiredAccessPermissions property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set RequiredAccessPermissions value
      * @throws \InvalidArgumentException
      * @param string[] $requiredAccessPermissions
@@ -324,11 +346,9 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
      */
     public function setRequiredAccessPermissions(array $requiredAccessPermissions = array())
     {
-        foreach ($requiredAccessPermissions as $setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem) {
-            // validation for constraint: itemType
-            if (!is_string($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem)) {
-                throw new \InvalidArgumentException(sprintf('The RequiredAccessPermissions property can only contain items of string, "%s" given', is_object($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem) ? get_class($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem) : gettype($setAccessPermissionsRequestDetailsTypeRequiredAccessPermissionsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($requiredAccessPermissionsArrayErrorMessage = self::validateRequiredAccessPermissionsForArrayConstraintsFromSetRequiredAccessPermissions($requiredAccessPermissions))) {
+            throw new \InvalidArgumentException($requiredAccessPermissionsArrayErrorMessage, __LINE__);
         }
         $this->RequiredAccessPermissions = $requiredAccessPermissions;
         return $this;
@@ -343,7 +363,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The RequiredAccessPermissions property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The RequiredAccessPermissions property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->RequiredAccessPermissions[] = $item;
         return $this;
@@ -357,6 +377,28 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
         return $this->OptionalAccessPermissions;
     }
     /**
+     * This method is responsible for validating the values passed to the setOptionalAccessPermissions method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setOptionalAccessPermissions method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateOptionalAccessPermissionsForArrayConstraintsFromSetOptionalAccessPermissions(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem) {
+            // validation for constraint: itemType
+            if (!is_string($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem)) {
+                $invalidValues[] = is_object($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem) ? get_class($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem) : sprintf('%s(%s)', gettype($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem), var_export($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The OptionalAccessPermissions property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set OptionalAccessPermissions value
      * @throws \InvalidArgumentException
      * @param string[] $optionalAccessPermissions
@@ -364,11 +406,9 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
      */
     public function setOptionalAccessPermissions(array $optionalAccessPermissions = array())
     {
-        foreach ($optionalAccessPermissions as $setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem) {
-            // validation for constraint: itemType
-            if (!is_string($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem)) {
-                throw new \InvalidArgumentException(sprintf('The OptionalAccessPermissions property can only contain items of string, "%s" given', is_object($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem) ? get_class($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem) : gettype($setAccessPermissionsRequestDetailsTypeOptionalAccessPermissionsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($optionalAccessPermissionsArrayErrorMessage = self::validateOptionalAccessPermissionsForArrayConstraintsFromSetOptionalAccessPermissions($optionalAccessPermissions))) {
+            throw new \InvalidArgumentException($optionalAccessPermissionsArrayErrorMessage, __LINE__);
         }
         $this->OptionalAccessPermissions = $optionalAccessPermissions;
         return $this;
@@ -383,7 +423,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The OptionalAccessPermissions property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The OptionalAccessPermissions property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->OptionalAccessPermissions[] = $item;
         return $this;
@@ -405,7 +445,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($localeCode) && !is_string($localeCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($localeCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($localeCode, true), gettype($localeCode)), __LINE__);
         }
         $this->LocaleCode = $localeCode;
         return $this;
@@ -427,7 +467,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($pageStyle) && !is_string($pageStyle)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($pageStyle)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pageStyle, true), gettype($pageStyle)), __LINE__);
         }
         $this->PageStyle = $pageStyle;
         return $this;
@@ -449,7 +489,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_image) && !is_string($cpp_header_image)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_header_image)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_image, true), gettype($cpp_header_image)), __LINE__);
         }
         $this->cpp_header_image = $this->{'cpp-header-image'} = $cpp_header_image;
         return $this;
@@ -471,7 +511,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_border_color) && !is_string($cpp_header_border_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_header_border_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_border_color, true), gettype($cpp_header_border_color)), __LINE__);
         }
         $this->cpp_header_border_color = $this->{'cpp-header-border-color'} = $cpp_header_border_color;
         return $this;
@@ -493,7 +533,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_back_color) && !is_string($cpp_header_back_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_header_back_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_back_color, true), gettype($cpp_header_back_color)), __LINE__);
         }
         $this->cpp_header_back_color = $this->{'cpp-header-back-color'} = $cpp_header_back_color;
         return $this;
@@ -515,7 +555,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_payflow_color) && !is_string($cpp_payflow_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_payflow_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_payflow_color, true), gettype($cpp_payflow_color)), __LINE__);
         }
         $this->cpp_payflow_color = $this->{'cpp-payflow-color'} = $cpp_payflow_color;
         return $this;
@@ -537,7 +577,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($firstName) && !is_string($firstName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($firstName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->FirstName = $firstName;
         return $this;
@@ -559,7 +599,7 @@ class SetAccessPermissionsRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($lastName) && !is_string($lastName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lastName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->LastName = $lastName;
         return $this;

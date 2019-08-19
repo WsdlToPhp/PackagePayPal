@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for MerchantPullPaymentResponseType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MerchantPullPaymentResponseType Response data from the merchant pull.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class MerchantPullPaymentResponseType extends AbstractStructBase
 {
     /**
      * The PayerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: information about the customer
      * @var \PayPal\StructType\PayerInfoType
      */
     public $PayerInfo;
     /**
      * The PaymentInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the transaction
      * @var \PayPal\StructType\PaymentInfoType
      */
     public $PaymentInfo;
     /**
      * The MerchantPullInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Specific information about the preapproved payment
      * @var \PayPal\StructType\MerchantPullInfoType
      */

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PaymentReasonType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentReasonType This is the Payment Reason type (used by DoRT and SetEC for Refund of PI transaction, eBay return shipment, external dispute)
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -23,6 +23,8 @@ class PaymentReasonType
     const VALUE_REFUND = 'Refund';
     /**
      * Constant for value 'ReturnShipment'
+     * Meta information extracted from the WSDL
+     * - documentation: Identifies a BA flow for return shipment
      * @return string 'ReturnShipment'
      */
     const VALUE_RETURN_SHIPMENT = 'ReturnShipment';

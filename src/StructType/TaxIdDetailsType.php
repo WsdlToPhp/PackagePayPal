@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for TaxIdDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Details about the payer's tax info passed in by the merchant or partner. Optional.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class TaxIdDetailsType extends AbstractStructBase
 {
     /**
      * The TaxIdType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The payer's Tax ID type; CNPJ/CPF for BR country.
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class TaxIdDetailsType extends AbstractStructBase
     public $TaxIdType;
     /**
      * The TaxId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The payer's Tax ID
      * - minOccurs: 0
      * @var string
@@ -59,7 +59,7 @@ class TaxIdDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($taxIdType) && !is_string($taxIdType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($taxIdType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxIdType, true), gettype($taxIdType)), __LINE__);
         }
         $this->TaxIdType = $taxIdType;
         return $this;
@@ -81,7 +81,7 @@ class TaxIdDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($taxId) && !is_string($taxId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($taxId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxId, true), gettype($taxId)), __LINE__);
         }
         $this->TaxId = $taxId;
         return $this;

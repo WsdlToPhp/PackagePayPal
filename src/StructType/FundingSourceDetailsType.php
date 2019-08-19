@@ -13,7 +13,7 @@ class FundingSourceDetailsType extends AbstractStructBase
 {
     /**
      * The AllowPushFunding
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Allowable values: 0,1 The value 1 indicates that the customer can accept push funding, and 0 means they cannot. Optional Character length and limitations: One single-byte numeric character.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class FundingSourceDetailsType extends AbstractStructBase
     public $AllowPushFunding;
     /**
      * The UserSelectedFundingSource
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Allowable values: ELV, CreditCard, ChinaUnionPay, BML, Finance, Qiwi This element could be used to specify the perered funding option for a guest users. It has effect only if LandingPage element is set to Billing. Otherwise it will
      * be ignored.
      * - maxOccurs: 1
@@ -60,7 +60,7 @@ class FundingSourceDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($allowPushFunding) && !is_string($allowPushFunding)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($allowPushFunding)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allowPushFunding, true), gettype($allowPushFunding)), __LINE__);
         }
         $this->AllowPushFunding = $allowPushFunding;
         return $this;
@@ -85,7 +85,7 @@ class FundingSourceDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\UserSelectedFundingSourceType::valueIsValid($userSelectedFundingSource)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $userSelectedFundingSource, implode(', ', \PayPal\EnumType\UserSelectedFundingSourceType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\UserSelectedFundingSourceType', is_array($userSelectedFundingSource) ? implode(', ', $userSelectedFundingSource) : var_export($userSelectedFundingSource, true), implode(', ', \PayPal\EnumType\UserSelectedFundingSourceType::getValidValues())), __LINE__);
         }
         $this->UserSelectedFundingSource = $userSelectedFundingSource;
         return $this;

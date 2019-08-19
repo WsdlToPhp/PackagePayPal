@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for IncentiveRequestDetailLevelCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: IncentiveRequestDetailLevelType This identifies the granularity of information requested by the client application. This information will be used to define the contents and details of the response.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

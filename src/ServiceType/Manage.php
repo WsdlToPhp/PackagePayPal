@@ -26,7 +26,7 @@ class Manage extends SoapClientBase
     }
     /**
      * Method to call the operation originally named ManagePendingTransactionStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Manage extends SoapClientBase
     public function ManagePendingTransactionStatus(\PayPal\StructType\ManagePendingTransactionStatusReq $managePendingTransactionStatusRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->ManagePendingTransactionStatus($managePendingTransactionStatusRequest));
+            $this->setResult($this->getSoapClient()->ManagePendingTransactionStatus($managePendingTransactionStatusRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -51,7 +51,7 @@ class Manage extends SoapClientBase
     /**
      * Method to call the operation originally named
      * ManageRecurringPaymentsProfileStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -66,7 +66,7 @@ class Manage extends SoapClientBase
     public function ManageRecurringPaymentsProfileStatus(\PayPal\StructType\ManageRecurringPaymentsProfileStatusReq $manageRecurringPaymentsProfileStatusRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusRequest));
+            $this->setResult($this->getSoapClient()->ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

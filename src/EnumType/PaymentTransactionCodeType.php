@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PaymentTransactionCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentTransactionCodeType This is the type of a PayPal of which matches the output from IPN
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

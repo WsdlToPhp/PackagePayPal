@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PendingStatusCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PendingStatusCodeType The pending status for a PayPal Payment transaction which matches the output from IPN
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for UserType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Feedback scores are a quantitative expression of the desirability of dealing with that person as a Buyer or a Seller in auction transactions. Each auction transaction can result in one feedback entry for a given user (the Buyer can
  * leave one feedback about the Seller and the Seller can leave one feedback about the Buyer). That one feedback can be positive, negative, or neutral. The aggregated feedback counts for a particular user represent that user's overall feedback score
  * (referred to as a "feedback rating" on the eBay site). This rating is commonly expressed as the eBay Feedback score for the user.
@@ -17,28 +17,28 @@ class UserType extends AbstractStructBase
 {
     /**
      * The AboutMePage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $AboutMePage;
     /**
      * The EAISToken
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $EAISToken;
     /**
      * The Email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:Email
      * @var string
      */
     public $Email;
     /**
      * The FeedbackScore
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:FeedbackScore
      * @var int
@@ -46,35 +46,35 @@ class UserType extends AbstractStructBase
     public $FeedbackScore;
     /**
      * The FeedbackPrivate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $FeedbackPrivate;
     /**
      * The FeedbackRatingStar
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $FeedbackRatingStar;
     /**
      * The IDVerified
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $IDVerified;
     /**
      * The NewUser
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $NewUser;
     /**
      * The RegistrationAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:RegistrationAddress
      * @var \PayPal\StructType\AddressType
@@ -82,14 +82,14 @@ class UserType extends AbstractStructBase
     public $RegistrationAddress;
     /**
      * The RegistrationDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $RegistrationDate;
     /**
      * The Site
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:Site
      * @var string
@@ -97,37 +97,38 @@ class UserType extends AbstractStructBase
     public $Site;
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $Status;
     /**
      * The UserID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
+     * - base: xs:string
+     * - maxLength: 127
      * - minOccurs: 0
      * - ref: ns:UserID
-     * - maxLength: 127
      * @var string
      */
     public $UserID;
     /**
      * The UserIDChanged
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $UserIDChanged;
     /**
      * The UserIDLastChanged
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $UserIDLastChanged;
     /**
      * The VATStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If present, indicates whether or not the user is subject to VAT. Users who have registered with eBay as VAT-exempt are not subject to VAT. See Value-Added Tax (VAT). Not returned for users whose country of residence is outside the
      * EU. Possible values for the user's status: 2 = Residence in an EU country but user registered as VAT-exempt 3 = Residence in an EU country and user not registered as VAT-exempt
      * - minOccurs: 0
@@ -136,14 +137,14 @@ class UserType extends AbstractStructBase
     public $VATStatus;
     /**
      * The BuyerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BuyerType
      */
     public $BuyerInfo;
     /**
      * The SellerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\SellerType
      */
@@ -226,7 +227,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($aboutMePage) && !is_bool($aboutMePage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($aboutMePage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($aboutMePage, true), gettype($aboutMePage)), __LINE__);
         }
         $this->AboutMePage = $aboutMePage;
         return $this;
@@ -248,7 +249,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eAISToken) && !is_string($eAISToken)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eAISToken)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eAISToken, true), gettype($eAISToken)), __LINE__);
         }
         $this->EAISToken = $eAISToken;
         return $this;
@@ -270,7 +271,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->Email = $email;
         return $this;
@@ -291,8 +292,8 @@ class UserType extends AbstractStructBase
     public function setFeedbackScore($feedbackScore = null)
     {
         // validation for constraint: int
-        if (!is_null($feedbackScore) && !is_numeric($feedbackScore)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($feedbackScore)), __LINE__);
+        if (!is_null($feedbackScore) && !(is_int($feedbackScore) || ctype_digit($feedbackScore))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($feedbackScore, true), gettype($feedbackScore)), __LINE__);
         }
         $this->FeedbackScore = $feedbackScore;
         return $this;
@@ -314,7 +315,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($feedbackPrivate) && !is_bool($feedbackPrivate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($feedbackPrivate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($feedbackPrivate, true), gettype($feedbackPrivate)), __LINE__);
         }
         $this->FeedbackPrivate = $feedbackPrivate;
         return $this;
@@ -339,7 +340,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\FeedbackRatingStarCodeType::valueIsValid($feedbackRatingStar)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $feedbackRatingStar, implode(', ', \PayPal\EnumType\FeedbackRatingStarCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\FeedbackRatingStarCodeType', is_array($feedbackRatingStar) ? implode(', ', $feedbackRatingStar) : var_export($feedbackRatingStar, true), implode(', ', \PayPal\EnumType\FeedbackRatingStarCodeType::getValidValues())), __LINE__);
         }
         $this->FeedbackRatingStar = $feedbackRatingStar;
         return $this;
@@ -361,7 +362,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($iDVerified) && !is_bool($iDVerified)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($iDVerified)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($iDVerified, true), gettype($iDVerified)), __LINE__);
         }
         $this->IDVerified = $iDVerified;
         return $this;
@@ -383,7 +384,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($newUser) && !is_bool($newUser)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($newUser)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($newUser, true), gettype($newUser)), __LINE__);
         }
         $this->NewUser = $newUser;
         return $this;
@@ -423,7 +424,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($registrationDate) && !is_string($registrationDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($registrationDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($registrationDate, true), gettype($registrationDate)), __LINE__);
         }
         $this->RegistrationDate = $registrationDate;
         return $this;
@@ -448,7 +449,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\SiteCodeType::valueIsValid($site)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $site, implode(', ', \PayPal\EnumType\SiteCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\SiteCodeType', is_array($site) ? implode(', ', $site) : var_export($site, true), implode(', ', \PayPal\EnumType\SiteCodeType::getValidValues())), __LINE__);
         }
         $this->Site = $site;
         return $this;
@@ -473,7 +474,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\UserStatusCodeType::valueIsValid($status)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $status, implode(', ', \PayPal\EnumType\UserStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\UserStatusCodeType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PayPal\EnumType\UserStatusCodeType::getValidValues())), __LINE__);
         }
         $this->Status = $status;
         return $this;
@@ -493,13 +494,13 @@ class UserType extends AbstractStructBase
      */
     public function setUserID($userID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($userID) && strlen($userID) > 127) || (is_array($userID) && count($userID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($userID) ? strlen($userID) : count($userID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($userID) && !is_string($userID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($userID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userID, true), gettype($userID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($userID) && mb_strlen($userID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($userID)), __LINE__);
         }
         $this->UserID = $userID;
         return $this;
@@ -521,7 +522,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($userIDChanged) && !is_bool($userIDChanged)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($userIDChanged)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($userIDChanged, true), gettype($userIDChanged)), __LINE__);
         }
         $this->UserIDChanged = $userIDChanged;
         return $this;
@@ -543,7 +544,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($userIDLastChanged) && !is_string($userIDLastChanged)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($userIDLastChanged)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userIDLastChanged, true), gettype($userIDLastChanged)), __LINE__);
         }
         $this->UserIDLastChanged = $userIDLastChanged;
         return $this;
@@ -568,7 +569,7 @@ class UserType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\VATStatusCodeType::valueIsValid($vATStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $vATStatus, implode(', ', \PayPal\EnumType\VATStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\VATStatusCodeType', is_array($vATStatus) ? implode(', ', $vATStatus) : var_export($vATStatus, true), implode(', ', \PayPal\EnumType\VATStatusCodeType::getValidValues())), __LINE__);
         }
         $this->VATStatus = $vATStatus;
         return $this;

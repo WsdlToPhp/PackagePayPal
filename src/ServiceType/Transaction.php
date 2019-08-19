@@ -26,7 +26,7 @@ class Transaction extends SoapClientBase
     }
     /**
      * Method to call the operation originally named TransactionSearch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Transaction extends SoapClientBase
     public function TransactionSearch(\PayPal\StructType\TransactionSearchReq $transactionSearchRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->TransactionSearch($transactionSearchRequest));
+            $this->setResult($this->getSoapClient()->TransactionSearch($transactionSearchRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

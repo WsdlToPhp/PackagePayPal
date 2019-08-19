@@ -13,7 +13,7 @@ class CreateRecurringPaymentsProfileResponseType extends AbstractResponseType
 {
     /**
      * The CreateRecurringPaymentsProfileResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:CreateRecurringPaymentsProfileResponseDetails
      * @var \PayPal\StructType\CreateRecurringPaymentsProfileResponseDetailsType
      */

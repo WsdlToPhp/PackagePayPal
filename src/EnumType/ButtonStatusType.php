@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ButtonStatusType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: values for subscribe button text
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,6 +13,8 @@ class ButtonStatusType
 {
     /**
      * Constant for value 'DELETE'
+     * Meta information extracted from the WSDL
+     * - documentation: Changes Button Status to DELETE
      * @return string 'DELETE'
      */
     const VALUE_DELETE = 'DELETE';

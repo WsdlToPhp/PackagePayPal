@@ -13,35 +13,35 @@ class IncentiveItemType extends AbstractStructBase
 {
     /**
      * The ItemId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ItemId;
     /**
      * The PurchaseTime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $PurchaseTime;
     /**
      * The ItemCategoryList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ItemCategoryList;
     /**
      * The ItemPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
      */
     public $ItemPrice;
     /**
      * The ItemQuantity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
@@ -85,7 +85,7 @@ class IncentiveItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemId) && !is_string($itemId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemId, true), gettype($itemId)), __LINE__);
         }
         $this->ItemId = $itemId;
         return $this;
@@ -107,7 +107,7 @@ class IncentiveItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($purchaseTime) && !is_string($purchaseTime)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($purchaseTime)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($purchaseTime, true), gettype($purchaseTime)), __LINE__);
         }
         $this->PurchaseTime = $purchaseTime;
         return $this;
@@ -129,7 +129,7 @@ class IncentiveItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemCategoryList) && !is_string($itemCategoryList)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemCategoryList)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemCategoryList, true), gettype($itemCategoryList)), __LINE__);
         }
         $this->ItemCategoryList = $itemCategoryList;
         return $this;
@@ -168,8 +168,8 @@ class IncentiveItemType extends AbstractStructBase
     public function setItemQuantity($itemQuantity = null)
     {
         // validation for constraint: int
-        if (!is_null($itemQuantity) && !is_numeric($itemQuantity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($itemQuantity)), __LINE__);
+        if (!is_null($itemQuantity) && !(is_int($itemQuantity) || ctype_digit($itemQuantity))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($itemQuantity, true), gettype($itemQuantity)), __LINE__);
         }
         $this->ItemQuantity = $itemQuantity;
         return $this;

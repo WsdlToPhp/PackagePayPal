@@ -13,7 +13,7 @@ class ManageRecurringPaymentsProfileStatusRequestType extends AbstractRequestTyp
 {
     /**
      * The ManageRecurringPaymentsProfileStatusRequestDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:ManageRecurringPaymentsProfileStatusRequestDetails
      * @var \PayPal\StructType\ManageRecurringPaymentsProfileStatusRequestDetailsType
      */

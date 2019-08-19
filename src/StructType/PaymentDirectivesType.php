@@ -13,7 +13,7 @@ class PaymentDirectivesType extends AbstractStructBase
 {
     /**
      * The PaymentType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of the Payment is it Instant or Echeck or Any.
      * - minOccurs: 0
      * @var string
@@ -49,7 +49,7 @@ class PaymentDirectivesType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchantPullPaymentCodeType::valueIsValid($paymentType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentType, implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchantPullPaymentCodeType', is_array($paymentType) ? implode(', ', $paymentType) : var_export($paymentType, true), implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentType = $paymentType;
         return $this;

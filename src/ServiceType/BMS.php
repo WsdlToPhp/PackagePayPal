@@ -26,7 +26,7 @@ class BMS extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BMSetInventory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class BMS extends SoapClientBase
     public function BMSetInventory(\PayPal\StructType\BMSetInventoryReq $bMSetInventoryRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BMSetInventory($bMSetInventoryRequest));
+            $this->setResult($this->getSoapClient()->BMSetInventory($bMSetInventoryRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

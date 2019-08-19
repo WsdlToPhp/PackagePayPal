@@ -13,7 +13,7 @@ class TransactionStatusType extends AbstractStructBase
 {
     /**
      * The eBayPaymentStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the success or failure of an eBay Online Payment for the transaction. If the payment failed, the value returned indicates the reason for the failure. Possible values: 0 = No payment failure. 3 = Buyer's eCheck bounced. 4 =
      * Buyer's credit card failed. 5 = Buyer failed payment as reported by seller. 7 = Payment from buyer to seller is in PayPal process, but has not yet been completed.
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class TransactionStatusType extends AbstractStructBase
     public $eBayPaymentStatus;
     /**
      * The IncompleteState
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the current state of the checkout process for the transaction. Possible values: 0 = Checkout complete. 1 = Checkout incomplete. No details specified. 2 = Buyer requests total. 3 = Seller responded to buyer's request.
      * - minOccurs: 0
      * @var int
@@ -30,7 +30,7 @@ class TransactionStatusType extends AbstractStructBase
     public $IncompleteState;
     /**
      * The LastTimeModified
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates last date and time checkout status or incomplete state was updated (in GMT).
      * - minOccurs: 0
      * @var string
@@ -38,7 +38,7 @@ class TransactionStatusType extends AbstractStructBase
     public $LastTimeModified;
     /**
      * The PaymentMethodUsed
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Payment method used by the buyer. (See BuyerPaymentCodeList/Type).
      * - minOccurs: 0
      * @var string
@@ -46,7 +46,7 @@ class TransactionStatusType extends AbstractStructBase
     public $PaymentMethodUsed;
     /**
      * The StatusIs
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the transaction process complete or incomplete. Possible values: 1 = Incomplete 2 = Complete
      * - minOccurs: 0
      * @var int
@@ -90,8 +90,8 @@ class TransactionStatusType extends AbstractStructBase
     public function setEBayPaymentStatus($eBayPaymentStatus = null)
     {
         // validation for constraint: int
-        if (!is_null($eBayPaymentStatus) && !is_numeric($eBayPaymentStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($eBayPaymentStatus)), __LINE__);
+        if (!is_null($eBayPaymentStatus) && !(is_int($eBayPaymentStatus) || ctype_digit($eBayPaymentStatus))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($eBayPaymentStatus, true), gettype($eBayPaymentStatus)), __LINE__);
         }
         $this->eBayPaymentStatus = $eBayPaymentStatus;
         return $this;
@@ -112,8 +112,8 @@ class TransactionStatusType extends AbstractStructBase
     public function setIncompleteState($incompleteState = null)
     {
         // validation for constraint: int
-        if (!is_null($incompleteState) && !is_numeric($incompleteState)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($incompleteState)), __LINE__);
+        if (!is_null($incompleteState) && !(is_int($incompleteState) || ctype_digit($incompleteState))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($incompleteState, true), gettype($incompleteState)), __LINE__);
         }
         $this->IncompleteState = $incompleteState;
         return $this;
@@ -135,7 +135,7 @@ class TransactionStatusType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($lastTimeModified) && !is_string($lastTimeModified)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lastTimeModified)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastTimeModified, true), gettype($lastTimeModified)), __LINE__);
         }
         $this->LastTimeModified = $lastTimeModified;
         return $this;
@@ -160,7 +160,7 @@ class TransactionStatusType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BuyerPaymentMethodCodeType::valueIsValid($paymentMethodUsed)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentMethodUsed, implode(', ', \PayPal\EnumType\BuyerPaymentMethodCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BuyerPaymentMethodCodeType', is_array($paymentMethodUsed) ? implode(', ', $paymentMethodUsed) : var_export($paymentMethodUsed, true), implode(', ', \PayPal\EnumType\BuyerPaymentMethodCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentMethodUsed = $paymentMethodUsed;
         return $this;
@@ -181,8 +181,8 @@ class TransactionStatusType extends AbstractStructBase
     public function setStatusIs($statusIs = null)
     {
         // validation for constraint: int
-        if (!is_null($statusIs) && !is_numeric($statusIs)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($statusIs)), __LINE__);
+        if (!is_null($statusIs) && !(is_int($statusIs) || ctype_digit($statusIs))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($statusIs, true), gettype($statusIs)), __LINE__);
         }
         $this->StatusIs = $statusIs;
         return $this;

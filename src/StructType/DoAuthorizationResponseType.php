@@ -13,7 +13,7 @@ class DoAuthorizationResponseType extends AbstractResponseType
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An authorization identification number. Character length and limits: 19 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class DoAuthorizationResponseType extends AbstractResponseType
     public $TransactionID;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The amount and currency you specified in the request.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class DoAuthorizationResponseType extends AbstractResponseType
     public $Amount;
     /**
      * The AuthorizationInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:AuthorizationInfo
@@ -40,7 +40,7 @@ class DoAuthorizationResponseType extends AbstractResponseType
     public $AuthorizationInfo;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return msgsubid back to merchant
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -83,7 +83,7 @@ class DoAuthorizationResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -141,7 +141,7 @@ class DoAuthorizationResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

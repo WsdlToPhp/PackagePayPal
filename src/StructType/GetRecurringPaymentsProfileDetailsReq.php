@@ -13,7 +13,7 @@ class GetRecurringPaymentsProfileDetailsReq extends AbstractStructBase
 {
     /**
      * The GetRecurringPaymentsProfileDetailsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:GetRecurringPaymentsProfileDetailsRequest
      * @var \PayPal\StructType\GetRecurringPaymentsProfileDetailsRequestType
      */

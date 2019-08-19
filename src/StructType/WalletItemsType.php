@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for WalletItemsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Details about an Item stored in the PayPal Wallet.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class WalletItemsType extends AbstractStructBase
 {
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: (Optional)Identifies a wallet item of a given type. The format varies depending on the type.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -24,7 +24,7 @@ class WalletItemsType extends AbstractStructBase
     public $Type;
     /**
      * The Id
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: (Optional)Uniquely identifies a wallet item of given type. Format varies depending on the type. Character length and limitations: 64 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -33,7 +33,7 @@ class WalletItemsType extends AbstractStructBase
     public $Id;
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: (Optional)Description of wallet item. Character length and limitations: 512 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -76,7 +76,7 @@ class WalletItemsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\WalletItemType::valueIsValid($type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $type, implode(', ', \PayPal\EnumType\WalletItemType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\WalletItemType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \PayPal\EnumType\WalletItemType::getValidValues())), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -98,7 +98,7 @@ class WalletItemsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($id)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->Id = $id;
         return $this;
@@ -120,7 +120,7 @@ class WalletItemsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;

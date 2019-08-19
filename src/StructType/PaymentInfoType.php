@@ -6,9 +6,9 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PaymentInfoType StructType
- * Meta informations extracted from the WSDL
- * - documentation: PaymentInfoType Payment information. | A transaction identification number. Character length and limits: 19 single-byte characters maximum | Its Ebay transaction id. EbayTransactionID will returned for immediate pay item transaction
- * in ECA | Receipt ID Character length and limitations: 16 digits in xxxx-xxxx-xxxx-xxxx format
+ * Meta information extracted from the WSDL
+ * - documentation: Receipt ID Character length and limitations: 16 digits in xxxx-xxxx-xxxx-xxxx format | Its Ebay transaction id. EbayTransactionID will returned for immediate pay item transaction in ECA | A transaction identification number.
+ * Character length and limits: 19 single-byte characters maximum | PaymentInfoType Payment information.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -16,7 +16,7 @@ class PaymentInfoType extends AbstractStructBase
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:TransactionID
      * @var string
@@ -24,7 +24,7 @@ class PaymentInfoType extends AbstractStructBase
     public $TransactionID;
     /**
      * The EbayTransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:EbayTransactionID
      * @var string
@@ -32,17 +32,18 @@ class PaymentInfoType extends AbstractStructBase
     public $EbayTransactionID;
     /**
      * The ParentTransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Parent or related transaction identification number. This field is populated for the following transaction types: ReversalCapture of an authorized transaction.Reauthorization of a transaction.Capture of an order. The value of
      * ParentTransactionID is the original OrderID.Authorization of an order. The value of ParentTransactionID is the original OrderID.Capture of an order authorization.Void of an order. The value of ParentTransactionID is the original OrderID. Character
      * length and limits: 19 single-byte characters maximum | TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - minOccurs: 0
      * @var string
      */
     public $ParentTransactionID;
     /**
      * The ReceiptID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:ReceiptID
      * @var string
@@ -50,7 +51,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ReceiptID;
     /**
      * The TransactionType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The type of transaction cart: Transaction created via the PayPal Shopping Cart feature or by Express Checkout with multiple purchased item express-checkout: Transaction created by Express Checkout with a single purchased items
      * send-money: Transaction created by customer from the Send Money tab on the PayPal website. web-accept: Transaction created by customer via Buy Now, Donation, or Auction Smart Logos. subscr-*: Transaction created by customer via Subscription. eot
      * means "end of subscription term." merch-pmt: preapproved payment. mass-pay: Transaction created via MassPay. virtual-terminal: Transaction created via merchant virtual terminal. credit: Transaction created via merchant virtual terminal or API to
@@ -60,7 +61,7 @@ class PaymentInfoType extends AbstractStructBase
     public $TransactionType;
     /**
      * The PaymentType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The type of payment
      * - minOccurs: 0
      * @var string
@@ -68,7 +69,7 @@ class PaymentInfoType extends AbstractStructBase
     public $PaymentType;
     /**
      * The RefundSourceCodeType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The type of funding source
      * - minOccurs: 0
      * @var string
@@ -76,7 +77,7 @@ class PaymentInfoType extends AbstractStructBase
     public $RefundSourceCodeType;
     /**
      * The ExpectedeCheckClearDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: eCheck latest expected clear date
      * - minOccurs: 0
      * @var string
@@ -84,7 +85,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ExpectedeCheckClearDate;
     /**
      * The PaymentDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Date and time of payment
      * - minOccurs: 0
      * @var string
@@ -92,7 +93,7 @@ class PaymentInfoType extends AbstractStructBase
     public $PaymentDate;
     /**
      * The GrossAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Full amount of the customer's payment, before transaction fee is subtracted
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -100,7 +101,7 @@ class PaymentInfoType extends AbstractStructBase
     public $GrossAmount;
     /**
      * The FeeAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Transaction fee associated with the payment
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -108,7 +109,7 @@ class PaymentInfoType extends AbstractStructBase
     public $FeeAmount;
     /**
      * The FinancingFeeAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Transaction financing fee associated with the payment.
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -116,7 +117,7 @@ class PaymentInfoType extends AbstractStructBase
     public $FinancingFeeAmount;
     /**
      * The FinancingTotalCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Total overall cost associated with this financing transaction.
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -124,7 +125,7 @@ class PaymentInfoType extends AbstractStructBase
     public $FinancingTotalCost;
     /**
      * The FinancingMonthlyPayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Monthly payment for this financing transaction.
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -132,7 +133,7 @@ class PaymentInfoType extends AbstractStructBase
     public $FinancingMonthlyPayment;
     /**
      * The FinancingTerm
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The length of this financing term, in months.
      * - minOccurs: 0
      * @var string
@@ -140,14 +141,14 @@ class PaymentInfoType extends AbstractStructBase
     public $FinancingTerm;
     /**
      * The IsFinancing
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $IsFinancing;
     /**
      * The SettleAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount deposited into the account's primary balance after a currency conversion from automatic conversion through your Payment Receiving Preferences or manual conversion through manually accepting a payment. This amount is calculated
      * after fees and taxes have been assessed.
      * - minOccurs: 0
@@ -156,7 +157,7 @@ class PaymentInfoType extends AbstractStructBase
     public $SettleAmount;
     /**
      * The TaxAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of tax for transaction
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -164,7 +165,7 @@ class PaymentInfoType extends AbstractStructBase
     public $TaxAmount;
     /**
      * The ExchangeRate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Exchange rate for transaction
      * - minOccurs: 0
      * @var string
@@ -172,7 +173,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ExchangeRate;
     /**
      * The PaymentStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The status of the payment: None: No status Created: A giropay payment has been initiated. Canceled-Reversal: A reversal has been canceled. For example, you won a dispute with the customer, and the funds for the transaction that was
      * reversed have been returned to you. Completed: The payment has been completed, and the funds have been added successfully to your account balance. Denied: You denied the payment. This happens only if the payment was previously pending because of
      * possible reasons described for the PendingReason element. Expired: This authorization has expired and cannot be captured. Failed: The payment has failed. This happens only if the payment was made from your customer's bank account. In-Progress: The
@@ -184,7 +185,7 @@ class PaymentInfoType extends AbstractStructBase
     public $PaymentStatus;
     /**
      * The PendingReason
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The reason the payment is pending: none: No pending reason address: The payment is pending because your customer did not include a confirmed shipping address and your Payment Receiving Preferences is set such that you want to
      * manually accept or deny each of these payments. To change your preference, go to the Preferences section of your Profile. authorization: You set PaymentAction to Authorization on SetExpressCheckoutRequest and have not yet captured funds. echeck: The
      * payment is pending because it was made by an eCheck that has not yet cleared. intl: The payment is pending because you hold a non-U.S. account and do not have a withdrawal mechanism. You must manually accept or deny this payment from your Account
@@ -199,7 +200,7 @@ class PaymentInfoType extends AbstractStructBase
     public $PendingReason;
     /**
      * The ReasonCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The reason for a reversal if TransactionType is reversal: none: No reason code chargeback: A reversal has occurred on this transaction due to a chargeback by your customer. guarantee: A reversal has occurred on this transaction due
      * to your customer triggering a money-back guarantee. buyer-complaint: A reversal has occurred on this transaction due to a complaint about the transaction from your customer. refund: A reversal has occurred on this transaction because you have given
      * the customer a refund. other: A reversal has occurred on this transaction due to a reason not listed above.
@@ -209,7 +210,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ReasonCode;
     /**
      * The HoldDecision
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: HoldDecision is returned in the response only if PaymentStatus is Completed-Funds-Held. The reason the funds are kept in pending balance: newsellerpaymenthold: The seller is new. paymenthold: A hold is placed on your transaction due
      * to a reason not listed above.
      * - minOccurs: 0
@@ -218,7 +219,7 @@ class PaymentInfoType extends AbstractStructBase
     public $HoldDecision;
     /**
      * The ShippingMethod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shipping method selected by the user during check-out.
      * - minOccurs: 0
      * @var string
@@ -226,7 +227,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ShippingMethod;
     /**
      * The ProtectionEligibility
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Protection Eligibility for this Transaction - None, SPP or ESPP
      * - minOccurs: 0
      * @var string
@@ -234,7 +235,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ProtectionEligibility;
     /**
      * The ProtectionEligibilityType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Protection Eligibility details for this Transaction
      * - minOccurs: 0
      * @var string
@@ -242,7 +243,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ProtectionEligibilityType;
     /**
      * The ReceiptReferenceNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Receipt Reference Number for this Transaction
      * - minOccurs: 0
      * @var string
@@ -250,7 +251,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ReceiptReferenceNumber;
     /**
      * The POSTransactionType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The type of POS transaction F: Forced post transaction. POS merchant can send transactions at a later point if connectivity is lost. S: Single call checkout, and this is to identify PayPal Lite API usage.
      * - minOccurs: 0
      * @var string
@@ -258,7 +259,7 @@ class PaymentInfoType extends AbstractStructBase
     public $POSTransactionType;
     /**
      * The ShipAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of shipping charged on transaction
      * - minOccurs: 0
      * @var string
@@ -266,7 +267,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ShipAmount;
     /**
      * The ShipHandleAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of ship handling charged on transaction
      * - minOccurs: 0
      * @var string
@@ -274,7 +275,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ShipHandleAmount;
     /**
      * The ShipDiscount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of shipping discount on transaction
      * - minOccurs: 0
      * @var string
@@ -282,7 +283,7 @@ class PaymentInfoType extends AbstractStructBase
     public $ShipDiscount;
     /**
      * The InsuranceAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of Insurance amount on transaction
      * - minOccurs: 0
      * @var string
@@ -290,7 +291,7 @@ class PaymentInfoType extends AbstractStructBase
     public $InsuranceAmount;
     /**
      * The Subject
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Subject as entered in the transaction
      * - minOccurs: 0
      * @var string
@@ -298,7 +299,7 @@ class PaymentInfoType extends AbstractStructBase
     public $Subject;
     /**
      * The StoreID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: StoreID as entered in the transaction
      * - minOccurs: 0
      * @var string
@@ -306,7 +307,7 @@ class PaymentInfoType extends AbstractStructBase
     public $StoreID;
     /**
      * The TerminalID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: TerminalID as entered in the transaction
      * - minOccurs: 0
      * @var string
@@ -314,7 +315,7 @@ class PaymentInfoType extends AbstractStructBase
     public $TerminalID;
     /**
      * The SellerDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about the seller. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -323,7 +324,7 @@ class PaymentInfoType extends AbstractStructBase
     public $SellerDetails;
     /**
      * The PaymentRequestID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique identifier and mandatory for each bucket in case of split payement
      * - minOccurs: 0
      * @var string
@@ -331,7 +332,7 @@ class PaymentInfoType extends AbstractStructBase
     public $PaymentRequestID;
     /**
      * The FMFDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Thes are filters that could result in accept/deny/pending action.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -340,7 +341,7 @@ class PaymentInfoType extends AbstractStructBase
     public $FMFDetails;
     /**
      * The EnhancedPaymentInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This will be enhanced info for the payment: Example: UATP details
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -349,7 +350,7 @@ class PaymentInfoType extends AbstractStructBase
     public $EnhancedPaymentInfo;
     /**
      * The PaymentError
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This will indicate the payment status for individual payment request in case of split payment
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -358,7 +359,7 @@ class PaymentInfoType extends AbstractStructBase
     public $PaymentError;
     /**
      * The InstrumentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of the payment instrument.
      * - minOccurs: 0
      * @var \PayPal\StructType\InstrumentDetailsType
@@ -366,7 +367,7 @@ class PaymentInfoType extends AbstractStructBase
     public $InstrumentDetails;
     /**
      * The OfferDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Offer Details.
      * - minOccurs: 0
      * @var \PayPal\StructType\OfferDetailsType
@@ -374,7 +375,7 @@ class PaymentInfoType extends AbstractStructBase
     public $OfferDetails;
     /**
      * The BinEligibility
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This field indicates whether the credit card number used for this transaction is in a particular bin range registered with PayPal by the merchant. This filed is optional and will be present if merchant has a registered bin range. The
      * value of this field will be "true" if merchant has a registered bin range and the credit card used in the transaction is within the registered bin range. The value of this field will be false if merchant has a registered bin range and credit card
      * used in the transaction outside registered bin range or the transaction is not done using a credit card.
@@ -384,7 +385,7 @@ class PaymentInfoType extends AbstractStructBase
     public $BinEligibility;
     /**
      * The SoftDescriptor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This information holds business name and other data describing the transaction. This information is usually displayed in the CC account holder's statement.
      * - minOccurs: 0
      * @var string
@@ -392,7 +393,7 @@ class PaymentInfoType extends AbstractStructBase
     public $SoftDescriptor;
     /**
      * The SoftDescriptorCity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: CC Information about how consumer should contact the merchant. This information is usually displayed in the CC account holder's statement.
      * - minOccurs: 0
      * @var string
@@ -557,7 +558,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -579,7 +580,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($ebayTransactionID) && !is_string($ebayTransactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($ebayTransactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ebayTransactionID, true), gettype($ebayTransactionID)), __LINE__);
         }
         $this->EbayTransactionID = $ebayTransactionID;
         return $this;
@@ -601,7 +602,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($parentTransactionID) && !is_string($parentTransactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($parentTransactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($parentTransactionID, true), gettype($parentTransactionID)), __LINE__);
         }
         $this->ParentTransactionID = $parentTransactionID;
         return $this;
@@ -623,7 +624,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($receiptID) && !is_string($receiptID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiptID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiptID, true), gettype($receiptID)), __LINE__);
         }
         $this->ReceiptID = $receiptID;
         return $this;
@@ -648,7 +649,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentTransactionCodeType::valueIsValid($transactionType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $transactionType, implode(', ', \PayPal\EnumType\PaymentTransactionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentTransactionCodeType', is_array($transactionType) ? implode(', ', $transactionType) : var_export($transactionType, true), implode(', ', \PayPal\EnumType\PaymentTransactionCodeType::getValidValues())), __LINE__);
         }
         $this->TransactionType = $transactionType;
         return $this;
@@ -673,7 +674,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentCodeType::valueIsValid($paymentType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentType, implode(', ', \PayPal\EnumType\PaymentCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentCodeType', is_array($paymentType) ? implode(', ', $paymentType) : var_export($paymentType, true), implode(', ', \PayPal\EnumType\PaymentCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentType = $paymentType;
         return $this;
@@ -698,7 +699,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\RefundSourceCodeType::valueIsValid($refundSourceCodeType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $refundSourceCodeType, implode(', ', \PayPal\EnumType\RefundSourceCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\RefundSourceCodeType', is_array($refundSourceCodeType) ? implode(', ', $refundSourceCodeType) : var_export($refundSourceCodeType, true), implode(', ', \PayPal\EnumType\RefundSourceCodeType::getValidValues())), __LINE__);
         }
         $this->RefundSourceCodeType = $refundSourceCodeType;
         return $this;
@@ -720,7 +721,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($expectedeCheckClearDate) && !is_string($expectedeCheckClearDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($expectedeCheckClearDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expectedeCheckClearDate, true), gettype($expectedeCheckClearDate)), __LINE__);
         }
         $this->ExpectedeCheckClearDate = $expectedeCheckClearDate;
         return $this;
@@ -742,7 +743,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($paymentDate) && !is_string($paymentDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentDate, true), gettype($paymentDate)), __LINE__);
         }
         $this->PaymentDate = $paymentDate;
         return $this;
@@ -854,7 +855,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($financingTerm) && !is_string($financingTerm)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($financingTerm)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($financingTerm, true), gettype($financingTerm)), __LINE__);
         }
         $this->FinancingTerm = $financingTerm;
         return $this;
@@ -876,7 +877,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($isFinancing) && !is_string($isFinancing)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($isFinancing)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isFinancing, true), gettype($isFinancing)), __LINE__);
         }
         $this->IsFinancing = $isFinancing;
         return $this;
@@ -934,7 +935,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($exchangeRate) && !is_string($exchangeRate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($exchangeRate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exchangeRate, true), gettype($exchangeRate)), __LINE__);
         }
         $this->ExchangeRate = $exchangeRate;
         return $this;
@@ -959,7 +960,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentStatusCodeType::valueIsValid($paymentStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentStatus, implode(', ', \PayPal\EnumType\PaymentStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentStatusCodeType', is_array($paymentStatus) ? implode(', ', $paymentStatus) : var_export($paymentStatus, true), implode(', ', \PayPal\EnumType\PaymentStatusCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentStatus = $paymentStatus;
         return $this;
@@ -984,7 +985,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PendingStatusCodeType::valueIsValid($pendingReason)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $pendingReason, implode(', ', \PayPal\EnumType\PendingStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PendingStatusCodeType', is_array($pendingReason) ? implode(', ', $pendingReason) : var_export($pendingReason, true), implode(', ', \PayPal\EnumType\PendingStatusCodeType::getValidValues())), __LINE__);
         }
         $this->PendingReason = $pendingReason;
         return $this;
@@ -1009,7 +1010,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ReversalReasonCodeType::valueIsValid($reasonCode)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $reasonCode, implode(', ', \PayPal\EnumType\ReversalReasonCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ReversalReasonCodeType', is_array($reasonCode) ? implode(', ', $reasonCode) : var_export($reasonCode, true), implode(', ', \PayPal\EnumType\ReversalReasonCodeType::getValidValues())), __LINE__);
         }
         $this->ReasonCode = $reasonCode;
         return $this;
@@ -1031,7 +1032,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($holdDecision) && !is_string($holdDecision)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($holdDecision)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($holdDecision, true), gettype($holdDecision)), __LINE__);
         }
         $this->HoldDecision = $holdDecision;
         return $this;
@@ -1053,7 +1054,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingMethod) && !is_string($shippingMethod)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingMethod)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingMethod, true), gettype($shippingMethod)), __LINE__);
         }
         $this->ShippingMethod = $shippingMethod;
         return $this;
@@ -1075,7 +1076,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($protectionEligibility) && !is_string($protectionEligibility)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($protectionEligibility)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($protectionEligibility, true), gettype($protectionEligibility)), __LINE__);
         }
         $this->ProtectionEligibility = $protectionEligibility;
         return $this;
@@ -1097,7 +1098,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($protectionEligibilityType) && !is_string($protectionEligibilityType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($protectionEligibilityType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($protectionEligibilityType, true), gettype($protectionEligibilityType)), __LINE__);
         }
         $this->ProtectionEligibilityType = $protectionEligibilityType;
         return $this;
@@ -1119,7 +1120,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($receiptReferenceNumber) && !is_string($receiptReferenceNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiptReferenceNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiptReferenceNumber, true), gettype($receiptReferenceNumber)), __LINE__);
         }
         $this->ReceiptReferenceNumber = $receiptReferenceNumber;
         return $this;
@@ -1144,7 +1145,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\POSTransactionCodeType::valueIsValid($pOSTransactionType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $pOSTransactionType, implode(', ', \PayPal\EnumType\POSTransactionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\POSTransactionCodeType', is_array($pOSTransactionType) ? implode(', ', $pOSTransactionType) : var_export($pOSTransactionType, true), implode(', ', \PayPal\EnumType\POSTransactionCodeType::getValidValues())), __LINE__);
         }
         $this->POSTransactionType = $pOSTransactionType;
         return $this;
@@ -1166,7 +1167,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shipAmount) && !is_string($shipAmount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shipAmount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shipAmount, true), gettype($shipAmount)), __LINE__);
         }
         $this->ShipAmount = $shipAmount;
         return $this;
@@ -1188,7 +1189,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shipHandleAmount) && !is_string($shipHandleAmount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shipHandleAmount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shipHandleAmount, true), gettype($shipHandleAmount)), __LINE__);
         }
         $this->ShipHandleAmount = $shipHandleAmount;
         return $this;
@@ -1210,7 +1211,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shipDiscount) && !is_string($shipDiscount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shipDiscount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shipDiscount, true), gettype($shipDiscount)), __LINE__);
         }
         $this->ShipDiscount = $shipDiscount;
         return $this;
@@ -1232,7 +1233,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($insuranceAmount) && !is_string($insuranceAmount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($insuranceAmount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($insuranceAmount, true), gettype($insuranceAmount)), __LINE__);
         }
         $this->InsuranceAmount = $insuranceAmount;
         return $this;
@@ -1254,7 +1255,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($subject) && !is_string($subject)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($subject)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subject, true), gettype($subject)), __LINE__);
         }
         $this->Subject = $subject;
         return $this;
@@ -1276,7 +1277,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($storeID) && !is_string($storeID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($storeID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($storeID, true), gettype($storeID)), __LINE__);
         }
         $this->StoreID = $storeID;
         return $this;
@@ -1298,7 +1299,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($terminalID) && !is_string($terminalID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($terminalID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($terminalID, true), gettype($terminalID)), __LINE__);
         }
         $this->TerminalID = $terminalID;
         return $this;
@@ -1338,7 +1339,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($paymentRequestID) && !is_string($paymentRequestID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentRequestID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRequestID, true), gettype($paymentRequestID)), __LINE__);
         }
         $this->PaymentRequestID = $paymentRequestID;
         return $this;
@@ -1450,7 +1451,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($binEligibility) && !is_string($binEligibility)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($binEligibility)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($binEligibility, true), gettype($binEligibility)), __LINE__);
         }
         $this->BinEligibility = $binEligibility;
         return $this;
@@ -1472,7 +1473,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptor)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
         $this->SoftDescriptor = $softDescriptor;
         return $this;
@@ -1494,7 +1495,7 @@ class PaymentInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($softDescriptorCity) && !is_string($softDescriptorCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptorCity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptorCity, true), gettype($softDescriptorCity)), __LINE__);
         }
         $this->SoftDescriptorCity = $softDescriptorCity;
         return $this;

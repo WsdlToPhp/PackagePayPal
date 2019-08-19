@@ -13,7 +13,7 @@ class DoReauthorizationReq extends AbstractStructBase
 {
     /**
      * The DoReauthorizationRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoReauthorizationRequest
      * @var \PayPal\StructType\DoReauthorizationRequestType
      */

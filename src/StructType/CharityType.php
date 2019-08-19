@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for CharityType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Contains information about a Charity listing.in case of revision - all data can be min occur = 0
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class CharityType extends AbstractStructBase
 {
     /**
      * The CharityName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CharityName;
     /**
      * The CharityNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $CharityNumber;
     /**
      * The DonationPercent
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var float
      */
@@ -67,7 +67,7 @@ class CharityType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($charityName) && !is_string($charityName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($charityName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($charityName, true), gettype($charityName)), __LINE__);
         }
         $this->CharityName = $charityName;
         return $this;
@@ -88,8 +88,8 @@ class CharityType extends AbstractStructBase
     public function setCharityNumber($charityNumber = null)
     {
         // validation for constraint: int
-        if (!is_null($charityNumber) && !is_numeric($charityNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($charityNumber)), __LINE__);
+        if (!is_null($charityNumber) && !(is_int($charityNumber) || ctype_digit($charityNumber))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($charityNumber, true), gettype($charityNumber)), __LINE__);
         }
         $this->CharityNumber = $charityNumber;
         return $this;
@@ -109,6 +109,10 @@ class CharityType extends AbstractStructBase
      */
     public function setDonationPercent($donationPercent = null)
     {
+        // validation for constraint: float
+        if (!is_null($donationPercent) && !(is_float($donationPercent) || is_numeric($donationPercent))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($donationPercent, true), gettype($donationPercent)), __LINE__);
+        }
         $this->DonationPercent = $donationPercent;
         return $this;
     }

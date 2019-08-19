@@ -6,10 +6,10 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for SellingStatusType StructType
- * Meta informations extracted from the WSDL
- * - documentation: Contains the listed items price details which consists of following information: BuyItNowPrice, ConvertedBuyItNowPrice, ConvertedPrice, ConvertedStartPrice, CurrentPrice, MinimumToBid, ReservePrice, and StartPrice. need to take in
- * account get seller events when defining minoccurs = 0 | Contains one User node representing the current high bidder. GetItem returns a high bidder for auctions that have ended and have a winning bidder. For Fixed Price listings, in-progress auctions,
- * or auction items that received no bids, GetItem returns a HighBidder node with empty tags.
+ * Meta information extracted from the WSDL
+ * - documentation: Contains one User node representing the current high bidder. GetItem returns a high bidder for auctions that have ended and have a winning bidder. For Fixed Price listings, in-progress auctions, or auction items that received no
+ * bids, GetItem returns a HighBidder node with empty tags. | Contains the listed items price details which consists of following information: BuyItNowPrice, ConvertedBuyItNowPrice, ConvertedPrice, ConvertedStartPrice, CurrentPrice, MinimumToBid,
+ * ReservePrice, and StartPrice. need to take in account get seller events when defining minoccurs = 0
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -17,7 +17,7 @@ class SellingStatusType extends AbstractStructBase
 {
     /**
      * The BidCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Number of bids placed so far against the item. Not returned for International Fixed Price items.
      * - minOccurs: 0
      * @var int
@@ -25,7 +25,7 @@ class SellingStatusType extends AbstractStructBase
     public $BidCount;
     /**
      * The BidIncrement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Smallest amount a bid must be above the current high bid. Not returned International Fixed Price items.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -33,7 +33,7 @@ class SellingStatusType extends AbstractStructBase
     public $BidIncrement;
     /**
      * The ConvertedCurrentPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Converted current price of listed item.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -41,7 +41,7 @@ class SellingStatusType extends AbstractStructBase
     public $ConvertedCurrentPrice;
     /**
      * The CurrentPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: For auction-format listings, current minimum asking price or the current highest bid for the item if bids have been placed. Shows minimum bid if no bids have been placed against the item. This field does not reflect the actual
      * current price of the item if it's a Type=7 or Type=9 (Fixed Price) item and the price has been revised. (See StartPrice for revised asking price.)
      * @var \PayPal\StructType\AmountType
@@ -49,7 +49,7 @@ class SellingStatusType extends AbstractStructBase
     public $CurrentPrice;
     /**
      * The HighBidder
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:HighBidder
      * @var \PayPal\StructType\UserType
@@ -57,7 +57,7 @@ class SellingStatusType extends AbstractStructBase
     public $HighBidder;
     /**
      * The LeadCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Applicable to ad-format items only. Indicates how many leads to potential buyers are associated with this item. For other item types (other than ad-format items), returns a value of 0 (zero).
      * - minOccurs: 0
      * @var int
@@ -65,7 +65,7 @@ class SellingStatusType extends AbstractStructBase
     public $LeadCount;
     /**
      * The MinimumToBid
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Minimum acceptable bid for the item. Not returned for International Fixed Price items.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -73,14 +73,14 @@ class SellingStatusType extends AbstractStructBase
     public $MinimumToBid;
     /**
      * The QuantitySold
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Number of items purchased so far. (Subtract from the value returned in the Quantity field to calculate the number of items remaining.)
      * @var int
      */
     public $QuantitySold;
     /**
      * The ReserveMet
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns true if the reserve price was met or no reserve price was specified.
      * - minOccurs: 0
      * @var bool
@@ -88,7 +88,7 @@ class SellingStatusType extends AbstractStructBase
     public $ReserveMet;
     /**
      * The SecondChanceEligible
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
@@ -146,8 +146,8 @@ class SellingStatusType extends AbstractStructBase
     public function setBidCount($bidCount = null)
     {
         // validation for constraint: int
-        if (!is_null($bidCount) && !is_numeric($bidCount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($bidCount)), __LINE__);
+        if (!is_null($bidCount) && !(is_int($bidCount) || ctype_digit($bidCount))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($bidCount, true), gettype($bidCount)), __LINE__);
         }
         $this->BidCount = $bidCount;
         return $this;
@@ -240,8 +240,8 @@ class SellingStatusType extends AbstractStructBase
     public function setLeadCount($leadCount = null)
     {
         // validation for constraint: int
-        if (!is_null($leadCount) && !is_numeric($leadCount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($leadCount)), __LINE__);
+        if (!is_null($leadCount) && !(is_int($leadCount) || ctype_digit($leadCount))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($leadCount, true), gettype($leadCount)), __LINE__);
         }
         $this->LeadCount = $leadCount;
         return $this;
@@ -280,8 +280,8 @@ class SellingStatusType extends AbstractStructBase
     public function setQuantitySold($quantitySold = null)
     {
         // validation for constraint: int
-        if (!is_null($quantitySold) && !is_numeric($quantitySold)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($quantitySold)), __LINE__);
+        if (!is_null($quantitySold) && !(is_int($quantitySold) || ctype_digit($quantitySold))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantitySold, true), gettype($quantitySold)), __LINE__);
         }
         $this->QuantitySold = $quantitySold;
         return $this;
@@ -303,7 +303,7 @@ class SellingStatusType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($reserveMet) && !is_bool($reserveMet)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reserveMet)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reserveMet, true), gettype($reserveMet)), __LINE__);
         }
         $this->ReserveMet = $reserveMet;
         return $this;
@@ -325,7 +325,7 @@ class SellingStatusType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($secondChanceEligible) && !is_bool($secondChanceEligible)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($secondChanceEligible)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($secondChanceEligible, true), gettype($secondChanceEligible)), __LINE__);
         }
         $this->SecondChanceEligible = $secondChanceEligible;
         return $this;

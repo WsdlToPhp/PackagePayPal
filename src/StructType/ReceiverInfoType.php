@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ReceiverInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ReceiverInfoType Receiver information.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,23 +15,26 @@ class ReceiverInfoType extends AbstractStructBase
 {
     /**
      * The Business
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address or account ID of the payment recipient (the seller). Equivalent to Receiver if payment is sent to primary account. Character length and limitations: 127 single-byte alphanumeric characters
+     * - base: xs:string
      * @var string
      */
     public $Business;
     /**
      * The Receiver
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Primary email address of the payment recipient (the seller). If you are the recipient of the payment and the payment is sent to your non-primary email address, the value of Receiver is still your primary email address. Character
      * length and limitations: 127 single-byte alphanumeric characters
+     * - base: xs:string
      * @var string
      */
     public $Receiver;
     /**
      * The ReceiverID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique account ID of the payment recipient (the seller). This value is the same as the value of the recipient's referral ID.
+     * - base: xs:string
      * - maxLength: 127
      * @var string
      */
@@ -69,7 +72,7 @@ class ReceiverInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($business) && !is_string($business)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($business)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($business, true), gettype($business)), __LINE__);
         }
         $this->Business = $business;
         return $this;
@@ -91,7 +94,7 @@ class ReceiverInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($receiver) && !is_string($receiver)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiver)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiver, true), gettype($receiver)), __LINE__);
         }
         $this->Receiver = $receiver;
         return $this;
@@ -111,13 +114,13 @@ class ReceiverInfoType extends AbstractStructBase
      */
     public function setReceiverID($receiverID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($receiverID) && strlen($receiverID) > 127) || (is_array($receiverID) && count($receiverID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($receiverID) ? strlen($receiverID) : count($receiverID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($receiverID) && !is_string($receiverID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiverID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiverID, true), gettype($receiverID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($receiverID) && mb_strlen($receiverID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($receiverID)), __LINE__);
         }
         $this->ReceiverID = $receiverID;
         return $this;

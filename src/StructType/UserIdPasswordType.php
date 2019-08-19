@@ -13,42 +13,42 @@ class UserIdPasswordType extends AbstractStructBase
 {
     /**
      * The AppId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $AppId;
     /**
      * The DevId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $DevId;
     /**
      * The AuthCert
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $AuthCert;
     /**
      * The Username
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The username is the identifier for an account.
      * @var string
      */
     public $Username;
     /**
      * The Password
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Password contains the current password associated with the username.
      * @var string
      */
     public $Password;
     /**
      * The Signature
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Signature for Three Token authentication.
      * - minOccurs: 0
      * @var string
@@ -56,7 +56,7 @@ class UserIdPasswordType extends AbstractStructBase
     public $Signature;
     /**
      * The Subject
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This field identifies an account (e.g., payment) on whose behalf the operation is being performed. For instance one account holder may delegate the abililty to perform certain operations to another account holder. This delegation is
      * done through a separate mechanism. If the base username has not been authorized by the subject the request will be rejected.
      * - minOccurs: 0
@@ -65,7 +65,7 @@ class UserIdPasswordType extends AbstractStructBase
     public $Subject;
     /**
      * The AuthToken
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Authentication Session Token for authentication and authorization.
      * - minOccurs: 0
      * @var string
@@ -119,7 +119,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($appId) && !is_string($appId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($appId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($appId, true), gettype($appId)), __LINE__);
         }
         $this->AppId = $appId;
         return $this;
@@ -141,7 +141,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($devId) && !is_string($devId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($devId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($devId, true), gettype($devId)), __LINE__);
         }
         $this->DevId = $devId;
         return $this;
@@ -163,7 +163,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($authCert) && !is_string($authCert)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authCert)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authCert, true), gettype($authCert)), __LINE__);
         }
         $this->AuthCert = $authCert;
         return $this;
@@ -185,7 +185,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($username) && !is_string($username)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($username)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($username, true), gettype($username)), __LINE__);
         }
         $this->Username = $username;
         return $this;
@@ -207,7 +207,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($password) && !is_string($password)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($password)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($password, true), gettype($password)), __LINE__);
         }
         $this->Password = $password;
         return $this;
@@ -229,7 +229,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($signature) && !is_string($signature)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($signature)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($signature, true), gettype($signature)), __LINE__);
         }
         $this->Signature = $signature;
         return $this;
@@ -251,7 +251,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($subject) && !is_string($subject)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($subject)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subject, true), gettype($subject)), __LINE__);
         }
         $this->Subject = $subject;
         return $this;
@@ -273,7 +273,7 @@ class UserIdPasswordType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($authToken) && !is_string($authToken)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authToken)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authToken, true), gettype($authToken)), __LINE__);
         }
         $this->AuthToken = $authToken;
         return $this;

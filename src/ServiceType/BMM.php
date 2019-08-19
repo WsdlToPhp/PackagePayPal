@@ -26,7 +26,7 @@ class BMM extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BMManageButtonStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class BMM extends SoapClientBase
     public function BMManageButtonStatus(\PayPal\StructType\BMManageButtonStatusReq $bMManageButtonStatusRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BMManageButtonStatus($bMManageButtonStatusRequest));
+            $this->setResult($this->getSoapClient()->BMManageButtonStatus($bMManageButtonStatusRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

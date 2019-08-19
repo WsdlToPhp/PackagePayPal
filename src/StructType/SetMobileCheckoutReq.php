@@ -13,7 +13,7 @@ class SetMobileCheckoutReq extends AbstractStructBase
 {
     /**
      * The SetMobileCheckoutRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:SetMobileCheckoutRequest
      * @var \PayPal\StructType\SetMobileCheckoutRequestType
      */

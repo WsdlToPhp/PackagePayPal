@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PayerInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PayerInfoType Payer information
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,24 +15,26 @@ class PayerInfoType extends AbstractStructBase
 {
     /**
      * The Payer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address of payer Character length and limitations: 127 single-byte characters
+     * - base: xs:string
      * - minOccurs: 0
      * @var string
      */
     public $Payer;
     /**
      * The PayerID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique customer ID Character length and limitations: 17 single-byte characters
-     * - minOccurs: 0
+     * - base: xs:string
      * - maxLength: 127
+     * - minOccurs: 0
      * @var string
      */
     public $PayerID;
     /**
      * The PayerStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Status of payer's email address
      * - minOccurs: 0
      * @var string
@@ -40,14 +42,14 @@ class PayerInfoType extends AbstractStructBase
     public $PayerStatus;
     /**
      * The PayerName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Name of payer
      * @var \PayPal\StructType\PersonNameType
      */
     public $PayerName;
     /**
      * The PayerCountry
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Payment sender's country of residence using standard two-character ISO 3166 country codes. Character length and limitations: Two single-byte characters
      * - minOccurs: 0
      * @var string
@@ -55,7 +57,7 @@ class PayerInfoType extends AbstractStructBase
     public $PayerCountry;
     /**
      * The PayerBusiness
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Payer's business name. Character length and limitations: 127 single-byte characters
      * - minOccurs: 0
      * @var string
@@ -63,7 +65,7 @@ class PayerInfoType extends AbstractStructBase
     public $PayerBusiness;
     /**
      * The Address
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Payer's business address
      * - minOccurs: 0
      * @var \PayPal\StructType\AddressType
@@ -71,7 +73,7 @@ class PayerInfoType extends AbstractStructBase
     public $Address;
     /**
      * The ContactPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Business contact telephone number
      * - minOccurs: 0
      * @var string
@@ -79,7 +81,7 @@ class PayerInfoType extends AbstractStructBase
     public $ContactPhone;
     /**
      * The WalletItems
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Items such as merchant coupons, loyalty cards, and manufacturer coupons in the PayPal wallet.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -88,7 +90,7 @@ class PayerInfoType extends AbstractStructBase
     public $WalletItems;
     /**
      * The TaxIdDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about payer's tax info. Refer to the TaxIdDetailsType for more details.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -97,7 +99,7 @@ class PayerInfoType extends AbstractStructBase
     public $TaxIdDetails;
     /**
      * The EnhancedPayerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Holds any enhanced information about the payer
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -161,7 +163,7 @@ class PayerInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($payer) && !is_string($payer)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payer)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payer, true), gettype($payer)), __LINE__);
         }
         $this->Payer = $payer;
         return $this;
@@ -181,13 +183,13 @@ class PayerInfoType extends AbstractStructBase
      */
     public function setPayerID($payerID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($payerID) && strlen($payerID) > 127) || (is_array($payerID) && count($payerID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($payerID) ? strlen($payerID) : count($payerID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($payerID) && !is_string($payerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payerID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payerID, true), gettype($payerID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($payerID) && mb_strlen($payerID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($payerID)), __LINE__);
         }
         $this->PayerID = $payerID;
         return $this;
@@ -212,7 +214,7 @@ class PayerInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PayPalUserStatusCodeType::valueIsValid($payerStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $payerStatus, implode(', ', \PayPal\EnumType\PayPalUserStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PayPalUserStatusCodeType', is_array($payerStatus) ? implode(', ', $payerStatus) : var_export($payerStatus, true), implode(', ', \PayPal\EnumType\PayPalUserStatusCodeType::getValidValues())), __LINE__);
         }
         $this->PayerStatus = $payerStatus;
         return $this;
@@ -255,7 +257,7 @@ class PayerInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CountryCodeType::valueIsValid($payerCountry)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $payerCountry, implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CountryCodeType', is_array($payerCountry) ? implode(', ', $payerCountry) : var_export($payerCountry, true), implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
         }
         $this->PayerCountry = $payerCountry;
         return $this;
@@ -277,7 +279,7 @@ class PayerInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($payerBusiness) && !is_string($payerBusiness)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payerBusiness)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payerBusiness, true), gettype($payerBusiness)), __LINE__);
         }
         $this->PayerBusiness = $payerBusiness;
         return $this;
@@ -317,7 +319,7 @@ class PayerInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($contactPhone) && !is_string($contactPhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($contactPhone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contactPhone, true), gettype($contactPhone)), __LINE__);
         }
         $this->ContactPhone = $contactPhone;
         return $this;
@@ -331,6 +333,28 @@ class PayerInfoType extends AbstractStructBase
         return $this->WalletItems;
     }
     /**
+     * This method is responsible for validating the values passed to the setWalletItems method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setWalletItems method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateWalletItemsForArrayConstraintsFromSetWalletItems(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $payerInfoTypeWalletItemsItem) {
+            // validation for constraint: itemType
+            if (!$payerInfoTypeWalletItemsItem instanceof \PayPal\StructType\WalletItemsType) {
+                $invalidValues[] = is_object($payerInfoTypeWalletItemsItem) ? get_class($payerInfoTypeWalletItemsItem) : sprintf('%s(%s)', gettype($payerInfoTypeWalletItemsItem), var_export($payerInfoTypeWalletItemsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The WalletItems property can only contain items of type \PayPal\StructType\WalletItemsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set WalletItems value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\WalletItemsType[] $walletItems
@@ -338,11 +362,9 @@ class PayerInfoType extends AbstractStructBase
      */
     public function setWalletItems(array $walletItems = array())
     {
-        foreach ($walletItems as $payerInfoTypeWalletItemsItem) {
-            // validation for constraint: itemType
-            if (!$payerInfoTypeWalletItemsItem instanceof \PayPal\StructType\WalletItemsType) {
-                throw new \InvalidArgumentException(sprintf('The WalletItems property can only contain items of \PayPal\StructType\WalletItemsType, "%s" given', is_object($payerInfoTypeWalletItemsItem) ? get_class($payerInfoTypeWalletItemsItem) : gettype($payerInfoTypeWalletItemsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($walletItemsArrayErrorMessage = self::validateWalletItemsForArrayConstraintsFromSetWalletItems($walletItems))) {
+            throw new \InvalidArgumentException($walletItemsArrayErrorMessage, __LINE__);
         }
         $this->WalletItems = $walletItems;
         return $this;
@@ -357,7 +379,7 @@ class PayerInfoType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\WalletItemsType) {
-            throw new \InvalidArgumentException(sprintf('The WalletItems property can only contain items of \PayPal\StructType\WalletItemsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The WalletItems property can only contain items of type \PayPal\StructType\WalletItemsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->WalletItems[] = $item;
         return $this;

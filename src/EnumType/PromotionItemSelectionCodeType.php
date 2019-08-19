@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PromotionItemSelectionCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Cross Promotion Method.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,16 +13,22 @@ class PromotionItemSelectionCodeType
 {
     /**
      * Constant for value 'Manual'
+     * Meta information extracted from the WSDL
+     * - documentation: Manual Selection
      * @return string 'Manual'
      */
     const VALUE_MANUAL = 'Manual';
     /**
      * Constant for value 'Automatic'
+     * Meta information extracted from the WSDL
+     * - documentation: Automatic Selection
      * @return string 'Automatic'
      */
     const VALUE_AUTOMATIC = 'Automatic';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved. Do not use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

@@ -13,7 +13,7 @@ class AuthorizationResponseType extends AbstractStructBase
 {
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Status will denote whether Auto authorization was successful or not.
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class AuthorizationResponseType extends AbstractStructBase
     public $Status;
     /**
      * The AuthorizationError
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var \PayPal\StructType\ErrorType[]
@@ -60,7 +60,7 @@ class AuthorizationResponseType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AckCodeType::valueIsValid($status)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $status, implode(', ', \PayPal\EnumType\AckCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AckCodeType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PayPal\EnumType\AckCodeType::getValidValues())), __LINE__);
         }
         $this->Status = $status;
         return $this;
@@ -74,6 +74,28 @@ class AuthorizationResponseType extends AbstractStructBase
         return $this->AuthorizationError;
     }
     /**
+     * This method is responsible for validating the values passed to the setAuthorizationError method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setAuthorizationError method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateAuthorizationErrorForArrayConstraintsFromSetAuthorizationError(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $authorizationResponseTypeAuthorizationErrorItem) {
+            // validation for constraint: itemType
+            if (!$authorizationResponseTypeAuthorizationErrorItem instanceof \PayPal\StructType\ErrorType) {
+                $invalidValues[] = is_object($authorizationResponseTypeAuthorizationErrorItem) ? get_class($authorizationResponseTypeAuthorizationErrorItem) : sprintf('%s(%s)', gettype($authorizationResponseTypeAuthorizationErrorItem), var_export($authorizationResponseTypeAuthorizationErrorItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The AuthorizationError property can only contain items of type \PayPal\StructType\ErrorType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set AuthorizationError value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\ErrorType[] $authorizationError
@@ -81,11 +103,9 @@ class AuthorizationResponseType extends AbstractStructBase
      */
     public function setAuthorizationError(array $authorizationError = array())
     {
-        foreach ($authorizationError as $authorizationResponseTypeAuthorizationErrorItem) {
-            // validation for constraint: itemType
-            if (!$authorizationResponseTypeAuthorizationErrorItem instanceof \PayPal\StructType\ErrorType) {
-                throw new \InvalidArgumentException(sprintf('The AuthorizationError property can only contain items of \PayPal\StructType\ErrorType, "%s" given', is_object($authorizationResponseTypeAuthorizationErrorItem) ? get_class($authorizationResponseTypeAuthorizationErrorItem) : gettype($authorizationResponseTypeAuthorizationErrorItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($authorizationErrorArrayErrorMessage = self::validateAuthorizationErrorForArrayConstraintsFromSetAuthorizationError($authorizationError))) {
+            throw new \InvalidArgumentException($authorizationErrorArrayErrorMessage, __LINE__);
         }
         $this->AuthorizationError = $authorizationError;
         return $this;
@@ -100,7 +120,7 @@ class AuthorizationResponseType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\ErrorType) {
-            throw new \InvalidArgumentException(sprintf('The AuthorizationError property can only contain items of \PayPal\StructType\ErrorType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The AuthorizationError property can only contain items of type \PayPal\StructType\ErrorType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AuthorizationError[] = $item;
         return $this;

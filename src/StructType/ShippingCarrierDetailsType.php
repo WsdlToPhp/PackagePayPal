@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ShippingCarrierDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: is unique identified of shipping carrier, without this element the whole node makes no sence
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
 {
     /**
      * The CarrierShippingFee
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Calculated cost of shipping, based on shipping parameters and selected shipping service. Only returned if ShippingType = 2 (i.e., calculated shipping rate).
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -23,7 +23,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     public $CarrierShippingFee;
     /**
      * The InsuranceFee
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:InsuranceFee
      * @var \PayPal\StructType\AmountType
@@ -31,7 +31,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     public $InsuranceFee;
     /**
      * The InsuranceOption
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:InsuranceOption
      * @var string
@@ -39,7 +39,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     public $InsuranceOption;
     /**
      * The PackagingHandlingCosts
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Optional fees a seller might assess for the shipping of the item.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -47,7 +47,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     public $PackagingHandlingCosts;
     /**
      * The ShippingRateErrorMessage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Describes any error message associated with the attempt to calculate shipping rates. If there was no error, returns "No Error" (without the quotation marks).
      * - minOccurs: 0
      * @var string
@@ -55,7 +55,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     public $ShippingRateErrorMessage;
     /**
      * The ShippingService
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:ShippingService
      * @var string
      */
@@ -141,7 +141,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\InsuranceOptionCodeType::valueIsValid($insuranceOption)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $insuranceOption, implode(', ', \PayPal\EnumType\InsuranceOptionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\InsuranceOptionCodeType', is_array($insuranceOption) ? implode(', ', $insuranceOption) : var_export($insuranceOption, true), implode(', ', \PayPal\EnumType\InsuranceOptionCodeType::getValidValues())), __LINE__);
         }
         $this->InsuranceOption = $insuranceOption;
         return $this;
@@ -181,7 +181,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingRateErrorMessage) && !is_string($shippingRateErrorMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingRateErrorMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingRateErrorMessage, true), gettype($shippingRateErrorMessage)), __LINE__);
         }
         $this->ShippingRateErrorMessage = $shippingRateErrorMessage;
         return $this;
@@ -206,7 +206,7 @@ class ShippingCarrierDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ShippingServiceCodeType::valueIsValid($shippingService)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $shippingService, implode(', ', \PayPal\EnumType\ShippingServiceCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ShippingServiceCodeType', is_array($shippingService) ? implode(', ', $shippingService) : var_export($shippingService, true), implode(', ', \PayPal\EnumType\ShippingServiceCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingService = $shippingService;
         return $this;

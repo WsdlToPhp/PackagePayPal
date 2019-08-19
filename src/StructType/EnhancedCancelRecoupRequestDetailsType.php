@@ -12,12 +12,6 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 class EnhancedCancelRecoupRequestDetailsType extends AbstractStructBase
 {
     /**
-     * Constructor method for EnhancedCancelRecoupRequestDetailsType
-     */
-    public function __construct()
-    {
-    }
-    /**
      * Method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
      * @see AbstractStructBase::__set_state()

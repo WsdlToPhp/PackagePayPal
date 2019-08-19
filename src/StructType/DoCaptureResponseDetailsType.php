@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for DoCaptureResponseDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: The authorization identification number you specified in the request. Character length and limits: 19 single-byte characters maximum
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class DoCaptureResponseDetailsType extends AbstractStructBase
 {
     /**
      * The AuthorizationID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:AuthorizationID
      * @var string
@@ -23,14 +23,14 @@ class DoCaptureResponseDetailsType extends AbstractStructBase
     public $AuthorizationID;
     /**
      * The PaymentInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the transaction
      * @var \PayPal\StructType\PaymentInfoType
      */
     public $PaymentInfo;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return msgsubid back to merchant
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -39,7 +39,7 @@ class DoCaptureResponseDetailsType extends AbstractStructBase
     public $MsgSubID;
     /**
      * The PartnerFundingSourceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Partner funding source id corresponding to the FS used in authorization.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -82,7 +82,7 @@ class DoCaptureResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($authorizationID) && !is_string($authorizationID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authorizationID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizationID, true), gettype($authorizationID)), __LINE__);
         }
         $this->AuthorizationID = $authorizationID;
         return $this;
@@ -122,7 +122,7 @@ class DoCaptureResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;
@@ -144,7 +144,7 @@ class DoCaptureResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($partnerFundingSourceID) && !is_string($partnerFundingSourceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($partnerFundingSourceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($partnerFundingSourceID, true), gettype($partnerFundingSourceID)), __LINE__);
         }
         $this->PartnerFundingSourceID = $partnerFundingSourceID;
         return $this;

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for DisplayControlDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Contains elements that allows customization of display (user interface) elements.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class DisplayControlDetailsType extends AbstractStructBase
 {
     /**
      * The InContextPaymentButtonImage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Optional URL to pay button image for the inline checkout flow. Currently applicable only to the inline checkout flow when the FlowControlDetails/InlineReturnURL is present.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -49,7 +49,7 @@ class DisplayControlDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($inContextPaymentButtonImage) && !is_string($inContextPaymentButtonImage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($inContextPaymentButtonImage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($inContextPaymentButtonImage, true), gettype($inContextPaymentButtonImage)), __LINE__);
         }
         $this->InContextPaymentButtonImage = $inContextPaymentButtonImage;
         return $this;

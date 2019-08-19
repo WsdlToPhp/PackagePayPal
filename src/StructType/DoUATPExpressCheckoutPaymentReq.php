@@ -13,7 +13,7 @@ class DoUATPExpressCheckoutPaymentReq extends AbstractStructBase
 {
     /**
      * The DoUATPExpressCheckoutPaymentRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoUATPExpressCheckoutPaymentRequest
      * @var \PayPal\StructType\DoUATPExpressCheckoutPaymentRequestType
      */

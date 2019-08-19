@@ -13,7 +13,7 @@ class UpdateAccessPermissionsResponseType extends AbstractResponseType
 {
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The status of the update call, Success/Failure. Character length and limitations: 20 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -47,7 +47,7 @@ class UpdateAccessPermissionsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($status) && !is_string($status)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($status)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
         }
         $this->Status = $status;
         return $this;

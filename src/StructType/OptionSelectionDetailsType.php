@@ -13,7 +13,7 @@ class OptionSelectionDetailsType extends AbstractStructBase
 {
     /**
      * The OptionSelection
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Selection. Required Character length and limitations: 12 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class OptionSelectionDetailsType extends AbstractStructBase
     public $OptionSelection;
     /**
      * The Price
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Price. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class OptionSelectionDetailsType extends AbstractStructBase
     public $Price;
     /**
      * The OptionType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Type Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -40,7 +40,7 @@ class OptionSelectionDetailsType extends AbstractStructBase
     public $OptionType;
     /**
      * The PaymentPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 10
      * - minOccurs: 0
      * @var \PayPal\StructType\InstallmentDetailsType[]
@@ -82,7 +82,7 @@ class OptionSelectionDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionSelection) && !is_string($optionSelection)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionSelection)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionSelection, true), gettype($optionSelection)), __LINE__);
         }
         $this->OptionSelection = $optionSelection;
         return $this;
@@ -104,7 +104,7 @@ class OptionSelectionDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($price) && !is_string($price)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($price)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($price, true), gettype($price)), __LINE__);
         }
         $this->Price = $price;
         return $this;
@@ -129,7 +129,7 @@ class OptionSelectionDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\OptionTypeListType::valueIsValid($optionType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $optionType, implode(', ', \PayPal\EnumType\OptionTypeListType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\OptionTypeListType', is_array($optionType) ? implode(', ', $optionType) : var_export($optionType, true), implode(', ', \PayPal\EnumType\OptionTypeListType::getValidValues())), __LINE__);
         }
         $this->OptionType = $optionType;
         return $this;
@@ -143,6 +143,28 @@ class OptionSelectionDetailsType extends AbstractStructBase
         return $this->PaymentPeriod;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentPeriod method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentPeriod method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentPeriodForArrayConstraintsFromSetPaymentPeriod(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $optionSelectionDetailsTypePaymentPeriodItem) {
+            // validation for constraint: itemType
+            if (!$optionSelectionDetailsTypePaymentPeriodItem instanceof \PayPal\StructType\InstallmentDetailsType) {
+                $invalidValues[] = is_object($optionSelectionDetailsTypePaymentPeriodItem) ? get_class($optionSelectionDetailsTypePaymentPeriodItem) : sprintf('%s(%s)', gettype($optionSelectionDetailsTypePaymentPeriodItem), var_export($optionSelectionDetailsTypePaymentPeriodItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentPeriod property can only contain items of type \PayPal\StructType\InstallmentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentPeriod value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\InstallmentDetailsType[] $paymentPeriod
@@ -150,11 +172,13 @@ class OptionSelectionDetailsType extends AbstractStructBase
      */
     public function setPaymentPeriod(array $paymentPeriod = array())
     {
-        foreach ($paymentPeriod as $optionSelectionDetailsTypePaymentPeriodItem) {
-            // validation for constraint: itemType
-            if (!$optionSelectionDetailsTypePaymentPeriodItem instanceof \PayPal\StructType\InstallmentDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentPeriod property can only contain items of \PayPal\StructType\InstallmentDetailsType, "%s" given', is_object($optionSelectionDetailsTypePaymentPeriodItem) ? get_class($optionSelectionDetailsTypePaymentPeriodItem) : gettype($optionSelectionDetailsTypePaymentPeriodItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentPeriodArrayErrorMessage = self::validatePaymentPeriodForArrayConstraintsFromSetPaymentPeriod($paymentPeriod))) {
+            throw new \InvalidArgumentException($paymentPeriodArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($paymentPeriod) && count($paymentPeriod) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentPeriod)), __LINE__);
         }
         $this->PaymentPeriod = $paymentPeriod;
         return $this;
@@ -169,7 +193,11 @@ class OptionSelectionDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\InstallmentDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentPeriod property can only contain items of \PayPal\StructType\InstallmentDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentPeriod property can only contain items of type \PayPal\StructType\InstallmentDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->PaymentPeriod) && count($this->PaymentPeriod) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->PaymentPeriod)), __LINE__);
         }
         $this->PaymentPeriod[] = $item;
         return $this;

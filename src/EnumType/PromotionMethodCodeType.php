@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PromotionMethodCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Cross Promotion Method.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,16 +13,22 @@ class PromotionMethodCodeType
 {
     /**
      * Constant for value 'CrossSell'
+     * Meta information extracted from the WSDL
+     * - documentation: Cross Sell
      * @return string 'CrossSell'
      */
     const VALUE_CROSS_SELL = 'CrossSell';
     /**
      * Constant for value 'UpSell'
+     * Meta information extracted from the WSDL
+     * - documentation: Up Sell
      * @return string 'UpSell'
      */
     const VALUE_UP_SELL = 'UpSell';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved. Do not use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

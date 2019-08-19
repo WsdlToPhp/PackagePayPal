@@ -13,7 +13,7 @@ class SalesTaxType extends AbstractStructBase
 {
     /**
      * The SalesTaxPercent
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of the sales tax to be collected for the transaction. Sales tax is only for US.
      * - minOccurs: 0
      * @var float
@@ -21,7 +21,7 @@ class SalesTaxType extends AbstractStructBase
     public $SalesTaxPercent;
     /**
      * The SalesTaxState
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Sales tax for the transaction, expressed as a percentage. Should be empty for items listed on international sites (hence, this is US-only element).
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class SalesTaxType extends AbstractStructBase
     public $SalesTaxState;
     /**
      * The ShippingIncludedInTax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether shipping is included in the tax. Applicable if ShippingType = 1 or 2. This element is used for US-only.
      * - minOccurs: 0
      * @var bool
@@ -66,6 +66,10 @@ class SalesTaxType extends AbstractStructBase
      */
     public function setSalesTaxPercent($salesTaxPercent = null)
     {
+        // validation for constraint: float
+        if (!is_null($salesTaxPercent) && !(is_float($salesTaxPercent) || is_numeric($salesTaxPercent))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($salesTaxPercent, true), gettype($salesTaxPercent)), __LINE__);
+        }
         $this->SalesTaxPercent = $salesTaxPercent;
         return $this;
     }
@@ -86,7 +90,7 @@ class SalesTaxType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($salesTaxState) && !is_string($salesTaxState)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($salesTaxState)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($salesTaxState, true), gettype($salesTaxState)), __LINE__);
         }
         $this->SalesTaxState = $salesTaxState;
         return $this;
@@ -108,7 +112,7 @@ class SalesTaxType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($shippingIncludedInTax) && !is_bool($shippingIncludedInTax)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($shippingIncludedInTax)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($shippingIncludedInTax, true), gettype($shippingIncludedInTax)), __LINE__);
         }
         $this->ShippingIncludedInTax = $shippingIncludedInTax;
         return $this;

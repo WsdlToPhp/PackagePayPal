@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for IncentiveRequestCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: IncentiveRequestType This identifies the type of request for the API call. The type of request may be used to determine whether the request is for evaluating incentives in pre-checkout or in-checkout phase.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

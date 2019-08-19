@@ -13,7 +13,7 @@ class ListOfAttributeSetType extends AbstractStructBase
 {
     /**
      * The AttributeSet
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * @var \PayPal\StructType\AttributeSetType[]
      */
@@ -37,6 +37,28 @@ class ListOfAttributeSetType extends AbstractStructBase
         return $this->AttributeSet;
     }
     /**
+     * This method is responsible for validating the values passed to the setAttributeSet method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setAttributeSet method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateAttributeSetForArrayConstraintsFromSetAttributeSet(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $listOfAttributeSetTypeAttributeSetItem) {
+            // validation for constraint: itemType
+            if (!$listOfAttributeSetTypeAttributeSetItem instanceof \PayPal\StructType\AttributeSetType) {
+                $invalidValues[] = is_object($listOfAttributeSetTypeAttributeSetItem) ? get_class($listOfAttributeSetTypeAttributeSetItem) : sprintf('%s(%s)', gettype($listOfAttributeSetTypeAttributeSetItem), var_export($listOfAttributeSetTypeAttributeSetItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The AttributeSet property can only contain items of type \PayPal\StructType\AttributeSetType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set AttributeSet value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\AttributeSetType[] $attributeSet
@@ -44,11 +66,9 @@ class ListOfAttributeSetType extends AbstractStructBase
      */
     public function setAttributeSet(array $attributeSet = array())
     {
-        foreach ($attributeSet as $listOfAttributeSetTypeAttributeSetItem) {
-            // validation for constraint: itemType
-            if (!$listOfAttributeSetTypeAttributeSetItem instanceof \PayPal\StructType\AttributeSetType) {
-                throw new \InvalidArgumentException(sprintf('The AttributeSet property can only contain items of \PayPal\StructType\AttributeSetType, "%s" given', is_object($listOfAttributeSetTypeAttributeSetItem) ? get_class($listOfAttributeSetTypeAttributeSetItem) : gettype($listOfAttributeSetTypeAttributeSetItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($attributeSetArrayErrorMessage = self::validateAttributeSetForArrayConstraintsFromSetAttributeSet($attributeSet))) {
+            throw new \InvalidArgumentException($attributeSetArrayErrorMessage, __LINE__);
         }
         $this->AttributeSet = $attributeSet;
         return $this;
@@ -63,7 +83,7 @@ class ListOfAttributeSetType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\AttributeSetType) {
-            throw new \InvalidArgumentException(sprintf('The AttributeSet property can only contain items of \PayPal\StructType\AttributeSetType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The AttributeSet property can only contain items of type \PayPal\StructType\AttributeSetType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AttributeSet[] = $item;
         return $this;

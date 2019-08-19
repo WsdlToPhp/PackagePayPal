@@ -13,7 +13,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
 {
     /**
      * The OptionNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Number. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     public $OptionNumber;
     /**
      * The OptionQty
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Quantity. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     public $OptionQty;
     /**
      * The OptionSelect
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Select Name. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -40,7 +40,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     public $OptionSelect;
     /**
      * The OptionQtyDelta
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Quantity Delta. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -49,7 +49,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     public $OptionQtyDelta;
     /**
      * The OptionAlert
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Alert. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -58,7 +58,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     public $OptionAlert;
     /**
      * The OptionCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Cost. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -107,7 +107,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionNumber) && !is_string($optionNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionNumber, true), gettype($optionNumber)), __LINE__);
         }
         $this->OptionNumber = $optionNumber;
         return $this;
@@ -129,7 +129,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionQty) && !is_string($optionQty)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionQty)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionQty, true), gettype($optionQty)), __LINE__);
         }
         $this->OptionQty = $optionQty;
         return $this;
@@ -151,7 +151,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionSelect) && !is_string($optionSelect)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionSelect)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionSelect, true), gettype($optionSelect)), __LINE__);
         }
         $this->OptionSelect = $optionSelect;
         return $this;
@@ -173,7 +173,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionQtyDelta) && !is_string($optionQtyDelta)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionQtyDelta)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionQtyDelta, true), gettype($optionQtyDelta)), __LINE__);
         }
         $this->OptionQtyDelta = $optionQtyDelta;
         return $this;
@@ -195,7 +195,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionAlert) && !is_string($optionAlert)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionAlert)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionAlert, true), gettype($optionAlert)), __LINE__);
         }
         $this->OptionAlert = $optionAlert;
         return $this;
@@ -217,7 +217,7 @@ class OptionTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($optionCost) && !is_string($optionCost)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionCost)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionCost, true), gettype($optionCost)), __LINE__);
         }
         $this->OptionCost = $optionCost;
         return $this;

@@ -13,7 +13,7 @@ class SiteHostedPictureType extends AbstractStructBase
 {
     /**
      * The PictureURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URLs for item picture that are stored/hosted at eBay site.
      * - maxOccurs: 6
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class SiteHostedPictureType extends AbstractStructBase
     public $PictureURL;
     /**
      * The PhotoDisplay
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of display for photos used for PhotoHosting slide show. Here are display options: None = No special Picture Services features. SlideShow = Slideshow of multiple pictures. SuperSize = Super-size format picture. PicturePack =
      * Picture Pack. Default is 'None'.
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class SiteHostedPictureType extends AbstractStructBase
     public $PhotoDisplay;
     /**
      * The GalleryType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This will be either "Featured" or "Gallery".
      * - minOccurs: 0
      * @var string
@@ -62,6 +62,28 @@ class SiteHostedPictureType extends AbstractStructBase
         return $this->PictureURL;
     }
     /**
+     * This method is responsible for validating the values passed to the setPictureURL method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPictureURL method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePictureURLForArrayConstraintsFromSetPictureURL(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $siteHostedPictureTypePictureURLItem) {
+            // validation for constraint: itemType
+            if (!is_string($siteHostedPictureTypePictureURLItem)) {
+                $invalidValues[] = is_object($siteHostedPictureTypePictureURLItem) ? get_class($siteHostedPictureTypePictureURLItem) : sprintf('%s(%s)', gettype($siteHostedPictureTypePictureURLItem), var_export($siteHostedPictureTypePictureURLItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PictureURL property can only contain items of type anyURI, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PictureURL value
      * @throws \InvalidArgumentException
      * @param string[] $pictureURL
@@ -69,11 +91,13 @@ class SiteHostedPictureType extends AbstractStructBase
      */
     public function setPictureURL(array $pictureURL = array())
     {
-        foreach ($pictureURL as $siteHostedPictureTypePictureURLItem) {
-            // validation for constraint: itemType
-            if (!is_string($siteHostedPictureTypePictureURLItem)) {
-                throw new \InvalidArgumentException(sprintf('The PictureURL property can only contain items of anyURI, "%s" given', is_object($siteHostedPictureTypePictureURLItem) ? get_class($siteHostedPictureTypePictureURLItem) : gettype($siteHostedPictureTypePictureURLItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($pictureURLArrayErrorMessage = self::validatePictureURLForArrayConstraintsFromSetPictureURL($pictureURL))) {
+            throw new \InvalidArgumentException($pictureURLArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(6)
+        if (is_array($pictureURL) && count($pictureURL) > 6) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 6', count($pictureURL)), __LINE__);
         }
         $this->PictureURL = $pictureURL;
         return $this;
@@ -88,7 +112,11 @@ class SiteHostedPictureType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The PictureURL property can only contain items of anyURI, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PictureURL property can only contain items of type anyURI, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(6)
+        if (is_array($this->PictureURL) && count($this->PictureURL) >= 6) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 6', count($this->PictureURL)), __LINE__);
         }
         $this->PictureURL[] = $item;
         return $this;
@@ -113,7 +141,7 @@ class SiteHostedPictureType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PhotoDisplayCodeType::valueIsValid($photoDisplay)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $photoDisplay, implode(', ', \PayPal\EnumType\PhotoDisplayCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PhotoDisplayCodeType', is_array($photoDisplay) ? implode(', ', $photoDisplay) : var_export($photoDisplay, true), implode(', ', \PayPal\EnumType\PhotoDisplayCodeType::getValidValues())), __LINE__);
         }
         $this->PhotoDisplay = $photoDisplay;
         return $this;
@@ -138,7 +166,7 @@ class SiteHostedPictureType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\GalleryTypeCodeType::valueIsValid($galleryType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $galleryType, implode(', ', \PayPal\EnumType\GalleryTypeCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\GalleryTypeCodeType', is_array($galleryType) ? implode(', ', $galleryType) : var_export($galleryType, true), implode(', ', \PayPal\EnumType\GalleryTypeCodeType::getValidValues())), __LINE__);
         }
         $this->GalleryType = $galleryType;
         return $this;

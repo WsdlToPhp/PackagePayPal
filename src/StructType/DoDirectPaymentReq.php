@@ -13,7 +13,7 @@ class DoDirectPaymentReq extends AbstractStructBase
 {
     /**
      * The DoDirectPaymentRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoDirectPaymentRequest
      * @var \PayPal\StructType\DoDirectPaymentRequestType
      */

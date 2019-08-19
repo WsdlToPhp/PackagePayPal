@@ -26,7 +26,7 @@ class BMG extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BMGetButtonDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class BMG extends SoapClientBase
     public function BMGetButtonDetails(\PayPal\StructType\BMGetButtonDetailsReq $bMGetButtonDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BMGetButtonDetails($bMGetButtonDetailsRequest));
+            $this->setResult($this->getSoapClient()->BMGetButtonDetails($bMGetButtonDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -50,7 +50,7 @@ class BMG extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BMGetInventory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -65,7 +65,7 @@ class BMG extends SoapClientBase
     public function BMGetInventory(\PayPal\StructType\BMGetInventoryReq $bMGetInventoryRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BMGetInventory($bMGetInventoryRequest));
+            $this->setResult($this->getSoapClient()->BMGetInventory($bMGetInventoryRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

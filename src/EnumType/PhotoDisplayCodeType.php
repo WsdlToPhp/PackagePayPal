@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PhotoDisplayCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PhotoDisplayCodeType These are types of display for photos used for PhotoHosting slide show.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,26 +13,36 @@ class PhotoDisplayCodeType
 {
     /**
      * Constant for value 'None'
+     * Meta information extracted from the WSDL
+     * - documentation: No special Picture Services features.
      * @return string 'None'
      */
     const VALUE_NONE = 'None';
     /**
      * Constant for value 'SlideShow'
+     * Meta information extracted from the WSDL
+     * - documentation: Slideshow of multiple pictures.
      * @return string 'SlideShow'
      */
     const VALUE_SLIDE_SHOW = 'SlideShow';
     /**
      * Constant for value 'SuperSize'
+     * Meta information extracted from the WSDL
+     * - documentation: Super-size format picture.
      * @return string 'SuperSize'
      */
     const VALUE_SUPER_SIZE = 'SuperSize';
     /**
      * Constant for value 'PicturePack'
+     * Meta information extracted from the WSDL
+     * - documentation: Picture Pack.
      * @return string 'PicturePack'
      */
     const VALUE_PICTURE_PACK = 'PicturePack';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

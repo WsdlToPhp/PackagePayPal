@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ReversalReasonCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ReversalReasonCodeType Reason for a reversal on a PayPal transaction which matches the output from IPN
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

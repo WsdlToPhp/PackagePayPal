@@ -13,7 +13,7 @@ class CreditCardNumberTypeType extends AbstractStructBase
 {
     /**
      * The CreditCardType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class CreditCardNumberTypeType extends AbstractStructBase
     public $CreditCardType;
     /**
      * The CreditCardNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -60,7 +60,7 @@ class CreditCardNumberTypeType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CreditCardTypeType::valueIsValid($creditCardType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $creditCardType, implode(', ', \PayPal\EnumType\CreditCardTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CreditCardTypeType', is_array($creditCardType) ? implode(', ', $creditCardType) : var_export($creditCardType, true), implode(', ', \PayPal\EnumType\CreditCardTypeType::getValidValues())), __LINE__);
         }
         $this->CreditCardType = $creditCardType;
         return $this;
@@ -82,7 +82,7 @@ class CreditCardNumberTypeType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($creditCardNumber) && !is_string($creditCardNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($creditCardNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($creditCardNumber, true), gettype($creditCardNumber)), __LINE__);
         }
         $this->CreditCardNumber = $creditCardNumber;
         return $this;

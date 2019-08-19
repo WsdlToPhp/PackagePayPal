@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for VATDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Contains information required To list a business item. BusinessSeller - only for add item, the RestrictedToBusiness and VATPercent for both get and add, for revise all must be optional
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class VATDetailsType extends AbstractStructBase
 {
     /**
      * The BusinessSeller
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $BusinessSeller;
     /**
      * The RestrictedToBusiness
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $RestrictedToBusiness;
     /**
      * The VATPercent
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var float
      */
@@ -67,7 +67,7 @@ class VATDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($businessSeller) && !is_bool($businessSeller)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($businessSeller)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($businessSeller, true), gettype($businessSeller)), __LINE__);
         }
         $this->BusinessSeller = $businessSeller;
         return $this;
@@ -89,7 +89,7 @@ class VATDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($restrictedToBusiness) && !is_bool($restrictedToBusiness)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($restrictedToBusiness)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($restrictedToBusiness, true), gettype($restrictedToBusiness)), __LINE__);
         }
         $this->RestrictedToBusiness = $restrictedToBusiness;
         return $this;
@@ -109,6 +109,10 @@ class VATDetailsType extends AbstractStructBase
      */
     public function setVATPercent($vATPercent = null)
     {
+        // validation for constraint: float
+        if (!is_null($vATPercent) && !(is_float($vATPercent) || is_numeric($vATPercent))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($vATPercent, true), gettype($vATPercent)), __LINE__);
+        }
         $this->VATPercent = $vATPercent;
         return $this;
     }

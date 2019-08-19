@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for MerchantPullStatusCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MerchantPullStatusCodeType Status of the merchant pull
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

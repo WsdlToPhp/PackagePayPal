@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PaymentActionCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentDetailsCodeType This is the PayPal payment details type (used by DCC and Express Checkout)
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

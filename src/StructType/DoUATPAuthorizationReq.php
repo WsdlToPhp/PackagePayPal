@@ -13,7 +13,7 @@ class DoUATPAuthorizationReq extends AbstractStructBase
 {
     /**
      * The DoUATPAuthorizationRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoUATPAuthorizationRequest
      * @var \PayPal\StructType\DoUATPAuthorizationRequestType
      */

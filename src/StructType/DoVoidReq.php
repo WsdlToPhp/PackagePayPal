@@ -13,7 +13,7 @@ class DoVoidReq extends AbstractStructBase
 {
     /**
      * The DoVoidRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoVoidRequest
      * @var \PayPal\StructType\DoVoidRequestType
      */

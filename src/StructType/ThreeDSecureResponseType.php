@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ThreeDSecureResponseType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: 3DS remaining fields.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,14 +15,14 @@ class ThreeDSecureResponseType extends AbstractStructBase
 {
     /**
      * The Vpas
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $Vpas;
     /**
      * The EciSubmitted3DS
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -57,7 +57,7 @@ class ThreeDSecureResponseType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($vpas) && !is_string($vpas)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($vpas)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vpas, true), gettype($vpas)), __LINE__);
         }
         $this->Vpas = $vpas;
         return $this;
@@ -79,7 +79,7 @@ class ThreeDSecureResponseType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eciSubmitted3DS) && !is_string($eciSubmitted3DS)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eciSubmitted3DS)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eciSubmitted3DS, true), gettype($eciSubmitted3DS)), __LINE__);
         }
         $this->EciSubmitted3DS = $eciSubmitted3DS;
         return $this;

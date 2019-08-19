@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for APICredentialsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: APICredentialsType
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class APICredentialsType extends AbstractStructBase
 {
     /**
      * The Username
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs PayPal API usernameCharacter length and limitations: 128 alphanumeric characters
      * @var string
      */
     public $Username;
     /**
      * The Password
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs PayPal API passwordCharacter length and limitations: 40 alphanumeric characters
      * @var string
      */
     public $Password;
     /**
      * The Signature
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs PayPal API signature, if one exists. Character length and limitations: 256 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -37,7 +37,7 @@ class APICredentialsType extends AbstractStructBase
     public $Signature;
     /**
      * The Certificate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs PayPal API certificate in PEM format, if one exists The certificate consists of two parts: the private key (2,048 bytes) and the certificate proper (4,000 bytes). Character length and limitations: 6,048 alphanumeric
      * characters
      * - minOccurs: 0
@@ -46,7 +46,7 @@ class APICredentialsType extends AbstractStructBase
     public $Certificate;
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs PayPal API authentication mechanism. Auth-None: no authentication mechanism on file Cert: API certificate Sign: API signature Character length and limitations: 9 alphanumeric characters
      * @var string
      */
@@ -90,7 +90,7 @@ class APICredentialsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($username) && !is_string($username)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($username)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($username, true), gettype($username)), __LINE__);
         }
         $this->Username = $username;
         return $this;
@@ -112,7 +112,7 @@ class APICredentialsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($password) && !is_string($password)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($password)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($password, true), gettype($password)), __LINE__);
         }
         $this->Password = $password;
         return $this;
@@ -134,7 +134,7 @@ class APICredentialsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($signature) && !is_string($signature)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($signature)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($signature, true), gettype($signature)), __LINE__);
         }
         $this->Signature = $signature;
         return $this;
@@ -156,7 +156,7 @@ class APICredentialsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($certificate) && !is_string($certificate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($certificate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($certificate, true), gettype($certificate)), __LINE__);
         }
         $this->Certificate = $certificate;
         return $this;
@@ -181,7 +181,7 @@ class APICredentialsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\APIAuthenticationType::valueIsValid($type)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $type, implode(', ', \PayPal\EnumType\APIAuthenticationType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\APIAuthenticationType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \PayPal\EnumType\APIAuthenticationType::getValidValues())), __LINE__);
         }
         $this->Type = $type;
         return $this;

@@ -18,7 +18,7 @@ class ValType extends AbstractStructBase
     public $ValueLiteral;
     /**
      * The ValueID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - use: optional
      * @var string
      */
@@ -53,7 +53,7 @@ class ValType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($valueLiteral) && !is_string($valueLiteral)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($valueLiteral)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($valueLiteral, true), gettype($valueLiteral)), __LINE__);
         }
         $this->ValueLiteral = $valueLiteral;
         return $this;
@@ -75,7 +75,7 @@ class ValType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($valueID) && !is_string($valueID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($valueID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($valueID, true), gettype($valueID)), __LINE__);
         }
         $this->ValueID = $valueID;
         return $this;

@@ -13,7 +13,7 @@ class BMGetButtonDetailsReq extends AbstractStructBase
 {
     /**
      * The BMGetButtonDetailsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BMGetButtonDetailsRequest
      * @var \PayPal\StructType\BMGetButtonDetailsRequestType
      */

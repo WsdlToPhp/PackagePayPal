@@ -13,7 +13,7 @@ class AddressVerifyResponseType extends AbstractResponseType
 {
     /**
      * The ConfirmationCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Confirmation of a match, with one of the following tokens: None: The input value of the Email object does not match any email address on file at PayPal. Confirmed: If the value of the StreetMatch object is Matched, PayPal responds
      * that the entire postal address is confirmed. Unconfirmed: PayPal responds that the postal address is unconfirmed
      * - maxOccurs: 1
@@ -23,7 +23,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     public $ConfirmationCode;
     /**
      * The StreetMatch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: PayPal has compared the postal address you want to verify with the postal address on file at PayPal. None: The input value of the Email object does not match any email address on file at PayPal. In addition, an error response is
      * returned. No further comparison of other input values has been made. Matched: The street address matches the street address on file at PayPal. Unmatched: The street address does not match the street address on file at PayPal.
      * - maxOccurs: 1
@@ -33,7 +33,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     public $StreetMatch;
     /**
      * The ZipMatch
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: PayPal has compared the zip code you want to verify with the zip code on file for the email address. None: The street address was unmatched. No further comparison of other input values has been made. Matched: The zip code matches the
      * zip code on file at PayPal. Unmatched: The zip code does not match the zip code on file at PayPal.
      * - maxOccurs: 1
@@ -43,7 +43,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     public $ZipMatch;
     /**
      * The CountryCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Two-character country code (ISO 3166) on file for the PayPal email address.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -52,7 +52,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     public $CountryCode;
     /**
      * The PayPalToken
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The token prevents a buyer from using any street address other than the address on file at PayPal during additional purchases he might make from the merchant. It contains encrypted information about the user’s street address and
      * email address. You can pass the value of the token with the Buy Now button HTML address_api_token variable so that PayPal prevents the buyer from using any street address or email address other than those verified by PayPal. The token is valid for 24
      * hours. Character length and limitations: 94 single-byte characters
@@ -103,7 +103,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AddressStatusCodeType::valueIsValid($confirmationCode)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $confirmationCode, implode(', ', \PayPal\EnumType\AddressStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AddressStatusCodeType', is_array($confirmationCode) ? implode(', ', $confirmationCode) : var_export($confirmationCode, true), implode(', ', \PayPal\EnumType\AddressStatusCodeType::getValidValues())), __LINE__);
         }
         $this->ConfirmationCode = $confirmationCode;
         return $this;
@@ -128,7 +128,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MatchStatusCodeType::valueIsValid($streetMatch)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $streetMatch, implode(', ', \PayPal\EnumType\MatchStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MatchStatusCodeType', is_array($streetMatch) ? implode(', ', $streetMatch) : var_export($streetMatch, true), implode(', ', \PayPal\EnumType\MatchStatusCodeType::getValidValues())), __LINE__);
         }
         $this->StreetMatch = $streetMatch;
         return $this;
@@ -153,7 +153,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MatchStatusCodeType::valueIsValid($zipMatch)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $zipMatch, implode(', ', \PayPal\EnumType\MatchStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MatchStatusCodeType', is_array($zipMatch) ? implode(', ', $zipMatch) : var_export($zipMatch, true), implode(', ', \PayPal\EnumType\MatchStatusCodeType::getValidValues())), __LINE__);
         }
         $this->ZipMatch = $zipMatch;
         return $this;
@@ -178,7 +178,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CountryCodeType::valueIsValid($countryCode)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $countryCode, implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CountryCodeType', is_array($countryCode) ? implode(', ', $countryCode) : var_export($countryCode, true), implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
         }
         $this->CountryCode = $countryCode;
         return $this;
@@ -200,7 +200,7 @@ class AddressVerifyResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($payPalToken) && !is_string($payPalToken)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payPalToken)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payPalToken, true), gettype($payPalToken)), __LINE__);
         }
         $this->PayPalToken = $payPalToken;
         return $this;

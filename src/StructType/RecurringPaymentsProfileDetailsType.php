@@ -13,7 +13,7 @@ class RecurringPaymentsProfileDetailsType extends AbstractStructBase
 {
     /**
      * The BillingStartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: When does this Profile begin billing?
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class RecurringPaymentsProfileDetailsType extends AbstractStructBase
     public $BillingStartDate;
     /**
      * The SubscriberName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Subscriber name - if missing, will use name in buyer's account
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class RecurringPaymentsProfileDetailsType extends AbstractStructBase
     public $SubscriberName;
     /**
      * The SubscriberShippingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Subscriber address - if missing, will use address in buyer's account
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -40,7 +40,7 @@ class RecurringPaymentsProfileDetailsType extends AbstractStructBase
     public $SubscriberShippingAddress;
     /**
      * The ProfileReference
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your own unique invoice or tracking number. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -83,7 +83,7 @@ class RecurringPaymentsProfileDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($billingStartDate) && !is_string($billingStartDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingStartDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingStartDate, true), gettype($billingStartDate)), __LINE__);
         }
         $this->BillingStartDate = $billingStartDate;
         return $this;
@@ -105,7 +105,7 @@ class RecurringPaymentsProfileDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($subscriberName) && !is_string($subscriberName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($subscriberName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subscriberName, true), gettype($subscriberName)), __LINE__);
         }
         $this->SubscriberName = $subscriberName;
         return $this;
@@ -145,7 +145,7 @@ class RecurringPaymentsProfileDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($profileReference) && !is_string($profileReference)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($profileReference)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileReference, true), gettype($profileReference)), __LINE__);
         }
         $this->ProfileReference = $profileReference;
         return $this;

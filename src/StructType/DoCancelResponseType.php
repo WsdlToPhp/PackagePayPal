@@ -13,7 +13,7 @@ class DoCancelResponseType extends AbstractResponseType
 {
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return msgsubid back to merchant
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -47,7 +47,7 @@ class DoCancelResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

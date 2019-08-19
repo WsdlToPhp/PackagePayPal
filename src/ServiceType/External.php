@@ -26,7 +26,7 @@ class External extends SoapClientBase
     }
     /**
      * Method to call the operation originally named ExternalRememberMeOptOut
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class External extends SoapClientBase
     public function ExternalRememberMeOptOut(\PayPal\StructType\ExternalRememberMeOptOutReq $externalRememberMeOptOutRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->ExternalRememberMeOptOut($externalRememberMeOptOutRequest));
+            $this->setResult($this->getSoapClient()->ExternalRememberMeOptOut($externalRememberMeOptOutRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

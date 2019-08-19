@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PaymentTransactionType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentTransactionType Information about a PayPal payment from the seller side
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class PaymentTransactionType extends AbstractStructBase
 {
     /**
      * The ReceiverInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the recipient of the payment
      * @var \PayPal\StructType\ReceiverInfoType
      */
     public $ReceiverInfo;
     /**
      * The PayerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the payer
      * @var \PayPal\StructType\PayerInfoType
      */
     public $PayerInfo;
     /**
      * The TPLReferenceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This field is for holding ReferenceId for shippment sent from Merchant to the 3rd Party
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -38,14 +38,14 @@ class PaymentTransactionType extends AbstractStructBase
     public $TPLReferenceID;
     /**
      * The PaymentInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the transaction
      * @var \PayPal\StructType\PaymentInfoType
      */
     public $PaymentInfo;
     /**
      * The PaymentItemInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about an individual item in the transaction
      * - minOccurs: 0
      * @var \PayPal\StructType\PaymentItemInfoType
@@ -53,7 +53,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $PaymentItemInfo;
     /**
      * The OfferCouponInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about an individual Offer and Coupon information in the transaction
      * - minOccurs: 0
      * @var \PayPal\StructType\OfferCouponInfoType
@@ -61,7 +61,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $OfferCouponInfo;
     /**
      * The SecondaryAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about Secondary Address
      * - minOccurs: 0
      * @var \PayPal\StructType\AddressType
@@ -69,7 +69,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $SecondaryAddress;
     /**
      * The UserSelectedOptions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the user selected options.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -78,7 +78,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $UserSelectedOptions;
     /**
      * The GiftMessage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift message.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -87,7 +87,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $GiftMessage;
     /**
      * The GiftReceipt
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift receipt.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -96,7 +96,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $GiftReceipt;
     /**
      * The GiftWrapName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift Wrap name.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -105,7 +105,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $GiftWrapName;
     /**
      * The GiftWrapAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift Wrap amount.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -114,7 +114,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $GiftWrapAmount;
     /**
      * The BuyerEmailOptIn
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Buyer email.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -123,7 +123,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $BuyerEmailOptIn;
     /**
      * The SurveyQuestion
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the survey question.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -132,7 +132,7 @@ class PaymentTransactionType extends AbstractStructBase
     public $SurveyQuestion;
     /**
      * The SurveyChoiceSelected
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the survey choice selected by the user.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -244,7 +244,7 @@ class PaymentTransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($tPLReferenceID) && !is_string($tPLReferenceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($tPLReferenceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tPLReferenceID, true), gettype($tPLReferenceID)), __LINE__);
         }
         $this->TPLReferenceID = $tPLReferenceID;
         return $this;
@@ -356,7 +356,7 @@ class PaymentTransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftMessage) && !is_string($giftMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($giftMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftMessage, true), gettype($giftMessage)), __LINE__);
         }
         $this->GiftMessage = $giftMessage;
         return $this;
@@ -378,7 +378,7 @@ class PaymentTransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftReceipt) && !is_string($giftReceipt)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($giftReceipt)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftReceipt, true), gettype($giftReceipt)), __LINE__);
         }
         $this->GiftReceipt = $giftReceipt;
         return $this;
@@ -400,7 +400,7 @@ class PaymentTransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftWrapName) && !is_string($giftWrapName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($giftWrapName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapName, true), gettype($giftWrapName)), __LINE__);
         }
         $this->GiftWrapName = $giftWrapName;
         return $this;
@@ -440,7 +440,7 @@ class PaymentTransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerEmailOptIn) && !is_string($buyerEmailOptIn)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerEmailOptIn)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmailOptIn, true), gettype($buyerEmailOptIn)), __LINE__);
         }
         $this->BuyerEmailOptIn = $buyerEmailOptIn;
         return $this;
@@ -462,7 +462,7 @@ class PaymentTransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($surveyQuestion) && !is_string($surveyQuestion)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($surveyQuestion)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyQuestion, true), gettype($surveyQuestion)), __LINE__);
         }
         $this->SurveyQuestion = $surveyQuestion;
         return $this;
@@ -476,6 +476,28 @@ class PaymentTransactionType extends AbstractStructBase
         return $this->SurveyChoiceSelected;
     }
     /**
+     * This method is responsible for validating the values passed to the setSurveyChoiceSelected method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setSurveyChoiceSelected method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateSurveyChoiceSelectedForArrayConstraintsFromSetSurveyChoiceSelected(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $paymentTransactionTypeSurveyChoiceSelectedItem) {
+            // validation for constraint: itemType
+            if (!is_string($paymentTransactionTypeSurveyChoiceSelectedItem)) {
+                $invalidValues[] = is_object($paymentTransactionTypeSurveyChoiceSelectedItem) ? get_class($paymentTransactionTypeSurveyChoiceSelectedItem) : sprintf('%s(%s)', gettype($paymentTransactionTypeSurveyChoiceSelectedItem), var_export($paymentTransactionTypeSurveyChoiceSelectedItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The SurveyChoiceSelected property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set SurveyChoiceSelected value
      * @throws \InvalidArgumentException
      * @param string[] $surveyChoiceSelected
@@ -483,11 +505,9 @@ class PaymentTransactionType extends AbstractStructBase
      */
     public function setSurveyChoiceSelected(array $surveyChoiceSelected = array())
     {
-        foreach ($surveyChoiceSelected as $paymentTransactionTypeSurveyChoiceSelectedItem) {
-            // validation for constraint: itemType
-            if (!is_string($paymentTransactionTypeSurveyChoiceSelectedItem)) {
-                throw new \InvalidArgumentException(sprintf('The SurveyChoiceSelected property can only contain items of string, "%s" given', is_object($paymentTransactionTypeSurveyChoiceSelectedItem) ? get_class($paymentTransactionTypeSurveyChoiceSelectedItem) : gettype($paymentTransactionTypeSurveyChoiceSelectedItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($surveyChoiceSelectedArrayErrorMessage = self::validateSurveyChoiceSelectedForArrayConstraintsFromSetSurveyChoiceSelected($surveyChoiceSelected))) {
+            throw new \InvalidArgumentException($surveyChoiceSelectedArrayErrorMessage, __LINE__);
         }
         $this->SurveyChoiceSelected = $surveyChoiceSelected;
         return $this;
@@ -502,7 +522,7 @@ class PaymentTransactionType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The SurveyChoiceSelected property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The SurveyChoiceSelected property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->SurveyChoiceSelected[] = $item;
         return $this;

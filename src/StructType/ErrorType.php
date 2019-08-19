@@ -18,28 +18,28 @@ class ErrorType extends AbstractStructBase
     public $ShortMessage;
     /**
      * The LongMessage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $LongMessage;
     /**
      * The ErrorCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Error code can be used by a receiving application to debugging a response message. These codes will need to be uniquely defined for each application.
      * @var string
      */
     public $ErrorCode;
     /**
      * The SeverityCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: SeverityCode indicates whether the error is an application level error or if it is informational error, i.e., warning.
      * @var string
      */
     public $SeverityCode;
     /**
      * The ErrorParameters
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This optional element may carry additional application-specific error variables that indicate specific information about the error condition particularly in the cases where there are multiple instances of the ErrorType which require
      * additional context.
      * - maxOccurs: unbounded
@@ -86,7 +86,7 @@ class ErrorType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shortMessage) && !is_string($shortMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shortMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shortMessage, true), gettype($shortMessage)), __LINE__);
         }
         $this->ShortMessage = $shortMessage;
         return $this;
@@ -108,7 +108,7 @@ class ErrorType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($longMessage) && !is_string($longMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($longMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($longMessage, true), gettype($longMessage)), __LINE__);
         }
         $this->LongMessage = $longMessage;
         return $this;
@@ -130,7 +130,7 @@ class ErrorType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($errorCode) && !is_string($errorCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($errorCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->ErrorCode = $errorCode;
         return $this;
@@ -155,7 +155,7 @@ class ErrorType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\SeverityCodeType::valueIsValid($severityCode)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $severityCode, implode(', ', \PayPal\EnumType\SeverityCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\SeverityCodeType', is_array($severityCode) ? implode(', ', $severityCode) : var_export($severityCode, true), implode(', ', \PayPal\EnumType\SeverityCodeType::getValidValues())), __LINE__);
         }
         $this->SeverityCode = $severityCode;
         return $this;
@@ -169,6 +169,28 @@ class ErrorType extends AbstractStructBase
         return $this->ErrorParameters;
     }
     /**
+     * This method is responsible for validating the values passed to the setErrorParameters method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setErrorParameters method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateErrorParametersForArrayConstraintsFromSetErrorParameters(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $errorTypeErrorParametersItem) {
+            // validation for constraint: itemType
+            if (!$errorTypeErrorParametersItem instanceof \PayPal\StructType\ErrorParameterType) {
+                $invalidValues[] = is_object($errorTypeErrorParametersItem) ? get_class($errorTypeErrorParametersItem) : sprintf('%s(%s)', gettype($errorTypeErrorParametersItem), var_export($errorTypeErrorParametersItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The ErrorParameters property can only contain items of type \PayPal\StructType\ErrorParameterType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set ErrorParameters value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\ErrorParameterType[] $errorParameters
@@ -176,11 +198,9 @@ class ErrorType extends AbstractStructBase
      */
     public function setErrorParameters(array $errorParameters = array())
     {
-        foreach ($errorParameters as $errorTypeErrorParametersItem) {
-            // validation for constraint: itemType
-            if (!$errorTypeErrorParametersItem instanceof \PayPal\StructType\ErrorParameterType) {
-                throw new \InvalidArgumentException(sprintf('The ErrorParameters property can only contain items of \PayPal\StructType\ErrorParameterType, "%s" given', is_object($errorTypeErrorParametersItem) ? get_class($errorTypeErrorParametersItem) : gettype($errorTypeErrorParametersItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($errorParametersArrayErrorMessage = self::validateErrorParametersForArrayConstraintsFromSetErrorParameters($errorParameters))) {
+            throw new \InvalidArgumentException($errorParametersArrayErrorMessage, __LINE__);
         }
         $this->ErrorParameters = $errorParameters;
         return $this;
@@ -195,7 +215,7 @@ class ErrorType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\ErrorParameterType) {
-            throw new \InvalidArgumentException(sprintf('The ErrorParameters property can only contain items of \PayPal\StructType\ErrorParameterType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The ErrorParameters property can only contain items of type \PayPal\StructType\ErrorParameterType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->ErrorParameters[] = $item;
         return $this;

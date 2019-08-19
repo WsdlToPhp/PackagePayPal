@@ -13,7 +13,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
 {
     /**
      * The ApprovalType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The Type of Approval requested - Billing Agreement or Profile
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
     public $ApprovalType;
     /**
      * The ApprovalSubType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The Approval subtype - Must be MerchantInitiatedBilling for BillingAgreement ApprovalType
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
     public $ApprovalSubType;
     /**
      * The OrderDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Description about the Order
      * - minOccurs: 0
      * @var \PayPal\StructType\OrderDetailsType
@@ -37,7 +37,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
     public $OrderDetails;
     /**
      * The PaymentDirectives
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Directives about the type of payment
      * - minOccurs: 0
      * @var \PayPal\StructType\PaymentDirectivesType
@@ -45,7 +45,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
     public $PaymentDirectives;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Client may pass in its identification of this Billing Agreement. It used for the client's tracking purposes.
      * - minOccurs: 0
      * @var string
@@ -93,7 +93,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ApprovalTypeType::valueIsValid($approvalType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $approvalType, implode(', ', \PayPal\EnumType\ApprovalTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ApprovalTypeType', is_array($approvalType) ? implode(', ', $approvalType) : var_export($approvalType, true), implode(', ', \PayPal\EnumType\ApprovalTypeType::getValidValues())), __LINE__);
         }
         $this->ApprovalType = $approvalType;
         return $this;
@@ -118,7 +118,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ApprovalSubTypeType::valueIsValid($approvalSubType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $approvalSubType, implode(', ', \PayPal\EnumType\ApprovalSubTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ApprovalSubTypeType', is_array($approvalSubType) ? implode(', ', $approvalSubType) : var_export($approvalSubType, true), implode(', ', \PayPal\EnumType\ApprovalSubTypeType::getValidValues())), __LINE__);
         }
         $this->ApprovalSubType = $approvalSubType;
         return $this;
@@ -176,7 +176,7 @@ class BillingApprovalDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;

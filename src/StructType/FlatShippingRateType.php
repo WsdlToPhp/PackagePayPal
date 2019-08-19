@@ -13,7 +13,7 @@ class FlatShippingRateType extends AbstractStructBase
 {
     /**
      * The AdditionalShippingCosts
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Any additional shipping costs for the item.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -21,14 +21,14 @@ class FlatShippingRateType extends AbstractStructBase
     public $AdditionalShippingCosts;
     /**
      * The FlatShippingHandlingCosts
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
      */
     public $FlatShippingHandlingCosts;
     /**
      * The InsuranceFee
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:InsuranceFee
      * @var \PayPal\StructType\AmountType
@@ -36,7 +36,7 @@ class FlatShippingRateType extends AbstractStructBase
     public $InsuranceFee;
     /**
      * The InsuranceOption
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:InsuranceOption
      * @var string
@@ -44,7 +44,7 @@ class FlatShippingRateType extends AbstractStructBase
     public $InsuranceOption;
     /**
      * The ShippingService
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:ShippingService
      * @var string
@@ -146,7 +146,7 @@ class FlatShippingRateType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\InsuranceOptionCodeType::valueIsValid($insuranceOption)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $insuranceOption, implode(', ', \PayPal\EnumType\InsuranceOptionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\InsuranceOptionCodeType', is_array($insuranceOption) ? implode(', ', $insuranceOption) : var_export($insuranceOption, true), implode(', ', \PayPal\EnumType\InsuranceOptionCodeType::getValidValues())), __LINE__);
         }
         $this->InsuranceOption = $insuranceOption;
         return $this;
@@ -171,7 +171,7 @@ class FlatShippingRateType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ShippingServiceCodeType::valueIsValid($shippingService)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $shippingService, implode(', ', \PayPal\EnumType\ShippingServiceCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ShippingServiceCodeType', is_array($shippingService) ? implode(', ', $shippingService) : var_export($shippingService, true), implode(', ', \PayPal\EnumType\ShippingServiceCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingService = $shippingService;
         return $this;

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for POSTransactionCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: POSTransactionCodeType POS Transaction Code Type. F for Forced Post Transaction and S for Single Call Checkout
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

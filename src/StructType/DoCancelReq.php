@@ -13,7 +13,7 @@ class DoCancelReq extends AbstractStructBase
 {
     /**
      * The DoCancelRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoCancelRequest
      * @var \PayPal\StructType\DoCancelRequestType
      */

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for MerchantPullInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MerchantPullInfoType Information about the merchant pull.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class MerchantPullInfoType extends AbstractStructBase
 {
     /**
      * The MpStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Current status of billing agreement
      * @var string
      */
     public $MpStatus;
     /**
      * The MpMax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Monthly maximum payment amount
      * @var \PayPal\StructType\BasicAmountType
      */
     public $MpMax;
     /**
      * The MpCustom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value of the mp_custom variable that you specified in a FORM submission to PayPal during the creation or updating of a customer billing agreement
      * - minOccurs: 0
      * @var string
@@ -37,7 +37,7 @@ class MerchantPullInfoType extends AbstractStructBase
     public $MpCustom;
     /**
      * The Desc
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value of the mp_desc variable (description of goods or services) associated with the billing agreement
      * - minOccurs: 0
      * @var string
@@ -45,7 +45,7 @@ class MerchantPullInfoType extends AbstractStructBase
     public $Desc;
     /**
      * The Invoice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Invoice value as set by BillUserRequest API call
      * - minOccurs: 0
      * @var string
@@ -53,7 +53,7 @@ class MerchantPullInfoType extends AbstractStructBase
     public $Invoice;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Custom field as set by BillUserRequest API call
      * - minOccurs: 0
      * @var string
@@ -61,7 +61,7 @@ class MerchantPullInfoType extends AbstractStructBase
     public $Custom;
     /**
      * The PaymentSourceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Note: This field is no longer used and is always empty.
      * - minOccurs: 0
      * @var string
@@ -115,7 +115,7 @@ class MerchantPullInfoType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchantPullStatusCodeType::valueIsValid($mpStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $mpStatus, implode(', ', \PayPal\EnumType\MerchantPullStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchantPullStatusCodeType', is_array($mpStatus) ? implode(', ', $mpStatus) : var_export($mpStatus, true), implode(', ', \PayPal\EnumType\MerchantPullStatusCodeType::getValidValues())), __LINE__);
         }
         $this->MpStatus = $mpStatus;
         return $this;
@@ -155,7 +155,7 @@ class MerchantPullInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($mpCustom) && !is_string($mpCustom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($mpCustom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mpCustom, true), gettype($mpCustom)), __LINE__);
         }
         $this->MpCustom = $mpCustom;
         return $this;
@@ -177,7 +177,7 @@ class MerchantPullInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($desc) && !is_string($desc)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($desc)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($desc, true), gettype($desc)), __LINE__);
         }
         $this->Desc = $desc;
         return $this;
@@ -199,7 +199,7 @@ class MerchantPullInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($invoice) && !is_string($invoice)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoice)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoice, true), gettype($invoice)), __LINE__);
         }
         $this->Invoice = $invoice;
         return $this;
@@ -221,7 +221,7 @@ class MerchantPullInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -243,7 +243,7 @@ class MerchantPullInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($paymentSourceID) && !is_string($paymentSourceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentSourceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentSourceID, true), gettype($paymentSourceID)), __LINE__);
         }
         $this->PaymentSourceID = $paymentSourceID;
         return $this;

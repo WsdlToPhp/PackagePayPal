@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for UserChannelCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: It defines the enumerated types of the user channels defined in biz/User/value_object/Channel.oml
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

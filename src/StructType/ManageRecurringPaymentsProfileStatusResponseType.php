@@ -14,7 +14,7 @@ class ManageRecurringPaymentsProfileStatusResponseType extends AbstractResponseT
 {
     /**
      * The ManageRecurringPaymentsProfileStatusResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:ManageRecurringPaymentsProfileStatusResponseDetails
      * @var \PayPal\StructType\ManageRecurringPaymentsProfileStatusResponseDetailsType
      */

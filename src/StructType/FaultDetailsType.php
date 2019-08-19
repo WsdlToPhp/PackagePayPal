@@ -13,7 +13,7 @@ class FaultDetailsType extends AbstractStructBase
 {
     /**
      * The ErrorCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Error code can be used by a receiving application to debugging a SOAP response message that contain one or more SOAP Fault detail objects, i.e., fault detail sub-elements. These codes will need to be uniquely defined for each fault
      * scenario.
      * @var string
@@ -21,14 +21,14 @@ class FaultDetailsType extends AbstractStructBase
     public $ErrorCode;
     /**
      * The Severity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Severity indicates whether the error is a serious fault or if it is informational error, i.e., warning.
      * @var string
      */
     public $Severity;
     /**
      * The DetailedMessage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -66,7 +66,7 @@ class FaultDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($errorCode) && !is_string($errorCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($errorCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->ErrorCode = $errorCode;
         return $this;
@@ -88,7 +88,7 @@ class FaultDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($severity) && !is_string($severity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($severity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($severity, true), gettype($severity)), __LINE__);
         }
         $this->Severity = $severity;
         return $this;
@@ -110,7 +110,7 @@ class FaultDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($detailedMessage) && !is_string($detailedMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($detailedMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($detailedMessage, true), gettype($detailedMessage)), __LINE__);
         }
         $this->DetailedMessage = $detailedMessage;
         return $this;

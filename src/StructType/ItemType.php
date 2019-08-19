@@ -6,11 +6,11 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ItemType StructType
- * Meta informations extracted from the WSDL
- * - documentation: 2-letter ISO 3166 Country Code. | 3-letter ISO Currency Code. | The ID that uniquely identifies the item listing. | Describes the number of days the auction will be active. | List of payment methods accepted by a seller from a buyer
- * for a (checkout) transaction. | Region where the item is listed. See Region Table for values. If the item is listed with a Region of 0 (zero), then this return field denotes no region association with the item, meaning that it is not listing the item
- * regionally. | Revise Status contains information about the item being revised. | Seller user. | Container for for selling status information (e.g., BidCount, BidIncrement, HighBidder, MinimimumToBid, etc). | Contains the shipping payment related
- * information for the listed item. | Regions that seller will ship to. | eBay site on which item is listed. | Universally unique constraint tag. The UUID is unique to a category.
+ * Meta information extracted from the WSDL
+ * - documentation: Universally unique constraint tag. The UUID is unique to a category. | eBay site on which item is listed. | Regions that seller will ship to. | Contains the shipping payment related information for the listed item. | Container for
+ * for selling status information (e.g., BidCount, BidIncrement, HighBidder, MinimimumToBid, etc). | Seller user. | Revise Status contains information about the item being revised. | Region where the item is listed. See Region Table for values. If the
+ * item is listed with a Region of 0 (zero), then this return field denotes no region association with the item, meaning that it is not listing the item regionally. | List of payment methods accepted by a seller from a buyer for a (checkout)
+ * transaction. | Describes the number of days the auction will be active. | The ID that uniquely identifies the item listing. | 3-letter ISO Currency Code. | 2-letter ISO 3166 Country Code.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -18,7 +18,7 @@ class ItemType extends AbstractStructBase
 {
     /**
      * The ApplicationData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns custom, application-specific data associated with the item. The data in this field is stored with the item in the items table at eBay, but is not used in any way by eBay. Use ApplicationData to store such special information
      * as a part or SKU number. Maximum 32 characters in length.
      * - minOccurs: 0
@@ -27,7 +27,7 @@ class ItemType extends AbstractStructBase
     public $ApplicationData;
     /**
      * The ListOfAttributeSets
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Carries one or more instances of the AttributeSet in a list.
      * - minOccurs: 0
      * @var \PayPal\StructType\ListOfAttributeSetType
@@ -35,7 +35,7 @@ class ItemType extends AbstractStructBase
     public $ListOfAttributeSets;
     /**
      * The AutoPay
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If true (1), indicates that the seller requested immediate payment for the item. False (0) if immediate payment was not requested. (Does not indicate whether the item is still a candidate for puchase via immediate payment.) Only
      * applicable for items listed on US and UK sites in categories that support immediate payment, when seller has a Premier or Business PayPal account.
      * - minOccurs: 0
@@ -44,7 +44,7 @@ class ItemType extends AbstractStructBase
     public $AutoPay;
     /**
      * The BuyerProtection
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the status of the item's eligibility for the Buyer Protection Program. Possible values: ItemIneligible - Item is ineligible (e.g., category not applicable) ItemEligible - Item is eligible per standard criteria
      * ItemMarkedIneligible - Item marked ineligible per special criteria (e.g., seller's account closed) ItemMarkedIneligible - Item marked elegible per other criteria Applicable for items listed to the US site and for the Parts and Accessories category
      * (6028) or Everything Else category (10368) (or their subcategories) on the eBay Motors site.
@@ -54,7 +54,7 @@ class ItemType extends AbstractStructBase
     public $BuyerProtection;
     /**
      * The BuyItNowPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount a Buyer would need to bid to take advantage of the Buy It Now feature. Not applicable to Fixed-Price items (Type = 7 or 9) or AdFormat-type listings. For Fixed-Price items, see StartPrice instead.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -62,7 +62,7 @@ class ItemType extends AbstractStructBase
     public $BuyItNowPrice;
     /**
      * The Charity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Charity listing container.
      * - minOccurs: 0
      * @var \PayPal\StructType\CharityType
@@ -70,7 +70,7 @@ class ItemType extends AbstractStructBase
     public $Charity;
     /**
      * The Country
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:Country
      * @var string
@@ -78,7 +78,7 @@ class ItemType extends AbstractStructBase
     public $Country;
     /**
      * The CrossPromotion
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: CrossPromotions container, if applicable shows promoted items
      * - minOccurs: 0
      * @var \PayPal\StructType\CrossPromotionsType
@@ -86,7 +86,7 @@ class ItemType extends AbstractStructBase
     public $CrossPromotion;
     /**
      * The Currency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:Currency
      * @var string
@@ -94,7 +94,7 @@ class ItemType extends AbstractStructBase
     public $Currency;
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item Description.
      * - minOccurs: 0
      * @var string
@@ -102,7 +102,7 @@ class ItemType extends AbstractStructBase
     public $Description;
     /**
      * The Escrow
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Online Escrow paid for by buyer or seller. Cannot use with real estate auctions. Escrow is recommended for for transactions over $500. Escrow service, available via Escrow.com, protects both buyer and seller by acting as a trusted
      * third-party during the transaction and managing the payment process from start to finish. Also, if escrow by seller option used, then for Motors, this means that Escrow will be negotiated at the end of the auction.
      * - minOccurs: 0
@@ -111,7 +111,7 @@ class ItemType extends AbstractStructBase
     public $Escrow;
     /**
      * The GiftIcon
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If set, a generic gift icon displays in the listing's Title. GiftIcon must be set to to be able to use GiftServices options (e.g., GiftExpressShipping, GiftShipToRecipient, or GiftWrap).
      * - minOccurs: 0
      * @var int
@@ -119,7 +119,7 @@ class ItemType extends AbstractStructBase
     public $GiftIcon;
     /**
      * The GiftServices
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gift service options offered by the seller of the listed item.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -128,7 +128,7 @@ class ItemType extends AbstractStructBase
     public $GiftServices;
     /**
      * The HitCounter
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Optional hit counter for the item's listing page. Possible values are: "NoHitCounter" "HonestyStyle" "GreenLED" "Hidden"
      * - minOccurs: 0
      * @var string
@@ -136,16 +136,17 @@ class ItemType extends AbstractStructBase
     public $HitCounter;
     /**
      * The ItemID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
+     * - documentation: Represents the unique identifier for an item. To be used to specify the elements that represents an ItemID.
+     * - base: xs:string
      * - minOccurs: 0
      * - ref: ns:ItemID
-     * - documentation: Represents the unique identifier for an item. To be used to specify the elements that represents an ItemID.
      * @var string
      */
     public $ItemID;
     /**
      * The ListingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Includes listing details in terms of start and end time of listing (in GMT) as well as other details (e.g., orginal item for second chance, converted start price, etc.).
      * - minOccurs: 0
      * @var \PayPal\StructType\ListingDetailsType
@@ -153,7 +154,7 @@ class ItemType extends AbstractStructBase
     public $ListingDetails;
     /**
      * The ListingDesigner
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: When an item is first listed (using AddItem), a Layout template or a Theme template (or both) can be assigned to the item. A Layout template is assigned to a new item by specifying the Layout template ID (in the AddItem input
      * argument LayoutID). Similarly, a Theme template is assigned to the item using the ThemeID argument.
      * - minOccurs: 0
@@ -162,7 +163,7 @@ class ItemType extends AbstractStructBase
     public $ListingDesigner;
     /**
      * The ListingDuration
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:ListingDuration
      * @var string
@@ -170,7 +171,7 @@ class ItemType extends AbstractStructBase
     public $ListingDuration;
     /**
      * The ListingEnhancement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Describes the types of enhancment supported for the item's listing.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -179,7 +180,7 @@ class ItemType extends AbstractStructBase
     public $ListingEnhancement;
     /**
      * The ListingType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Describes the type of listing for the item a seller has chosen (e.g., Chinese, Dutch, FixedPrice, etc.).
      * - minOccurs: 0
      * @var string
@@ -187,7 +188,7 @@ class ItemType extends AbstractStructBase
     public $ListingType;
     /**
      * The Location
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the geographical location of the item.
      * - minOccurs: 0
      * @var string
@@ -195,7 +196,7 @@ class ItemType extends AbstractStructBase
     public $Location;
     /**
      * The PartnerCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Needed for add item only for partners.
      * - minOccurs: 0
      * @var string
@@ -203,7 +204,7 @@ class ItemType extends AbstractStructBase
     public $PartnerCode;
     /**
      * The PartnerName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Needed for add item only for partners.
      * - minOccurs: 0
      * @var string
@@ -211,7 +212,7 @@ class ItemType extends AbstractStructBase
     public $PartnerName;
     /**
      * The PaymentMethods
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - ref: ns:PaymentMethods
@@ -220,7 +221,7 @@ class ItemType extends AbstractStructBase
     public $PaymentMethods;
     /**
      * The PayPalEmailAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Valid PayPal e-mail address if seller has chosen PayPal as a payment method for the listed item.
      * - minOccurs: 0
      * @var string
@@ -228,7 +229,7 @@ class ItemType extends AbstractStructBase
     public $PayPalEmailAddress;
     /**
      * The PrimaryCategory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Container for data on the primary category of listing.
      * - minOccurs: 0
      * @var \PayPal\StructType\CategoryType
@@ -236,7 +237,7 @@ class ItemType extends AbstractStructBase
     public $PrimaryCategory;
     /**
      * The PrivateListing
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Private auction. Not applicable to Fixed Price items.
      * - minOccurs: 0
      * @var bool
@@ -244,7 +245,7 @@ class ItemType extends AbstractStructBase
     public $PrivateListing;
     /**
      * The Quantity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Number of items being sold in the auction.
      * - minOccurs: 0
      * @var int
@@ -252,7 +253,7 @@ class ItemType extends AbstractStructBase
     public $Quantity;
     /**
      * The RegionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:RegionID
      * @var string
@@ -260,7 +261,7 @@ class ItemType extends AbstractStructBase
     public $RegionID;
     /**
      * The RelistLink
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If true, creates a link from the old listing for the item to the new relist page, which accommodates users who might still look for the item under its old item ID. Also adds the relist ID to the old listing's record in the eBay
      * database, which can be returned by calling GetItem for the old ItemId. If your application creates the listing page for the user, you need to add the relist link option to your application for your users.
      * - minOccurs: 0
@@ -269,7 +270,7 @@ class ItemType extends AbstractStructBase
     public $RelistLink;
     /**
      * The ReservePrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the reserve price for a reserve auction. Returned only if DetailLevel = 4. ReservePrice is only returned for auctions with a reserve price where the user calling GetItem is the item's seller. Returned as null for
      * International Fixed Price items. For more information on reserve price auctions, see http://pages.ebay.com/help/basics/f-format.html#1.
      * - minOccurs: 0
@@ -278,7 +279,7 @@ class ItemType extends AbstractStructBase
     public $ReservePrice;
     /**
      * The ReviseStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:ReviseStatus
      * @var \PayPal\StructType\ReviseStatusType
@@ -286,14 +287,14 @@ class ItemType extends AbstractStructBase
     public $ReviseStatus;
     /**
      * The ScheduleTime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $ScheduleTime;
     /**
      * The SecondaryCategory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Container for data on the secondary category of listing. Secondary category is optional.
      * - minOccurs: 0
      * @var \PayPal\StructType\CategoryType
@@ -301,7 +302,7 @@ class ItemType extends AbstractStructBase
     public $SecondaryCategory;
     /**
      * The SiteHostedPicture
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item picture information for pictures hosted at eBay site.
      * - minOccurs: 0
      * @var \PayPal\StructType\SiteHostedPictureType
@@ -309,7 +310,7 @@ class ItemType extends AbstractStructBase
     public $SiteHostedPicture;
     /**
      * The Seller
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:Seller
      * @var \PayPal\StructType\UserType
@@ -317,7 +318,7 @@ class ItemType extends AbstractStructBase
     public $Seller;
     /**
      * The SellingStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:SellingStatus
      * @var \PayPal\StructType\SellingStatusType
@@ -325,7 +326,7 @@ class ItemType extends AbstractStructBase
     public $SellingStatus;
     /**
      * The ShippingOption
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Specifies where the seller is willing to ship the item. Default "SiteOnly". Valid values are: SiteOnly (the default) WorldWide SitePlusRegions WillNotShip If SitePlusRegions is selected, then at least one regions argument
      * (ShipToNorthAmerica, ShipToEurope, etc.) must also be set.
      * - minOccurs: 0
@@ -334,7 +335,7 @@ class ItemType extends AbstractStructBase
     public $ShippingOption;
     /**
      * The ShippingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:ShippingDetails
      * @var \PayPal\StructType\ShippingDetailsType
@@ -342,7 +343,7 @@ class ItemType extends AbstractStructBase
     public $ShippingDetails;
     /**
      * The ShippingRegions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - ref: ns:ShippingRegions
@@ -351,7 +352,7 @@ class ItemType extends AbstractStructBase
     public $ShippingRegions;
     /**
      * The ShippingTerms
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Describes who pays for the delivery of an item (e.g., buyer or seller).
      * - minOccurs: 0
      * @var string
@@ -359,7 +360,7 @@ class ItemType extends AbstractStructBase
     public $ShippingTerms;
     /**
      * The Site
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:Site
      * @var string
@@ -367,7 +368,7 @@ class ItemType extends AbstractStructBase
     public $Site;
     /**
      * The StartPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Starting price for the item. For Type=7 or Type=9 (Fixed Price) items, if the item price (MinimumBid) is revised, this field returns the new price.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -375,7 +376,7 @@ class ItemType extends AbstractStructBase
     public $StartPrice;
     /**
      * The Storefront
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Storefront is shown for any item that belongs to an eBay Store owner, regardless of whether it is fixed price or auction type. Not returned for International Fixed Price items.
      * - minOccurs: 0
      * @var \PayPal\StructType\StorefrontType
@@ -383,7 +384,7 @@ class ItemType extends AbstractStructBase
     public $Storefront;
     /**
      * The SubTitle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Subtitle to use in addition to the title. Provides more keywords when buyers search in titles and descriptions.
      * - minOccurs: 0
      * @var string
@@ -391,7 +392,7 @@ class ItemType extends AbstractStructBase
     public $SubTitle;
     /**
      * The TimeLeft
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Time until the the end of the listing (e.g., the amount of time left in an active auction).
      * - minOccurs: 0
      * @var string
@@ -399,7 +400,7 @@ class ItemType extends AbstractStructBase
     public $TimeLeft;
     /**
      * The Title
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Name of the item as it appears for auctions.
      * - minOccurs: 0
      * @var string
@@ -407,17 +408,18 @@ class ItemType extends AbstractStructBase
     public $Title;
     /**
      * The UUID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
+     * - documentation: Specifies a universally unique identifier. The UUID can only contain digits from 0-9 and letters from A-F. The UUID must be 32 characters long. For example, 1FB02B2-9D27-3acb-ABA2-9D539C374228
+     * - base: xs:string
+     * - length: 36
      * - minOccurs: 0
      * - ref: ns:UUID
-     * - documentation: Specifies a universally unique identifier. The UUID can only contain digits from 0-9 and letters from A-F. The UUID must be 32 characters long. For example, 1FB02B2-9D27-3acb-ABA2-9D539C374228
-     * - length: 36
      * @var string
      */
     public $UUID;
     /**
      * The VATDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: VAT info container.
      * - minOccurs: 0
      * @var \PayPal\StructType\VATDetailsType
@@ -425,7 +427,7 @@ class ItemType extends AbstractStructBase
     public $VATDetails;
     /**
      * The VendorHostedPicture
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item picture information for pictures hosted at vendor (i.e., remote) site.
      * - minOccurs: 0
      * @var \PayPal\StructType\VendorHostedPictureType
@@ -605,7 +607,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($applicationData) && !is_string($applicationData)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($applicationData)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($applicationData, true), gettype($applicationData)), __LINE__);
         }
         $this->ApplicationData = $applicationData;
         return $this;
@@ -645,7 +647,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($autoPay) && !is_bool($autoPay)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($autoPay)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($autoPay, true), gettype($autoPay)), __LINE__);
         }
         $this->AutoPay = $autoPay;
         return $this;
@@ -670,7 +672,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BuyerProtectionCodeType::valueIsValid($buyerProtection)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buyerProtection, implode(', ', \PayPal\EnumType\BuyerProtectionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BuyerProtectionCodeType', is_array($buyerProtection) ? implode(', ', $buyerProtection) : var_export($buyerProtection, true), implode(', ', \PayPal\EnumType\BuyerProtectionCodeType::getValidValues())), __LINE__);
         }
         $this->BuyerProtection = $buyerProtection;
         return $this;
@@ -731,7 +733,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CountryCodeType::valueIsValid($country)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $country, implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CountryCodeType', is_array($country) ? implode(', ', $country) : var_export($country, true), implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
         }
         $this->Country = $country;
         return $this;
@@ -774,7 +776,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CurrencyCodeType::valueIsValid($currency)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $currency, implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CurrencyCodeType', is_array($currency) ? implode(', ', $currency) : var_export($currency, true), implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
         }
         $this->Currency = $currency;
         return $this;
@@ -796,7 +798,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;
@@ -821,7 +823,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\EscrowCodeType::valueIsValid($escrow)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $escrow, implode(', ', \PayPal\EnumType\EscrowCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\EscrowCodeType', is_array($escrow) ? implode(', ', $escrow) : var_export($escrow, true), implode(', ', \PayPal\EnumType\EscrowCodeType::getValidValues())), __LINE__);
         }
         $this->Escrow = $escrow;
         return $this;
@@ -842,8 +844,8 @@ class ItemType extends AbstractStructBase
     public function setGiftIcon($giftIcon = null)
     {
         // validation for constraint: int
-        if (!is_null($giftIcon) && !is_numeric($giftIcon)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($giftIcon)), __LINE__);
+        if (!is_null($giftIcon) && !(is_int($giftIcon) || ctype_digit($giftIcon))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($giftIcon, true), gettype($giftIcon)), __LINE__);
         }
         $this->GiftIcon = $giftIcon;
         return $this;
@@ -857,6 +859,28 @@ class ItemType extends AbstractStructBase
         return $this->GiftServices;
     }
     /**
+     * This method is responsible for validating the values passed to the setGiftServices method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setGiftServices method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateGiftServicesForArrayConstraintsFromSetGiftServices(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $itemTypeGiftServicesItem) {
+            // validation for constraint: enumeration
+            if (!\PayPal\EnumType\GiftServicesCodeType::valueIsValid($itemTypeGiftServicesItem)) {
+                $invalidValues[] = is_object($itemTypeGiftServicesItem) ? get_class($itemTypeGiftServicesItem) : sprintf('%s(%s)', gettype($itemTypeGiftServicesItem), var_export($itemTypeGiftServicesItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\GiftServicesCodeType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PayPal\EnumType\GiftServicesCodeType::getValidValues()));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set GiftServices value
      * @uses \PayPal\EnumType\GiftServicesCodeType::valueIsValid()
      * @uses \PayPal\EnumType\GiftServicesCodeType::getValidValues()
@@ -866,14 +890,9 @@ class ItemType extends AbstractStructBase
      */
     public function setGiftServices(array $giftServices = array())
     {
-        $invalidValues = array();
-        foreach ($giftServices as $itemTypeGiftServicesItem) {
-            if (!\PayPal\EnumType\GiftServicesCodeType::valueIsValid($itemTypeGiftServicesItem)) {
-                $invalidValues[] = var_export($itemTypeGiftServicesItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \PayPal\EnumType\GiftServicesCodeType::getValidValues())), __LINE__);
+        // validation for constraint: array
+        if ('' !== ($giftServicesArrayErrorMessage = self::validateGiftServicesForArrayConstraintsFromSetGiftServices($giftServices))) {
+            throw new \InvalidArgumentException($giftServicesArrayErrorMessage, __LINE__);
         }
         $this->GiftServices = $giftServices;
         return $this;
@@ -890,7 +909,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\GiftServicesCodeType::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \PayPal\EnumType\GiftServicesCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\GiftServicesCodeType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PayPal\EnumType\GiftServicesCodeType::getValidValues())), __LINE__);
         }
         $this->GiftServices[] = $item;
         return $this;
@@ -915,7 +934,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\HitCounterCodeType::valueIsValid($hitCounter)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $hitCounter, implode(', ', \PayPal\EnumType\HitCounterCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\HitCounterCodeType', is_array($hitCounter) ? implode(', ', $hitCounter) : var_export($hitCounter, true), implode(', ', \PayPal\EnumType\HitCounterCodeType::getValidValues())), __LINE__);
         }
         $this->HitCounter = $hitCounter;
         return $this;
@@ -937,7 +956,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemID) && !is_string($itemID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemID, true), gettype($itemID)), __LINE__);
         }
         $this->ItemID = $itemID;
         return $this;
@@ -998,7 +1017,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ListingDurationCodeType::valueIsValid($listingDuration)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $listingDuration, implode(', ', \PayPal\EnumType\ListingDurationCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ListingDurationCodeType', is_array($listingDuration) ? implode(', ', $listingDuration) : var_export($listingDuration, true), implode(', ', \PayPal\EnumType\ListingDurationCodeType::getValidValues())), __LINE__);
         }
         $this->ListingDuration = $listingDuration;
         return $this;
@@ -1012,6 +1031,28 @@ class ItemType extends AbstractStructBase
         return $this->ListingEnhancement;
     }
     /**
+     * This method is responsible for validating the values passed to the setListingEnhancement method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setListingEnhancement method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateListingEnhancementForArrayConstraintsFromSetListingEnhancement(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $itemTypeListingEnhancementItem) {
+            // validation for constraint: enumeration
+            if (!\PayPal\EnumType\ListingEnhancementsCodeType::valueIsValid($itemTypeListingEnhancementItem)) {
+                $invalidValues[] = is_object($itemTypeListingEnhancementItem) ? get_class($itemTypeListingEnhancementItem) : sprintf('%s(%s)', gettype($itemTypeListingEnhancementItem), var_export($itemTypeListingEnhancementItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ListingEnhancementsCodeType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PayPal\EnumType\ListingEnhancementsCodeType::getValidValues()));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set ListingEnhancement value
      * @uses \PayPal\EnumType\ListingEnhancementsCodeType::valueIsValid()
      * @uses \PayPal\EnumType\ListingEnhancementsCodeType::getValidValues()
@@ -1021,14 +1062,9 @@ class ItemType extends AbstractStructBase
      */
     public function setListingEnhancement(array $listingEnhancement = array())
     {
-        $invalidValues = array();
-        foreach ($listingEnhancement as $itemTypeListingEnhancementItem) {
-            if (!\PayPal\EnumType\ListingEnhancementsCodeType::valueIsValid($itemTypeListingEnhancementItem)) {
-                $invalidValues[] = var_export($itemTypeListingEnhancementItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \PayPal\EnumType\ListingEnhancementsCodeType::getValidValues())), __LINE__);
+        // validation for constraint: array
+        if ('' !== ($listingEnhancementArrayErrorMessage = self::validateListingEnhancementForArrayConstraintsFromSetListingEnhancement($listingEnhancement))) {
+            throw new \InvalidArgumentException($listingEnhancementArrayErrorMessage, __LINE__);
         }
         $this->ListingEnhancement = $listingEnhancement;
         return $this;
@@ -1045,7 +1081,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ListingEnhancementsCodeType::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \PayPal\EnumType\ListingEnhancementsCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ListingEnhancementsCodeType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PayPal\EnumType\ListingEnhancementsCodeType::getValidValues())), __LINE__);
         }
         $this->ListingEnhancement[] = $item;
         return $this;
@@ -1070,7 +1106,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ListingTypeCodeType::valueIsValid($listingType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $listingType, implode(', ', \PayPal\EnumType\ListingTypeCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ListingTypeCodeType', is_array($listingType) ? implode(', ', $listingType) : var_export($listingType, true), implode(', ', \PayPal\EnumType\ListingTypeCodeType::getValidValues())), __LINE__);
         }
         $this->ListingType = $listingType;
         return $this;
@@ -1092,7 +1128,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($location) && !is_string($location)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($location)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
         }
         $this->Location = $location;
         return $this;
@@ -1114,7 +1150,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($partnerCode) && !is_string($partnerCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($partnerCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($partnerCode, true), gettype($partnerCode)), __LINE__);
         }
         $this->PartnerCode = $partnerCode;
         return $this;
@@ -1136,7 +1172,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($partnerName) && !is_string($partnerName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($partnerName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($partnerName, true), gettype($partnerName)), __LINE__);
         }
         $this->PartnerName = $partnerName;
         return $this;
@@ -1150,6 +1186,28 @@ class ItemType extends AbstractStructBase
         return $this->PaymentMethods;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentMethods method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentMethods method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentMethodsForArrayConstraintsFromSetPaymentMethods(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $itemTypePaymentMethodsItem) {
+            // validation for constraint: enumeration
+            if (!\PayPal\EnumType\BuyerPaymentMethodCodeType::valueIsValid($itemTypePaymentMethodsItem)) {
+                $invalidValues[] = is_object($itemTypePaymentMethodsItem) ? get_class($itemTypePaymentMethodsItem) : sprintf('%s(%s)', gettype($itemTypePaymentMethodsItem), var_export($itemTypePaymentMethodsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BuyerPaymentMethodCodeType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PayPal\EnumType\BuyerPaymentMethodCodeType::getValidValues()));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentMethods value
      * @uses \PayPal\EnumType\BuyerPaymentMethodCodeType::valueIsValid()
      * @uses \PayPal\EnumType\BuyerPaymentMethodCodeType::getValidValues()
@@ -1159,14 +1217,9 @@ class ItemType extends AbstractStructBase
      */
     public function setPaymentMethods(array $paymentMethods = array())
     {
-        $invalidValues = array();
-        foreach ($paymentMethods as $itemTypePaymentMethodsItem) {
-            if (!\PayPal\EnumType\BuyerPaymentMethodCodeType::valueIsValid($itemTypePaymentMethodsItem)) {
-                $invalidValues[] = var_export($itemTypePaymentMethodsItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \PayPal\EnumType\BuyerPaymentMethodCodeType::getValidValues())), __LINE__);
+        // validation for constraint: array
+        if ('' !== ($paymentMethodsArrayErrorMessage = self::validatePaymentMethodsForArrayConstraintsFromSetPaymentMethods($paymentMethods))) {
+            throw new \InvalidArgumentException($paymentMethodsArrayErrorMessage, __LINE__);
         }
         $this->PaymentMethods = $paymentMethods;
         return $this;
@@ -1183,7 +1236,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BuyerPaymentMethodCodeType::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \PayPal\EnumType\BuyerPaymentMethodCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BuyerPaymentMethodCodeType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PayPal\EnumType\BuyerPaymentMethodCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentMethods[] = $item;
         return $this;
@@ -1205,7 +1258,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($payPalEmailAddress) && !is_string($payPalEmailAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payPalEmailAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payPalEmailAddress, true), gettype($payPalEmailAddress)), __LINE__);
         }
         $this->PayPalEmailAddress = $payPalEmailAddress;
         return $this;
@@ -1245,7 +1298,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($privateListing) && !is_bool($privateListing)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($privateListing)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($privateListing, true), gettype($privateListing)), __LINE__);
         }
         $this->PrivateListing = $privateListing;
         return $this;
@@ -1266,8 +1319,8 @@ class ItemType extends AbstractStructBase
     public function setQuantity($quantity = null)
     {
         // validation for constraint: int
-        if (!is_null($quantity) && !is_numeric($quantity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($quantity)), __LINE__);
+        if (!is_null($quantity) && !(is_int($quantity) || ctype_digit($quantity))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
         }
         $this->Quantity = $quantity;
         return $this;
@@ -1289,7 +1342,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($regionID) && !is_string($regionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($regionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($regionID, true), gettype($regionID)), __LINE__);
         }
         $this->RegionID = $regionID;
         return $this;
@@ -1311,7 +1364,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($relistLink) && !is_bool($relistLink)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($relistLink)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($relistLink, true), gettype($relistLink)), __LINE__);
         }
         $this->RelistLink = $relistLink;
         return $this;
@@ -1369,7 +1422,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($scheduleTime) && !is_string($scheduleTime)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($scheduleTime)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($scheduleTime, true), gettype($scheduleTime)), __LINE__);
         }
         $this->ScheduleTime = $scheduleTime;
         return $this;
@@ -1466,7 +1519,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ShippingOptionCodeType::valueIsValid($shippingOption)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $shippingOption, implode(', ', \PayPal\EnumType\ShippingOptionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ShippingOptionCodeType', is_array($shippingOption) ? implode(', ', $shippingOption) : var_export($shippingOption, true), implode(', ', \PayPal\EnumType\ShippingOptionCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingOption = $shippingOption;
         return $this;
@@ -1498,6 +1551,28 @@ class ItemType extends AbstractStructBase
         return $this->ShippingRegions;
     }
     /**
+     * This method is responsible for validating the values passed to the setShippingRegions method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setShippingRegions method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateShippingRegionsForArrayConstraintsFromSetShippingRegions(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $itemTypeShippingRegionsItem) {
+            // validation for constraint: enumeration
+            if (!\PayPal\EnumType\ShippingRegionCodeType::valueIsValid($itemTypeShippingRegionsItem)) {
+                $invalidValues[] = is_object($itemTypeShippingRegionsItem) ? get_class($itemTypeShippingRegionsItem) : sprintf('%s(%s)', gettype($itemTypeShippingRegionsItem), var_export($itemTypeShippingRegionsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ShippingRegionCodeType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \PayPal\EnumType\ShippingRegionCodeType::getValidValues()));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set ShippingRegions value
      * @uses \PayPal\EnumType\ShippingRegionCodeType::valueIsValid()
      * @uses \PayPal\EnumType\ShippingRegionCodeType::getValidValues()
@@ -1507,14 +1582,9 @@ class ItemType extends AbstractStructBase
      */
     public function setShippingRegions(array $shippingRegions = array())
     {
-        $invalidValues = array();
-        foreach ($shippingRegions as $itemTypeShippingRegionsItem) {
-            if (!\PayPal\EnumType\ShippingRegionCodeType::valueIsValid($itemTypeShippingRegionsItem)) {
-                $invalidValues[] = var_export($itemTypeShippingRegionsItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            throw new \InvalidArgumentException(sprintf('Value(s) "%s" is/are invalid, please use one of: %s', implode(', ', $invalidValues), implode(', ', \PayPal\EnumType\ShippingRegionCodeType::getValidValues())), __LINE__);
+        // validation for constraint: array
+        if ('' !== ($shippingRegionsArrayErrorMessage = self::validateShippingRegionsForArrayConstraintsFromSetShippingRegions($shippingRegions))) {
+            throw new \InvalidArgumentException($shippingRegionsArrayErrorMessage, __LINE__);
         }
         $this->ShippingRegions = $shippingRegions;
         return $this;
@@ -1531,7 +1601,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ShippingRegionCodeType::valueIsValid($item)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $item, implode(', ', \PayPal\EnumType\ShippingRegionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ShippingRegionCodeType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \PayPal\EnumType\ShippingRegionCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingRegions[] = $item;
         return $this;
@@ -1556,7 +1626,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ShippingTermsCodeType::valueIsValid($shippingTerms)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $shippingTerms, implode(', ', \PayPal\EnumType\ShippingTermsCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ShippingTermsCodeType', is_array($shippingTerms) ? implode(', ', $shippingTerms) : var_export($shippingTerms, true), implode(', ', \PayPal\EnumType\ShippingTermsCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingTerms = $shippingTerms;
         return $this;
@@ -1581,7 +1651,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\SiteCodeType::valueIsValid($site)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $site, implode(', ', \PayPal\EnumType\SiteCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\SiteCodeType', is_array($site) ? implode(', ', $site) : var_export($site, true), implode(', ', \PayPal\EnumType\SiteCodeType::getValidValues())), __LINE__);
         }
         $this->Site = $site;
         return $this;
@@ -1639,7 +1709,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($subTitle) && !is_string($subTitle)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($subTitle)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subTitle, true), gettype($subTitle)), __LINE__);
         }
         $this->SubTitle = $subTitle;
         return $this;
@@ -1661,7 +1731,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($timeLeft) && !is_string($timeLeft)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($timeLeft)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($timeLeft, true), gettype($timeLeft)), __LINE__);
         }
         $this->TimeLeft = $timeLeft;
         return $this;
@@ -1683,7 +1753,7 @@ class ItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($title)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
         return $this;
@@ -1703,13 +1773,13 @@ class ItemType extends AbstractStructBase
      */
     public function setUUID($uUID = null)
     {
-        // validation for constraint: length
-        if ((is_scalar($uUID) && strlen($uUID) !== 36) || (is_array($uUID) && count($uUID) !== 36)) {
-            throw new \InvalidArgumentException('Invalid length, please provide an array with 36 element(s) or a scalar of 36 character(s)', __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($uUID) && !is_string($uUID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uUID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uUID, true), gettype($uUID)), __LINE__);
+        }
+        // validation for constraint: length(36)
+        if (!is_null($uUID) && mb_strlen($uUID) !== 36) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 36', mb_strlen($uUID)), __LINE__);
         }
         $this->UUID = $uUID;
         return $this;

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for MarketingCategoryType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MarketingCategoryType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

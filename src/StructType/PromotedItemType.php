@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PromotedItemType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Merchandizing info for an Item. This contains a list of crosssell or upsell items.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,15 +15,16 @@ class PromotedItemType extends AbstractStructBase
 {
     /**
      * The ItemID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item ID for the base item. Based on this item other items are promoted. it is teh only tag that would show up in all calls that use promoted item type. some are not in soap yet, such as get and ser promotion rules | Represents the
      * unique identifier for an item. To be used to specify the elements that represents an ItemID.
+     * - base: xs:string
      * @var string
      */
     public $ItemID;
     /**
      * The PictureURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL for the picture of the promoted item.
      * - minOccurs: 0
      * @var string
@@ -31,7 +32,7 @@ class PromotedItemType extends AbstractStructBase
     public $PictureURL;
     /**
      * The position
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Where to display in the list of items.currentl y even forget and set does not have to be minoccur =0 but if we ever were to do revise promotion tems, it can be omitted
      * - minOccurs: 0
      * @var int
@@ -39,7 +40,7 @@ class PromotedItemType extends AbstractStructBase
     public $position;
     /**
      * The PromotionPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Promotion Price. Price at which the buyer can buy the item now.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -47,21 +48,21 @@ class PromotedItemType extends AbstractStructBase
     public $PromotionPrice;
     /**
      * The PromotionPriceType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $PromotionPriceType;
     /**
      * The SelectionType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $SelectionType;
     /**
      * The Title
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item Title for the promoted item.
      * - minOccurs: 0
      * @var string
@@ -69,7 +70,7 @@ class PromotedItemType extends AbstractStructBase
     public $Title;
     /**
      * The ListingType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -122,7 +123,7 @@ class PromotedItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemID) && !is_string($itemID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemID, true), gettype($itemID)), __LINE__);
         }
         $this->ItemID = $itemID;
         return $this;
@@ -144,7 +145,7 @@ class PromotedItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($pictureURL) && !is_string($pictureURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($pictureURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pictureURL, true), gettype($pictureURL)), __LINE__);
         }
         $this->PictureURL = $pictureURL;
         return $this;
@@ -165,8 +166,8 @@ class PromotedItemType extends AbstractStructBase
     public function setPosition($position = null)
     {
         // validation for constraint: int
-        if (!is_null($position) && !is_numeric($position)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($position)), __LINE__);
+        if (!is_null($position) && !(is_int($position) || ctype_digit($position))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($position, true), gettype($position)), __LINE__);
         }
         $this->position = $position;
         return $this;
@@ -209,7 +210,7 @@ class PromotedItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PromotionItemPriceTypeCodeType::valueIsValid($promotionPriceType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $promotionPriceType, implode(', ', \PayPal\EnumType\PromotionItemPriceTypeCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PromotionItemPriceTypeCodeType', is_array($promotionPriceType) ? implode(', ', $promotionPriceType) : var_export($promotionPriceType, true), implode(', ', \PayPal\EnumType\PromotionItemPriceTypeCodeType::getValidValues())), __LINE__);
         }
         $this->PromotionPriceType = $promotionPriceType;
         return $this;
@@ -234,7 +235,7 @@ class PromotedItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PromotionItemSelectionCodeType::valueIsValid($selectionType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $selectionType, implode(', ', \PayPal\EnumType\PromotionItemSelectionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PromotionItemSelectionCodeType', is_array($selectionType) ? implode(', ', $selectionType) : var_export($selectionType, true), implode(', ', \PayPal\EnumType\PromotionItemSelectionCodeType::getValidValues())), __LINE__);
         }
         $this->SelectionType = $selectionType;
         return $this;
@@ -256,7 +257,7 @@ class PromotedItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($title) && !is_string($title)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($title)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
         $this->Title = $title;
         return $this;
@@ -281,7 +282,7 @@ class PromotedItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ListingTypeCodeType::valueIsValid($listingType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $listingType, implode(', ', \PayPal\EnumType\ListingTypeCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ListingTypeCodeType', is_array($listingType) ? implode(', ', $listingType) : var_export($listingType, true), implode(', ', \PayPal\EnumType\ListingTypeCodeType::getValidValues())), __LINE__);
         }
         $this->ListingType = $listingType;
         return $this;

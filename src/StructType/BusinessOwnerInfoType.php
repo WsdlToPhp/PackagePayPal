@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for BusinessOwnerInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: BusinessOwnerInfoType
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class BusinessOwnerInfoType extends AbstractStructBase
 {
     /**
      * The Owner
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about the business owner
      * - minOccurs: 0
      * @var \PayPal\StructType\PayerInfoType
@@ -23,7 +23,7 @@ class BusinessOwnerInfoType extends AbstractStructBase
     public $Owner;
     /**
      * The HomePhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Business ownerâs home telephone number Character length and limitations: 32 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -31,7 +31,7 @@ class BusinessOwnerInfoType extends AbstractStructBase
     public $HomePhone;
     /**
      * The MobilePhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Business ownerâs mobile telephone number Character length and limitations: 32 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -39,7 +39,7 @@ class BusinessOwnerInfoType extends AbstractStructBase
     public $MobilePhone;
     /**
      * The SSN
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Business ownerâs social security number Character length and limitations: 9 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -99,7 +99,7 @@ class BusinessOwnerInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($homePhone) && !is_string($homePhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($homePhone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($homePhone, true), gettype($homePhone)), __LINE__);
         }
         $this->HomePhone = $homePhone;
         return $this;
@@ -121,7 +121,7 @@ class BusinessOwnerInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($mobilePhone) && !is_string($mobilePhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($mobilePhone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mobilePhone, true), gettype($mobilePhone)), __LINE__);
         }
         $this->MobilePhone = $mobilePhone;
         return $this;
@@ -143,7 +143,7 @@ class BusinessOwnerInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($sSN) && !is_string($sSN)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sSN)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sSN, true), gettype($sSN)), __LINE__);
         }
         $this->SSN = $sSN;
         return $this;
