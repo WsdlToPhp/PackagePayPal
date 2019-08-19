@@ -1,6 +1,5 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackagePayPal/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/WsdlToPhp/PackagePayPal/?branch=develop)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/package-paypal/v/stable)](https://packagist.org/packages/wsdltophp/package-paypal)
-[![Dependency Status](https://www.versioneye.com/user/projects/55fc8608ddc3cf0014000209/badge.svg)](https://www.versioneye.com/user/projects/55fc8608ddc3cf0014000209)
 [![StyleCI](https://styleci.io/repos/80418221/shield)](https://styleci.io/repos/80418221)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/package-paypal/downloads)](https://packagist.org/packages/wsdltophp/package-paypal)
 
