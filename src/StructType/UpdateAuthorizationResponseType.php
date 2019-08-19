@@ -13,7 +13,7 @@ class UpdateAuthorizationResponseType extends AbstractResponseType
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An authorization identification number. Character length and limits: 19 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class UpdateAuthorizationResponseType extends AbstractResponseType
     public $TransactionID;
     /**
      * The AuthorizationInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:AuthorizationInfo
@@ -59,7 +59,7 @@ class UpdateAuthorizationResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PromotionSchemeCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Cross Promotion Context Promotion Scheme.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,21 +13,29 @@ class PromotionSchemeCodeType
 {
     /**
      * Constant for value 'ItemToItem'
+     * Meta information extracted from the WSDL
+     * - documentation: Item to Item Promotional Scheme
      * @return string 'ItemToItem'
      */
     const VALUE_ITEM_TO_ITEM = 'ItemToItem';
     /**
      * Constant for value 'ItemToStoreCat'
+     * Meta information extracted from the WSDL
+     * - documentation: Item to Item Store Scheme
      * @return string 'ItemToStoreCat'
      */
     const VALUE_ITEM_TO_STORE_CAT = 'ItemToStoreCat';
     /**
      * Constant for value 'StoreToStoreCat'
+     * Meta information extracted from the WSDL
+     * - documentation: Store to Store Scheme
      * @return string 'StoreToStoreCat'
      */
     const VALUE_STORE_TO_STORE_CAT = 'StoreToStoreCat';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved. Do not use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

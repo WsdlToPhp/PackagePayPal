@@ -13,7 +13,7 @@ class ItemArrayType extends AbstractStructArrayBase
 {
     /**
      * The Item
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - ref: ns:Item
@@ -39,6 +39,28 @@ class ItemArrayType extends AbstractStructArrayBase
         return $this->Item;
     }
     /**
+     * This method is responsible for validating the values passed to the setItem method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setItem method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateItemForArrayConstraintsFromSetItem(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $itemArrayTypeItemItem) {
+            // validation for constraint: itemType
+            if (!$itemArrayTypeItemItem instanceof \PayPal\StructType\ItemType) {
+                $invalidValues[] = is_object($itemArrayTypeItemItem) ? get_class($itemArrayTypeItemItem) : sprintf('%s(%s)', gettype($itemArrayTypeItemItem), var_export($itemArrayTypeItemItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The Item property can only contain items of type \PayPal\StructType\ItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set Item value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\ItemType[] $item
@@ -46,11 +68,9 @@ class ItemArrayType extends AbstractStructArrayBase
      */
     public function setItem(array $item = array())
     {
-        foreach ($item as $itemArrayTypeItemItem) {
-            // validation for constraint: itemType
-            if (!$itemArrayTypeItemItem instanceof \PayPal\StructType\ItemType) {
-                throw new \InvalidArgumentException(sprintf('The Item property can only contain items of \PayPal\StructType\ItemType, "%s" given', is_object($itemArrayTypeItemItem) ? get_class($itemArrayTypeItemItem) : gettype($itemArrayTypeItemItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($itemArrayErrorMessage = self::validateItemForArrayConstraintsFromSetItem($item))) {
+            throw new \InvalidArgumentException($itemArrayErrorMessage, __LINE__);
         }
         $this->Item = $item;
         return $this;
@@ -65,7 +85,7 @@ class ItemArrayType extends AbstractStructArrayBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\ItemType) {
-            throw new \InvalidArgumentException(sprintf('The Item property can only contain items of \PayPal\StructType\ItemType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Item property can only contain items of type \PayPal\StructType\ItemType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Item[] = $item;
         return $this;

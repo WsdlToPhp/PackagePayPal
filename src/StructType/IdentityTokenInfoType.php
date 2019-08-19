@@ -13,7 +13,7 @@ class IdentityTokenInfoType extends AbstractStructBase
 {
     /**
      * The AccessToken
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Identity Access token from merchant
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -47,7 +47,7 @@ class IdentityTokenInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($accessToken) && !is_string($accessToken)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($accessToken)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accessToken, true), gettype($accessToken)), __LINE__);
         }
         $this->AccessToken = $accessToken;
         return $this;

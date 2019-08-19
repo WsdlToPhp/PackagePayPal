@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ReceiverInfoCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ReceiverInfoCodeType Payee identifier type for MassPay API
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

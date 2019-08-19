@@ -6,8 +6,8 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for EnhancedPaymentDataType StructType
- * Meta informations extracted from the WSDL
- * - documentation: Enhanced data for different transactions. | AID for Airlines
+ * Meta information extracted from the WSDL
+ * - documentation: AID for Airlines | Enhanced data for different transactions.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -15,7 +15,7 @@ class EnhancedPaymentDataType extends AbstractStructBase
 {
     /**
      * The AirlineItinerary
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:AirlineItinerary

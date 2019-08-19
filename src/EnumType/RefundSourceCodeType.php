@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for RefundSourceCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: RefundSourceCodeType This is the type of PayPal funding source that can be used for auto refund. any - Means Merchant doesn't have any preference. PayPal can use any available funding source (Balance or eCheck) default - Means
  * merchant's preferred funding source as configured in his profile. (Balance or eCheck) instant - Only Balance echeck - Merchant prefers echeck. If PayPal balance can cover the refund amount, we will use PayPal balance. (balance or eCheck)
  * @subpackage Enumerations

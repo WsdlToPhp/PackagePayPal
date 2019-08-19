@@ -13,14 +13,14 @@ class PaginationResultType extends AbstractStructBase
 {
     /**
      * The TotalNumberOfPages
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $TotalNumberOfPages;
     /**
      * The TotalNumberOfEntries
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
@@ -54,8 +54,8 @@ class PaginationResultType extends AbstractStructBase
     public function setTotalNumberOfPages($totalNumberOfPages = null)
     {
         // validation for constraint: int
-        if (!is_null($totalNumberOfPages) && !is_numeric($totalNumberOfPages)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($totalNumberOfPages)), __LINE__);
+        if (!is_null($totalNumberOfPages) && !(is_int($totalNumberOfPages) || ctype_digit($totalNumberOfPages))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($totalNumberOfPages, true), gettype($totalNumberOfPages)), __LINE__);
         }
         $this->TotalNumberOfPages = $totalNumberOfPages;
         return $this;
@@ -76,8 +76,8 @@ class PaginationResultType extends AbstractStructBase
     public function setTotalNumberOfEntries($totalNumberOfEntries = null)
     {
         // validation for constraint: int
-        if (!is_null($totalNumberOfEntries) && !is_numeric($totalNumberOfEntries)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($totalNumberOfEntries)), __LINE__);
+        if (!is_null($totalNumberOfEntries) && !(is_int($totalNumberOfEntries) || ctype_digit($totalNumberOfEntries))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($totalNumberOfEntries, true), gettype($totalNumberOfEntries)), __LINE__);
         }
         $this->TotalNumberOfEntries = $totalNumberOfEntries;
         return $this;

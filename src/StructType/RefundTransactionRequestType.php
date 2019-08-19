@@ -6,8 +6,8 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for RefundTransactionRequestType StructType
- * Meta informations extracted from the WSDL
- * - documentation: To pass the Merchant store informationOptional | Information about the individual details of the items to be refunded.Optional | This holds key-value pair which merchants wants to pass it to the open wallet-PLCC processorOptional
+ * Meta information extracted from the WSDL
+ * - documentation: This holds key-value pair which merchants wants to pass it to the open wallet-PLCC processorOptional | Information about the individual details of the items to be refunded.Optional | To pass the Merchant store informationOptional
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -15,8 +15,9 @@ class RefundTransactionRequestType extends AbstractRequestType
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique identifier of the transaction you are refunding. Optional Character length and limitations: 17 single-byte alphanumeric characters | TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -24,17 +25,18 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $TransactionID;
     /**
      * The PayerID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Encrypted PayPal customer account identification number. Optional Character length and limitations: 127 single-byte alphanumeric characters
+     * - base: xs:string
+     * - maxLength: 127
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - maxLength: 127
      * @var string
      */
     public $PayerID;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Invoice number corresponding to transaction details for tracking the refund of a payment. This parameter is passed by the merchant or recipient while refunding the transaction. This parameter does not affect the business logic, it is
      * persisted in the DB for transaction reference Optional
      * - maxOccurs: 1
@@ -44,7 +46,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $InvoiceID;
     /**
      * The RefundType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of refund you are making Required
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -53,7 +55,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $RefundType;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Refund amount. Amount is required if RefundType is Partial. NOTE: If RefundType is Full, do not set Amount.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -62,7 +64,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $Amount;
     /**
      * The ShippingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shipping amount. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -71,7 +73,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $ShippingAmount;
     /**
      * The TaxAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Tax amount. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -80,7 +82,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $TaxAmount;
     /**
      * The Memo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Custom memo about the refund. Optional Character length and limitations: 255 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -89,7 +91,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $Memo;
     /**
      * The RetryUntil
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The maximum time till which refund must be tried. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -98,7 +100,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $RetryUntil;
     /**
      * The RefundSource
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The type of funding source for refund. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -107,7 +109,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $RefundSource;
     /**
      * The RefundAdvice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Flag to indicate that the customer was already given store credit for a given transaction. This will allow us to make sure we do not double refund. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -116,7 +118,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $RefundAdvice;
     /**
      * The MerchantStoreDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:MerchantStoreDetails
@@ -125,7 +127,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $MerchantStoreDetails;
     /**
      * The RefundItemDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - ref: ebl:RefundItemDetails
@@ -134,7 +136,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $RefundItemDetails;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -143,7 +145,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     public $MsgSubID;
     /**
      * The MerchantData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:MerchantData
@@ -219,7 +221,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -239,13 +241,13 @@ class RefundTransactionRequestType extends AbstractRequestType
      */
     public function setPayerID($payerID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($payerID) && strlen($payerID) > 127) || (is_array($payerID) && count($payerID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($payerID) ? strlen($payerID) : count($payerID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($payerID) && !is_string($payerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payerID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payerID, true), gettype($payerID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($payerID) && mb_strlen($payerID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($payerID)), __LINE__);
         }
         $this->PayerID = $payerID;
         return $this;
@@ -267,7 +269,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -292,7 +294,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\RefundType::valueIsValid($refundType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $refundType, implode(', ', \PayPal\EnumType\RefundType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\RefundType', is_array($refundType) ? implode(', ', $refundType) : var_export($refundType, true), implode(', ', \PayPal\EnumType\RefundType::getValidValues())), __LINE__);
         }
         $this->RefundType = $refundType;
         return $this;
@@ -368,7 +370,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($memo) && !is_string($memo)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($memo)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($memo, true), gettype($memo)), __LINE__);
         }
         $this->Memo = $memo;
         return $this;
@@ -390,7 +392,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($retryUntil) && !is_string($retryUntil)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($retryUntil)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($retryUntil, true), gettype($retryUntil)), __LINE__);
         }
         $this->RetryUntil = $retryUntil;
         return $this;
@@ -415,7 +417,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\RefundSourceCodeType::valueIsValid($refundSource)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $refundSource, implode(', ', \PayPal\EnumType\RefundSourceCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\RefundSourceCodeType', is_array($refundSource) ? implode(', ', $refundSource) : var_export($refundSource, true), implode(', ', \PayPal\EnumType\RefundSourceCodeType::getValidValues())), __LINE__);
         }
         $this->RefundSource = $refundSource;
         return $this;
@@ -437,7 +439,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: boolean
         if (!is_null($refundAdvice) && !is_bool($refundAdvice)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($refundAdvice)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($refundAdvice, true), gettype($refundAdvice)), __LINE__);
         }
         $this->RefundAdvice = $refundAdvice;
         return $this;
@@ -469,6 +471,28 @@ class RefundTransactionRequestType extends AbstractRequestType
         return $this->RefundItemDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setRefundItemDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setRefundItemDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateRefundItemDetailsForArrayConstraintsFromSetRefundItemDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $refundTransactionRequestTypeRefundItemDetailsItem) {
+            // validation for constraint: itemType
+            if (!$refundTransactionRequestTypeRefundItemDetailsItem instanceof \PayPal\StructType\InvoiceItemType) {
+                $invalidValues[] = is_object($refundTransactionRequestTypeRefundItemDetailsItem) ? get_class($refundTransactionRequestTypeRefundItemDetailsItem) : sprintf('%s(%s)', gettype($refundTransactionRequestTypeRefundItemDetailsItem), var_export($refundTransactionRequestTypeRefundItemDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The RefundItemDetails property can only contain items of type \PayPal\StructType\InvoiceItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set RefundItemDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\InvoiceItemType[] $refundItemDetails
@@ -476,11 +500,9 @@ class RefundTransactionRequestType extends AbstractRequestType
      */
     public function setRefundItemDetails(array $refundItemDetails = array())
     {
-        foreach ($refundItemDetails as $refundTransactionRequestTypeRefundItemDetailsItem) {
-            // validation for constraint: itemType
-            if (!$refundTransactionRequestTypeRefundItemDetailsItem instanceof \PayPal\StructType\InvoiceItemType) {
-                throw new \InvalidArgumentException(sprintf('The RefundItemDetails property can only contain items of \PayPal\StructType\InvoiceItemType, "%s" given', is_object($refundTransactionRequestTypeRefundItemDetailsItem) ? get_class($refundTransactionRequestTypeRefundItemDetailsItem) : gettype($refundTransactionRequestTypeRefundItemDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($refundItemDetailsArrayErrorMessage = self::validateRefundItemDetailsForArrayConstraintsFromSetRefundItemDetails($refundItemDetails))) {
+            throw new \InvalidArgumentException($refundItemDetailsArrayErrorMessage, __LINE__);
         }
         $this->RefundItemDetails = $refundItemDetails;
         return $this;
@@ -495,7 +517,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\InvoiceItemType) {
-            throw new \InvalidArgumentException(sprintf('The RefundItemDetails property can only contain items of \PayPal\StructType\InvoiceItemType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The RefundItemDetails property can only contain items of type \PayPal\StructType\InvoiceItemType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->RefundItemDetails[] = $item;
         return $this;
@@ -517,7 +539,7 @@ class RefundTransactionRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

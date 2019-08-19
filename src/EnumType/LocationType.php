@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for LocationType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Location Type
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,16 +13,22 @@ class LocationType
 {
     /**
      * Constant for value 'Consumer'
+     * Meta information extracted from the WSDL
+     * - documentation: Consumer
      * @return string 'Consumer'
      */
     const VALUE_CONSUMER = 'Consumer';
     /**
      * Constant for value 'Store'
+     * Meta information extracted from the WSDL
+     * - documentation: Store
      * @return string 'Store'
      */
     const VALUE_STORE = 'Store';
     /**
      * Constant for value 'PickupDropoff'
+     * Meta information extracted from the WSDL
+     * - documentation: PickupDropOff
      * @return string 'PickupDropoff'
      */
     const VALUE_PICKUP_DROPOFF = 'PickupDropoff';

@@ -13,7 +13,7 @@ class GetIncentiveEvaluationResponseDetailsType extends AbstractStructBase
 {
     /**
      * The IncentiveDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1000
      * - minOccurs: 0
      * @var \PayPal\StructType\IncentiveDetailType[]
@@ -21,7 +21,7 @@ class GetIncentiveEvaluationResponseDetailsType extends AbstractStructBase
     public $IncentiveDetails;
     /**
      * The RequestId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -49,6 +49,28 @@ class GetIncentiveEvaluationResponseDetailsType extends AbstractStructBase
         return $this->IncentiveDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setIncentiveDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setIncentiveDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateIncentiveDetailsForArrayConstraintsFromSetIncentiveDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem) {
+            // validation for constraint: itemType
+            if (!$getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem instanceof \PayPal\StructType\IncentiveDetailType) {
+                $invalidValues[] = is_object($getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem) ? get_class($getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem) : sprintf('%s(%s)', gettype($getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem), var_export($getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The IncentiveDetails property can only contain items of type \PayPal\StructType\IncentiveDetailType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set IncentiveDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\IncentiveDetailType[] $incentiveDetails
@@ -56,11 +78,13 @@ class GetIncentiveEvaluationResponseDetailsType extends AbstractStructBase
      */
     public function setIncentiveDetails(array $incentiveDetails = array())
     {
-        foreach ($incentiveDetails as $getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem) {
-            // validation for constraint: itemType
-            if (!$getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem instanceof \PayPal\StructType\IncentiveDetailType) {
-                throw new \InvalidArgumentException(sprintf('The IncentiveDetails property can only contain items of \PayPal\StructType\IncentiveDetailType, "%s" given', is_object($getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem) ? get_class($getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem) : gettype($getIncentiveEvaluationResponseDetailsTypeIncentiveDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($incentiveDetailsArrayErrorMessage = self::validateIncentiveDetailsForArrayConstraintsFromSetIncentiveDetails($incentiveDetails))) {
+            throw new \InvalidArgumentException($incentiveDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($incentiveDetails) && count($incentiveDetails) > 1000) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 1000', count($incentiveDetails)), __LINE__);
         }
         $this->IncentiveDetails = $incentiveDetails;
         return $this;
@@ -75,7 +99,11 @@ class GetIncentiveEvaluationResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\IncentiveDetailType) {
-            throw new \InvalidArgumentException(sprintf('The IncentiveDetails property can only contain items of \PayPal\StructType\IncentiveDetailType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The IncentiveDetails property can only contain items of type \PayPal\StructType\IncentiveDetailType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($this->IncentiveDetails) && count($this->IncentiveDetails) >= 1000) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 1000', count($this->IncentiveDetails)), __LINE__);
         }
         $this->IncentiveDetails[] = $item;
         return $this;
@@ -97,7 +125,7 @@ class GetIncentiveEvaluationResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($requestId) && !is_string($requestId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($requestId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($requestId, true), gettype($requestId)), __LINE__);
         }
         $this->RequestId = $requestId;
         return $this;

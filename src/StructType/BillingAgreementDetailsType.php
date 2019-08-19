@@ -13,7 +13,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
 {
     /**
      * The BillingType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
     public $BillingType;
     /**
      * The BillingAgreementDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Only needed for AutoBill billinng type.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -30,7 +30,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
     public $BillingAgreementDescription;
     /**
      * The PaymentType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -38,7 +38,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
     public $PaymentType;
     /**
      * The BillingAgreementCustom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Custom annotation field for your exclusive use.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -84,7 +84,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BillingCodeType::valueIsValid($billingType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $billingType, implode(', ', \PayPal\EnumType\BillingCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BillingCodeType', is_array($billingType) ? implode(', ', $billingType) : var_export($billingType, true), implode(', ', \PayPal\EnumType\BillingCodeType::getValidValues())), __LINE__);
         }
         $this->BillingType = $billingType;
         return $this;
@@ -106,7 +106,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($billingAgreementDescription) && !is_string($billingAgreementDescription)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementDescription)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementDescription, true), gettype($billingAgreementDescription)), __LINE__);
         }
         $this->BillingAgreementDescription = $billingAgreementDescription;
         return $this;
@@ -131,7 +131,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchantPullPaymentCodeType::valueIsValid($paymentType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentType, implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchantPullPaymentCodeType', is_array($paymentType) ? implode(', ', $paymentType) : var_export($paymentType, true), implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentType = $paymentType;
         return $this;
@@ -153,7 +153,7 @@ class BillingAgreementDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($billingAgreementCustom) && !is_string($billingAgreementCustom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementCustom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementCustom, true), gettype($billingAgreementCustom)), __LINE__);
         }
         $this->BillingAgreementCustom = $billingAgreementCustom;
         return $this;

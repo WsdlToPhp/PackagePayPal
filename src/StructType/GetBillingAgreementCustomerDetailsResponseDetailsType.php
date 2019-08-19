@@ -14,7 +14,7 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType extends AbstractStru
 {
     /**
      * The PayerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\PayerInfoType
@@ -22,7 +22,7 @@ class GetBillingAgreementCustomerDetailsResponseDetailsType extends AbstractStru
     public $PayerInfo;
     /**
      * The BillingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Customer's billing address. Optional If you have a credit card mapped in your PayPal account, PayPal returns the billing address of the credit billing address otherwise your primary address as billing address in
      * GetBillingAgreementCustomerDetails.
      * - minOccurs: 0

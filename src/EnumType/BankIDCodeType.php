@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for BankIDCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: BankID The various banks supported for China postbacks.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

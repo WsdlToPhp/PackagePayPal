@@ -13,28 +13,28 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
 {
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Status of merchant's onboarding process: CompletedCancelledPending Character length and limitations: Eight alphabetic characters
      * @var string
      */
     public $Status;
     /**
      * The StartDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Date the boarding process started
      * @var string
      */
     public $StartDate;
     /**
      * The LastUpdated
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Date the merchantâs status or progress was last updated
      * @var string
      */
     public $LastUpdated;
     /**
      * The Reason
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Reason for merchantâs cancellation of sign-up. Character length and limitations: 1,024 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -52,14 +52,14 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $ProgramCode;
     /**
      * The CampaignID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CampaignID;
     /**
      * The UserWithdrawalLimit
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates if there is a limitation on the amount of money the business can withdraw from PayPal
      * - minOccurs: 0
      * @var string
@@ -67,7 +67,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $UserWithdrawalLimit;
     /**
      * The PartnerCustom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Custom information you set on the EnterBoarding API call Character length and limitations: 256 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -75,7 +75,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $PartnerCustom;
     /**
      * The AccountOwner
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about the owner of the account
      * - minOccurs: 0
      * @var \PayPal\StructType\PayerInfoType
@@ -83,7 +83,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $AccountOwner;
     /**
      * The Credentials
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Merchantâs PayPal API credentials
      * - minOccurs: 0
      * @var \PayPal\StructType\APICredentialsType
@@ -91,7 +91,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $Credentials;
     /**
      * The ConfigureAPIs
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The APIs that this merchant has granted the business partner permission to call on his behalf. For example: SetExpressCheckout,GetExpressCheckoutDetails,DoExpressCheckoutPayment
      * - minOccurs: 0
      * @var string
@@ -99,7 +99,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $ConfigureAPIs;
     /**
      * The EmailVerificationStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Primary email verification status. Confirmed, Unconfirmed
      * - minOccurs: 0
      * @var string
@@ -107,7 +107,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $EmailVerificationStatus;
     /**
      * The VettingStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gives VettingStatus - Pending, Cancelled, Approved, UnderReview Character length and limitations: 256 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -115,7 +115,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     public $VettingStatus;
     /**
      * The BankAccountVerificationStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Gives BankAccountVerificationStatus - Added, Confirmed Character length and limitations: 256 alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -193,7 +193,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BoardingStatusType::valueIsValid($status)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $status, implode(', ', \PayPal\EnumType\BoardingStatusType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BoardingStatusType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PayPal\EnumType\BoardingStatusType::getValidValues())), __LINE__);
         }
         $this->Status = $status;
         return $this;
@@ -215,7 +215,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($startDate) && !is_string($startDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($startDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
         }
         $this->StartDate = $startDate;
         return $this;
@@ -237,7 +237,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($lastUpdated) && !is_string($lastUpdated)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lastUpdated)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastUpdated, true), gettype($lastUpdated)), __LINE__);
         }
         $this->LastUpdated = $lastUpdated;
         return $this;
@@ -259,7 +259,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reason) && !is_string($reason)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reason)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reason, true), gettype($reason)), __LINE__);
         }
         $this->Reason = $reason;
         return $this;
@@ -281,7 +281,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($programName) && !is_string($programName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($programName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($programName, true), gettype($programName)), __LINE__);
         }
         $this->ProgramName = $programName;
         return $this;
@@ -303,7 +303,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($programCode) && !is_string($programCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($programCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($programCode, true), gettype($programCode)), __LINE__);
         }
         $this->ProgramCode = $programCode;
         return $this;
@@ -325,7 +325,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($campaignID) && !is_string($campaignID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($campaignID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($campaignID, true), gettype($campaignID)), __LINE__);
         }
         $this->CampaignID = $campaignID;
         return $this;
@@ -350,7 +350,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\UserWithdrawalLimitTypeType::valueIsValid($userWithdrawalLimit)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $userWithdrawalLimit, implode(', ', \PayPal\EnumType\UserWithdrawalLimitTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\UserWithdrawalLimitTypeType', is_array($userWithdrawalLimit) ? implode(', ', $userWithdrawalLimit) : var_export($userWithdrawalLimit, true), implode(', ', \PayPal\EnumType\UserWithdrawalLimitTypeType::getValidValues())), __LINE__);
         }
         $this->UserWithdrawalLimit = $userWithdrawalLimit;
         return $this;
@@ -372,7 +372,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($partnerCustom) && !is_string($partnerCustom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($partnerCustom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($partnerCustom, true), gettype($partnerCustom)), __LINE__);
         }
         $this->PartnerCustom = $partnerCustom;
         return $this;
@@ -430,7 +430,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($configureAPIs) && !is_string($configureAPIs)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($configureAPIs)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($configureAPIs, true), gettype($configureAPIs)), __LINE__);
         }
         $this->ConfigureAPIs = $configureAPIs;
         return $this;
@@ -452,7 +452,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($emailVerificationStatus) && !is_string($emailVerificationStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($emailVerificationStatus)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($emailVerificationStatus, true), gettype($emailVerificationStatus)), __LINE__);
         }
         $this->EmailVerificationStatus = $emailVerificationStatus;
         return $this;
@@ -474,7 +474,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($vettingStatus) && !is_string($vettingStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($vettingStatus)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vettingStatus, true), gettype($vettingStatus)), __LINE__);
         }
         $this->VettingStatus = $vettingStatus;
         return $this;
@@ -496,7 +496,7 @@ class GetBoardingDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($bankAccountVerificationStatus) && !is_string($bankAccountVerificationStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($bankAccountVerificationStatus)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bankAccountVerificationStatus, true), gettype($bankAccountVerificationStatus)), __LINE__);
         }
         $this->BankAccountVerificationStatus = $bankAccountVerificationStatus;
         return $this;

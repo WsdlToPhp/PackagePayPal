@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for MerchantPullPaymentType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MerchantPullPayment Parameters to make initiate a pull payment
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class MerchantPullPaymentType extends AbstractStructBase
 {
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The amount to charge to the customer. Required Only numeric characters and a decimal separator are allowed. Limit: 10 single-byte characters, including two for decimals You must set the currencyID attribute to one of the
      * three-character currency code for any of the supported PayPal currencies.
      * @var \PayPal\StructType\BasicAmountType
@@ -23,15 +23,16 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $Amount;
     /**
      * The MpID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Preapproved Payments billing agreement identification number between the PayPal customer and you. Required Character limit: 19 single-byte alphanumeric characters. The format of a billing agreement identification number is the
      * single-character prefix B, followed by a hyphen and an alphanumeric character string: B-unique_alphanumeric_string
+     * - base: xs:string
      * @var string
      */
     public $MpID;
     /**
      * The PaymentType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Specifies type of PayPal payment you require Optional
      * - minOccurs: 0
      * @var string
@@ -39,7 +40,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $PaymentType;
     /**
      * The Memo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Text entered by the customer in the Note field during enrollment Optional
      * - minOccurs: 0
      * @var string
@@ -47,7 +48,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $Memo;
     /**
      * The EmailSubject
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Subject line of confirmation email sent to recipient Optional
      * - minOccurs: 0
      * @var string
@@ -55,7 +56,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $EmailSubject;
     /**
      * The Tax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The tax charged on the transaction Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -63,7 +64,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $Tax;
     /**
      * The Shipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Per-transaction shipping charge Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -71,7 +72,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $Shipping;
     /**
      * The Handling
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Per-transaction handling charge Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -79,7 +80,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $Handling;
     /**
      * The ItemName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Name of purchased item Optional
      * - minOccurs: 0
      * @var string
@@ -87,7 +88,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $ItemName;
     /**
      * The ItemNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Reference number of purchased item Optional
      * - minOccurs: 0
      * @var string
@@ -95,7 +96,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $ItemNumber;
     /**
      * The Invoice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your invoice number Optional
      * - minOccurs: 0
      * @var string
@@ -103,7 +104,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $Invoice;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Custom annotation field for tracking or other use Optional
      * - minOccurs: 0
      * @var string
@@ -111,7 +112,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $Custom;
     /**
      * The ButtonSource
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An identification code for use by third-party applications to identify transactions. Optional Character length and limitations: 32 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -119,7 +120,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     public $ButtonSource;
     /**
      * The SoftDescriptor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Passed in soft descriptor string to be appended. Optional Character length and limitations: single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -209,7 +210,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($mpID) && !is_string($mpID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($mpID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mpID, true), gettype($mpID)), __LINE__);
         }
         $this->MpID = $mpID;
         return $this;
@@ -234,7 +235,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchantPullPaymentCodeType::valueIsValid($paymentType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentType, implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchantPullPaymentCodeType', is_array($paymentType) ? implode(', ', $paymentType) : var_export($paymentType, true), implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentType = $paymentType;
         return $this;
@@ -256,7 +257,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($memo) && !is_string($memo)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($memo)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($memo, true), gettype($memo)), __LINE__);
         }
         $this->Memo = $memo;
         return $this;
@@ -278,7 +279,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($emailSubject) && !is_string($emailSubject)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($emailSubject)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($emailSubject, true), gettype($emailSubject)), __LINE__);
         }
         $this->EmailSubject = $emailSubject;
         return $this;
@@ -354,7 +355,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemName) && !is_string($itemName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemName, true), gettype($itemName)), __LINE__);
         }
         $this->ItemName = $itemName;
         return $this;
@@ -376,7 +377,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemNumber) && !is_string($itemNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemNumber, true), gettype($itemNumber)), __LINE__);
         }
         $this->ItemNumber = $itemNumber;
         return $this;
@@ -398,7 +399,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($invoice) && !is_string($invoice)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoice)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoice, true), gettype($invoice)), __LINE__);
         }
         $this->Invoice = $invoice;
         return $this;
@@ -420,7 +421,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -442,7 +443,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buttonSource) && !is_string($buttonSource)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buttonSource)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buttonSource, true), gettype($buttonSource)), __LINE__);
         }
         $this->ButtonSource = $buttonSource;
         return $this;
@@ -464,7 +465,7 @@ class MerchantPullPaymentType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptor)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
         $this->SoftDescriptor = $softDescriptor;
         return $this;

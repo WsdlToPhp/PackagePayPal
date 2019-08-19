@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for UserWithdrawalLimitTypeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: User Withdrawal Limit Type Type
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

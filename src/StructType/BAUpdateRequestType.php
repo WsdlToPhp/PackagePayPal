@@ -13,7 +13,7 @@ class BAUpdateRequestType extends AbstractRequestType
 {
     /**
      * The ReferenceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class BAUpdateRequestType extends AbstractRequestType
     public $ReferenceID;
     /**
      * The BillingAgreementDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class BAUpdateRequestType extends AbstractRequestType
     public $BillingAgreementDescription;
     /**
      * The BillingAgreementStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -37,7 +37,7 @@ class BAUpdateRequestType extends AbstractRequestType
     public $BillingAgreementStatus;
     /**
      * The BillingAgreementCustom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -79,7 +79,7 @@ class BAUpdateRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($referenceID) && !is_string($referenceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($referenceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($referenceID, true), gettype($referenceID)), __LINE__);
         }
         $this->ReferenceID = $referenceID;
         return $this;
@@ -101,7 +101,7 @@ class BAUpdateRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($billingAgreementDescription) && !is_string($billingAgreementDescription)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementDescription)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementDescription, true), gettype($billingAgreementDescription)), __LINE__);
         }
         $this->BillingAgreementDescription = $billingAgreementDescription;
         return $this;
@@ -126,7 +126,7 @@ class BAUpdateRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchantPullStatusCodeType::valueIsValid($billingAgreementStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $billingAgreementStatus, implode(', ', \PayPal\EnumType\MerchantPullStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchantPullStatusCodeType', is_array($billingAgreementStatus) ? implode(', ', $billingAgreementStatus) : var_export($billingAgreementStatus, true), implode(', ', \PayPal\EnumType\MerchantPullStatusCodeType::getValidValues())), __LINE__);
         }
         $this->BillingAgreementStatus = $billingAgreementStatus;
         return $this;
@@ -148,7 +148,7 @@ class BAUpdateRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($billingAgreementCustom) && !is_string($billingAgreementCustom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementCustom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementCustom, true), gettype($billingAgreementCustom)), __LINE__);
         }
         $this->BillingAgreementCustom = $billingAgreementCustom;
         return $this;

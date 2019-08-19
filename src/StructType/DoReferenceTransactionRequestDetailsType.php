@@ -13,7 +13,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
 {
     /**
      * The ReferenceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $ReferenceID;
     /**
      * The PaymentAction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -29,7 +29,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $PaymentAction;
     /**
      * The PaymentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\PaymentDetailsType
@@ -37,7 +37,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $PaymentDetails;
     /**
      * The PaymentType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -45,7 +45,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $PaymentType;
     /**
      * The CreditCard
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\ReferenceCreditCardDetailsType
@@ -53,7 +53,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $CreditCard;
     /**
      * The IPAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -61,7 +61,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $IPAddress;
     /**
      * The RiskSessionCorrelationID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Correlation id related to risk process done for the device. Max length is 36 Chars.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -70,7 +70,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $RiskSessionCorrelationID;
     /**
      * The MerchantSessionId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -78,7 +78,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $MerchantSessionId;
     /**
      * The ReqConfirmShipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -86,7 +86,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $ReqConfirmShipping;
     /**
      * The SoftDescriptor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -94,7 +94,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $SoftDescriptor;
     /**
      * The SoftDescriptorCity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -102,7 +102,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $SoftDescriptorCity;
     /**
      * The SenderDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\SenderDetailsType
@@ -110,7 +110,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     public $SenderDetails;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -180,7 +180,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($referenceID) && !is_string($referenceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($referenceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($referenceID, true), gettype($referenceID)), __LINE__);
         }
         $this->ReferenceID = $referenceID;
         return $this;
@@ -205,7 +205,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentActionCodeType::valueIsValid($paymentAction)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentAction, implode(', ', \PayPal\EnumType\PaymentActionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \PayPal\EnumType\PaymentActionCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentAction = $paymentAction;
         return $this;
@@ -248,7 +248,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchantPullPaymentCodeType::valueIsValid($paymentType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentType, implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchantPullPaymentCodeType', is_array($paymentType) ? implode(', ', $paymentType) : var_export($paymentType, true), implode(', ', \PayPal\EnumType\MerchantPullPaymentCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentType = $paymentType;
         return $this;
@@ -288,7 +288,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($iPAddress) && !is_string($iPAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iPAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iPAddress, true), gettype($iPAddress)), __LINE__);
         }
         $this->IPAddress = $iPAddress;
         return $this;
@@ -310,7 +310,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($riskSessionCorrelationID) && !is_string($riskSessionCorrelationID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($riskSessionCorrelationID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($riskSessionCorrelationID, true), gettype($riskSessionCorrelationID)), __LINE__);
         }
         $this->RiskSessionCorrelationID = $riskSessionCorrelationID;
         return $this;
@@ -332,7 +332,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($merchantSessionId) && !is_string($merchantSessionId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($merchantSessionId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantSessionId, true), gettype($merchantSessionId)), __LINE__);
         }
         $this->MerchantSessionId = $merchantSessionId;
         return $this;
@@ -354,7 +354,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reqConfirmShipping) && !is_string($reqConfirmShipping)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reqConfirmShipping)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqConfirmShipping, true), gettype($reqConfirmShipping)), __LINE__);
         }
         $this->ReqConfirmShipping = $reqConfirmShipping;
         return $this;
@@ -376,7 +376,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptor)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
         $this->SoftDescriptor = $softDescriptor;
         return $this;
@@ -398,7 +398,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($softDescriptorCity) && !is_string($softDescriptorCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptorCity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptorCity, true), gettype($softDescriptorCity)), __LINE__);
         }
         $this->SoftDescriptorCity = $softDescriptorCity;
         return $this;
@@ -438,7 +438,7 @@ class DoReferenceTransactionRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

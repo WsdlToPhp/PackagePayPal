@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for FMFPendingTransactionActionType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: This is various actions that a merchant can take on a FMF Pending Transaction.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

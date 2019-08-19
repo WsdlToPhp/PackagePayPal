@@ -13,21 +13,21 @@ class IncentiveRequestDetailsType extends AbstractStructBase
 {
     /**
      * The RequestId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $RequestId;
     /**
      * The RequestType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $RequestType;
     /**
      * The RequestDetailLevel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -65,7 +65,7 @@ class IncentiveRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($requestId) && !is_string($requestId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($requestId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($requestId, true), gettype($requestId)), __LINE__);
         }
         $this->RequestId = $requestId;
         return $this;
@@ -90,7 +90,7 @@ class IncentiveRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\IncentiveRequestCodeType::valueIsValid($requestType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $requestType, implode(', ', \PayPal\EnumType\IncentiveRequestCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\IncentiveRequestCodeType', is_array($requestType) ? implode(', ', $requestType) : var_export($requestType, true), implode(', ', \PayPal\EnumType\IncentiveRequestCodeType::getValidValues())), __LINE__);
         }
         $this->RequestType = $requestType;
         return $this;
@@ -115,7 +115,7 @@ class IncentiveRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\IncentiveRequestDetailLevelCodeType::valueIsValid($requestDetailLevel)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $requestDetailLevel, implode(', ', \PayPal\EnumType\IncentiveRequestDetailLevelCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\IncentiveRequestDetailLevelCodeType', is_array($requestDetailLevel) ? implode(', ', $requestDetailLevel) : var_export($requestDetailLevel, true), implode(', ', \PayPal\EnumType\IncentiveRequestDetailLevelCodeType::getValidValues())), __LINE__);
         }
         $this->RequestDetailLevel = $requestDetailLevel;
         return $this;

@@ -13,14 +13,14 @@ class BillUserResponseType extends AbstractResponseType
 {
     /**
      * The BillUserResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:BillUserResponseDetails
      * @var \PayPal\StructType\MerchantPullPaymentResponseType
      */
     public $BillUserResponseDetails;
     /**
      * The FMFDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\FMFDetailsType

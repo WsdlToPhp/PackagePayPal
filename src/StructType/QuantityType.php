@@ -18,7 +18,7 @@ class QuantityType extends AbstractStructBase
     public $_;
     /**
      * The unit
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - use: optional
      * @var string
      */
@@ -51,6 +51,10 @@ class QuantityType extends AbstractStructBase
      */
     public function set_($_ = null)
     {
+        // validation for constraint: float
+        if (!is_null($_) && !(is_float($_) || is_numeric($_))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($_, true), gettype($_)), __LINE__);
+        }
         $this->_ = $_;
         return $this;
     }
@@ -71,7 +75,7 @@ class QuantityType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($unit) && !is_string($unit)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($unit)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($unit, true), gettype($unit)), __LINE__);
         }
         $this->unit = $unit;
         return $this;

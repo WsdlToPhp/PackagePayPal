@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for APIType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Supported API Types for DoCancel operation
  * - type: ns:APIType
  * @subpackage Enumerations
@@ -14,16 +14,22 @@ class APIType
 {
     /**
      * Constant for value 'CHECKOUT_AUTHORIZATION'
+     * Meta information extracted from the WSDL
+     * - documentation: POS CHECKOUT AUTHORIZATION
      * @return string 'CHECKOUT_AUTHORIZATION'
      */
     const VALUE_CHECKOUT_AUTHORIZATION = 'CHECKOUT_AUTHORIZATION';
     /**
      * Constant for value 'CHECKOUT_SALE'
+     * Meta information extracted from the WSDL
+     * - documentation: POS CHECKOUT SALE
      * @return string 'CHECKOUT_SALE'
      */
     const VALUE_CHECKOUT_SALE = 'CHECKOUT_SALE';
     /**
      * Constant for value 'REFUND_TRANSACTION'
+     * Meta information extracted from the WSDL
+     * - documentation: REFUND TRANSACTION
      * @return string 'REFUND_TRANSACTION'
      */
     const VALUE_REFUND_TRANSACTION = 'REFUND_TRANSACTION';

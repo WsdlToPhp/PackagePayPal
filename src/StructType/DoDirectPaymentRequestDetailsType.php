@@ -13,7 +13,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
 {
     /**
      * The PaymentAction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: How you want to obtain payment. Required Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture. Sale indicates that this is a final sale for which you are
      * requesting payment. NOTE: Order is not allowed for Direct Payment. Character length and limit: Up to 13 single-byte alphabetic characters
      * @var string
@@ -21,21 +21,21 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     public $PaymentAction;
     /**
      * The PaymentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the payment Required
      * @var \PayPal\StructType\PaymentDetailsType
      */
     public $PaymentDetails;
     /**
      * The CreditCard
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the credit card to be charged. Required
      * @var \PayPal\StructType\CreditCardDetailsType
      */
     public $CreditCard;
     /**
      * The IPAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IP address of the payer's browser as recorded in its HTTP request to your website. PayPal records this IP addresses as a means to detect possible fraud. Required Character length and limitations: 15 single-byte characters, including
      * periods, in dotted-quad format: ???.???.???.???
      * @var string
@@ -43,7 +43,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     public $IPAddress;
     /**
      * The MerchantSessionId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your customer session identification token. PayPal records this optional session identification token as an additional means to detect possible fraud. Optional Character length and limitations: 64 single-byte numeric characters
      * - minOccurs: 0
      * @var string
@@ -51,7 +51,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     public $MerchantSessionId;
     /**
      * The ReturnFMFDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var bool
@@ -59,7 +59,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     public $ReturnFMFDetails;
     /**
      * The SoftDescriptor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Use this optional parameter to pass in your business name and other data describing the transaction. Optional This information is usually displayed in the account holder's statement. Example: RedCross Haiti, RedCross Uganda,
      * Realtor.com dues, Realtor.com list fee Length 25 characters. Alphanumeric characters and dash(-), dot(.), asterisk(*), space( ) On the customer's statement, an asterisk is used to separate the DBA name and product name. The asterisk delimiter can
      * appear in position 4, 8, or 13.
@@ -70,7 +70,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     public $SoftDescriptor;
     /**
      * The SoftDescriptorCity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Use this optional parameter to pass information about how consumer should contact the merchant. Optional This information is usually displayed in the account holder's statement. For Ecom trx: phone, email or URL is allowed For Retail
      * trx: only the actual city is allowed For details on allowed characters in Soft Descriptor City refer to the API documentation.
      * - maxOccurs: 1
@@ -129,7 +129,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentActionCodeType::valueIsValid($paymentAction)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentAction, implode(', ', \PayPal\EnumType\PaymentActionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \PayPal\EnumType\PaymentActionCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentAction = $paymentAction;
         return $this;
@@ -187,7 +187,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($iPAddress) && !is_string($iPAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iPAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iPAddress, true), gettype($iPAddress)), __LINE__);
         }
         $this->IPAddress = $iPAddress;
         return $this;
@@ -209,7 +209,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($merchantSessionId) && !is_string($merchantSessionId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($merchantSessionId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($merchantSessionId, true), gettype($merchantSessionId)), __LINE__);
         }
         $this->MerchantSessionId = $merchantSessionId;
         return $this;
@@ -231,7 +231,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($returnFMFDetails) && !is_bool($returnFMFDetails)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($returnFMFDetails)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnFMFDetails, true), gettype($returnFMFDetails)), __LINE__);
         }
         $this->ReturnFMFDetails = $returnFMFDetails;
         return $this;
@@ -253,7 +253,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($softDescriptor) && !is_string($softDescriptor)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptor)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptor, true), gettype($softDescriptor)), __LINE__);
         }
         $this->SoftDescriptor = $softDescriptor;
         return $this;
@@ -275,7 +275,7 @@ class DoDirectPaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($softDescriptorCity) && !is_string($softDescriptorCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($softDescriptorCity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($softDescriptorCity, true), gettype($softDescriptorCity)), __LINE__);
         }
         $this->SoftDescriptorCity = $softDescriptorCity;
         return $this;

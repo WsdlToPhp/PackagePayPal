@@ -13,7 +13,7 @@ class DoCaptureReq extends AbstractStructBase
 {
     /**
      * The DoCaptureRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoCaptureRequest
      * @var \PayPal\StructType\DoCaptureRequestType
      */

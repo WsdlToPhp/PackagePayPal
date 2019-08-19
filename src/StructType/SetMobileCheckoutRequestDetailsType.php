@@ -13,7 +13,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
 {
     /**
      * The ItemAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cost of this item before tax and shipping.You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Required
      * - minOccurs: 1
      * @var \PayPal\StructType\BasicAmountType
@@ -21,7 +21,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ItemAmount;
     /**
      * The ItemName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Description of the item that the customer is purchasing. Required Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 1
      * @var string
@@ -29,7 +29,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ItemName;
     /**
      * The ReturnURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. Required Character length
      * and limitations: no limit.
      * - minOccurs: 1
@@ -38,7 +38,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ReturnURL;
     /**
      * The BuyerPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The phone number of the buyer's mobile device, if available. Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\PhoneNumberType
@@ -46,7 +46,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $BuyerPhone;
     /**
      * The Tax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Tax amount for this item.You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -54,7 +54,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $Tax;
     /**
      * The Shipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shipping amount for this item.You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -62,7 +62,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $Shipping;
     /**
      * The ItemNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Reference number of the item that the customer is purchasing. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -70,7 +70,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ItemNumber;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A free-form field for your own use, such as a tracking number or other value you want returned to you in IPN. Optional Character length and limitations: 256 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -78,7 +78,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $Custom;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your own unique invoice or tracking number. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -86,7 +86,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $InvoiceID;
     /**
      * The CancelURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. Optional Character length
      * and limitations: no limit
      * - minOccurs: 0
@@ -95,7 +95,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $CancelURL;
     /**
      * The AddressDisplayOptions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that you require that the customer's shipping address on file with PayPal be a confirmed address. Setting this element overrides the setting you have specified in your Merchant Account Profile. Optional
      * - minOccurs: 0
      * @var int
@@ -103,7 +103,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $AddressDisplayOptions;
     /**
      * The SharePhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that you require that the customer specifies a contact phone for the transactxion. Default is 0 / none required. Optional
      * - minOccurs: 0
      * @var int
@@ -111,7 +111,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $SharePhone;
     /**
      * The ShipToAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Customer's shipping address. Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\AddressType
@@ -119,8 +119,9 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public $ShipToAddress;
     /**
      * The BuyerEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address of the buyer as entered during checkout. PayPal uses this value to pre-fill the login portion of the PayPal login page. Optional Character length and limit: 127 single-byte alphanumeric characters
+     * - base: xs:string
      * - minOccurs: 0
      * @var string
      */
@@ -209,7 +210,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemName) && !is_string($itemName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemName, true), gettype($itemName)), __LINE__);
         }
         $this->ItemName = $itemName;
         return $this;
@@ -231,7 +232,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($returnURL) && !is_string($returnURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($returnURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->ReturnURL = $returnURL;
         return $this;
@@ -307,7 +308,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemNumber) && !is_string($itemNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemNumber, true), gettype($itemNumber)), __LINE__);
         }
         $this->ItemNumber = $itemNumber;
         return $this;
@@ -329,7 +330,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -351,7 +352,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -373,7 +374,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cancelURL) && !is_string($cancelURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cancelURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->CancelURL = $cancelURL;
         return $this;
@@ -394,8 +395,8 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public function setAddressDisplayOptions($addressDisplayOptions = null)
     {
         // validation for constraint: int
-        if (!is_null($addressDisplayOptions) && !is_numeric($addressDisplayOptions)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($addressDisplayOptions)), __LINE__);
+        if (!is_null($addressDisplayOptions) && !(is_int($addressDisplayOptions) || ctype_digit($addressDisplayOptions))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($addressDisplayOptions, true), gettype($addressDisplayOptions)), __LINE__);
         }
         $this->AddressDisplayOptions = $addressDisplayOptions;
         return $this;
@@ -416,8 +417,8 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     public function setSharePhone($sharePhone = null)
     {
         // validation for constraint: int
-        if (!is_null($sharePhone) && !is_numeric($sharePhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($sharePhone)), __LINE__);
+        if (!is_null($sharePhone) && !(is_int($sharePhone) || ctype_digit($sharePhone))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($sharePhone, true), gettype($sharePhone)), __LINE__);
         }
         $this->SharePhone = $sharePhone;
         return $this;
@@ -457,7 +458,7 @@ class SetMobileCheckoutRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerEmail) && !is_string($buyerEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmail, true), gettype($buyerEmail)), __LINE__);
         }
         $this->BuyerEmail = $buyerEmail;
         return $this;

@@ -13,7 +13,7 @@ class InitiateRecoupReq extends AbstractStructBase
 {
     /**
      * The InitiateRecoupRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:InitiateRecoupRequest
      * @var \PayPal\StructType\InitiateRecoupRequestType
      */

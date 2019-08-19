@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ButtonSubTypeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Types of button sub types
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,11 +13,15 @@ class ButtonSubTypeType
 {
     /**
      * Constant for value 'PRODUCTS'
+     * Meta information extracted from the WSDL
+     * - documentation: button subtype is PRODUCTS
      * @return string 'PRODUCTS'
      */
     const VALUE_PRODUCTS = 'PRODUCTS';
     /**
      * Constant for value 'SERVICES'
+     * Meta information extracted from the WSDL
+     * - documentation: button subtype is SERVICES
      * @return string 'SERVICES'
      */
     const VALUE_SERVICES = 'SERVICES';

@@ -13,7 +13,7 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
 {
     /**
      * The BillingPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unit of meausre for billing cycle
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     public $BillingPeriod;
     /**
      * The BillingFrequency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Number of BillingPeriod that make up one billing cycle
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     public $BillingFrequency;
     /**
      * The TotalBillingCycles
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Total billing cycles in this portion of the schedule
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -40,7 +40,7 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     public $TotalBillingCycles;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount to charge
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -49,7 +49,7 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     public $Amount;
     /**
      * The ShippingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Additional shipping amount to charge
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -58,7 +58,7 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     public $ShippingAmount;
     /**
      * The TaxAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Additional tax amount to charge
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -110,7 +110,7 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\BillingPeriodType::valueIsValid($billingPeriod)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $billingPeriod, implode(', ', \PayPal\EnumType\BillingPeriodType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BillingPeriodType', is_array($billingPeriod) ? implode(', ', $billingPeriod) : var_export($billingPeriod, true), implode(', ', \PayPal\EnumType\BillingPeriodType::getValidValues())), __LINE__);
         }
         $this->BillingPeriod = $billingPeriod;
         return $this;
@@ -131,8 +131,8 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     public function setBillingFrequency($billingFrequency = null)
     {
         // validation for constraint: int
-        if (!is_null($billingFrequency) && !is_numeric($billingFrequency)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($billingFrequency)), __LINE__);
+        if (!is_null($billingFrequency) && !(is_int($billingFrequency) || ctype_digit($billingFrequency))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($billingFrequency, true), gettype($billingFrequency)), __LINE__);
         }
         $this->BillingFrequency = $billingFrequency;
         return $this;
@@ -153,8 +153,8 @@ class BillingPeriodDetailsType_Update extends AbstractStructBase
     public function setTotalBillingCycles($totalBillingCycles = null)
     {
         // validation for constraint: int
-        if (!is_null($totalBillingCycles) && !is_numeric($totalBillingCycles)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($totalBillingCycles)), __LINE__);
+        if (!is_null($totalBillingCycles) && !(is_int($totalBillingCycles) || ctype_digit($totalBillingCycles))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($totalBillingCycles, true), gettype($totalBillingCycles)), __LINE__);
         }
         $this->TotalBillingCycles = $totalBillingCycles;
         return $this;

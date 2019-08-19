@@ -13,7 +13,7 @@ class GetAccessPermissionDetailsResponseType extends AbstractResponseType
 {
     /**
      * The GetAccessPermissionDetailsResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:GetAccessPermissionDetailsResponseDetails

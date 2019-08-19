@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for TransactionSearchResponseType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Results of a Transaction Search.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class TransactionSearchResponseType extends AbstractResponseType
 {
     /**
      * The PaymentTransactions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - ref: ebl:PaymentTransactions
@@ -41,6 +41,28 @@ class TransactionSearchResponseType extends AbstractResponseType
         return $this->PaymentTransactions;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentTransactions method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentTransactions method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentTransactionsForArrayConstraintsFromSetPaymentTransactions(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $transactionSearchResponseTypePaymentTransactionsItem) {
+            // validation for constraint: itemType
+            if (!$transactionSearchResponseTypePaymentTransactionsItem instanceof \PayPal\StructType\PaymentTransactionSearchResultType) {
+                $invalidValues[] = is_object($transactionSearchResponseTypePaymentTransactionsItem) ? get_class($transactionSearchResponseTypePaymentTransactionsItem) : sprintf('%s(%s)', gettype($transactionSearchResponseTypePaymentTransactionsItem), var_export($transactionSearchResponseTypePaymentTransactionsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentTransactions property can only contain items of type \PayPal\StructType\PaymentTransactionSearchResultType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentTransactions value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentTransactionSearchResultType[] $paymentTransactions
@@ -48,11 +70,9 @@ class TransactionSearchResponseType extends AbstractResponseType
      */
     public function setPaymentTransactions(array $paymentTransactions = array())
     {
-        foreach ($paymentTransactions as $transactionSearchResponseTypePaymentTransactionsItem) {
-            // validation for constraint: itemType
-            if (!$transactionSearchResponseTypePaymentTransactionsItem instanceof \PayPal\StructType\PaymentTransactionSearchResultType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentTransactions property can only contain items of \PayPal\StructType\PaymentTransactionSearchResultType, "%s" given', is_object($transactionSearchResponseTypePaymentTransactionsItem) ? get_class($transactionSearchResponseTypePaymentTransactionsItem) : gettype($transactionSearchResponseTypePaymentTransactionsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentTransactionsArrayErrorMessage = self::validatePaymentTransactionsForArrayConstraintsFromSetPaymentTransactions($paymentTransactions))) {
+            throw new \InvalidArgumentException($paymentTransactionsArrayErrorMessage, __LINE__);
         }
         $this->PaymentTransactions = $paymentTransactions;
         return $this;
@@ -67,7 +87,7 @@ class TransactionSearchResponseType extends AbstractResponseType
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentTransactionSearchResultType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentTransactions property can only contain items of \PayPal\StructType\PaymentTransactionSearchResultType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentTransactions property can only contain items of type \PayPal\StructType\PaymentTransactionSearchResultType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->PaymentTransactions[] = $item;
         return $this;

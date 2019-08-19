@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for TotalType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: TotalType - Type declaration for the label to be displayed in MiniCart for UX.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

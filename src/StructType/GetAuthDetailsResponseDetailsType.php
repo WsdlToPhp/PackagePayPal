@@ -13,7 +13,7 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
 {
     /**
      * The FirstName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The first name of the User. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
     public $FirstName;
     /**
      * The LastName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The Last name of the user. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
     public $LastName;
     /**
      * The Email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The email address of the user. Character length and limitations: 256 single-byte alphanumeric characters.
      * - minOccurs: 0
      * @var string
@@ -37,8 +37,9 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
     public $Email;
     /**
      * The PayerID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Encrypted PayPal customer account identification number. Required Character length and limitations: 127 single-byte characters.
+     * - base: xs:string
      * - maxLength: 127
      * @var string
      */
@@ -79,7 +80,7 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($firstName) && !is_string($firstName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($firstName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->FirstName = $firstName;
         return $this;
@@ -101,7 +102,7 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($lastName) && !is_string($lastName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lastName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->LastName = $lastName;
         return $this;
@@ -123,7 +124,7 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->Email = $email;
         return $this;
@@ -143,13 +144,13 @@ class GetAuthDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setPayerID($payerID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($payerID) && strlen($payerID) > 127) || (is_array($payerID) && count($payerID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($payerID) ? strlen($payerID) : count($payerID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($payerID) && !is_string($payerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payerID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payerID, true), gettype($payerID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($payerID) && mb_strlen($payerID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($payerID)), __LINE__);
         }
         $this->PayerID = $payerID;
         return $this;

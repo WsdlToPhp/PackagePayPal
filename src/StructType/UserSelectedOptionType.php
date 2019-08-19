@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for UserSelectedOptionType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Information on user selected options
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class UserSelectedOptionType extends AbstractStructBase
 {
     /**
      * The ShippingCalculationMode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class UserSelectedOptionType extends AbstractStructBase
     public $ShippingCalculationMode;
     /**
      * The InsuranceOptionSelected
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -31,7 +31,7 @@ class UserSelectedOptionType extends AbstractStructBase
     public $InsuranceOptionSelected;
     /**
      * The ShippingOptionIsDefault
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -39,7 +39,7 @@ class UserSelectedOptionType extends AbstractStructBase
     public $ShippingOptionIsDefault;
     /**
      * The ShippingOptionAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -47,7 +47,7 @@ class UserSelectedOptionType extends AbstractStructBase
     public $ShippingOptionAmount;
     /**
      * The ShippingOptionName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -55,7 +55,7 @@ class UserSelectedOptionType extends AbstractStructBase
     public $ShippingOptionName;
     /**
      * The ScheduledShippingDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -63,7 +63,7 @@ class UserSelectedOptionType extends AbstractStructBase
     public $ScheduledShippingDate;
     /**
      * The ScheduledShippingPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -114,7 +114,7 @@ class UserSelectedOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingCalculationMode) && !is_string($shippingCalculationMode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingCalculationMode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingCalculationMode, true), gettype($shippingCalculationMode)), __LINE__);
         }
         $this->ShippingCalculationMode = $shippingCalculationMode;
         return $this;
@@ -136,7 +136,7 @@ class UserSelectedOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($insuranceOptionSelected) && !is_string($insuranceOptionSelected)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($insuranceOptionSelected)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($insuranceOptionSelected, true), gettype($insuranceOptionSelected)), __LINE__);
         }
         $this->InsuranceOptionSelected = $insuranceOptionSelected;
         return $this;
@@ -158,7 +158,7 @@ class UserSelectedOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingOptionIsDefault) && !is_string($shippingOptionIsDefault)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingOptionIsDefault)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingOptionIsDefault, true), gettype($shippingOptionIsDefault)), __LINE__);
         }
         $this->ShippingOptionIsDefault = $shippingOptionIsDefault;
         return $this;
@@ -198,7 +198,7 @@ class UserSelectedOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingOptionName) && !is_string($shippingOptionName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingOptionName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingOptionName, true), gettype($shippingOptionName)), __LINE__);
         }
         $this->ShippingOptionName = $shippingOptionName;
         return $this;
@@ -220,7 +220,7 @@ class UserSelectedOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($scheduledShippingDate) && !is_string($scheduledShippingDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($scheduledShippingDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($scheduledShippingDate, true), gettype($scheduledShippingDate)), __LINE__);
         }
         $this->ScheduledShippingDate = $scheduledShippingDate;
         return $this;
@@ -242,7 +242,7 @@ class UserSelectedOptionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($scheduledShippingPeriod) && !is_string($scheduledShippingPeriod)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($scheduledShippingPeriod)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($scheduledShippingPeriod, true), gettype($scheduledShippingPeriod)), __LINE__);
         }
         $this->ScheduledShippingPeriod = $scheduledShippingPeriod;
         return $this;

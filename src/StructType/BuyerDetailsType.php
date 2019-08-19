@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for BuyerDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Details about the buyer's account passed in by the merchant or partner. Optional.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class BuyerDetailsType extends AbstractStructBase
 {
     /**
      * The BuyerId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The client's unique ID for this user.
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class BuyerDetailsType extends AbstractStructBase
     public $BuyerId;
     /**
      * The BuyerUserName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The user name of the user at the marketplaces site.
      * - minOccurs: 0
      * @var string
@@ -31,7 +31,7 @@ class BuyerDetailsType extends AbstractStructBase
     public $BuyerUserName;
     /**
      * The BuyerRegistrationDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Date when the user registered with the marketplace.
      * - minOccurs: 0
      * @var string
@@ -39,7 +39,7 @@ class BuyerDetailsType extends AbstractStructBase
     public $BuyerRegistrationDate;
     /**
      * The TaxIdDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about payer's tax info. Refer to the TaxIdDetailsType for more details.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -48,7 +48,7 @@ class BuyerDetailsType extends AbstractStructBase
     public $TaxIdDetails;
     /**
      * The IdentificationInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Contains information that identifies the buyer. e.g. email address or the external remember me id.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -94,7 +94,7 @@ class BuyerDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerId) && !is_string($buyerId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerId, true), gettype($buyerId)), __LINE__);
         }
         $this->BuyerId = $buyerId;
         return $this;
@@ -116,7 +116,7 @@ class BuyerDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerUserName) && !is_string($buyerUserName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerUserName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerUserName, true), gettype($buyerUserName)), __LINE__);
         }
         $this->BuyerUserName = $buyerUserName;
         return $this;
@@ -138,7 +138,7 @@ class BuyerDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerRegistrationDate) && !is_string($buyerRegistrationDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerRegistrationDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerRegistrationDate, true), gettype($buyerRegistrationDate)), __LINE__);
         }
         $this->BuyerRegistrationDate = $buyerRegistrationDate;
         return $this;

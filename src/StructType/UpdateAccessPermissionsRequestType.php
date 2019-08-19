@@ -13,11 +13,12 @@ class UpdateAccessPermissionsRequestType extends AbstractRequestType
 {
     /**
      * The PayerID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique PayPal customer account number, the value of which was returned by GetAuthDetails Response. Required Character length and limitations: 20 single-byte characters
+     * - base: xs:string
+     * - maxLength: 127
      * - maxOccurs: 1
      * - minOccurs: 1
-     * - maxLength: 127
      * @var string
      */
     public $PayerID;
@@ -46,13 +47,13 @@ class UpdateAccessPermissionsRequestType extends AbstractRequestType
      */
     public function setPayerID($payerID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($payerID) && strlen($payerID) > 127) || (is_array($payerID) && count($payerID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($payerID) ? strlen($payerID) : count($payerID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($payerID) && !is_string($payerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payerID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payerID, true), gettype($payerID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($payerID) && mb_strlen($payerID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($payerID)), __LINE__);
         }
         $this->PayerID = $payerID;
         return $this;

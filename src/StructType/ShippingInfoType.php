@@ -75,7 +75,7 @@ class ShippingInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingMethod) && !is_string($shippingMethod)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingMethod)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingMethod, true), gettype($shippingMethod)), __LINE__);
         }
         $this->ShippingMethod = $shippingMethod;
         return $this;
@@ -97,7 +97,7 @@ class ShippingInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($shippingCarrier) && !is_string($shippingCarrier)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingCarrier)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingCarrier, true), gettype($shippingCarrier)), __LINE__);
         }
         $this->ShippingCarrier = $shippingCarrier;
         return $this;

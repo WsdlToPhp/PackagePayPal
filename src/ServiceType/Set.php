@@ -26,7 +26,7 @@ class Set extends SoapClientBase
     }
     /**
      * Method to call the operation originally named SetMobileCheckout
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Set extends SoapClientBase
     public function SetMobileCheckout(\PayPal\StructType\SetMobileCheckoutReq $setMobileCheckoutRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->SetMobileCheckout($setMobileCheckoutRequest));
+            $this->setResult($this->getSoapClient()->SetMobileCheckout($setMobileCheckoutRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -50,7 +50,7 @@ class Set extends SoapClientBase
     }
     /**
      * Method to call the operation originally named SetAuthFlowParam
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -65,7 +65,7 @@ class Set extends SoapClientBase
     public function SetAuthFlowParam(\PayPal\StructType\SetAuthFlowParamReq $setAuthFlowParamRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->SetAuthFlowParam($setAuthFlowParamRequest));
+            $this->setResult($this->getSoapClient()->SetAuthFlowParam($setAuthFlowParamRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -74,7 +74,7 @@ class Set extends SoapClientBase
     }
     /**
      * Method to call the operation originally named SetAccessPermissions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -89,7 +89,7 @@ class Set extends SoapClientBase
     public function SetAccessPermissions(\PayPal\StructType\SetAccessPermissionsReq $setAccessPermissionsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->SetAccessPermissions($setAccessPermissionsRequest));
+            $this->setResult($this->getSoapClient()->SetAccessPermissions($setAccessPermissionsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -98,7 +98,7 @@ class Set extends SoapClientBase
     }
     /**
      * Method to call the operation originally named SetExpressCheckout
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -113,7 +113,7 @@ class Set extends SoapClientBase
     public function SetExpressCheckout(\PayPal\StructType\SetExpressCheckoutReq $setExpressCheckoutRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->SetExpressCheckout($setExpressCheckoutRequest));
+            $this->setResult($this->getSoapClient()->SetExpressCheckout($setExpressCheckoutRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -122,7 +122,7 @@ class Set extends SoapClientBase
     }
     /**
      * Method to call the operation originally named SetCustomerBillingAgreement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -137,7 +137,7 @@ class Set extends SoapClientBase
     public function SetCustomerBillingAgreement(\PayPal\StructType\SetCustomerBillingAgreementReq $setCustomerBillingAgreementRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->SetCustomerBillingAgreement($setCustomerBillingAgreementRequest));
+            $this->setResult($this->getSoapClient()->SetCustomerBillingAgreement($setCustomerBillingAgreementRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for OtherPaymentMethodDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Lists the Payment Methods (other than PayPal) that the use can pay with e.g. Money Order. Optional.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
 {
     /**
      * The OtherPaymentMethodId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The identifier of the Payment Method.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -24,7 +24,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     public $OtherPaymentMethodId;
     /**
      * The OtherPaymentMethodType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Valid values are 'Method', 'SubMethod'.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -33,7 +33,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     public $OtherPaymentMethodType;
     /**
      * The OtherPaymentMethodLabel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The name of the Payment Method.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     public $OtherPaymentMethodLabel;
     /**
      * The OtherPaymentMethodLabelDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The short description of the Payment Method, goes along with the label.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -51,7 +51,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     public $OtherPaymentMethodLabelDescription;
     /**
      * The OtherPaymentMethodLongDescriptionTitle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The title for the long description.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -60,7 +60,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     public $OtherPaymentMethodLongDescriptionTitle;
     /**
      * The OtherPaymentMethodLongDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The long description of the Payment Method.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -69,7 +69,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     public $OtherPaymentMethodLongDescription;
     /**
      * The OtherPaymentMethodIcon
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The icon of the Payment Method.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -78,7 +78,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     public $OtherPaymentMethodIcon;
     /**
      * The OtherPaymentMethodHideLabel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If this flag is true, then OtherPaymentMethodIcon is required to have a valid value; the label will be hidden and only ICON will be shown.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -133,7 +133,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($otherPaymentMethodId) && !is_string($otherPaymentMethodId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($otherPaymentMethodId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($otherPaymentMethodId, true), gettype($otherPaymentMethodId)), __LINE__);
         }
         $this->OtherPaymentMethodId = $otherPaymentMethodId;
         return $this;
@@ -155,7 +155,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($otherPaymentMethodType) && !is_string($otherPaymentMethodType)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($otherPaymentMethodType)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($otherPaymentMethodType, true), gettype($otherPaymentMethodType)), __LINE__);
         }
         $this->OtherPaymentMethodType = $otherPaymentMethodType;
         return $this;
@@ -177,7 +177,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($otherPaymentMethodLabel) && !is_string($otherPaymentMethodLabel)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($otherPaymentMethodLabel)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($otherPaymentMethodLabel, true), gettype($otherPaymentMethodLabel)), __LINE__);
         }
         $this->OtherPaymentMethodLabel = $otherPaymentMethodLabel;
         return $this;
@@ -199,7 +199,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($otherPaymentMethodLabelDescription) && !is_string($otherPaymentMethodLabelDescription)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($otherPaymentMethodLabelDescription)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($otherPaymentMethodLabelDescription, true), gettype($otherPaymentMethodLabelDescription)), __LINE__);
         }
         $this->OtherPaymentMethodLabelDescription = $otherPaymentMethodLabelDescription;
         return $this;
@@ -221,7 +221,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($otherPaymentMethodLongDescriptionTitle) && !is_string($otherPaymentMethodLongDescriptionTitle)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($otherPaymentMethodLongDescriptionTitle)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($otherPaymentMethodLongDescriptionTitle, true), gettype($otherPaymentMethodLongDescriptionTitle)), __LINE__);
         }
         $this->OtherPaymentMethodLongDescriptionTitle = $otherPaymentMethodLongDescriptionTitle;
         return $this;
@@ -243,7 +243,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($otherPaymentMethodLongDescription) && !is_string($otherPaymentMethodLongDescription)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($otherPaymentMethodLongDescription)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($otherPaymentMethodLongDescription, true), gettype($otherPaymentMethodLongDescription)), __LINE__);
         }
         $this->OtherPaymentMethodLongDescription = $otherPaymentMethodLongDescription;
         return $this;
@@ -265,7 +265,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($otherPaymentMethodIcon) && !is_string($otherPaymentMethodIcon)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($otherPaymentMethodIcon)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($otherPaymentMethodIcon, true), gettype($otherPaymentMethodIcon)), __LINE__);
         }
         $this->OtherPaymentMethodIcon = $otherPaymentMethodIcon;
         return $this;
@@ -287,7 +287,7 @@ class OtherPaymentMethodDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($otherPaymentMethodHideLabel) && !is_bool($otherPaymentMethodHideLabel)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($otherPaymentMethodHideLabel)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($otherPaymentMethodHideLabel, true), gettype($otherPaymentMethodHideLabel)), __LINE__);
         }
         $this->OtherPaymentMethodHideLabel = $otherPaymentMethodHideLabel;
         return $this;

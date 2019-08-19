@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for CurrencyCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ISO 4217 standard 3-letter currency code. The following currencies are supported by PayPal. Code CurrencyMaximum Transaction Amount AUD Australian Dollar 12,500 AUD CAD Canadian Dollar12,500 CAD EUR Euro 8,000 EUR GBP Pound Sterling
  * 5,500 GBP JPY Japanese Yen 1,000,000 JPY USD U.S. Dollar 10,000 USD CHF Czech Koruna 70,000 CHF SEK Swedish Krona 3,50,000 SEK NOK Norwegian Krone 4,00,000 NOK DKK Danish Krone 3,00,000 DKK PLN Poland Zloty 1,60,000 PLN HUF Hungary Forint 110,00,000
  * HUF SGD Singapore Dollar 80,000 SGD HKD HongKong Dollar 3,80,000 HKD NZD New Zealand Dollar 77,000 NZD CZK Czech Koruna 1,20,000 CZK
@@ -885,6 +885,8 @@ class CurrencyCodeType
     const VALUE_ZWD = 'ZWD';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

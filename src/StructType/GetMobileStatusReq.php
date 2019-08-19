@@ -13,7 +13,7 @@ class GetMobileStatusReq extends AbstractStructBase
 {
     /**
      * The GetMobileStatusRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:GetMobileStatusRequest
      * @var \PayPal\StructType\GetMobileStatusRequestType
      */

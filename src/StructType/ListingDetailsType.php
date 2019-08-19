@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ListingDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Contains the listed item details which consists of following information: .
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,28 +15,28 @@ class ListingDetailsType extends AbstractStructBase
 {
     /**
      * The Adult
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $Adult;
     /**
      * The BindingAuction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $BindingAuction;
     /**
      * The CheckoutEnabled
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $CheckoutEnabled;
     /**
      * The ConvertedBuyItNowPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Converted value of the BuyItNowPrice in the currency indicated by SiteCurrency. This value must be refreshed every 24 hours to pick up the current conversion rates.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -44,7 +44,7 @@ class ListingDetailsType extends AbstractStructBase
     public $ConvertedBuyItNowPrice;
     /**
      * The ConvertedStartPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Converted value of the StartPrice field in the currency indicated by SiteCurrency. This value must be refreshed every 24 hours to pick up the current conversion rates.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -52,7 +52,7 @@ class ListingDetailsType extends AbstractStructBase
     public $ConvertedStartPrice;
     /**
      * The ConvertedReservePrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the converted reserve price for a reserve auction. Returned only if DetailLevel = 4. ReservePrice is only returned for auctions with a reserve price where the user calling GetItem is the item's seller. Returned as null for
      * International Fixed Price items. For more information on reserve price auctions, see http://pages.ebay.com/help/basics/f-format.html#1.
      * - minOccurs: 0
@@ -61,38 +61,40 @@ class ListingDetailsType extends AbstractStructBase
     public $ConvertedReservePrice;
     /**
      * The HasReservePrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $HasReservePrice;
     /**
      * The RegionName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $RegionName;
     /**
      * The RelistedItemID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates the new ItemID for a relisted item. When an item is relisted, the old (expired) listing is annotated with the new (relist) ItemID. This field only appears when the old listing is retrieved. | Represents the unique
      * identifier for an item. To be used to specify the elements that represents an ItemID.
+     * - base: xs:string
      * - minOccurs: 0
      * @var string
      */
     public $RelistedItemID;
     /**
      * The SecondChanceOriginalItemID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The ItemID for the original listing (i.e., OriginalItemID specific to Second Chance Offer items). | Represents the unique identifier for an item. To be used to specify the elements that represents an ItemID.
+     * - base: xs:string
      * - minOccurs: 0
      * @var string
      */
     public $SecondChanceOriginalItemID;
     /**
      * The StartTime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Time stamp for the start of the listing (in GMT). For regular items, StartTime is not sent in at listing time.
      * - minOccurs: 0
      * @var string
@@ -100,7 +102,7 @@ class ListingDetailsType extends AbstractStructBase
     public $StartTime;
     /**
      * The EndTime
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Time stamp for the end of the listing (in GMT).
      * - minOccurs: 0
      * @var string
@@ -108,7 +110,7 @@ class ListingDetailsType extends AbstractStructBase
     public $EndTime;
     /**
      * The ViewItemURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -176,7 +178,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($adult) && !is_bool($adult)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($adult)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($adult, true), gettype($adult)), __LINE__);
         }
         $this->Adult = $adult;
         return $this;
@@ -198,7 +200,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($bindingAuction) && !is_bool($bindingAuction)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($bindingAuction)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($bindingAuction, true), gettype($bindingAuction)), __LINE__);
         }
         $this->BindingAuction = $bindingAuction;
         return $this;
@@ -220,7 +222,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($checkoutEnabled) && !is_bool($checkoutEnabled)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($checkoutEnabled)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($checkoutEnabled, true), gettype($checkoutEnabled)), __LINE__);
         }
         $this->CheckoutEnabled = $checkoutEnabled;
         return $this;
@@ -296,7 +298,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($hasReservePrice) && !is_bool($hasReservePrice)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($hasReservePrice)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($hasReservePrice, true), gettype($hasReservePrice)), __LINE__);
         }
         $this->HasReservePrice = $hasReservePrice;
         return $this;
@@ -318,7 +320,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($regionName) && !is_string($regionName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($regionName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($regionName, true), gettype($regionName)), __LINE__);
         }
         $this->RegionName = $regionName;
         return $this;
@@ -340,7 +342,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($relistedItemID) && !is_string($relistedItemID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($relistedItemID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($relistedItemID, true), gettype($relistedItemID)), __LINE__);
         }
         $this->RelistedItemID = $relistedItemID;
         return $this;
@@ -362,7 +364,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($secondChanceOriginalItemID) && !is_string($secondChanceOriginalItemID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($secondChanceOriginalItemID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($secondChanceOriginalItemID, true), gettype($secondChanceOriginalItemID)), __LINE__);
         }
         $this->SecondChanceOriginalItemID = $secondChanceOriginalItemID;
         return $this;
@@ -384,7 +386,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($startTime) && !is_string($startTime)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($startTime)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startTime, true), gettype($startTime)), __LINE__);
         }
         $this->StartTime = $startTime;
         return $this;
@@ -406,7 +408,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($endTime) && !is_string($endTime)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($endTime)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endTime, true), gettype($endTime)), __LINE__);
         }
         $this->EndTime = $endTime;
         return $this;
@@ -428,7 +430,7 @@ class ListingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($viewItemURL) && !is_string($viewItemURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($viewItemURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($viewItemURL, true), gettype($viewItemURL)), __LINE__);
         }
         $this->ViewItemURL = $viewItemURL;
         return $this;

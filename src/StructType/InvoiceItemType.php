@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for InvoiceItemType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Describes an individual item for an invoice.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class InvoiceItemType extends AbstractStructBase
 {
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: a human readable item nameOptional Character length and limits: 127 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -24,7 +24,7 @@ class InvoiceItemType extends AbstractStructBase
     public $Name;
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: a human readable item descriptionOptional Character length and limits: 127 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -33,7 +33,7 @@ class InvoiceItemType extends AbstractStructBase
     public $Description;
     /**
      * The EAN
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The International Article Number or Universal Product Code (UPC) for the item. Empty string is allowed. Character length and limits: 17 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class InvoiceItemType extends AbstractStructBase
     public $EAN;
     /**
      * The SKU
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The Stock-Keeping Unit or other identification code assigned to the item. Character length and limits: 64 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -51,7 +51,7 @@ class InvoiceItemType extends AbstractStructBase
     public $SKU;
     /**
      * The ReturnPolicyIdentifier
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A retailer could apply different return policies on different items. Each return policy would be identified using a label or identifier. This return policy identifier should be set here. This identifier will be displayed next to the
      * item in the e-Receipt. Character length and limits: 8 single-byte characters
      * - maxOccurs: 1
@@ -61,7 +61,7 @@ class InvoiceItemType extends AbstractStructBase
     public $ReturnPolicyIdentifier;
     /**
      * The Price
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: total price of this item
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -70,7 +70,7 @@ class InvoiceItemType extends AbstractStructBase
     public $Price;
     /**
      * The ItemPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: price per item quantity
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -79,7 +79,7 @@ class InvoiceItemType extends AbstractStructBase
     public $ItemPrice;
     /**
      * The ItemCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: quantity of the item (non-negative)
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -88,7 +88,7 @@ class InvoiceItemType extends AbstractStructBase
     public $ItemCount;
     /**
      * The ItemCountUnit
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unit of measure for the itemCount
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -97,7 +97,7 @@ class InvoiceItemType extends AbstractStructBase
     public $ItemCountUnit;
     /**
      * The Discount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: discount applied to this item
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -106,7 +106,7 @@ class InvoiceItemType extends AbstractStructBase
     public $Discount;
     /**
      * The Taxable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: identifies whether this item is taxable or not. If not passed, this will be assumed to be true.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -115,7 +115,7 @@ class InvoiceItemType extends AbstractStructBase
     public $Taxable;
     /**
      * The TaxRate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The tax percentage applied to the item. This is only used for displaying in the receipt, it is not used in pricing calculations. Note: we have totalTax at invoice level. It's up to the caller to do the calculations for setting that
      * other element.
      * - maxOccurs: 1
@@ -125,7 +125,7 @@ class InvoiceItemType extends AbstractStructBase
     public $TaxRate;
     /**
      * The AdditionalFees
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Additional fees to this item
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -134,7 +134,7 @@ class InvoiceItemType extends AbstractStructBase
     public $AdditionalFees;
     /**
      * The Reimbursable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: identifies whether this is reimbursable or not. If not pass, this will be assumed to be true.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -143,7 +143,7 @@ class InvoiceItemType extends AbstractStructBase
     public $Reimbursable;
     /**
      * The MPN
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Manufacturer part number.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -152,7 +152,7 @@ class InvoiceItemType extends AbstractStructBase
     public $MPN;
     /**
      * The ISBN
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: International Standard Book Number. Reference http://en.wikipedia.org/wiki/ISBN Character length and limits: 32 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -161,7 +161,7 @@ class InvoiceItemType extends AbstractStructBase
     public $ISBN;
     /**
      * The PLU
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Price Look-Up code Reference http://en.wikipedia.org/wiki/Price_Look-Up_code Character length and limits: 5 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -170,7 +170,7 @@ class InvoiceItemType extends AbstractStructBase
     public $PLU;
     /**
      * The ModelNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Character length and limits: 32 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -179,7 +179,7 @@ class InvoiceItemType extends AbstractStructBase
     public $ModelNumber;
     /**
      * The StyleNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Character length and limits: 32 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -267,7 +267,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($name) && !is_string($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
         $this->Name = $name;
         return $this;
@@ -289,7 +289,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;
@@ -311,7 +311,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eAN) && !is_string($eAN)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eAN)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eAN, true), gettype($eAN)), __LINE__);
         }
         $this->EAN = $eAN;
         return $this;
@@ -333,7 +333,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($sKU) && !is_string($sKU)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sKU)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sKU, true), gettype($sKU)), __LINE__);
         }
         $this->SKU = $sKU;
         return $this;
@@ -355,7 +355,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($returnPolicyIdentifier) && !is_string($returnPolicyIdentifier)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($returnPolicyIdentifier)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnPolicyIdentifier, true), gettype($returnPolicyIdentifier)), __LINE__);
         }
         $this->ReturnPolicyIdentifier = $returnPolicyIdentifier;
         return $this;
@@ -411,6 +411,10 @@ class InvoiceItemType extends AbstractStructBase
      */
     public function setItemCount($itemCount = null)
     {
+        // validation for constraint: float
+        if (!is_null($itemCount) && !(is_float($itemCount) || is_numeric($itemCount))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($itemCount, true), gettype($itemCount)), __LINE__);
+        }
         $this->ItemCount = $itemCount;
         return $this;
     }
@@ -434,7 +438,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\UnitOfMeasure::valueIsValid($itemCountUnit)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $itemCountUnit, implode(', ', \PayPal\EnumType\UnitOfMeasure::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\UnitOfMeasure', is_array($itemCountUnit) ? implode(', ', $itemCountUnit) : var_export($itemCountUnit, true), implode(', ', \PayPal\EnumType\UnitOfMeasure::getValidValues())), __LINE__);
         }
         $this->ItemCountUnit = $itemCountUnit;
         return $this;
@@ -448,6 +452,28 @@ class InvoiceItemType extends AbstractStructBase
         return $this->Discount;
     }
     /**
+     * This method is responsible for validating the values passed to the setDiscount method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setDiscount method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateDiscountForArrayConstraintsFromSetDiscount(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $invoiceItemTypeDiscountItem) {
+            // validation for constraint: itemType
+            if (!$invoiceItemTypeDiscountItem instanceof \PayPal\StructType\DiscountType) {
+                $invalidValues[] = is_object($invoiceItemTypeDiscountItem) ? get_class($invoiceItemTypeDiscountItem) : sprintf('%s(%s)', gettype($invoiceItemTypeDiscountItem), var_export($invoiceItemTypeDiscountItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The Discount property can only contain items of type \PayPal\StructType\DiscountType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set Discount value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\DiscountType[] $discount
@@ -455,11 +481,9 @@ class InvoiceItemType extends AbstractStructBase
      */
     public function setDiscount(array $discount = array())
     {
-        foreach ($discount as $invoiceItemTypeDiscountItem) {
-            // validation for constraint: itemType
-            if (!$invoiceItemTypeDiscountItem instanceof \PayPal\StructType\DiscountType) {
-                throw new \InvalidArgumentException(sprintf('The Discount property can only contain items of \PayPal\StructType\DiscountType, "%s" given', is_object($invoiceItemTypeDiscountItem) ? get_class($invoiceItemTypeDiscountItem) : gettype($invoiceItemTypeDiscountItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($discountArrayErrorMessage = self::validateDiscountForArrayConstraintsFromSetDiscount($discount))) {
+            throw new \InvalidArgumentException($discountArrayErrorMessage, __LINE__);
         }
         $this->Discount = $discount;
         return $this;
@@ -474,7 +498,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\DiscountType) {
-            throw new \InvalidArgumentException(sprintf('The Discount property can only contain items of \PayPal\StructType\DiscountType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Discount property can only contain items of type \PayPal\StructType\DiscountType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Discount[] = $item;
         return $this;
@@ -496,7 +520,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($taxable) && !is_bool($taxable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($taxable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($taxable, true), gettype($taxable)), __LINE__);
         }
         $this->Taxable = $taxable;
         return $this;
@@ -516,6 +540,10 @@ class InvoiceItemType extends AbstractStructBase
      */
     public function setTaxRate($taxRate = null)
     {
+        // validation for constraint: float
+        if (!is_null($taxRate) && !(is_float($taxRate) || is_numeric($taxRate))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($taxRate, true), gettype($taxRate)), __LINE__);
+        }
         $this->TaxRate = $taxRate;
         return $this;
     }
@@ -528,6 +556,28 @@ class InvoiceItemType extends AbstractStructBase
         return $this->AdditionalFees;
     }
     /**
+     * This method is responsible for validating the values passed to the setAdditionalFees method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setAdditionalFees method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateAdditionalFeesForArrayConstraintsFromSetAdditionalFees(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $invoiceItemTypeAdditionalFeesItem) {
+            // validation for constraint: itemType
+            if (!$invoiceItemTypeAdditionalFeesItem instanceof \PayPal\StructType\AdditionalFeeType) {
+                $invalidValues[] = is_object($invoiceItemTypeAdditionalFeesItem) ? get_class($invoiceItemTypeAdditionalFeesItem) : sprintf('%s(%s)', gettype($invoiceItemTypeAdditionalFeesItem), var_export($invoiceItemTypeAdditionalFeesItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The AdditionalFees property can only contain items of type \PayPal\StructType\AdditionalFeeType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set AdditionalFees value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\AdditionalFeeType[] $additionalFees
@@ -535,11 +585,9 @@ class InvoiceItemType extends AbstractStructBase
      */
     public function setAdditionalFees(array $additionalFees = array())
     {
-        foreach ($additionalFees as $invoiceItemTypeAdditionalFeesItem) {
-            // validation for constraint: itemType
-            if (!$invoiceItemTypeAdditionalFeesItem instanceof \PayPal\StructType\AdditionalFeeType) {
-                throw new \InvalidArgumentException(sprintf('The AdditionalFees property can only contain items of \PayPal\StructType\AdditionalFeeType, "%s" given', is_object($invoiceItemTypeAdditionalFeesItem) ? get_class($invoiceItemTypeAdditionalFeesItem) : gettype($invoiceItemTypeAdditionalFeesItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($additionalFeesArrayErrorMessage = self::validateAdditionalFeesForArrayConstraintsFromSetAdditionalFees($additionalFees))) {
+            throw new \InvalidArgumentException($additionalFeesArrayErrorMessage, __LINE__);
         }
         $this->AdditionalFees = $additionalFees;
         return $this;
@@ -554,7 +602,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\AdditionalFeeType) {
-            throw new \InvalidArgumentException(sprintf('The AdditionalFees property can only contain items of \PayPal\StructType\AdditionalFeeType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The AdditionalFees property can only contain items of type \PayPal\StructType\AdditionalFeeType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AdditionalFees[] = $item;
         return $this;
@@ -576,7 +624,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($reimbursable) && !is_bool($reimbursable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reimbursable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reimbursable, true), gettype($reimbursable)), __LINE__);
         }
         $this->Reimbursable = $reimbursable;
         return $this;
@@ -598,7 +646,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($mPN) && !is_string($mPN)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($mPN)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mPN, true), gettype($mPN)), __LINE__);
         }
         $this->MPN = $mPN;
         return $this;
@@ -620,7 +668,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($iSBN) && !is_string($iSBN)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iSBN)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iSBN, true), gettype($iSBN)), __LINE__);
         }
         $this->ISBN = $iSBN;
         return $this;
@@ -642,7 +690,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($pLU) && !is_string($pLU)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($pLU)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pLU, true), gettype($pLU)), __LINE__);
         }
         $this->PLU = $pLU;
         return $this;
@@ -664,7 +712,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($modelNumber) && !is_string($modelNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($modelNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modelNumber, true), gettype($modelNumber)), __LINE__);
         }
         $this->ModelNumber = $modelNumber;
         return $this;
@@ -686,7 +734,7 @@ class InvoiceItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($styleNumber) && !is_string($styleNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($styleNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($styleNumber, true), gettype($styleNumber)), __LINE__);
         }
         $this->StyleNumber = $styleNumber;
         return $this;

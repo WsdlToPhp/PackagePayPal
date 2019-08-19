@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for MobilePaymentCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MobilePaymentCodeType These are the accepted types of mobile payments
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

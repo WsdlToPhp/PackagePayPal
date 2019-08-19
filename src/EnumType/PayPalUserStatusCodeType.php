@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PayPalUserStatusCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PayPalUserStatusCodeType PayPal status of a user Address
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

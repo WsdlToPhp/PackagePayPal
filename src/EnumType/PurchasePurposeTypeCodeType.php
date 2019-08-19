@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PurchasePurposeTypeCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PurchasePurposeTypeCodeType - Type declaration to be used by other schema. This code identifies the purpose of purchases, e.g., by a PayPal application.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,6 +13,8 @@ class PurchasePurposeTypeCodeType
 {
     /**
      * Constant for value 'Other'
+     * Meta information extracted from the WSDL
+     * - documentation: Custom Code
      * @return string 'Other'
      */
     const VALUE_OTHER = 'Other';
@@ -53,6 +55,8 @@ class PurchasePurposeTypeCodeType
     const VALUE_E_BAY_BILLING = 'eBayBilling';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

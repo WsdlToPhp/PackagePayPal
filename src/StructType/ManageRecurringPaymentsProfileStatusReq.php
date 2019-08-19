@@ -13,7 +13,7 @@ class ManageRecurringPaymentsProfileStatusReq extends AbstractStructBase
 {
     /**
      * The ManageRecurringPaymentsProfileStatusRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:ManageRecurringPaymentsProfileStatusRequest
      * @var \PayPal\StructType\ManageRecurringPaymentsProfileStatusRequestType
      */

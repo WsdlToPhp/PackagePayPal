@@ -13,7 +13,7 @@ class ManagePendingTransactionStatusReq extends AbstractStructBase
 {
     /**
      * The ManagePendingTransactionStatusRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:ManagePendingTransactionStatusRequest
      * @var \PayPal\StructType\ManagePendingTransactionStatusRequestType
      */

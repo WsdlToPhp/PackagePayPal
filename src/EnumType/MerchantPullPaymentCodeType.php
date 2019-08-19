@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for MerchantPullPaymentCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MerchantPullPaymentCodeType Type of Payment to be initiated by the merchant
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

@@ -13,7 +13,7 @@ class DoVoidRequestType extends AbstractRequestType
 {
     /**
      * The AuthorizationID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value of the original authorization identification number returned by a PayPal product. If you are voiding a transaction that has been reauthorized, use the ID from the original authorization, and not the reauthorization.
      * Required Character length and limits: 19 single-byte characters
      * - maxOccurs: 1
@@ -23,7 +23,7 @@ class DoVoidRequestType extends AbstractRequestType
     public $AuthorizationID;
     /**
      * The Note
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An informational note about this settlement that is displayed to the payer in email and in transaction history. Optional Character length and limits: 255 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -32,7 +32,7 @@ class DoVoidRequestType extends AbstractRequestType
     public $Note;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -72,7 +72,7 @@ class DoVoidRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($authorizationID) && !is_string($authorizationID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authorizationID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizationID, true), gettype($authorizationID)), __LINE__);
         }
         $this->AuthorizationID = $authorizationID;
         return $this;
@@ -94,7 +94,7 @@ class DoVoidRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($note) && !is_string($note)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($note)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($note, true), gettype($note)), __LINE__);
         }
         $this->Note = $note;
         return $this;
@@ -116,7 +116,7 @@ class DoVoidRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

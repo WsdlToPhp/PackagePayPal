@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PaymentCategoryType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Category of payment like international shipping
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,21 +13,29 @@ class PaymentCategoryType
 {
     /**
      * Constant for value 'InternationalShipping'
+     * Meta information extracted from the WSDL
+     * - documentation: Internalnation Shipping
      * @return string 'InternationalShipping'
      */
     const VALUE_INTERNATIONAL_SHIPPING = 'InternationalShipping';
     /**
      * Constant for value 'LocalDelivery'
+     * Meta information extracted from the WSDL
+     * - documentation: LocalDelivery
      * @return string 'LocalDelivery'
      */
     const VALUE_LOCAL_DELIVERY = 'LocalDelivery';
     /**
      * Constant for value 'BOPIS'
+     * Meta information extracted from the WSDL
+     * - documentation: BOPIS
      * @return string 'BOPIS'
      */
     const VALUE_BOPIS = 'BOPIS';
     /**
      * Constant for value 'PUDO'
+     * Meta information extracted from the WSDL
+     * - documentation: PUDO
      * @return string 'PUDO'
      */
     const VALUE_PUDO = 'PUDO';

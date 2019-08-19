@@ -13,7 +13,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
 {
     /**
      * The BillingAgreementDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\BillingAgreementDetailsType
@@ -21,7 +21,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $BillingAgreementDetails;
     /**
      * The ReturnURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -29,7 +29,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $ReturnURL;
     /**
      * The CancelURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -37,7 +37,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $CancelURL;
     /**
      * The LocaleCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -45,7 +45,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $LocaleCode;
     /**
      * The PageStyle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -53,7 +53,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $PageStyle;
     /**
      * The cpp_header_image
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -61,7 +61,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $cpp_header_image;
     /**
      * The cpp_header_border_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -69,7 +69,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $cpp_header_border_color;
     /**
      * The cpp_header_back_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -77,7 +77,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $cpp_header_back_color;
     /**
      * The cpp_payflow_color
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -85,7 +85,8 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $cpp_payflow_color;
     /**
      * The BuyerEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -93,7 +94,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     public $BuyerEmail;
     /**
      * The ReqBillingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value 1 indicates that you require that the customer's billing address on file. Setting this element overrides the setting you have specified in Admin. Optional Character length and limitations: One single-byte numeric character.
      * - minOccurs: 0
      * @var string
@@ -174,7 +175,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($returnURL) && !is_string($returnURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($returnURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
         }
         $this->ReturnURL = $returnURL;
         return $this;
@@ -196,7 +197,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cancelURL) && !is_string($cancelURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cancelURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
         }
         $this->CancelURL = $cancelURL;
         return $this;
@@ -218,7 +219,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($localeCode) && !is_string($localeCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($localeCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($localeCode, true), gettype($localeCode)), __LINE__);
         }
         $this->LocaleCode = $localeCode;
         return $this;
@@ -240,7 +241,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($pageStyle) && !is_string($pageStyle)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($pageStyle)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pageStyle, true), gettype($pageStyle)), __LINE__);
         }
         $this->PageStyle = $pageStyle;
         return $this;
@@ -262,7 +263,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_image) && !is_string($cpp_header_image)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_header_image)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_image, true), gettype($cpp_header_image)), __LINE__);
         }
         $this->cpp_header_image = $this->{'cpp-header-image'} = $cpp_header_image;
         return $this;
@@ -284,7 +285,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_border_color) && !is_string($cpp_header_border_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_header_border_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_border_color, true), gettype($cpp_header_border_color)), __LINE__);
         }
         $this->cpp_header_border_color = $this->{'cpp-header-border-color'} = $cpp_header_border_color;
         return $this;
@@ -306,7 +307,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_header_back_color) && !is_string($cpp_header_back_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_header_back_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_back_color, true), gettype($cpp_header_back_color)), __LINE__);
         }
         $this->cpp_header_back_color = $this->{'cpp-header-back-color'} = $cpp_header_back_color;
         return $this;
@@ -328,7 +329,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cpp_payflow_color) && !is_string($cpp_payflow_color)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cpp_payflow_color)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_payflow_color, true), gettype($cpp_payflow_color)), __LINE__);
         }
         $this->cpp_payflow_color = $this->{'cpp-payflow-color'} = $cpp_payflow_color;
         return $this;
@@ -350,7 +351,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerEmail) && !is_string($buyerEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmail, true), gettype($buyerEmail)), __LINE__);
         }
         $this->BuyerEmail = $buyerEmail;
         return $this;
@@ -372,7 +373,7 @@ class SetCustomerBillingAgreementRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reqBillingAddress) && !is_string($reqBillingAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reqBillingAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqBillingAddress, true), gettype($reqBillingAddress)), __LINE__);
         }
         $this->ReqBillingAddress = $reqBillingAddress;
         return $this;

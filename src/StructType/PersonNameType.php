@@ -13,41 +13,46 @@ class PersonNameType extends AbstractStructBase
 {
     /**
      * The Salutation
-     * Meta informations extracted from the WSDL
-     * - minOccurs: 0
+     * Meta information extracted from the WSDL
+     * - base: xs:string
      * - maxLength: 20
+     * - minOccurs: 0
      * @var string
      */
     public $Salutation;
     /**
      * The FirstName
-     * Meta informations extracted from the WSDL
-     * - minOccurs: 0
+     * Meta information extracted from the WSDL
+     * - base: xs:string
      * - maxLength: 25
+     * - minOccurs: 0
      * @var string
      */
     public $FirstName;
     /**
      * The MiddleName
-     * Meta informations extracted from the WSDL
-     * - minOccurs: 0
+     * Meta information extracted from the WSDL
+     * - base: xs:string
      * - maxLength: 25
+     * - minOccurs: 0
      * @var string
      */
     public $MiddleName;
     /**
      * The LastName
-     * Meta informations extracted from the WSDL
-     * - minOccurs: 0
+     * Meta information extracted from the WSDL
+     * - base: xs:string
      * - maxLength: 25
+     * - minOccurs: 0
      * @var string
      */
     public $LastName;
     /**
      * The Suffix
-     * Meta informations extracted from the WSDL
-     * - minOccurs: 0
+     * Meta information extracted from the WSDL
+     * - base: xs:string
      * - maxLength: 12
+     * - minOccurs: 0
      * @var string
      */
     public $Suffix;
@@ -88,13 +93,13 @@ class PersonNameType extends AbstractStructBase
      */
     public function setSalutation($salutation = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($salutation) && strlen($salutation) > 20) || (is_array($salutation) && count($salutation) > 20)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 20 element(s) or a scalar of 20 character(s) at most, "%d" length given', is_scalar($salutation) ? strlen($salutation) : count($salutation)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($salutation) && !is_string($salutation)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($salutation)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($salutation, true), gettype($salutation)), __LINE__);
+        }
+        // validation for constraint: maxLength(20)
+        if (!is_null($salutation) && mb_strlen($salutation) > 20) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen($salutation)), __LINE__);
         }
         $this->Salutation = $salutation;
         return $this;
@@ -114,13 +119,13 @@ class PersonNameType extends AbstractStructBase
      */
     public function setFirstName($firstName = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($firstName) && strlen($firstName) > 25) || (is_array($firstName) && count($firstName) > 25)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 25 element(s) or a scalar of 25 character(s) at most, "%d" length given', is_scalar($firstName) ? strlen($firstName) : count($firstName)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($firstName) && !is_string($firstName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($firstName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
+        }
+        // validation for constraint: maxLength(25)
+        if (!is_null($firstName) && mb_strlen($firstName) > 25) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen($firstName)), __LINE__);
         }
         $this->FirstName = $firstName;
         return $this;
@@ -140,13 +145,13 @@ class PersonNameType extends AbstractStructBase
      */
     public function setMiddleName($middleName = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($middleName) && strlen($middleName) > 25) || (is_array($middleName) && count($middleName) > 25)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 25 element(s) or a scalar of 25 character(s) at most, "%d" length given', is_scalar($middleName) ? strlen($middleName) : count($middleName)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($middleName) && !is_string($middleName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($middleName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($middleName, true), gettype($middleName)), __LINE__);
+        }
+        // validation for constraint: maxLength(25)
+        if (!is_null($middleName) && mb_strlen($middleName) > 25) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen($middleName)), __LINE__);
         }
         $this->MiddleName = $middleName;
         return $this;
@@ -166,13 +171,13 @@ class PersonNameType extends AbstractStructBase
      */
     public function setLastName($lastName = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($lastName) && strlen($lastName) > 25) || (is_array($lastName) && count($lastName) > 25)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 25 element(s) or a scalar of 25 character(s) at most, "%d" length given', is_scalar($lastName) ? strlen($lastName) : count($lastName)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($lastName) && !is_string($lastName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lastName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
+        }
+        // validation for constraint: maxLength(25)
+        if (!is_null($lastName) && mb_strlen($lastName) > 25) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen($lastName)), __LINE__);
         }
         $this->LastName = $lastName;
         return $this;
@@ -192,13 +197,13 @@ class PersonNameType extends AbstractStructBase
      */
     public function setSuffix($suffix = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($suffix) && strlen($suffix) > 12) || (is_array($suffix) && count($suffix) > 12)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 12 element(s) or a scalar of 12 character(s) at most, "%d" length given', is_scalar($suffix) ? strlen($suffix) : count($suffix)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($suffix) && !is_string($suffix)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($suffix)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($suffix, true), gettype($suffix)), __LINE__);
+        }
+        // validation for constraint: maxLength(12)
+        if (!is_null($suffix) && mb_strlen($suffix) > 12) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 12', mb_strlen($suffix)), __LINE__);
         }
         $this->Suffix = $suffix;
         return $this;

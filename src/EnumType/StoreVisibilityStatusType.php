@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for StoreVisibilityStatusType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: This is to validate input if store should be visible/invisible in the store locator. If Merchant wants a store to be ENABLED, input should be "E". If Merchant wants a store to be DISABLED, input should be "D". If Merchant is not
  * giving any input, it will be taken as "DISABLED"
  * @subpackage Enumerations

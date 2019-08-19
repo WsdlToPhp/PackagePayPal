@@ -13,7 +13,7 @@ class AuthorizationRequestType extends AbstractStructBase
 {
     /**
      * The IsRequested
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var bool
@@ -46,7 +46,7 @@ class AuthorizationRequestType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($isRequested) && !is_bool($isRequested)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($isRequested)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isRequested, true), gettype($isRequested)), __LINE__);
         }
         $this->IsRequested = $isRequested;
         return $this;

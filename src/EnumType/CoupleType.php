@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for CoupleType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Defines couple relationship type between buckets
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,6 +13,8 @@ class CoupleType
 {
     /**
      * Constant for value 'LifeTime'
+     * Meta information extracted from the WSDL
+     * - documentation: The relation between buckets are for lifetime. Any post-transaction action on one affects other as well.
      * @return string 'LifeTime'
      */
     const VALUE_LIFE_TIME = 'LifeTime';

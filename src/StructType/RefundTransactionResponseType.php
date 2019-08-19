@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for RefundTransactionResponseType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Contains Refund Payment status information.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,8 +15,9 @@ class RefundTransactionResponseType extends AbstractResponseType
 {
     /**
      * The RefundTransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique transaction ID of the refund. Character length and limitations:17 single-byte characters | TransactionId - Type for a PayPal Transaction ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 0
      * - nillable: true
@@ -25,7 +26,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     public $RefundTransactionID;
     /**
      * The NetRefundAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount subtracted from PayPal balance of original recipient of payment to make this refund
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -34,7 +35,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     public $NetRefundAmount;
     /**
      * The FeeRefundAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Transaction fee refunded to original recipient of payment
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -43,7 +44,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     public $FeeRefundAmount;
     /**
      * The GrossRefundAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of money refunded to original payer
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -52,7 +53,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     public $GrossRefundAmount;
     /**
      * The TotalRefundedAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Total of all previous refunds
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -61,7 +62,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     public $TotalRefundedAmount;
     /**
      * The RefundInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:RefundInfo
@@ -70,7 +71,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     public $RefundInfo;
     /**
      * The ReceiptData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Any general information like offer details that is reinstated or any other marketing data
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -79,7 +80,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     public $ReceiptData;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Return msgsubid back to merchant
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -139,7 +140,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($refundTransactionID) && !is_string($refundTransactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($refundTransactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundTransactionID, true), gettype($refundTransactionID)), __LINE__);
         }
         if (is_null($refundTransactionID) || (is_array($refundTransactionID) && empty($refundTransactionID))) {
             unset($this->RefundTransactionID);
@@ -255,7 +256,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($receiptData) && !is_string($receiptData)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($receiptData)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receiptData, true), gettype($receiptData)), __LINE__);
         }
         $this->ReceiptData = $receiptData;
         return $this;
@@ -277,7 +278,7 @@ class RefundTransactionResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

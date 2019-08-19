@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PaymentDetailsItemType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentDetailsItemType Information about a Payment Item.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class PaymentDetailsItemType extends AbstractStructBase
 {
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item name. Optional Character length and limitations: 127 single-byte characters
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $Name;
     /**
      * The Number
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item number. Optional Character length and limitations: 127 single-byte characters
      * - minOccurs: 0
      * @var string
@@ -31,7 +31,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $Number;
     /**
      * The Quantity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item quantity. Optional Character length and limitations: Any positive integer
      * - minOccurs: 0
      * @var int
@@ -39,7 +39,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $Quantity;
     /**
      * The Tax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item sales tax. Optional Character length and limitations: any valid currency amount; currency code is set the same as for OrderTotal.
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -47,7 +47,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $Tax;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Cost of item You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies. Optional Limitations: Must not exceed $10,000 USD in any currency. No currency symbol.
      * Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - minOccurs: 0
@@ -56,7 +56,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $Amount;
     /**
      * The EbayItemPaymentDetailsItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Ebay specific details. Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\EbayItemPaymentDetailsItemType
@@ -64,7 +64,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $EbayItemPaymentDetailsItem;
     /**
      * The PromoCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Promotional financing code for item. Part of the Merchant Services Promotion Financing feature.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -73,7 +73,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $PromoCode;
     /**
      * The ProductCategory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -81,7 +81,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $ProductCategory;
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item description. Optional Character length and limitations: 127 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -90,7 +90,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $Description;
     /**
      * The ItemWeight
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Item weight.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -99,7 +99,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $ItemWeight;
     /**
      * The ItemLength
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Item length.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -108,7 +108,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $ItemLength;
     /**
      * The ItemWidth
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Item width.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -117,7 +117,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $ItemWidth;
     /**
      * The ItemHeight
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Item height.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -126,7 +126,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $ItemHeight;
     /**
      * The ItemURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL for the item. Optional Character length and limitations: no limit.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -135,7 +135,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $ItemURL;
     /**
      * The EnhancedItemData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Enhanced data for each item in the cart. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -144,7 +144,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     public $EnhancedItemData;
     /**
      * The ItemCategory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item category - physical or digital. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -223,7 +223,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($name) && !is_string($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
         $this->Name = $name;
         return $this;
@@ -245,7 +245,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($number) && !is_string($number)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($number)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
         }
         $this->Number = $number;
         return $this;
@@ -266,8 +266,8 @@ class PaymentDetailsItemType extends AbstractStructBase
     public function setQuantity($quantity = null)
     {
         // validation for constraint: int
-        if (!is_null($quantity) && !is_numeric($quantity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($quantity)), __LINE__);
+        if (!is_null($quantity) && !(is_int($quantity) || ctype_digit($quantity))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
         }
         $this->Quantity = $quantity;
         return $this;
@@ -343,7 +343,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($promoCode) && !is_string($promoCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($promoCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($promoCode, true), gettype($promoCode)), __LINE__);
         }
         $this->PromoCode = $promoCode;
         return $this;
@@ -368,7 +368,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ProductCategoryType::valueIsValid($productCategory)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $productCategory, implode(', ', \PayPal\EnumType\ProductCategoryType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ProductCategoryType', is_array($productCategory) ? implode(', ', $productCategory) : var_export($productCategory, true), implode(', ', \PayPal\EnumType\ProductCategoryType::getValidValues())), __LINE__);
         }
         $this->ProductCategory = $productCategory;
         return $this;
@@ -390,7 +390,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;
@@ -484,7 +484,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemURL) && !is_string($itemURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemURL, true), gettype($itemURL)), __LINE__);
         }
         $this->ItemURL = $itemURL;
         return $this;
@@ -527,7 +527,7 @@ class PaymentDetailsItemType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ItemCategoryType::valueIsValid($itemCategory)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $itemCategory, implode(', ', \PayPal\EnumType\ItemCategoryType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ItemCategoryType', is_array($itemCategory) ? implode(', ', $itemCategory) : var_export($itemCategory, true), implode(', ', \PayPal\EnumType\ItemCategoryType::getValidValues())), __LINE__);
         }
         $this->ItemCategory = $itemCategory;
         return $this;

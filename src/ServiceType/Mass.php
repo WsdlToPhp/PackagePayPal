@@ -26,7 +26,7 @@ class Mass extends SoapClientBase
     }
     /**
      * Method to call the operation originally named MassPay
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Mass extends SoapClientBase
     public function MassPay(\PayPal\StructType\MassPayReq $massPayRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->MassPay($massPayRequest));
+            $this->setResult($this->getSoapClient()->MassPay($massPayRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

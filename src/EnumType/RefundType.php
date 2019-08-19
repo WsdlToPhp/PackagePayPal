@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for RefundType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: RefundType - Type declaration to be used by other schema. This code identifies the types of refund transactions supported.
  * - type: ns:RefundType
  * @subpackage Enumerations
@@ -19,16 +19,22 @@ class RefundType
     const VALUE_OTHER = 'Other';
     /**
      * Constant for value 'Full'
+     * Meta information extracted from the WSDL
+     * - documentation: Full Refund
      * @return string 'Full'
      */
     const VALUE_FULL = 'Full';
     /**
      * Constant for value 'Partial'
+     * Meta information extracted from the WSDL
+     * - documentation: Partial Refund
      * @return string 'Partial'
      */
     const VALUE_PARTIAL = 'Partial';
     /**
      * Constant for value 'ExternalDispute'
+     * Meta information extracted from the WSDL
+     * - documentation: External Dispute
      * @return string 'ExternalDispute'
      */
     const VALUE_EXTERNAL_DISPUTE = 'ExternalDispute';

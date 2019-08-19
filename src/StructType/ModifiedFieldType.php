@@ -13,14 +13,14 @@ class ModifiedFieldType extends AbstractStructBase
 {
     /**
      * The Field
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $Field;
     /**
      * The ModifyType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -55,7 +55,7 @@ class ModifiedFieldType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($field) && !is_string($field)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($field)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($field, true), gettype($field)), __LINE__);
         }
         $this->Field = $field;
         return $this;
@@ -80,7 +80,7 @@ class ModifiedFieldType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ModifyCodeType::valueIsValid($modifyType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $modifyType, implode(', ', \PayPal\EnumType\ModifyCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ModifyCodeType', is_array($modifyType) ? implode(', ', $modifyType) : var_export($modifyType, true), implode(', ', \PayPal\EnumType\ModifyCodeType::getValidValues())), __LINE__);
         }
         $this->ModifyType = $modifyType;
         return $this;

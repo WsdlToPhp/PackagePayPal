@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ReviseStatusType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Contains the revise status information details (e.g., item properties information). ths node contains system set data only - always output and always all data. no minccurs needed, except for motors specific data, since it wil lnot be
  * retruned for non motors items
  * @subpackage Structs
@@ -16,14 +16,14 @@ class ReviseStatusType extends AbstractStructBase
 {
     /**
      * The ItemRevised
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the item was revised since the auction started.
      * @var bool
      */
     public $ItemRevised;
     /**
      * The BuyItNowAdded
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If true, indicates that a Buy It Now Price was added for the item. Only returned for Motors items.
      * - minOccurs: 0
      * @var bool
@@ -31,7 +31,7 @@ class ReviseStatusType extends AbstractStructBase
     public $BuyItNowAdded;
     /**
      * The BuyItNowLowered
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Replaces BinLowered as of API version 305. If true, indicates that the Buy It Now Price was lowered for the item. Only returned for Motors items.
      * - minOccurs: 0
      * @var bool
@@ -39,7 +39,7 @@ class ReviseStatusType extends AbstractStructBase
     public $BuyItNowLowered;
     /**
      * The ReserveLowered
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If true, indicates that the Reserve Price was lowered for the item. Only returned for Motors items.
      * - minOccurs: 0
      * @var bool
@@ -47,7 +47,7 @@ class ReviseStatusType extends AbstractStructBase
     public $ReserveLowered;
     /**
      * The ReserveRemoved
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: If true, indicates that the Reserve Price was removed from the item. Only returned for eBay Motors items.
      * - minOccurs: 0
      * @var bool
@@ -92,7 +92,7 @@ class ReviseStatusType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($itemRevised) && !is_bool($itemRevised)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($itemRevised)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($itemRevised, true), gettype($itemRevised)), __LINE__);
         }
         $this->ItemRevised = $itemRevised;
         return $this;
@@ -114,7 +114,7 @@ class ReviseStatusType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($buyItNowAdded) && !is_bool($buyItNowAdded)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($buyItNowAdded)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($buyItNowAdded, true), gettype($buyItNowAdded)), __LINE__);
         }
         $this->BuyItNowAdded = $buyItNowAdded;
         return $this;
@@ -136,7 +136,7 @@ class ReviseStatusType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($buyItNowLowered) && !is_bool($buyItNowLowered)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($buyItNowLowered)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($buyItNowLowered, true), gettype($buyItNowLowered)), __LINE__);
         }
         $this->BuyItNowLowered = $buyItNowLowered;
         return $this;
@@ -158,7 +158,7 @@ class ReviseStatusType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($reserveLowered) && !is_bool($reserveLowered)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reserveLowered)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reserveLowered, true), gettype($reserveLowered)), __LINE__);
         }
         $this->ReserveLowered = $reserveLowered;
         return $this;
@@ -180,7 +180,7 @@ class ReviseStatusType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($reserveRemoved) && !is_bool($reserveRemoved)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($reserveRemoved)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reserveRemoved, true), gettype($reserveRemoved)), __LINE__);
         }
         $this->ReserveRemoved = $reserveRemoved;
         return $this;

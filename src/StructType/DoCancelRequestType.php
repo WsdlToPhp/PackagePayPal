@@ -13,7 +13,7 @@ class DoCancelRequestType extends AbstractRequestType
 {
     /**
      * The CancelMsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Msg Sub Id that was used for the orginal operation.
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class DoCancelRequestType extends AbstractRequestType
     public $CancelMsgSubID;
     /**
      * The APIType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Original API's type
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -31,7 +31,7 @@ class DoCancelRequestType extends AbstractRequestType
     public $APIType;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -71,7 +71,7 @@ class DoCancelRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($cancelMsgSubID) && !is_string($cancelMsgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cancelMsgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelMsgSubID, true), gettype($cancelMsgSubID)), __LINE__);
         }
         $this->CancelMsgSubID = $cancelMsgSubID;
         return $this;
@@ -96,7 +96,7 @@ class DoCancelRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\APIType::valueIsValid($aPIType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $aPIType, implode(', ', \PayPal\EnumType\APIType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\APIType', is_array($aPIType) ? implode(', ', $aPIType) : var_export($aPIType, true), implode(', ', \PayPal\EnumType\APIType::getValidValues())), __LINE__);
         }
         $this->APIType = $aPIType;
         return $this;
@@ -118,7 +118,7 @@ class DoCancelRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

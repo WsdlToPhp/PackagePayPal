@@ -13,7 +13,7 @@ class AddressVerifyReq extends AbstractStructBase
 {
     /**
      * The AddressVerifyRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:AddressVerifyRequest
      * @var \PayPal\StructType\AddressVerifyRequestType
      */

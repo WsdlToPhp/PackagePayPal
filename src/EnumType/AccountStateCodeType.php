@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for AccountStateCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: AccountStateCodeType These are the possible codes to describe the state of an account of an eBay user.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,21 +13,29 @@ class AccountStateCodeType
 {
     /**
      * Constant for value 'Active'
+     * Meta information extracted from the WSDL
+     * - documentation: Amex
      * @return string 'Active'
      */
     const VALUE_ACTIVE = 'Active';
     /**
      * Constant for value 'Pending'
+     * Meta information extracted from the WSDL
+     * - documentation: Visa
      * @return string 'Pending'
      */
     const VALUE_PENDING = 'Pending';
     /**
      * Constant for value 'Inactive'
+     * Meta information extracted from the WSDL
+     * - documentation: Mastercard
      * @return string 'Inactive'
      */
     const VALUE_INACTIVE = 'Inactive';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

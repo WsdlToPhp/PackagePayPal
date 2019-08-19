@@ -13,7 +13,7 @@ class BillOutstandingAmountResponseType extends AbstractResponseType
 {
     /**
      * The BillOutstandingAmountResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:BillOutstandingAmountResponseDetails
      * @var \PayPal\StructType\BillOutstandingAmountResponseDetailsType
      */

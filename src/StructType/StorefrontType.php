@@ -6,10 +6,10 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for StorefrontType StructType
- * Meta informations extracted from the WSDL
- * - documentation: Contains the eBay Stores-specific item attributes department number and store location. StorefrontInfo is shown for any item that belongs to an eBay Store owner, regardless of whether it is fixed price or auction type. Returned as
- * null for international fixed price items. | assumed this type is specific to add/get/revise item, then each StorefrontType nust have category id, for store details this node makes no sense to use | in case or revise item for example - to change store
- * category (department) you do not need to change store URL, so it will notbe in request
+ * Meta information extracted from the WSDL
+ * - documentation: in case or revise item for example - to change store category (department) you do not need to change store URL, so it will notbe in request | assumed this type is specific to add/get/revise item, then each StorefrontType nust have
+ * category id, for store details this node makes no sense to use | Contains the eBay Stores-specific item attributes department number and store location. StorefrontInfo is shown for any item that belongs to an eBay Store owner, regardless of whether
+ * it is fixed price or auction type. Returned as null for international fixed price items.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -17,14 +17,14 @@ class StorefrontType extends AbstractStructBase
 {
     /**
      * The StoreCategoryID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:StoreCategoryID
      * @var int
      */
     public $StoreCategoryID;
     /**
      * The StoreURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:StoreURL
      * @var string
@@ -59,8 +59,8 @@ class StorefrontType extends AbstractStructBase
     public function setStoreCategoryID($storeCategoryID = null)
     {
         // validation for constraint: int
-        if (!is_null($storeCategoryID) && !is_numeric($storeCategoryID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($storeCategoryID)), __LINE__);
+        if (!is_null($storeCategoryID) && !(is_int($storeCategoryID) || ctype_digit($storeCategoryID))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($storeCategoryID, true), gettype($storeCategoryID)), __LINE__);
         }
         $this->StoreCategoryID = $storeCategoryID;
         return $this;
@@ -82,7 +82,7 @@ class StorefrontType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($storeURL) && !is_string($storeURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($storeURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($storeURL, true), gettype($storeURL)), __LINE__);
         }
         $this->StoreURL = $storeURL;
         return $this;

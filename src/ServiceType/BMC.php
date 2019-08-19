@@ -26,7 +26,7 @@ class BMC extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BMCreateButton
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class BMC extends SoapClientBase
     public function BMCreateButton(\PayPal\StructType\BMCreateButtonReq $bMCreateButtonRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BMCreateButton($bMCreateButtonRequest));
+            $this->setResult($this->getSoapClient()->BMCreateButton($bMCreateButtonRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

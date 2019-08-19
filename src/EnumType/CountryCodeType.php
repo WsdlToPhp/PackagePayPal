@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for CountryCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: CountryCodeType This code list module defines the enumerated types of standard 2-letter ISO 3166 country codes. This codelist contains some additional country code not defined in the ISO 3166 country code set.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -1213,36 +1213,50 @@ class CountryCodeType
     const VALUE_ZW = 'ZW';
     /**
      * Constant for value 'AA'
+     * Meta information extracted from the WSDL
+     * - documentation: NOTE: APO/FPO was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country code list for backward compatibility.
      * @return string 'AA'
      */
     const VALUE_AA = 'AA';
     /**
      * Constant for value 'QM'
+     * Meta information extracted from the WSDL
+     * - documentation: NOTE: Guernsey was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility.
      * @return string 'QM'
      */
     const VALUE_QM = 'QM';
     /**
      * Constant for value 'QN'
+     * Meta information extracted from the WSDL
+     * - documentation: NOTE: Jan Mayen was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility.
      * @return string 'QN'
      */
     const VALUE_QN = 'QN';
     /**
      * Constant for value 'QO'
+     * Meta information extracted from the WSDL
+     * - documentation: NOTE: Jersey was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility.
      * @return string 'QO'
      */
     const VALUE_QO = 'QO';
     /**
      * Constant for value 'QP'
+     * Meta information extracted from the WSDL
+     * - documentation: NOTE: Tahiti was defined in eBay list previously but they are not defined in ISO 3166. This country will remain on eBay country list for backward compatibility.
      * @return string 'QP'
      */
     const VALUE_QP = 'QP';
     /**
      * Constant for value 'CS'
+     * Meta information extracted from the WSDL
+     * - documentation: NOTE: Serbia and Montenegro was not defined in the list previously but now an ISO 3166 code has been defined. As of 41.0 this country is supported in PayPal PRO.
      * @return string 'CS'
      */
     const VALUE_CS = 'CS';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';
@@ -1268,11 +1282,15 @@ class CountryCodeType
     const VALUE_TL = 'TL';
     /**
      * Constant for value 'RS'
+     * Meta information extracted from the WSDL
+     * - documentation: Republic of Serbia.
      * @return string 'RS'
      */
     const VALUE_RS = 'RS';
     /**
      * Constant for value 'ME'
+     * Meta information extracted from the WSDL
+     * - documentation: Montenegro.
      * @return string 'ME'
      */
     const VALUE_ME = 'ME';

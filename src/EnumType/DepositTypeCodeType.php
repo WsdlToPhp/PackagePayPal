@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for DepositTypeCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: DepositTypeCodeType - Type declaration to be used by other schema's. This code identifies the DepositType codes used to specify deposit types for Motors items. If the ietm listed is not a Motors item, then always return DepositType
  * value to be "None".
  * @subpackage Enumerations
@@ -14,21 +14,29 @@ class DepositTypeCodeType
 {
     /**
      * Constant for value 'None'
+     * Meta information extracted from the WSDL
+     * - documentation: None
      * @return string 'None'
      */
     const VALUE_NONE = 'None';
     /**
      * Constant for value 'OtherMethod'
+     * Meta information extracted from the WSDL
+     * - documentation: Other Method
      * @return string 'OtherMethod'
      */
     const VALUE_OTHER_METHOD = 'OtherMethod';
     /**
      * Constant for value 'FastDeposit'
+     * Meta information extracted from the WSDL
+     * - documentation: Fast Deposit.
      * @return string 'FastDeposit'
      */
     const VALUE_FAST_DEPOSIT = 'FastDeposit';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

@@ -13,7 +13,7 @@ class UpdateRecurringPaymentsProfileReq extends AbstractStructBase
 {
     /**
      * The UpdateRecurringPaymentsProfileRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:UpdateRecurringPaymentsProfileRequest
      * @var \PayPal\StructType\UpdateRecurringPaymentsProfileRequestType
      */

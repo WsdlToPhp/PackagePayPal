@@ -13,7 +13,7 @@ class MobileIDInfoType extends AbstractStructBase
 {
     /**
      * The SessionToken
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The Session token returned during buyer authentication.
      * @var string
      */
@@ -45,7 +45,7 @@ class MobileIDInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($sessionToken) && !is_string($sessionToken)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sessionToken)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sessionToken, true), gettype($sessionToken)), __LINE__);
         }
         $this->SessionToken = $sessionToken;
         return $this;

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for BuyNowTextType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: values for buynow button text
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,11 +13,15 @@ class BuyNowTextType
 {
     /**
      * Constant for value 'BUYNOW'
+     * Meta information extracted from the WSDL
+     * - documentation: button wording is BUYNOW
      * @return string 'BUYNOW'
      */
     const VALUE_BUYNOW = 'BUYNOW';
     /**
      * Constant for value 'PAYNOW'
+     * Meta information extracted from the WSDL
+     * - documentation: button wording is PAYNOW
      * @return string 'PAYNOW'
      */
     const VALUE_PAYNOW = 'PAYNOW';

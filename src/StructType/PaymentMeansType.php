@@ -46,7 +46,7 @@ class PaymentMeansType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\SellerPaymentMethodCodeType::valueIsValid($typeCodeID)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $typeCodeID, implode(', ', \PayPal\EnumType\SellerPaymentMethodCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\SellerPaymentMethodCodeType', is_array($typeCodeID) ? implode(', ', $typeCodeID) : var_export($typeCodeID, true), implode(', ', \PayPal\EnumType\SellerPaymentMethodCodeType::getValidValues())), __LINE__);
         }
         $this->TypeCodeID = $typeCodeID;
         return $this;

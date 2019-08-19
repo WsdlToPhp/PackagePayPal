@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for CustomSecurityHeaderType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Custom Securiy Header.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class CustomSecurityHeaderType extends AbstractStructBase
 {
     /**
      * The eBayAuthToken
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $eBayAuthToken;
     /**
      * The HardExpirationWarning
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $HardExpirationWarning;
     /**
      * The Credentials
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\UserIdPasswordType
      */
@@ -67,7 +67,7 @@ class CustomSecurityHeaderType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eBayAuthToken) && !is_string($eBayAuthToken)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eBayAuthToken)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eBayAuthToken, true), gettype($eBayAuthToken)), __LINE__);
         }
         $this->eBayAuthToken = $eBayAuthToken;
         return $this;
@@ -89,7 +89,7 @@ class CustomSecurityHeaderType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($hardExpirationWarning) && !is_string($hardExpirationWarning)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hardExpirationWarning)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hardExpirationWarning, true), gettype($hardExpirationWarning)), __LINE__);
         }
         $this->HardExpirationWarning = $hardExpirationWarning;
         return $this;

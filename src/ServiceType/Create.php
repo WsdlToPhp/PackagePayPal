@@ -26,7 +26,7 @@ class Create extends SoapClientBase
     }
     /**
      * Method to call the operation originally named CreateMobilePayment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Create extends SoapClientBase
     public function CreateMobilePayment(\PayPal\StructType\CreateMobilePaymentReq $createMobilePaymentRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->CreateMobilePayment($createMobilePaymentRequest));
+            $this->setResult($this->getSoapClient()->CreateMobilePayment($createMobilePaymentRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -50,7 +50,7 @@ class Create extends SoapClientBase
     }
     /**
      * Method to call the operation originally named CreateBillingAgreement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -65,7 +65,7 @@ class Create extends SoapClientBase
     public function CreateBillingAgreement(\PayPal\StructType\CreateBillingAgreementReq $createBillingAgreementRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->CreateBillingAgreement($createBillingAgreementRequest));
+            $this->setResult($this->getSoapClient()->CreateBillingAgreement($createBillingAgreementRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -74,7 +74,7 @@ class Create extends SoapClientBase
     }
     /**
      * Method to call the operation originally named CreateRecurringPaymentsProfile
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -89,7 +89,7 @@ class Create extends SoapClientBase
     public function CreateRecurringPaymentsProfile(\PayPal\StructType\CreateRecurringPaymentsProfileReq $createRecurringPaymentsProfileRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->CreateRecurringPaymentsProfile($createRecurringPaymentsProfileRequest));
+            $this->setResult($this->getSoapClient()->CreateRecurringPaymentsProfile($createRecurringPaymentsProfileRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

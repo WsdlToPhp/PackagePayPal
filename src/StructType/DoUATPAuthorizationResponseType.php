@@ -13,7 +13,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
 {
     /**
      * The UATPDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:UATPDetails
@@ -22,7 +22,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
     public $UATPDetails;
     /**
      * The AuthorizationCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Auth Authorization Code.
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -31,7 +31,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
     public $AuthorizationCode;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Invoice ID. A pass through.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -40,7 +40,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
     public $InvoiceID;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -101,7 +101,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
     {
         // validation for constraint: string
         if (!is_null($authorizationCode) && !is_string($authorizationCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authorizationCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizationCode, true), gettype($authorizationCode)), __LINE__);
         }
         $this->AuthorizationCode = $authorizationCode;
         return $this;
@@ -123,7 +123,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -145,7 +145,7 @@ class DoUATPAuthorizationResponseType extends DoAuthorizationResponseType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ButtonImageType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Types of button images
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,16 +13,22 @@ class ButtonImageType
 {
     /**
      * Constant for value 'REG'
+     * Meta information extracted from the WSDL
+     * - documentation: button image type is REG
      * @return string 'REG'
      */
     const VALUE_REG = 'REG';
     /**
      * Constant for value 'SML'
+     * Meta information extracted from the WSDL
+     * - documentation: button image type is SML
      * @return string 'SML'
      */
     const VALUE_SML = 'SML';
     /**
      * Constant for value 'CC'
+     * Meta information extracted from the WSDL
+     * - documentation: button image type is CC
      * @return string 'CC'
      */
     const VALUE_CC = 'CC';

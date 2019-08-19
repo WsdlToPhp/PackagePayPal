@@ -13,7 +13,7 @@ class SetAccessPermissionsReq extends AbstractStructBase
 {
     /**
      * The SetAccessPermissionsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:SetAccessPermissionsRequest
      * @var \PayPal\StructType\SetAccessPermissionsRequestType
      */

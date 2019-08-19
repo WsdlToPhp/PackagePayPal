@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for UserSelectedFundingSourceType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: UserSelectedFundingSourceType User Selected Funding Source (used by Express Checkout)
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

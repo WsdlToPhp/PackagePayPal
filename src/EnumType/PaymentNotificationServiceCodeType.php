@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for PaymentNotificationServiceCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentNotificationService For SetPaymentStatus API, this value should always be eBayCN.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

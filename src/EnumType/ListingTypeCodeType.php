@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ListingTypeCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ListingTypeCodeType - Type declaration to be used by other schema. This includes codes indicating the type of auction for the listed item.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,46 +13,64 @@ class ListingTypeCodeType
 {
     /**
      * Constant for value 'Unknown'
+     * Meta information extracted from the WSDL
+     * - documentation: Unknown Listing Type
      * @return string 'Unknown'
      */
     const VALUE_UNKNOWN = 'Unknown';
     /**
      * Constant for value 'Chinese'
+     * Meta information extracted from the WSDL
+     * - documentation: Chinese auction
      * @return string 'Chinese'
      */
     const VALUE_CHINESE = 'Chinese';
     /**
      * Constant for value 'Dutch'
+     * Meta information extracted from the WSDL
+     * - documentation: Dutch auction
      * @return string 'Dutch'
      */
     const VALUE_DUTCH = 'Dutch';
     /**
      * Constant for value 'Live'
+     * Meta information extracted from the WSDL
+     * - documentation: Live Auctions-type auction
      * @return string 'Live'
      */
     const VALUE_LIVE = 'Live';
     /**
      * Constant for value 'AdType'
+     * Meta information extracted from the WSDL
+     * - documentation: Ad type auction
      * @return string 'AdType'
      */
     const VALUE_AD_TYPE = 'AdType';
     /**
      * Constant for value 'StoresFixedPrice'
+     * Meta information extracted from the WSDL
+     * - documentation: Stores Fixed-price auction (US only)
      * @return string 'StoresFixedPrice'
      */
     const VALUE_STORES_FIXED_PRICE = 'StoresFixedPrice';
     /**
      * Constant for value 'PersonalOffer'
+     * Meta information extracted from the WSDL
+     * - documentation: Personal Offer auction
      * @return string 'PersonalOffer'
      */
     const VALUE_PERSONAL_OFFER = 'PersonalOffer';
     /**
      * Constant for value 'FixedPriceItem'
+     * Meta information extracted from the WSDL
+     * - documentation: Fixed Price item ("BIN only").
      * @return string 'FixedPriceItem'
      */
     const VALUE_FIXED_PRICE_ITEM = 'FixedPriceItem';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

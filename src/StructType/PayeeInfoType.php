@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PayeeInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PayeeInfoType Payee Information
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,18 +15,20 @@ class PayeeInfoType extends AbstractStructBase
 {
     /**
      * The PayeeEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address of payee/agreement owner Character length and limitations: 127 single-byte characters
+     * - base: xs:string
      * - minOccurs: 0
      * @var string
      */
     public $PayeeEmail;
     /**
      * The PayeeID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique Merchant ID Character length and limitations: 17 single-byte characters
-     * - minOccurs: 0
+     * - base: xs:string
      * - maxLength: 127
+     * - minOccurs: 0
      * @var string
      */
     public $PayeeID;
@@ -60,7 +62,7 @@ class PayeeInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($payeeEmail) && !is_string($payeeEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payeeEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payeeEmail, true), gettype($payeeEmail)), __LINE__);
         }
         $this->PayeeEmail = $payeeEmail;
         return $this;
@@ -80,13 +82,13 @@ class PayeeInfoType extends AbstractStructBase
      */
     public function setPayeeID($payeeID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($payeeID) && strlen($payeeID) > 127) || (is_array($payeeID) && count($payeeID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($payeeID) ? strlen($payeeID) : count($payeeID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($payeeID) && !is_string($payeeID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payeeID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payeeID, true), gettype($payeeID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($payeeID) && mb_strlen($payeeID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($payeeID)), __LINE__);
         }
         $this->PayeeID = $payeeID;
         return $this;

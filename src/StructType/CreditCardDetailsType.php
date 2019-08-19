@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for CreditCardDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: CreditCardDetailsType Information about a Credit Card.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,70 +15,70 @@ class CreditCardDetailsType extends AbstractStructBase
 {
     /**
      * The CreditCardType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CreditCardType;
     /**
      * The CreditCardNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CreditCardNumber;
     /**
      * The ExpMonth
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $ExpMonth;
     /**
      * The ExpYear
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $ExpYear;
     /**
      * The CardOwner
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\PayerInfoType
      */
     public $CardOwner;
     /**
      * The CVV2
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CVV2;
     /**
      * The StartMonth
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $StartMonth;
     /**
      * The StartYear
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $StartYear;
     /**
      * The IssueNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $IssueNumber;
     /**
      * The ThreeDSecureRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \PayPal\StructType\ThreeDSecureRequestType
      */
@@ -140,7 +140,7 @@ class CreditCardDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CreditCardTypeType::valueIsValid($creditCardType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $creditCardType, implode(', ', \PayPal\EnumType\CreditCardTypeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CreditCardTypeType', is_array($creditCardType) ? implode(', ', $creditCardType) : var_export($creditCardType, true), implode(', ', \PayPal\EnumType\CreditCardTypeType::getValidValues())), __LINE__);
         }
         $this->CreditCardType = $creditCardType;
         return $this;
@@ -162,7 +162,7 @@ class CreditCardDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($creditCardNumber) && !is_string($creditCardNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($creditCardNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($creditCardNumber, true), gettype($creditCardNumber)), __LINE__);
         }
         $this->CreditCardNumber = $creditCardNumber;
         return $this;
@@ -183,8 +183,8 @@ class CreditCardDetailsType extends AbstractStructBase
     public function setExpMonth($expMonth = null)
     {
         // validation for constraint: int
-        if (!is_null($expMonth) && !is_numeric($expMonth)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($expMonth)), __LINE__);
+        if (!is_null($expMonth) && !(is_int($expMonth) || ctype_digit($expMonth))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($expMonth, true), gettype($expMonth)), __LINE__);
         }
         $this->ExpMonth = $expMonth;
         return $this;
@@ -205,8 +205,8 @@ class CreditCardDetailsType extends AbstractStructBase
     public function setExpYear($expYear = null)
     {
         // validation for constraint: int
-        if (!is_null($expYear) && !is_numeric($expYear)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($expYear)), __LINE__);
+        if (!is_null($expYear) && !(is_int($expYear) || ctype_digit($expYear))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($expYear, true), gettype($expYear)), __LINE__);
         }
         $this->ExpYear = $expYear;
         return $this;
@@ -246,7 +246,7 @@ class CreditCardDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cVV2) && !is_string($cVV2)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cVV2)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cVV2, true), gettype($cVV2)), __LINE__);
         }
         $this->CVV2 = $cVV2;
         return $this;
@@ -267,8 +267,8 @@ class CreditCardDetailsType extends AbstractStructBase
     public function setStartMonth($startMonth = null)
     {
         // validation for constraint: int
-        if (!is_null($startMonth) && !is_numeric($startMonth)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($startMonth)), __LINE__);
+        if (!is_null($startMonth) && !(is_int($startMonth) || ctype_digit($startMonth))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startMonth, true), gettype($startMonth)), __LINE__);
         }
         $this->StartMonth = $startMonth;
         return $this;
@@ -289,8 +289,8 @@ class CreditCardDetailsType extends AbstractStructBase
     public function setStartYear($startYear = null)
     {
         // validation for constraint: int
-        if (!is_null($startYear) && !is_numeric($startYear)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($startYear)), __LINE__);
+        if (!is_null($startYear) && !(is_int($startYear) || ctype_digit($startYear))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startYear, true), gettype($startYear)), __LINE__);
         }
         $this->StartYear = $startYear;
         return $this;
@@ -312,7 +312,7 @@ class CreditCardDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($issueNumber) && !is_string($issueNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($issueNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueNumber, true), gettype($issueNumber)), __LINE__);
         }
         $this->IssueNumber = $issueNumber;
         return $this;

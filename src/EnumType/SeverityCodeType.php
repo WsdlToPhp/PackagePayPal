@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for SeverityCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: SeverityCodeType This code identifies the Severity code types in terms of whether there is an API-level error or warning that needs to be communicated to the client.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,21 +13,29 @@ class SeverityCodeType
 {
     /**
      * Constant for value 'Warning'
+     * Meta information extracted from the WSDL
+     * - documentation: Warning or informational error.
      * @return string 'Warning'
      */
     const VALUE_WARNING = 'Warning';
     /**
      * Constant for value 'Error'
+     * Meta information extracted from the WSDL
+     * - documentation: Application-level error.
      * @return string 'Error'
      */
     const VALUE_ERROR = 'Error';
     /**
      * Constant for value 'PartialSuccess'
+     * Meta information extracted from the WSDL
+     * - documentation: Partial Success.
      * @return string 'PartialSuccess'
      */
     const VALUE_PARTIAL_SUCCESS = 'PartialSuccess';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

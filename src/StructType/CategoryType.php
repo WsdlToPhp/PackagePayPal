@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for CategoryType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Container for data on the primary category of listing.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,21 +15,21 @@ class CategoryType extends AbstractStructBase
 {
     /**
      * The AutoPayEnabled
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $AutoPayEnabled;
     /**
      * The B2BVATEnabled
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $B2BVATEnabled;
     /**
      * The CatalogEnabled
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
@@ -41,21 +41,21 @@ class CategoryType extends AbstractStructBase
     public $CategoryID;
     /**
      * The CategoryLevel
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var int
      */
     public $CategoryLevel;
     /**
      * The CategoryName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $CategoryName;
     /**
      * The CategoryParentID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var string[]
@@ -63,7 +63,7 @@ class CategoryType extends AbstractStructBase
     public $CategoryParentID;
     /**
      * The CategoryParentName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * @var string[]
@@ -71,7 +71,7 @@ class CategoryType extends AbstractStructBase
     public $CategoryParentName;
     /**
      * The CSIDList
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: CSIDList is not present if Attributes enabled.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -80,28 +80,28 @@ class CategoryType extends AbstractStructBase
     public $CSIDList;
     /**
      * The Expired
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $Expired;
     /**
      * The IntlAutosFixedCat
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $IntlAutosFixedCat;
     /**
      * The LeafCategory
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
     public $LeafCategory;
     /**
      * The Virtual
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var bool
      */
@@ -169,7 +169,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($autoPayEnabled) && !is_bool($autoPayEnabled)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($autoPayEnabled)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($autoPayEnabled, true), gettype($autoPayEnabled)), __LINE__);
         }
         $this->AutoPayEnabled = $autoPayEnabled;
         return $this;
@@ -191,7 +191,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($b2BVATEnabled) && !is_bool($b2BVATEnabled)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($b2BVATEnabled)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($b2BVATEnabled, true), gettype($b2BVATEnabled)), __LINE__);
         }
         $this->B2BVATEnabled = $b2BVATEnabled;
         return $this;
@@ -213,7 +213,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($catalogEnabled) && !is_bool($catalogEnabled)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($catalogEnabled)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($catalogEnabled, true), gettype($catalogEnabled)), __LINE__);
         }
         $this->CatalogEnabled = $catalogEnabled;
         return $this;
@@ -235,7 +235,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($categoryID) && !is_string($categoryID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($categoryID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($categoryID, true), gettype($categoryID)), __LINE__);
         }
         $this->CategoryID = $categoryID;
         return $this;
@@ -256,8 +256,8 @@ class CategoryType extends AbstractStructBase
     public function setCategoryLevel($categoryLevel = null)
     {
         // validation for constraint: int
-        if (!is_null($categoryLevel) && !is_numeric($categoryLevel)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($categoryLevel)), __LINE__);
+        if (!is_null($categoryLevel) && !(is_int($categoryLevel) || ctype_digit($categoryLevel))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($categoryLevel, true), gettype($categoryLevel)), __LINE__);
         }
         $this->CategoryLevel = $categoryLevel;
         return $this;
@@ -279,7 +279,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($categoryName) && !is_string($categoryName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($categoryName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($categoryName, true), gettype($categoryName)), __LINE__);
         }
         $this->CategoryName = $categoryName;
         return $this;
@@ -293,6 +293,28 @@ class CategoryType extends AbstractStructBase
         return $this->CategoryParentID;
     }
     /**
+     * This method is responsible for validating the values passed to the setCategoryParentID method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setCategoryParentID method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateCategoryParentIDForArrayConstraintsFromSetCategoryParentID(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $categoryTypeCategoryParentIDItem) {
+            // validation for constraint: itemType
+            if (!is_string($categoryTypeCategoryParentIDItem)) {
+                $invalidValues[] = is_object($categoryTypeCategoryParentIDItem) ? get_class($categoryTypeCategoryParentIDItem) : sprintf('%s(%s)', gettype($categoryTypeCategoryParentIDItem), var_export($categoryTypeCategoryParentIDItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The CategoryParentID property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set CategoryParentID value
      * @throws \InvalidArgumentException
      * @param string[] $categoryParentID
@@ -300,11 +322,9 @@ class CategoryType extends AbstractStructBase
      */
     public function setCategoryParentID(array $categoryParentID = array())
     {
-        foreach ($categoryParentID as $categoryTypeCategoryParentIDItem) {
-            // validation for constraint: itemType
-            if (!is_string($categoryTypeCategoryParentIDItem)) {
-                throw new \InvalidArgumentException(sprintf('The CategoryParentID property can only contain items of string, "%s" given', is_object($categoryTypeCategoryParentIDItem) ? get_class($categoryTypeCategoryParentIDItem) : gettype($categoryTypeCategoryParentIDItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($categoryParentIDArrayErrorMessage = self::validateCategoryParentIDForArrayConstraintsFromSetCategoryParentID($categoryParentID))) {
+            throw new \InvalidArgumentException($categoryParentIDArrayErrorMessage, __LINE__);
         }
         $this->CategoryParentID = $categoryParentID;
         return $this;
@@ -319,7 +339,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The CategoryParentID property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The CategoryParentID property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->CategoryParentID[] = $item;
         return $this;
@@ -333,6 +353,28 @@ class CategoryType extends AbstractStructBase
         return $this->CategoryParentName;
     }
     /**
+     * This method is responsible for validating the values passed to the setCategoryParentName method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setCategoryParentName method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateCategoryParentNameForArrayConstraintsFromSetCategoryParentName(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $categoryTypeCategoryParentNameItem) {
+            // validation for constraint: itemType
+            if (!is_string($categoryTypeCategoryParentNameItem)) {
+                $invalidValues[] = is_object($categoryTypeCategoryParentNameItem) ? get_class($categoryTypeCategoryParentNameItem) : sprintf('%s(%s)', gettype($categoryTypeCategoryParentNameItem), var_export($categoryTypeCategoryParentNameItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The CategoryParentName property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set CategoryParentName value
      * @throws \InvalidArgumentException
      * @param string[] $categoryParentName
@@ -340,11 +382,9 @@ class CategoryType extends AbstractStructBase
      */
     public function setCategoryParentName(array $categoryParentName = array())
     {
-        foreach ($categoryParentName as $categoryTypeCategoryParentNameItem) {
-            // validation for constraint: itemType
-            if (!is_string($categoryTypeCategoryParentNameItem)) {
-                throw new \InvalidArgumentException(sprintf('The CategoryParentName property can only contain items of string, "%s" given', is_object($categoryTypeCategoryParentNameItem) ? get_class($categoryTypeCategoryParentNameItem) : gettype($categoryTypeCategoryParentNameItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($categoryParentNameArrayErrorMessage = self::validateCategoryParentNameForArrayConstraintsFromSetCategoryParentName($categoryParentName))) {
+            throw new \InvalidArgumentException($categoryParentNameArrayErrorMessage, __LINE__);
         }
         $this->CategoryParentName = $categoryParentName;
         return $this;
@@ -359,7 +399,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The CategoryParentName property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The CategoryParentName property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->CategoryParentName[] = $item;
         return $this;
@@ -373,6 +413,28 @@ class CategoryType extends AbstractStructBase
         return $this->CSIDList;
     }
     /**
+     * This method is responsible for validating the values passed to the setCSIDList method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setCSIDList method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateCSIDListForArrayConstraintsFromSetCSIDList(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $categoryTypeCSIDListItem) {
+            // validation for constraint: itemType
+            if (!is_string($categoryTypeCSIDListItem)) {
+                $invalidValues[] = is_object($categoryTypeCSIDListItem) ? get_class($categoryTypeCSIDListItem) : sprintf('%s(%s)', gettype($categoryTypeCSIDListItem), var_export($categoryTypeCSIDListItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The CSIDList property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set CSIDList value
      * @throws \InvalidArgumentException
      * @param string[] $cSIDList
@@ -380,11 +442,9 @@ class CategoryType extends AbstractStructBase
      */
     public function setCSIDList(array $cSIDList = array())
     {
-        foreach ($cSIDList as $categoryTypeCSIDListItem) {
-            // validation for constraint: itemType
-            if (!is_string($categoryTypeCSIDListItem)) {
-                throw new \InvalidArgumentException(sprintf('The CSIDList property can only contain items of string, "%s" given', is_object($categoryTypeCSIDListItem) ? get_class($categoryTypeCSIDListItem) : gettype($categoryTypeCSIDListItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($cSIDListArrayErrorMessage = self::validateCSIDListForArrayConstraintsFromSetCSIDList($cSIDList))) {
+            throw new \InvalidArgumentException($cSIDListArrayErrorMessage, __LINE__);
         }
         $this->CSIDList = $cSIDList;
         return $this;
@@ -399,7 +459,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The CSIDList property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The CSIDList property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->CSIDList[] = $item;
         return $this;
@@ -421,7 +481,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($expired) && !is_bool($expired)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($expired)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($expired, true), gettype($expired)), __LINE__);
         }
         $this->Expired = $expired;
         return $this;
@@ -443,7 +503,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($intlAutosFixedCat) && !is_bool($intlAutosFixedCat)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($intlAutosFixedCat)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($intlAutosFixedCat, true), gettype($intlAutosFixedCat)), __LINE__);
         }
         $this->IntlAutosFixedCat = $intlAutosFixedCat;
         return $this;
@@ -465,7 +525,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($leafCategory) && !is_bool($leafCategory)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($leafCategory)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($leafCategory, true), gettype($leafCategory)), __LINE__);
         }
         $this->LeafCategory = $leafCategory;
         return $this;
@@ -487,7 +547,7 @@ class CategoryType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($virtual) && !is_bool($virtual)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($virtual)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($virtual, true), gettype($virtual)), __LINE__);
         }
         $this->Virtual = $virtual;
         return $this;

@@ -13,7 +13,7 @@ class BMGetButtonDetailsRequestType extends AbstractRequestType
 {
     /**
      * The HostedButtonID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button ID of button to return. Required Character length and limitations: 10 single-byte numeric characters
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -47,7 +47,7 @@ class BMGetButtonDetailsRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($hostedButtonID) && !is_string($hostedButtonID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hostedButtonID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostedButtonID, true), gettype($hostedButtonID)), __LINE__);
         }
         $this->HostedButtonID = $hostedButtonID;
         return $this;

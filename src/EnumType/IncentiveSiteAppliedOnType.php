@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for IncentiveSiteAppliedOnType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: This defines if the incentive is applied on Ebay or PayPal.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

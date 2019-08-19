@@ -13,7 +13,7 @@ class ReverseTransactionReq extends AbstractStructBase
 {
     /**
      * The ReverseTransactionRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:ReverseTransactionRequest
      * @var \PayPal\StructType\ReverseTransactionRequestType
      */

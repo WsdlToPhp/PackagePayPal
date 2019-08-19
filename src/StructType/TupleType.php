@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for TupleType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: This holds single key-value pair.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class TupleType extends AbstractStructBase
 {
     /**
      * The Key
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Key Name.Optional
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -24,7 +24,7 @@ class TupleType extends AbstractStructBase
     public $Key;
     /**
      * The Value
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Value for the above key.Optional
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -61,7 +61,7 @@ class TupleType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($key) && !is_string($key)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($key)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->Key = $key;
         return $this;
@@ -83,7 +83,7 @@ class TupleType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($value) && !is_string($value)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($value)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
         }
         $this->Value = $value;
         return $this;

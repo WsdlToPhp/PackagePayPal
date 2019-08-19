@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for IncentiveTypeCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: IncentiveType This identifies the type of INCENTIVE for the redemption code.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

@@ -6,8 +6,8 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for DoCaptureRequestType StructType
- * Meta informations extracted from the WSDL
- * - documentation: Contains enhanced data like airline itinerary information. Not Required | To pass the Merchant store informationOptional | This holds key-value pair which merchants wants to pass it to the open wallet-PLCC processorOptional
+ * Meta information extracted from the WSDL
+ * - documentation: This holds key-value pair which merchants wants to pass it to the open wallet-PLCC processorOptional | To pass the Merchant store informationOptional | Contains enhanced data like airline itinerary information. Not Required
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -15,8 +15,9 @@ class DoCaptureRequestType extends AbstractRequestType
 {
     /**
      * The AuthorizationID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The authorization identification number of the payment you want to capture. Required Character length and limits: 19 single-byte characters maximum | AuthorizationId - Type for a PayPal Authorization ID.
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -24,7 +25,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $AuthorizationID;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount to authorize. You must set the currencyID attribute to USD. Required Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a
      * comma (,)
      * - maxOccurs: 1
@@ -34,7 +35,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $Amount;
     /**
      * The CompleteType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates if this capture is the last capture you intend to make. The default is Complete. If CompleteType is Complete, any remaining amount of the original reauthorized transaction is automatically voided. Required Character length
      * and limits: 12 single-byte alphanumeric characters
      * - maxOccurs: 1
@@ -44,7 +45,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $CompleteType;
     /**
      * The Note
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: An informational note about this settlement that is displayed to the payer in email and in transaction history. Optional Character length and limits: 255 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -53,7 +54,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $Note;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your invoice number or other identification number. The InvoiceID value is recorded only if the authorization you are capturing is an order authorization, not a basic authorization. Optional Character length and limits: 127
      * single-byte alphanumeric characters
      * - maxOccurs: 1
@@ -63,7 +64,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $InvoiceID;
     /**
      * The EnhancedData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:EnhancedData
@@ -72,7 +73,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $EnhancedData;
     /**
      * The Descriptor
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: dynamic descriptor Dynamic descriptor is used for merchant to provide detail of a transaction appears on statement Optional Character length and limits: <18 characters alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -81,7 +82,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $Descriptor;
     /**
      * The MerchantStoreDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:MerchantStoreDetails
@@ -90,7 +91,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $MerchantStoreDetails;
     /**
      * The MsgSubID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique id for each API request to prevent duplicate payments. Optional Character length and limits: 38 single-byte characters maximum.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -99,7 +100,7 @@ class DoCaptureRequestType extends AbstractRequestType
     public $MsgSubID;
     /**
      * The MerchantData
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:MerchantData
@@ -160,7 +161,7 @@ class DoCaptureRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($authorizationID) && !is_string($authorizationID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authorizationID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizationID, true), gettype($authorizationID)), __LINE__);
         }
         $this->AuthorizationID = $authorizationID;
         return $this;
@@ -203,7 +204,7 @@ class DoCaptureRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CompleteCodeType::valueIsValid($completeType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $completeType, implode(', ', \PayPal\EnumType\CompleteCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CompleteCodeType', is_array($completeType) ? implode(', ', $completeType) : var_export($completeType, true), implode(', ', \PayPal\EnumType\CompleteCodeType::getValidValues())), __LINE__);
         }
         $this->CompleteType = $completeType;
         return $this;
@@ -225,7 +226,7 @@ class DoCaptureRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($note) && !is_string($note)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($note)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($note, true), gettype($note)), __LINE__);
         }
         $this->Note = $note;
         return $this;
@@ -247,7 +248,7 @@ class DoCaptureRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -287,7 +288,7 @@ class DoCaptureRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($descriptor) && !is_string($descriptor)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($descriptor)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($descriptor, true), gettype($descriptor)), __LINE__);
         }
         $this->Descriptor = $descriptor;
         return $this;
@@ -327,7 +328,7 @@ class DoCaptureRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($msgSubID) && !is_string($msgSubID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($msgSubID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($msgSubID, true), gettype($msgSubID)), __LINE__);
         }
         $this->MsgSubID = $msgSubID;
         return $this;

@@ -77,7 +77,7 @@ class TaxInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($salesTaxPercentage) && !is_string($salesTaxPercentage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($salesTaxPercentage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($salesTaxPercentage, true), gettype($salesTaxPercentage)), __LINE__);
         }
         $this->SalesTaxPercentage = $salesTaxPercentage;
         return $this;
@@ -99,7 +99,7 @@ class TaxInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($taxState) && !is_string($taxState)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($taxState)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxState, true), gettype($taxState)), __LINE__);
         }
         $this->TaxState = $taxState;
         return $this;

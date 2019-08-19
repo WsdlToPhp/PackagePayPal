@@ -13,7 +13,7 @@ class GetBillingAgreementCustomerDetailsReq extends AbstractStructBase
 {
     /**
      * The GetBillingAgreementCustomerDetailsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:GetBillingAgreementCustomerDetailsRequest
      * @var \PayPal\StructType\GetBillingAgreementCustomerDetailsRequestType
      */

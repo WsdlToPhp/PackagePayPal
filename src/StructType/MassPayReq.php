@@ -13,7 +13,7 @@ class MassPayReq extends AbstractStructBase
 {
     /**
      * The MassPayRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:MassPayRequest
      * @var \PayPal\StructType\MassPayRequestType
      */

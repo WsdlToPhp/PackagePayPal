@@ -13,7 +13,7 @@ class DoMobileCheckoutPaymentResponseDetailsType extends AbstractStructBase
 {
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A free-form field for your own use, such as a tracking number or other value you want returned to you in IPN. Optional Character length and limitations: 256 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class DoMobileCheckoutPaymentResponseDetailsType extends AbstractStructBase
     public $Custom;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your own unique invoice or tracking number. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -29,14 +29,14 @@ class DoMobileCheckoutPaymentResponseDetailsType extends AbstractStructBase
     public $InvoiceID;
     /**
      * The PayerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the payer
      * @var \PayPal\StructType\PayerInfoType
      */
     public $PayerInfo;
     /**
      * The PaymentInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the transaction
      * @var \PayPal\StructType\PaymentInfoType
      */
@@ -77,7 +77,7 @@ class DoMobileCheckoutPaymentResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -99,7 +99,7 @@ class DoMobileCheckoutPaymentResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;

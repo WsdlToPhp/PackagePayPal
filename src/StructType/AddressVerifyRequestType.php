@@ -13,8 +13,9 @@ class AddressVerifyRequestType extends AbstractRequestType
 {
     /**
      * The Email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address of buyer to be verified. Required Maximum string length: 255 single-byte characters Input mask: ?@?.??
+     * - base: xs:string
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -22,7 +23,7 @@ class AddressVerifyRequestType extends AbstractRequestType
     public $Email;
     /**
      * The Street
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: First line of buyer’s billing or shipping street address to be verified. Required For verification, input value of street address must match the first three single-byte characters of the street address on file for the PayPal
      * account. Maximum string length: 35 single-byte characters Alphanumeric plus - , . ‘ # \ Whitespace and case of input value are ignored.
      * - maxOccurs: 1
@@ -32,7 +33,7 @@ class AddressVerifyRequestType extends AbstractRequestType
     public $Street;
     /**
      * The Zip
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Postal code to be verified. Required For verification, input value of postal code must match the first five single-byte characters of the postal code on file for the PayPal account. Maximum string length: 16 single-byte characters
      * Whitespace and case of input value are ignored.
      * - maxOccurs: 1
@@ -73,7 +74,7 @@ class AddressVerifyRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->Email = $email;
         return $this;
@@ -95,7 +96,7 @@ class AddressVerifyRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($street) && !is_string($street)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($street)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street, true), gettype($street)), __LINE__);
         }
         $this->Street = $street;
         return $this;
@@ -117,7 +118,7 @@ class AddressVerifyRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($zip) && !is_string($zip)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($zip)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zip, true), gettype($zip)), __LINE__);
         }
         $this->Zip = $zip;
         return $this;

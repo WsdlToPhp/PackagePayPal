@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for TransactionEntityType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: TransactionEntityType This is the PayPal DoAuthorization TransactionEntityType code
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

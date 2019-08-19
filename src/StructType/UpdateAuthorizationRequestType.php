@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for UpdateAuthorizationRequestType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Shipping Address for this transaction.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class UpdateAuthorizationRequestType extends AbstractRequestType
 {
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The value of the authorizationâtransaction identification number returned by a PayPal product. Required Character length and limits: 19 single-byte characters maximum
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -24,7 +24,7 @@ class UpdateAuthorizationRequestType extends AbstractRequestType
     public $TransactionID;
     /**
      * The ShipToAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:ShipToAddress
@@ -33,7 +33,7 @@ class UpdateAuthorizationRequestType extends AbstractRequestType
     public $ShipToAddress;
     /**
      * The IPAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IP Address of the buyer
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class UpdateAuthorizationRequestType extends AbstractRequestType
     public $IPAddress;
     /**
      * The ShipToStore
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A flag indicating that this transaction is a Ship to Store transaction. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -85,7 +85,7 @@ class UpdateAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -125,7 +125,7 @@ class UpdateAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($iPAddress) && !is_string($iPAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iPAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iPAddress, true), gettype($iPAddress)), __LINE__);
         }
         $this->IPAddress = $iPAddress;
         return $this;
@@ -147,7 +147,7 @@ class UpdateAuthorizationRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($shipToStore) && !is_string($shipToStore)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shipToStore)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shipToStore, true), gettype($shipToStore)), __LINE__);
         }
         $this->ShipToStore = $shipToStore;
         return $this;

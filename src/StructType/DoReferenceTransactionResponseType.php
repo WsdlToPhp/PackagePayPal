@@ -13,7 +13,7 @@ class DoReferenceTransactionResponseType extends AbstractResponseType
 {
     /**
      * The DoReferenceTransactionResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:DoReferenceTransactionResponseDetails
@@ -22,7 +22,7 @@ class DoReferenceTransactionResponseType extends AbstractResponseType
     public $DoReferenceTransactionResponseDetails;
     /**
      * The FMFDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\FMFDetailsType

@@ -13,7 +13,7 @@ class SetExpressCheckoutReq extends AbstractStructBase
 {
     /**
      * The SetExpressCheckoutRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:SetExpressCheckoutRequest
      * @var \PayPal\StructType\SetExpressCheckoutRequestType
      */

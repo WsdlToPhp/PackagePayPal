@@ -13,7 +13,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
 {
     /**
      * The FirstName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The first name of the User. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     public $FirstName;
     /**
      * The LastName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The Last name of the user. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     public $LastName;
     /**
      * The Email
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The email address of the user. Character length and limitations: 256 single-byte alphanumeric characters.
      * - minOccurs: 0
      * @var string
@@ -37,7 +37,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     public $Email;
     /**
      * The AccessPermissionName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: contains information about API Services
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -46,7 +46,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     public $AccessPermissionName;
     /**
      * The AccessPermissionStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: contains information about API Services
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -55,8 +55,9 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     public $AccessPermissionStatus;
     /**
      * The PayerID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Encrypted PayPal customer account identification number. Required Character length and limitations: 127 single-byte characters.
+     * - base: xs:string
      * - maxLength: 127
      * @var string
      */
@@ -103,7 +104,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($firstName) && !is_string($firstName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($firstName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($firstName, true), gettype($firstName)), __LINE__);
         }
         $this->FirstName = $firstName;
         return $this;
@@ -125,7 +126,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($lastName) && !is_string($lastName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lastName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastName, true), gettype($lastName)), __LINE__);
         }
         $this->LastName = $lastName;
         return $this;
@@ -147,7 +148,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($email) && !is_string($email)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($email)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->Email = $email;
         return $this;
@@ -161,6 +162,28 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
         return $this->AccessPermissionName;
     }
     /**
+     * This method is responsible for validating the values passed to the setAccessPermissionName method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setAccessPermissionName method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateAccessPermissionNameForArrayConstraintsFromSetAccessPermissionName(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem) {
+            // validation for constraint: itemType
+            if (!is_string($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem)) {
+                $invalidValues[] = is_object($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem) ? get_class($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem) : sprintf('%s(%s)', gettype($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem), var_export($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The AccessPermissionName property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set AccessPermissionName value
      * @throws \InvalidArgumentException
      * @param string[] $accessPermissionName
@@ -168,11 +191,9 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setAccessPermissionName(array $accessPermissionName = array())
     {
-        foreach ($accessPermissionName as $getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem) {
-            // validation for constraint: itemType
-            if (!is_string($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem)) {
-                throw new \InvalidArgumentException(sprintf('The AccessPermissionName property can only contain items of string, "%s" given', is_object($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem) ? get_class($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem) : gettype($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionNameItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($accessPermissionNameArrayErrorMessage = self::validateAccessPermissionNameForArrayConstraintsFromSetAccessPermissionName($accessPermissionName))) {
+            throw new \InvalidArgumentException($accessPermissionNameArrayErrorMessage, __LINE__);
         }
         $this->AccessPermissionName = $accessPermissionName;
         return $this;
@@ -187,7 +208,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The AccessPermissionName property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The AccessPermissionName property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AccessPermissionName[] = $item;
         return $this;
@@ -201,6 +222,28 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
         return $this->AccessPermissionStatus;
     }
     /**
+     * This method is responsible for validating the values passed to the setAccessPermissionStatus method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setAccessPermissionStatus method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateAccessPermissionStatusForArrayConstraintsFromSetAccessPermissionStatus(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem) {
+            // validation for constraint: itemType
+            if (!is_string($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem)) {
+                $invalidValues[] = is_object($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem) ? get_class($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem) : sprintf('%s(%s)', gettype($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem), var_export($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The AccessPermissionStatus property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set AccessPermissionStatus value
      * @throws \InvalidArgumentException
      * @param string[] $accessPermissionStatus
@@ -208,11 +251,9 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setAccessPermissionStatus(array $accessPermissionStatus = array())
     {
-        foreach ($accessPermissionStatus as $getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem) {
-            // validation for constraint: itemType
-            if (!is_string($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem)) {
-                throw new \InvalidArgumentException(sprintf('The AccessPermissionStatus property can only contain items of string, "%s" given', is_object($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem) ? get_class($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem) : gettype($getAccessPermissionDetailsResponseDetailsTypeAccessPermissionStatusItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($accessPermissionStatusArrayErrorMessage = self::validateAccessPermissionStatusForArrayConstraintsFromSetAccessPermissionStatus($accessPermissionStatus))) {
+            throw new \InvalidArgumentException($accessPermissionStatusArrayErrorMessage, __LINE__);
         }
         $this->AccessPermissionStatus = $accessPermissionStatus;
         return $this;
@@ -227,7 +268,7 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The AccessPermissionStatus property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The AccessPermissionStatus property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->AccessPermissionStatus[] = $item;
         return $this;
@@ -247,13 +288,13 @@ class GetAccessPermissionDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setPayerID($payerID = null)
     {
-        // validation for constraint: maxLength
-        if ((is_scalar($payerID) && strlen($payerID) > 127) || (is_array($payerID) && count($payerID) > 127)) {
-            throw new \InvalidArgumentException(sprintf('Invalid length, please provide an array with 127 element(s) or a scalar of 127 character(s) at most, "%d" length given', is_scalar($payerID) ? strlen($payerID) : count($payerID)), __LINE__);
-        }
         // validation for constraint: string
         if (!is_null($payerID) && !is_string($payerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payerID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payerID, true), gettype($payerID)), __LINE__);
+        }
+        // validation for constraint: maxLength(127)
+        if (!is_null($payerID) && mb_strlen($payerID) > 127) {
+            throw new \InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 127', mb_strlen($payerID)), __LINE__);
         }
         $this->PayerID = $payerID;
         return $this;

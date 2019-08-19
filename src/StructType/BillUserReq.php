@@ -13,7 +13,7 @@ class BillUserReq extends AbstractStructBase
 {
     /**
      * The BillUserRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BillUserRequest
      * @var \PayPal\StructType\BillUserRequestType
      */

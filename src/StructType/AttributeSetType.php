@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AttributeSetType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: AttributeSet.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class AttributeSetType extends AbstractStructBase
 {
     /**
      * The Attribute
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * @var \PayPal\StructType\AttributeType[]
      */
@@ -47,6 +47,28 @@ class AttributeSetType extends AbstractStructBase
         return $this->Attribute;
     }
     /**
+     * This method is responsible for validating the values passed to the setAttribute method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setAttribute method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateAttributeForArrayConstraintsFromSetAttribute(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $attributeSetTypeAttributeItem) {
+            // validation for constraint: itemType
+            if (!$attributeSetTypeAttributeItem instanceof \PayPal\StructType\AttributeType) {
+                $invalidValues[] = is_object($attributeSetTypeAttributeItem) ? get_class($attributeSetTypeAttributeItem) : sprintf('%s(%s)', gettype($attributeSetTypeAttributeItem), var_export($attributeSetTypeAttributeItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The Attribute property can only contain items of type \PayPal\StructType\AttributeType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set Attribute value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\AttributeType[] $attribute
@@ -54,11 +76,9 @@ class AttributeSetType extends AbstractStructBase
      */
     public function setAttribute(array $attribute = array())
     {
-        foreach ($attribute as $attributeSetTypeAttributeItem) {
-            // validation for constraint: itemType
-            if (!$attributeSetTypeAttributeItem instanceof \PayPal\StructType\AttributeType) {
-                throw new \InvalidArgumentException(sprintf('The Attribute property can only contain items of \PayPal\StructType\AttributeType, "%s" given', is_object($attributeSetTypeAttributeItem) ? get_class($attributeSetTypeAttributeItem) : gettype($attributeSetTypeAttributeItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($attributeArrayErrorMessage = self::validateAttributeForArrayConstraintsFromSetAttribute($attribute))) {
+            throw new \InvalidArgumentException($attributeArrayErrorMessage, __LINE__);
         }
         $this->Attribute = $attribute;
         return $this;
@@ -73,7 +93,7 @@ class AttributeSetType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\AttributeType) {
-            throw new \InvalidArgumentException(sprintf('The Attribute property can only contain items of \PayPal\StructType\AttributeType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The Attribute property can only contain items of type \PayPal\StructType\AttributeType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Attribute[] = $item;
         return $this;
@@ -95,7 +115,7 @@ class AttributeSetType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($attributeSetID) && !is_string($attributeSetID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($attributeSetID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($attributeSetID, true), gettype($attributeSetID)), __LINE__);
         }
         $this->AttributeSetID = $attributeSetID;
         return $this;

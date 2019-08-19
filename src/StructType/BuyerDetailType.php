@@ -13,7 +13,7 @@ class BuyerDetailType extends AbstractStructBase
 {
     /**
      * The IdentificationInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information that is used to indentify the Buyer. This is used for auto authorization. Mandatory if Authorization is requested.
      * - minOccurs: 0
      * @var \PayPal\StructType\IdentificationInfoType
@@ -21,7 +21,7 @@ class BuyerDetailType extends AbstractStructBase
     public $IdentificationInfo;
     /**
      * The RiskSessionCorrelationID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Correlation id related to risk process done for the device. Max length is 36 Chars.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -30,7 +30,7 @@ class BuyerDetailType extends AbstractStructBase
     public $RiskSessionCorrelationID;
     /**
      * The BuyerIPAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Buyer's IP Address
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -88,7 +88,7 @@ class BuyerDetailType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($riskSessionCorrelationID) && !is_string($riskSessionCorrelationID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($riskSessionCorrelationID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($riskSessionCorrelationID, true), gettype($riskSessionCorrelationID)), __LINE__);
         }
         $this->RiskSessionCorrelationID = $riskSessionCorrelationID;
         return $this;
@@ -110,7 +110,7 @@ class BuyerDetailType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerIPAddress) && !is_string($buyerIPAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerIPAddress)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerIPAddress, true), gettype($buyerIPAddress)), __LINE__);
         }
         $this->BuyerIPAddress = $buyerIPAddress;
         return $this;

@@ -13,21 +13,22 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
 {
     /**
      * The Token
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The timestamped token value that was returned by SetExpressCheckoutResponse and passed on GetExpressCheckoutDetailsRequest. Character length and limitations: 20 single-byte characters
+     * - base: xs:string
      * @var string
      */
     public $Token;
     /**
      * The PayerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the payer
      * @var \PayPal\StructType\PayerInfoType
      */
     public $PayerInfo;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A free-form field for your own use, as set by you in the Custom element of SetExpressCheckoutRequest. Character length and limitations: 256 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -35,7 +36,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $Custom;
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Your own invoice or tracking number, as set by you in the InvoiceID element of SetExpressCheckoutRequest. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -43,7 +44,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $InvoiceID;
     /**
      * The ContactPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Payer's contact telephone number. PayPal returns a contact telephone number only if your Merchant account profile settings require that the buyer enter one.
      * - minOccurs: 0
      * @var string
@@ -51,7 +52,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $ContactPhone;
     /**
      * The BillingAgreementAcceptedStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var bool
@@ -59,7 +60,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $BillingAgreementAcceptedStatus;
     /**
      * The RedirectRequired
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -67,7 +68,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $RedirectRequired;
     /**
      * The BillingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Customer's billing address. Optional If you have credit card mapped in your account then billing address of the credit card is returned otherwise your primary address is returned , PayPal returns this address in
      * GetExpressCheckoutDetailsResponse.
      * - minOccurs: 0
@@ -76,7 +77,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $BillingAddress;
     /**
      * The Note
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Text note entered by the buyer in PayPal flow.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -85,7 +86,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $Note;
     /**
      * The CheckoutStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns the status of the EC checkout session. Values include 'PaymentActionNotInitiated', 'PaymentActionFailed', 'PaymentActionInProgress', 'PaymentCompleted'.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -94,7 +95,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $CheckoutStatus;
     /**
      * The PayPalAdjustment
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: PayPal may offer a discount or gift certificate to the buyer, which will be represented by a negativeamount. If the buyer has a negative balance, PayPal will add that amount to the current charges, which will be represented as a
      * positive amount.
      * - maxOccurs: 1
@@ -104,7 +105,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $PayPalAdjustment;
     /**
      * The PaymentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the individual purchased items.
      * - maxOccurs: 10
      * - minOccurs: 0
@@ -113,7 +114,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $PaymentDetails;
     /**
      * The UserSelectedOptions
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the user selected options.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -122,7 +123,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $UserSelectedOptions;
     /**
      * The IncentiveDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the incentives that were applied from Ebay RYP page and PayPal RYP page.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -131,7 +132,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $IncentiveDetails;
     /**
      * The GiftMessage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift message.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -140,7 +141,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $GiftMessage;
     /**
      * The GiftReceiptEnable
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift receipt enable.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -149,7 +150,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $GiftReceiptEnable;
     /**
      * The GiftWrapName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift Wrap name.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -158,7 +159,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $GiftWrapName;
     /**
      * The GiftWrapAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Gift Wrap amount.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -167,7 +168,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $GiftWrapAmount;
     /**
      * The BuyerMarketingEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Buyer marketing email.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -176,7 +177,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $BuyerMarketingEmail;
     /**
      * The SurveyQuestion
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the survey question.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -185,7 +186,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $SurveyQuestion;
     /**
      * The SurveyChoiceSelected
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the survey choice selected by the user.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -194,7 +195,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $SurveyChoiceSelected;
     /**
      * The PaymentRequestInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Contains payment request information about each bucket in the cart.
      * - maxOccurs: 10
      * - minOccurs: 0
@@ -203,7 +204,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $PaymentRequestInfo;
     /**
      * The ExternalRememberMeStatusDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Response information resulting from opt-in operation or current login bypass status.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -212,7 +213,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $ExternalRememberMeStatusDetails;
     /**
      * The RefreshTokenStatusDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Response information resulting from opt-in operation or current login bypass status.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -221,7 +222,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $RefreshTokenStatusDetails;
     /**
      * The PaymentInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the transaction
      * - maxOccurs: 10
      * - minOccurs: 0
@@ -230,7 +231,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $PaymentInfo;
     /**
      * The CartChangeTolerance
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicate the tolerance a cart can be changed. Possible values are NONE = cart cannot be changed (since financing was used and country is DE). FLEXIBLE = cart can be changed If this parameter does not exist, then assume cart can be
      * modified.
      * - maxOccurs: 1
@@ -240,7 +241,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     public $CartChangeTolerance;
     /**
      * The InstrumentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of the payment instrument.
      * - minOccurs: 0
      * @var \PayPal\StructType\InstrumentDetailsType
@@ -351,7 +352,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($token) && !is_string($token)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($token)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
         $this->Token = $token;
         return $this;
@@ -391,7 +392,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -413,7 +414,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -435,7 +436,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($contactPhone) && !is_string($contactPhone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($contactPhone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contactPhone, true), gettype($contactPhone)), __LINE__);
         }
         $this->ContactPhone = $contactPhone;
         return $this;
@@ -457,7 +458,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($billingAgreementAcceptedStatus) && !is_bool($billingAgreementAcceptedStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($billingAgreementAcceptedStatus)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($billingAgreementAcceptedStatus, true), gettype($billingAgreementAcceptedStatus)), __LINE__);
         }
         $this->BillingAgreementAcceptedStatus = $billingAgreementAcceptedStatus;
         return $this;
@@ -479,7 +480,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($redirectRequired) && !is_string($redirectRequired)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($redirectRequired)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($redirectRequired, true), gettype($redirectRequired)), __LINE__);
         }
         $this->RedirectRequired = $redirectRequired;
         return $this;
@@ -519,7 +520,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($note) && !is_string($note)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($note)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($note, true), gettype($note)), __LINE__);
         }
         $this->Note = $note;
         return $this;
@@ -541,7 +542,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($checkoutStatus) && !is_string($checkoutStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($checkoutStatus)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkoutStatus, true), gettype($checkoutStatus)), __LINE__);
         }
         $this->CheckoutStatus = $checkoutStatus;
         return $this;
@@ -573,6 +574,28 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
         return $this->PaymentDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem) {
+            // validation for constraint: itemType
+            if (!$getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem instanceof \PayPal\StructType\PaymentDetailsType) {
+                $invalidValues[] = is_object($getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem) : sprintf('%s(%s)', gettype($getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem), var_export($getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentDetails property can only contain items of type \PayPal\StructType\PaymentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentDetailsType[] $paymentDetails
@@ -580,11 +603,13 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setPaymentDetails(array $paymentDetails = array())
     {
-        foreach ($paymentDetails as $getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem) {
-            // validation for constraint: itemType
-            if (!$getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem instanceof \PayPal\StructType\PaymentDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of \PayPal\StructType\PaymentDetailsType, "%s" given', is_object($getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem) : gettype($getExpressCheckoutDetailsResponseDetailsTypePaymentDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentDetailsArrayErrorMessage = self::validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails($paymentDetails))) {
+            throw new \InvalidArgumentException($paymentDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($paymentDetails) && count($paymentDetails) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentDetails)), __LINE__);
         }
         $this->PaymentDetails = $paymentDetails;
         return $this;
@@ -599,7 +624,11 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of \PayPal\StructType\PaymentDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of type \PayPal\StructType\PaymentDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->PaymentDetails) && count($this->PaymentDetails) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->PaymentDetails)), __LINE__);
         }
         $this->PaymentDetails[] = $item;
         return $this;
@@ -631,6 +660,28 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
         return $this->IncentiveDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setIncentiveDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setIncentiveDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateIncentiveDetailsForArrayConstraintsFromSetIncentiveDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem) {
+            // validation for constraint: itemType
+            if (!$getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem instanceof \PayPal\StructType\IncentiveDetailsType) {
+                $invalidValues[] = is_object($getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem) : sprintf('%s(%s)', gettype($getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem), var_export($getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The IncentiveDetails property can only contain items of type \PayPal\StructType\IncentiveDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set IncentiveDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\IncentiveDetailsType[] $incentiveDetails
@@ -638,11 +689,9 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setIncentiveDetails(array $incentiveDetails = array())
     {
-        foreach ($incentiveDetails as $getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem) {
-            // validation for constraint: itemType
-            if (!$getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem instanceof \PayPal\StructType\IncentiveDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The IncentiveDetails property can only contain items of \PayPal\StructType\IncentiveDetailsType, "%s" given', is_object($getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem) : gettype($getExpressCheckoutDetailsResponseDetailsTypeIncentiveDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($incentiveDetailsArrayErrorMessage = self::validateIncentiveDetailsForArrayConstraintsFromSetIncentiveDetails($incentiveDetails))) {
+            throw new \InvalidArgumentException($incentiveDetailsArrayErrorMessage, __LINE__);
         }
         $this->IncentiveDetails = $incentiveDetails;
         return $this;
@@ -657,7 +706,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\IncentiveDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The IncentiveDetails property can only contain items of \PayPal\StructType\IncentiveDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The IncentiveDetails property can only contain items of type \PayPal\StructType\IncentiveDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->IncentiveDetails[] = $item;
         return $this;
@@ -679,7 +728,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftMessage) && !is_string($giftMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($giftMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftMessage, true), gettype($giftMessage)), __LINE__);
         }
         $this->GiftMessage = $giftMessage;
         return $this;
@@ -701,7 +750,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftReceiptEnable) && !is_string($giftReceiptEnable)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($giftReceiptEnable)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftReceiptEnable, true), gettype($giftReceiptEnable)), __LINE__);
         }
         $this->GiftReceiptEnable = $giftReceiptEnable;
         return $this;
@@ -723,7 +772,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($giftWrapName) && !is_string($giftWrapName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($giftWrapName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapName, true), gettype($giftWrapName)), __LINE__);
         }
         $this->GiftWrapName = $giftWrapName;
         return $this;
@@ -763,7 +812,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($buyerMarketingEmail) && !is_string($buyerMarketingEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($buyerMarketingEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerMarketingEmail, true), gettype($buyerMarketingEmail)), __LINE__);
         }
         $this->BuyerMarketingEmail = $buyerMarketingEmail;
         return $this;
@@ -785,7 +834,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($surveyQuestion) && !is_string($surveyQuestion)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($surveyQuestion)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyQuestion, true), gettype($surveyQuestion)), __LINE__);
         }
         $this->SurveyQuestion = $surveyQuestion;
         return $this;
@@ -799,6 +848,28 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
         return $this->SurveyChoiceSelected;
     }
     /**
+     * This method is responsible for validating the values passed to the setSurveyChoiceSelected method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setSurveyChoiceSelected method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateSurveyChoiceSelectedForArrayConstraintsFromSetSurveyChoiceSelected(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem) {
+            // validation for constraint: itemType
+            if (!is_string($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem)) {
+                $invalidValues[] = is_object($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem) : sprintf('%s(%s)', gettype($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem), var_export($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The SurveyChoiceSelected property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set SurveyChoiceSelected value
      * @throws \InvalidArgumentException
      * @param string[] $surveyChoiceSelected
@@ -806,11 +877,9 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setSurveyChoiceSelected(array $surveyChoiceSelected = array())
     {
-        foreach ($surveyChoiceSelected as $getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem) {
-            // validation for constraint: itemType
-            if (!is_string($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem)) {
-                throw new \InvalidArgumentException(sprintf('The SurveyChoiceSelected property can only contain items of string, "%s" given', is_object($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem) : gettype($getExpressCheckoutDetailsResponseDetailsTypeSurveyChoiceSelectedItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($surveyChoiceSelectedArrayErrorMessage = self::validateSurveyChoiceSelectedForArrayConstraintsFromSetSurveyChoiceSelected($surveyChoiceSelected))) {
+            throw new \InvalidArgumentException($surveyChoiceSelectedArrayErrorMessage, __LINE__);
         }
         $this->SurveyChoiceSelected = $surveyChoiceSelected;
         return $this;
@@ -825,7 +894,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The SurveyChoiceSelected property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The SurveyChoiceSelected property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->SurveyChoiceSelected[] = $item;
         return $this;
@@ -839,6 +908,28 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
         return $this->PaymentRequestInfo;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentRequestInfo method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentRequestInfo method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentRequestInfoForArrayConstraintsFromSetPaymentRequestInfo(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem) {
+            // validation for constraint: itemType
+            if (!$getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem instanceof \PayPal\StructType\PaymentRequestInfoType) {
+                $invalidValues[] = is_object($getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem) : sprintf('%s(%s)', gettype($getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem), var_export($getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentRequestInfo property can only contain items of type \PayPal\StructType\PaymentRequestInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentRequestInfo value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentRequestInfoType[] $paymentRequestInfo
@@ -846,11 +937,13 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setPaymentRequestInfo(array $paymentRequestInfo = array())
     {
-        foreach ($paymentRequestInfo as $getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem) {
-            // validation for constraint: itemType
-            if (!$getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem instanceof \PayPal\StructType\PaymentRequestInfoType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentRequestInfo property can only contain items of \PayPal\StructType\PaymentRequestInfoType, "%s" given', is_object($getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem) : gettype($getExpressCheckoutDetailsResponseDetailsTypePaymentRequestInfoItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentRequestInfoArrayErrorMessage = self::validatePaymentRequestInfoForArrayConstraintsFromSetPaymentRequestInfo($paymentRequestInfo))) {
+            throw new \InvalidArgumentException($paymentRequestInfoArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($paymentRequestInfo) && count($paymentRequestInfo) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentRequestInfo)), __LINE__);
         }
         $this->PaymentRequestInfo = $paymentRequestInfo;
         return $this;
@@ -865,7 +958,11 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentRequestInfoType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentRequestInfo property can only contain items of \PayPal\StructType\PaymentRequestInfoType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentRequestInfo property can only contain items of type \PayPal\StructType\PaymentRequestInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->PaymentRequestInfo) && count($this->PaymentRequestInfo) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->PaymentRequestInfo)), __LINE__);
         }
         $this->PaymentRequestInfo[] = $item;
         return $this;
@@ -915,6 +1012,28 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
         return $this->PaymentInfo;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentInfo method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentInfo method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentInfoForArrayConstraintsFromSetPaymentInfo(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem) {
+            // validation for constraint: itemType
+            if (!$getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem instanceof \PayPal\StructType\PaymentInfoType) {
+                $invalidValues[] = is_object($getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem) : sprintf('%s(%s)', gettype($getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem), var_export($getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentInfo property can only contain items of type \PayPal\StructType\PaymentInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentInfo value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentInfoType[] $paymentInfo
@@ -922,11 +1041,13 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
      */
     public function setPaymentInfo(array $paymentInfo = array())
     {
-        foreach ($paymentInfo as $getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem) {
-            // validation for constraint: itemType
-            if (!$getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem instanceof \PayPal\StructType\PaymentInfoType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentInfo property can only contain items of \PayPal\StructType\PaymentInfoType, "%s" given', is_object($getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem) ? get_class($getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem) : gettype($getExpressCheckoutDetailsResponseDetailsTypePaymentInfoItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentInfoArrayErrorMessage = self::validatePaymentInfoForArrayConstraintsFromSetPaymentInfo($paymentInfo))) {
+            throw new \InvalidArgumentException($paymentInfoArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($paymentInfo) && count($paymentInfo) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentInfo)), __LINE__);
         }
         $this->PaymentInfo = $paymentInfo;
         return $this;
@@ -941,7 +1062,11 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentInfoType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentInfo property can only contain items of \PayPal\StructType\PaymentInfoType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentInfo property can only contain items of type \PayPal\StructType\PaymentInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->PaymentInfo) && count($this->PaymentInfo) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->PaymentInfo)), __LINE__);
         }
         $this->PaymentInfo[] = $item;
         return $this;
@@ -963,7 +1088,7 @@ class GetExpressCheckoutDetailsResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cartChangeTolerance) && !is_string($cartChangeTolerance)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cartChangeTolerance)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cartChangeTolerance, true), gettype($cartChangeTolerance)), __LINE__);
         }
         $this->CartChangeTolerance = $cartChangeTolerance;
         return $this;

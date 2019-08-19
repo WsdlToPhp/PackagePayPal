@@ -6,8 +6,8 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PaymentTransactionSearchResultType StructType
- * Meta informations extracted from the WSDL
- * - documentation: PaymentTransactionSearchResultType Results from a PaymentTransaction search | The transaction ID of the seller
+ * Meta information extracted from the WSDL
+ * - documentation: The transaction ID of the seller | PaymentTransactionSearchResultType Results from a PaymentTransaction search
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -15,70 +15,71 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
 {
     /**
      * The Timestamp
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The date and time (in UTC/GMT format) the transaction occurred
      * @var string
      */
     public $Timestamp;
     /**
      * The Timezone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The time zone of the transaction
      * @var string
      */
     public $Timezone;
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The type of the transaction
      * @var string
      */
     public $Type;
     /**
      * The Payer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The email address of the payer
+     * - base: xs:string
      * @var string
      */
     public $Payer;
     /**
      * The PayerDisplayName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Display name of the payer
      * @var string
      */
     public $PayerDisplayName;
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:TransactionID
      * @var string
      */
     public $TransactionID;
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The status of the transaction
      * @var string
      */
     public $Status;
     /**
      * The GrossAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The total gross amount charged, including any profile shipping cost and taxes
      * @var \PayPal\StructType\BasicAmountType
      */
     public $GrossAmount;
     /**
      * The FeeAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The fee that PayPal charged for the transaction
      * @var \PayPal\StructType\BasicAmountType
      */
     public $FeeAmount;
     /**
      * The NetAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The net amount of the transaction
      * @var \PayPal\StructType\BasicAmountType
      */
@@ -137,7 +138,7 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($timestamp) && !is_string($timestamp)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($timestamp)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($timestamp, true), gettype($timestamp)), __LINE__);
         }
         $this->Timestamp = $timestamp;
         return $this;
@@ -159,7 +160,7 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($timezone) && !is_string($timezone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($timezone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($timezone, true), gettype($timezone)), __LINE__);
         }
         $this->Timezone = $timezone;
         return $this;
@@ -181,7 +182,7 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($type)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -203,7 +204,7 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($payer) && !is_string($payer)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payer)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payer, true), gettype($payer)), __LINE__);
         }
         $this->Payer = $payer;
         return $this;
@@ -225,7 +226,7 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($payerDisplayName) && !is_string($payerDisplayName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($payerDisplayName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payerDisplayName, true), gettype($payerDisplayName)), __LINE__);
         }
         $this->PayerDisplayName = $payerDisplayName;
         return $this;
@@ -247,7 +248,7 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -269,7 +270,7 @@ class PaymentTransactionSearchResultType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($status) && !is_string($status)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($status)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
         }
         $this->Status = $status;
         return $this;

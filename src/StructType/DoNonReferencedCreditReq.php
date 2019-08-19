@@ -13,7 +13,7 @@ class DoNonReferencedCreditReq extends AbstractStructBase
 {
     /**
      * The DoNonReferencedCreditRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:DoNonReferencedCreditRequest
      * @var \PayPal\StructType\DoNonReferencedCreditRequestType
      */

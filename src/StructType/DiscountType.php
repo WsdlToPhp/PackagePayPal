@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for DiscountType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Describes discount information
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class DiscountType extends AbstractStructBase
 {
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: amount discountedOptional
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -24,7 +24,7 @@ class DiscountType extends AbstractStructBase
     public $Amount;
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item nameOptional Character length and limits: 127 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -33,7 +33,7 @@ class DiscountType extends AbstractStructBase
     public $Name;
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: description of the discountOptional Character length and limits: 127 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class DiscountType extends AbstractStructBase
     public $Description;
     /**
      * The RedeemedOfferType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: offer typeOptional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -51,7 +51,7 @@ class DiscountType extends AbstractStructBase
     public $RedeemedOfferType;
     /**
      * The RedeemedOfferID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: offer IDOptional Character length and limits: 64 single-byte characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -115,7 +115,7 @@ class DiscountType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($name) && !is_string($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
         $this->Name = $name;
         return $this;
@@ -137,7 +137,7 @@ class DiscountType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;
@@ -162,7 +162,7 @@ class DiscountType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\RedeemedOfferType::valueIsValid($redeemedOfferType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $redeemedOfferType, implode(', ', \PayPal\EnumType\RedeemedOfferType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\RedeemedOfferType', is_array($redeemedOfferType) ? implode(', ', $redeemedOfferType) : var_export($redeemedOfferType, true), implode(', ', \PayPal\EnumType\RedeemedOfferType::getValidValues())), __LINE__);
         }
         $this->RedeemedOfferType = $redeemedOfferType;
         return $this;
@@ -184,7 +184,7 @@ class DiscountType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($redeemedOfferID) && !is_string($redeemedOfferID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($redeemedOfferID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($redeemedOfferID, true), gettype($redeemedOfferID)), __LINE__);
         }
         $this->RedeemedOfferID = $redeemedOfferID;
         return $this;

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for PaymentItemInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: PaymentItemInfoType Information about a PayPal item.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class PaymentItemInfoType extends AbstractStructBase
 {
     /**
      * The InvoiceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Invoice number you set in the original transaction. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class PaymentItemInfoType extends AbstractStructBase
     public $InvoiceID;
     /**
      * The Custom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Custom field you set in the original transaction. Character length and limitations: 127 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -31,7 +31,7 @@ class PaymentItemInfoType extends AbstractStructBase
     public $Custom;
     /**
      * The Memo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Memo entered by your customer in PayPal Website Payments note field. Character length and limitations: 255 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -39,7 +39,7 @@ class PaymentItemInfoType extends AbstractStructBase
     public $Memo;
     /**
      * The SalesTax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of tax charged on transaction
      * - minOccurs: 0
      * @var string
@@ -47,7 +47,7 @@ class PaymentItemInfoType extends AbstractStructBase
     public $SalesTax;
     /**
      * The PaymentItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details about the indivudal purchased item
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -56,7 +56,7 @@ class PaymentItemInfoType extends AbstractStructBase
     public $PaymentItem;
     /**
      * The Subscription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the transaction if it was created via PayPal Subcriptions
      * - minOccurs: 0
      * @var \PayPal\StructType\SubscriptionInfoType
@@ -64,7 +64,7 @@ class PaymentItemInfoType extends AbstractStructBase
     public $Subscription;
     /**
      * The Auction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the transaction if it was created via an auction
      * - minOccurs: 0
      * @var \PayPal\StructType\AuctionInfoType
@@ -115,7 +115,7 @@ class PaymentItemInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($invoiceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
         $this->InvoiceID = $invoiceID;
         return $this;
@@ -137,7 +137,7 @@ class PaymentItemInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($custom) && !is_string($custom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
         $this->Custom = $custom;
         return $this;
@@ -159,7 +159,7 @@ class PaymentItemInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($memo) && !is_string($memo)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($memo)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($memo, true), gettype($memo)), __LINE__);
         }
         $this->Memo = $memo;
         return $this;
@@ -181,7 +181,7 @@ class PaymentItemInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($salesTax) && !is_string($salesTax)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($salesTax)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($salesTax, true), gettype($salesTax)), __LINE__);
         }
         $this->SalesTax = $salesTax;
         return $this;
@@ -195,6 +195,28 @@ class PaymentItemInfoType extends AbstractStructBase
         return $this->PaymentItem;
     }
     /**
+     * This method is responsible for validating the values passed to the setPaymentItem method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentItem method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePaymentItemForArrayConstraintsFromSetPaymentItem(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $paymentItemInfoTypePaymentItemItem) {
+            // validation for constraint: itemType
+            if (!$paymentItemInfoTypePaymentItemItem instanceof \PayPal\StructType\PaymentItemType) {
+                $invalidValues[] = is_object($paymentItemInfoTypePaymentItemItem) ? get_class($paymentItemInfoTypePaymentItemItem) : sprintf('%s(%s)', gettype($paymentItemInfoTypePaymentItemItem), var_export($paymentItemInfoTypePaymentItemItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PaymentItem property can only contain items of type \PayPal\StructType\PaymentItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PaymentItem value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PaymentItemType[] $paymentItem
@@ -202,11 +224,9 @@ class PaymentItemInfoType extends AbstractStructBase
      */
     public function setPaymentItem(array $paymentItem = array())
     {
-        foreach ($paymentItem as $paymentItemInfoTypePaymentItemItem) {
-            // validation for constraint: itemType
-            if (!$paymentItemInfoTypePaymentItemItem instanceof \PayPal\StructType\PaymentItemType) {
-                throw new \InvalidArgumentException(sprintf('The PaymentItem property can only contain items of \PayPal\StructType\PaymentItemType, "%s" given', is_object($paymentItemInfoTypePaymentItemItem) ? get_class($paymentItemInfoTypePaymentItemItem) : gettype($paymentItemInfoTypePaymentItemItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($paymentItemArrayErrorMessage = self::validatePaymentItemForArrayConstraintsFromSetPaymentItem($paymentItem))) {
+            throw new \InvalidArgumentException($paymentItemArrayErrorMessage, __LINE__);
         }
         $this->PaymentItem = $paymentItem;
         return $this;
@@ -221,7 +241,7 @@ class PaymentItemInfoType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PaymentItemType) {
-            throw new \InvalidArgumentException(sprintf('The PaymentItem property can only contain items of \PayPal\StructType\PaymentItemType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PaymentItem property can only contain items of type \PayPal\StructType\PaymentItemType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->PaymentItem[] = $item;
         return $this;

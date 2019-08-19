@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for OfferCouponInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: OffersAndCouponsInfoType Information about a Offers and Coupons.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class OfferCouponInfoType extends AbstractStructBase
 {
     /**
      * The Type
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of the incentive
      * - minOccurs: 0
      * @var string
@@ -23,7 +23,7 @@ class OfferCouponInfoType extends AbstractStructBase
     public $Type;
     /**
      * The ID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: ID of the Incentive used in transaction
      * - minOccurs: 0
      * @var string
@@ -31,7 +31,7 @@ class OfferCouponInfoType extends AbstractStructBase
     public $ID;
     /**
      * The Amount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount used on transaction
      * - minOccurs: 0
      * @var string
@@ -39,7 +39,7 @@ class OfferCouponInfoType extends AbstractStructBase
     public $Amount;
     /**
      * The AmountCurrency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount Currency
      * - minOccurs: 0
      * @var string
@@ -81,7 +81,7 @@ class OfferCouponInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($type) && !is_string($type)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($type)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->Type = $type;
         return $this;
@@ -103,7 +103,7 @@ class OfferCouponInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($iD) && !is_string($iD)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($iD)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iD, true), gettype($iD)), __LINE__);
         }
         $this->ID = $iD;
         return $this;
@@ -125,7 +125,7 @@ class OfferCouponInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($amount) && !is_string($amount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($amount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         $this->Amount = $amount;
         return $this;
@@ -147,7 +147,7 @@ class OfferCouponInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($amountCurrency) && !is_string($amountCurrency)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($amountCurrency)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amountCurrency, true), gettype($amountCurrency)), __LINE__);
         }
         $this->AmountCurrency = $amountCurrency;
         return $this;

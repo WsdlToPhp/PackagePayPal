@@ -13,7 +13,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
 {
     /**
      * The HostedButtonID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Hosted Button ID of button you wish to change. Required Character length and limitations: 10 single-byte numeric characters
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $HostedButtonID;
     /**
      * The TrackInv
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Is Inventory tracked. Required 0 or 1
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -31,7 +31,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $TrackInv;
     /**
      * The TrackPnl
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Is PNL Tracked. Required 0 or 1
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -40,7 +40,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $TrackPnl;
     /**
      * The ItemTrackingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * - ref: ebl:ItemTrackingDetails
@@ -49,7 +49,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $ItemTrackingDetails;
     /**
      * The OptionIndex
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Index. Optional Character length and limitations: 1 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -58,7 +58,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $OptionIndex;
     /**
      * The OptionTrackingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 10
      * - minOccurs: 0
      * - ref: ebl:OptionTrackingDetails
@@ -67,7 +67,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $OptionTrackingDetails;
     /**
      * The SoldoutURL
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: URL of page to display when an item is soldout. Optional Character length and limitations: 127 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -76,7 +76,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $SoldoutURL;
     /**
      * The ReuseDigitalDownloadKeys
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Whether to use the same digital download key repeatedly. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -85,7 +85,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $ReuseDigitalDownloadKeys;
     /**
      * The AppendDigitalDownloadKeys
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Whether to append these keys to the list or not (replace). Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -94,7 +94,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     public $AppendDigitalDownloadKeys;
     /**
      * The DigitalDownloadKeys
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Zero or more digital download keys to distribute to customers after transaction is completed. Optional Character length and limitations: 1000 single-byte alphanumeric characters
      * - maxOccurs: 1000
      * - minOccurs: 0
@@ -155,7 +155,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($hostedButtonID) && !is_string($hostedButtonID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hostedButtonID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostedButtonID, true), gettype($hostedButtonID)), __LINE__);
         }
         $this->HostedButtonID = $hostedButtonID;
         return $this;
@@ -177,7 +177,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($trackInv) && !is_string($trackInv)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($trackInv)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trackInv, true), gettype($trackInv)), __LINE__);
         }
         $this->TrackInv = $trackInv;
         return $this;
@@ -199,7 +199,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($trackPnl) && !is_string($trackPnl)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($trackPnl)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trackPnl, true), gettype($trackPnl)), __LINE__);
         }
         $this->TrackPnl = $trackPnl;
         return $this;
@@ -239,7 +239,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($optionIndex) && !is_string($optionIndex)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionIndex)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionIndex, true), gettype($optionIndex)), __LINE__);
         }
         $this->OptionIndex = $optionIndex;
         return $this;
@@ -253,6 +253,28 @@ class BMSetInventoryRequestType extends AbstractRequestType
         return $this->OptionTrackingDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setOptionTrackingDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setOptionTrackingDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateOptionTrackingDetailsForArrayConstraintsFromSetOptionTrackingDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $bMSetInventoryRequestTypeOptionTrackingDetailsItem) {
+            // validation for constraint: itemType
+            if (!$bMSetInventoryRequestTypeOptionTrackingDetailsItem instanceof \PayPal\StructType\OptionTrackingDetailsType) {
+                $invalidValues[] = is_object($bMSetInventoryRequestTypeOptionTrackingDetailsItem) ? get_class($bMSetInventoryRequestTypeOptionTrackingDetailsItem) : sprintf('%s(%s)', gettype($bMSetInventoryRequestTypeOptionTrackingDetailsItem), var_export($bMSetInventoryRequestTypeOptionTrackingDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The OptionTrackingDetails property can only contain items of type \PayPal\StructType\OptionTrackingDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set OptionTrackingDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\OptionTrackingDetailsType[] $optionTrackingDetails
@@ -260,11 +282,13 @@ class BMSetInventoryRequestType extends AbstractRequestType
      */
     public function setOptionTrackingDetails(array $optionTrackingDetails = array())
     {
-        foreach ($optionTrackingDetails as $bMSetInventoryRequestTypeOptionTrackingDetailsItem) {
-            // validation for constraint: itemType
-            if (!$bMSetInventoryRequestTypeOptionTrackingDetailsItem instanceof \PayPal\StructType\OptionTrackingDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The OptionTrackingDetails property can only contain items of \PayPal\StructType\OptionTrackingDetailsType, "%s" given', is_object($bMSetInventoryRequestTypeOptionTrackingDetailsItem) ? get_class($bMSetInventoryRequestTypeOptionTrackingDetailsItem) : gettype($bMSetInventoryRequestTypeOptionTrackingDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($optionTrackingDetailsArrayErrorMessage = self::validateOptionTrackingDetailsForArrayConstraintsFromSetOptionTrackingDetails($optionTrackingDetails))) {
+            throw new \InvalidArgumentException($optionTrackingDetailsArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($optionTrackingDetails) && count($optionTrackingDetails) > 10) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($optionTrackingDetails)), __LINE__);
         }
         $this->OptionTrackingDetails = $optionTrackingDetails;
         return $this;
@@ -279,7 +303,11 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\OptionTrackingDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The OptionTrackingDetails property can only contain items of \PayPal\StructType\OptionTrackingDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The OptionTrackingDetails property can only contain items of type \PayPal\StructType\OptionTrackingDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(10)
+        if (is_array($this->OptionTrackingDetails) && count($this->OptionTrackingDetails) >= 10) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->OptionTrackingDetails)), __LINE__);
         }
         $this->OptionTrackingDetails[] = $item;
         return $this;
@@ -301,7 +329,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($soldoutURL) && !is_string($soldoutURL)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($soldoutURL)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($soldoutURL, true), gettype($soldoutURL)), __LINE__);
         }
         $this->SoldoutURL = $soldoutURL;
         return $this;
@@ -323,7 +351,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($reuseDigitalDownloadKeys) && !is_string($reuseDigitalDownloadKeys)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reuseDigitalDownloadKeys)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reuseDigitalDownloadKeys, true), gettype($reuseDigitalDownloadKeys)), __LINE__);
         }
         $this->ReuseDigitalDownloadKeys = $reuseDigitalDownloadKeys;
         return $this;
@@ -345,7 +373,7 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($appendDigitalDownloadKeys) && !is_string($appendDigitalDownloadKeys)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($appendDigitalDownloadKeys)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($appendDigitalDownloadKeys, true), gettype($appendDigitalDownloadKeys)), __LINE__);
         }
         $this->AppendDigitalDownloadKeys = $appendDigitalDownloadKeys;
         return $this;
@@ -359,6 +387,28 @@ class BMSetInventoryRequestType extends AbstractRequestType
         return $this->DigitalDownloadKeys;
     }
     /**
+     * This method is responsible for validating the values passed to the setDigitalDownloadKeys method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setDigitalDownloadKeys method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateDigitalDownloadKeysForArrayConstraintsFromSetDigitalDownloadKeys(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $bMSetInventoryRequestTypeDigitalDownloadKeysItem) {
+            // validation for constraint: itemType
+            if (!is_string($bMSetInventoryRequestTypeDigitalDownloadKeysItem)) {
+                $invalidValues[] = is_object($bMSetInventoryRequestTypeDigitalDownloadKeysItem) ? get_class($bMSetInventoryRequestTypeDigitalDownloadKeysItem) : sprintf('%s(%s)', gettype($bMSetInventoryRequestTypeDigitalDownloadKeysItem), var_export($bMSetInventoryRequestTypeDigitalDownloadKeysItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The DigitalDownloadKeys property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set DigitalDownloadKeys value
      * @throws \InvalidArgumentException
      * @param string[] $digitalDownloadKeys
@@ -366,11 +416,13 @@ class BMSetInventoryRequestType extends AbstractRequestType
      */
     public function setDigitalDownloadKeys(array $digitalDownloadKeys = array())
     {
-        foreach ($digitalDownloadKeys as $bMSetInventoryRequestTypeDigitalDownloadKeysItem) {
-            // validation for constraint: itemType
-            if (!is_string($bMSetInventoryRequestTypeDigitalDownloadKeysItem)) {
-                throw new \InvalidArgumentException(sprintf('The DigitalDownloadKeys property can only contain items of string, "%s" given', is_object($bMSetInventoryRequestTypeDigitalDownloadKeysItem) ? get_class($bMSetInventoryRequestTypeDigitalDownloadKeysItem) : gettype($bMSetInventoryRequestTypeDigitalDownloadKeysItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($digitalDownloadKeysArrayErrorMessage = self::validateDigitalDownloadKeysForArrayConstraintsFromSetDigitalDownloadKeys($digitalDownloadKeys))) {
+            throw new \InvalidArgumentException($digitalDownloadKeysArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($digitalDownloadKeys) && count($digitalDownloadKeys) > 1000) {
+            throw new \InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 1000', count($digitalDownloadKeys)), __LINE__);
         }
         $this->DigitalDownloadKeys = $digitalDownloadKeys;
         return $this;
@@ -385,7 +437,11 @@ class BMSetInventoryRequestType extends AbstractRequestType
     {
         // validation for constraint: itemType
         if (!is_string($item)) {
-            throw new \InvalidArgumentException(sprintf('The DigitalDownloadKeys property can only contain items of string, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The DigitalDownloadKeys property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: maxOccurs(1000)
+        if (is_array($this->DigitalDownloadKeys) && count($this->DigitalDownloadKeys) >= 1000) {
+            throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 1000', count($this->DigitalDownloadKeys)), __LINE__);
         }
         $this->DigitalDownloadKeys[] = $item;
         return $this;

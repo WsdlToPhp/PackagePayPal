@@ -13,7 +13,7 @@ class UpdateAuthorizationReq extends AbstractStructBase
 {
     /**
      * The UpdateAuthorizationRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:UpdateAuthorizationRequest
      * @var \PayPal\StructType\UpdateAuthorizationRequestType
      */

@@ -13,7 +13,7 @@ class PhoneNumberType extends AbstractStructBase
 {
     /**
      * The CountryCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Country code associated with this phone number.
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class PhoneNumberType extends AbstractStructBase
     public $CountryCode;
     /**
      * The PhoneNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Phone number associated with this phone.
      * - minOccurs: 0
      * @var string
@@ -29,7 +29,7 @@ class PhoneNumberType extends AbstractStructBase
     public $PhoneNumber;
     /**
      * The Extension
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Extension associated with this phone number.
      * - minOccurs: 0
      * @var string
@@ -68,7 +68,7 @@ class PhoneNumberType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($countryCode) && !is_string($countryCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($countryCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
         }
         $this->CountryCode = $countryCode;
         return $this;
@@ -90,7 +90,7 @@ class PhoneNumberType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($phoneNumber) && !is_string($phoneNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($phoneNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phoneNumber, true), gettype($phoneNumber)), __LINE__);
         }
         $this->PhoneNumber = $phoneNumber;
         return $this;
@@ -112,7 +112,7 @@ class PhoneNumberType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($extension) && !is_string($extension)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($extension)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($extension, true), gettype($extension)), __LINE__);
         }
         $this->Extension = $extension;
         return $this;

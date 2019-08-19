@@ -13,7 +13,7 @@ class TransactionSearchReq extends AbstractStructBase
 {
     /**
      * The TransactionSearchRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:TransactionSearchRequest
      * @var \PayPal\StructType\TransactionSearchRequestType
      */

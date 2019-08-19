@@ -13,7 +13,7 @@ class GetPalDetailsResponseType extends AbstractResponseType
 {
     /**
      * The Pal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class GetPalDetailsResponseType extends AbstractResponseType
     public $Pal;
     /**
      * The Locale
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -57,7 +57,7 @@ class GetPalDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($pal) && !is_string($pal)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($pal)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pal, true), gettype($pal)), __LINE__);
         }
         $this->Pal = $pal;
         return $this;
@@ -79,7 +79,7 @@ class GetPalDetailsResponseType extends AbstractResponseType
     {
         // validation for constraint: string
         if (!is_null($locale) && !is_string($locale)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($locale)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($locale, true), gettype($locale)), __LINE__);
         }
         $this->Locale = $locale;
         return $this;

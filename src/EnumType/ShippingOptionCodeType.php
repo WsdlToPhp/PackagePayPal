@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for ShippingOptionCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: ShippingOptionCodeType These are the possible codes to describe shipping options in terms of where the seller is willing to ship the item.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,26 +13,36 @@ class ShippingOptionCodeType
 {
     /**
      * Constant for value 'SiteOnly'
+     * Meta information extracted from the WSDL
+     * - documentation: Site only.
      * @return string 'SiteOnly'
      */
     const VALUE_SITE_ONLY = 'SiteOnly';
     /**
      * Constant for value 'WorldWide'
+     * Meta information extracted from the WSDL
+     * - documentation: WorldWide.
      * @return string 'WorldWide'
      */
     const VALUE_WORLD_WIDE = 'WorldWide';
     /**
      * Constant for value 'SitePlusRegions'
+     * Meta information extracted from the WSDL
+     * - documentation: SitePlusRegions.
      * @return string 'SitePlusRegions'
      */
     const VALUE_SITE_PLUS_REGIONS = 'SitePlusRegions';
     /**
      * Constant for value 'WillNotShip'
+     * Meta information extracted from the WSDL
+     * - documentation: WillNotShip.
      * @return string 'WillNotShip'
      */
     const VALUE_WILL_NOT_SHIP = 'WillNotShip';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for MobileRecipientCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MobileRecipientCodeType These are the accepted types of recipients for mobile-originated transactions
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

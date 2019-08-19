@@ -6,10 +6,9 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AddressType StructType
- * Meta informations extracted from the WSDL
- * - documentation: ISO 3166 standard country code Character limit: Two single-byte characters. | IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or
- * UpdateRecurringPaymentsProfile. This element should only be used in response elements and typically should not be used in creating request messages which specify the name of a country using the Country element (which refers to a 2-letter country
- * code).
+ * Meta information extracted from the WSDL
+ * - documentation: IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile. This element should only be used in response elements and
+ * typically should not be used in creating request messages which specify the name of a country using the Country element (which refers to a 2-letter country code). | ISO 3166 standard country code Character limit: Two single-byte characters.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -17,7 +16,7 @@ class AddressType extends AbstractStructBase
 {
     /**
      * The Name
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Person's name associated with this address. Character length and limitations: 32 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -25,7 +24,7 @@ class AddressType extends AbstractStructBase
     public $Name;
     /**
      * The Street1
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: First street address. Character length and limitations: 300 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -33,7 +32,7 @@ class AddressType extends AbstractStructBase
     public $Street1;
     /**
      * The Street2
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Second street address. Character length and limitations: 300 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -41,7 +40,7 @@ class AddressType extends AbstractStructBase
     public $Street2;
     /**
      * The CityName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Name of city. Character length and limitations: 120 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -49,7 +48,7 @@ class AddressType extends AbstractStructBase
     public $CityName;
     /**
      * The StateOrProvince
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: State or province. Character length and limitations: 120 single-byte alphanumeric characters For Canada and the USA, StateOrProvince must be the standard 2-character abbreviation of a state or province. Canadian Provinces Alberta AB
      * British_Columbia BC Manitoba MB New_Brunswick NB Newfoundland NF Northwest_Territories NT Nova_Scotia NS Nunavut NU Ontario ON Prince_Edward_Island PE Quebec QC Saskatchewan SK Yukon YK United States Alabama AL Alaska AK American_Samoa AS Arizona AZ
      * Arkansas AR California CA Colorado CO Connecticut CT Delaware DE District_Of_Columbia DC Federated_States_Of_Micronesia FM Florida FL Georgia GA Guam GU Hawaii HI Idaho ID Illinois IL Indiana IN Iowa IA Kansas KS Kentucky KY Louisiana LA Maine ME
@@ -62,7 +61,7 @@ class AddressType extends AbstractStructBase
     public $StateOrProvince;
     /**
      * The Country
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:Country
      * @var string
@@ -70,7 +69,7 @@ class AddressType extends AbstractStructBase
     public $Country;
     /**
      * The CountryName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:CountryName
      * @var string
@@ -78,7 +77,7 @@ class AddressType extends AbstractStructBase
     public $CountryName;
     /**
      * The Phone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Telephone number associated with this address
      * - minOccurs: 0
      * @var string
@@ -86,14 +85,14 @@ class AddressType extends AbstractStructBase
     public $Phone;
     /**
      * The PostalCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $PostalCode;
     /**
      * The AddressID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile, or UpdateRecurringPaymentsProfile.
      * - minOccurs: 0
      * @var string
@@ -101,7 +100,7 @@ class AddressType extends AbstractStructBase
     public $AddressID;
     /**
      * The AddressOwner
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
      * - minOccurs: 0
      * @var string
@@ -109,7 +108,7 @@ class AddressType extends AbstractStructBase
     public $AddressOwner;
     /**
      * The ExternalAddressID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
      * - minOccurs: 0
      * @var string
@@ -117,7 +116,7 @@ class AddressType extends AbstractStructBase
     public $ExternalAddressID;
     /**
      * The InternationalName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile. Only applicable to SellerPaymentAddress today. Seller's
      * international name that is associated with the payment address.
      * - minOccurs: 0
@@ -126,7 +125,7 @@ class AddressType extends AbstractStructBase
     public $InternationalName;
     /**
      * The InternationalStateAndCity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile. Only applicable to SellerPaymentAddress today. International
      * state and city for the seller's payment address.
      * - minOccurs: 0
@@ -135,7 +134,7 @@ class AddressType extends AbstractStructBase
     public $InternationalStateAndCity;
     /**
      * The InternationalStreet
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile. Only applicable to SellerPaymentAddress today. Seller's
      * international street address that is associated with the payment address.
      * - minOccurs: 0
@@ -144,7 +143,7 @@ class AddressType extends AbstractStructBase
     public $InternationalStreet;
     /**
      * The AddressStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Status of the address on file with PayPal. IMPORTANT: Do not set this element for SetExpressCheckout, DoExpressCheckoutPayment, DoDirectPayment, CreateRecurringPaymentsProfile or UpdateRecurringPaymentsProfile.
      * - minOccurs: 0
      * @var string
@@ -152,7 +151,7 @@ class AddressType extends AbstractStructBase
     public $AddressStatus;
     /**
      * The AddressNormalizationStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Returns Normalization Status of the Address. Possible values are Normalized, Unnormalized, and None.
      * - minOccurs: 0
      * @var string
@@ -233,7 +232,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($name) && !is_string($name)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($name)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
         }
         $this->Name = $name;
         return $this;
@@ -255,7 +254,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($street1) && !is_string($street1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($street1)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street1, true), gettype($street1)), __LINE__);
         }
         $this->Street1 = $street1;
         return $this;
@@ -277,7 +276,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($street2) && !is_string($street2)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($street2)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($street2, true), gettype($street2)), __LINE__);
         }
         $this->Street2 = $street2;
         return $this;
@@ -299,7 +298,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($cityName) && !is_string($cityName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cityName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityName, true), gettype($cityName)), __LINE__);
         }
         $this->CityName = $cityName;
         return $this;
@@ -321,7 +320,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($stateOrProvince) && !is_string($stateOrProvince)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($stateOrProvince)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($stateOrProvince, true), gettype($stateOrProvince)), __LINE__);
         }
         $this->StateOrProvince = $stateOrProvince;
         return $this;
@@ -346,7 +345,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CountryCodeType::valueIsValid($country)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $country, implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CountryCodeType', is_array($country) ? implode(', ', $country) : var_export($country, true), implode(', ', \PayPal\EnumType\CountryCodeType::getValidValues())), __LINE__);
         }
         $this->Country = $country;
         return $this;
@@ -368,7 +367,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($countryName) && !is_string($countryName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($countryName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryName, true), gettype($countryName)), __LINE__);
         }
         $this->CountryName = $countryName;
         return $this;
@@ -390,7 +389,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($phone) && !is_string($phone)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($phone)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phone, true), gettype($phone)), __LINE__);
         }
         $this->Phone = $phone;
         return $this;
@@ -412,7 +411,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($postalCode) && !is_string($postalCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($postalCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($postalCode, true), gettype($postalCode)), __LINE__);
         }
         $this->PostalCode = $postalCode;
         return $this;
@@ -434,7 +433,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($addressID) && !is_string($addressID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($addressID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($addressID, true), gettype($addressID)), __LINE__);
         }
         $this->AddressID = $addressID;
         return $this;
@@ -459,7 +458,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AddressOwnerCodeType::valueIsValid($addressOwner)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $addressOwner, implode(', ', \PayPal\EnumType\AddressOwnerCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AddressOwnerCodeType', is_array($addressOwner) ? implode(', ', $addressOwner) : var_export($addressOwner, true), implode(', ', \PayPal\EnumType\AddressOwnerCodeType::getValidValues())), __LINE__);
         }
         $this->AddressOwner = $addressOwner;
         return $this;
@@ -481,7 +480,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($externalAddressID) && !is_string($externalAddressID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($externalAddressID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalAddressID, true), gettype($externalAddressID)), __LINE__);
         }
         $this->ExternalAddressID = $externalAddressID;
         return $this;
@@ -503,7 +502,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($internationalName) && !is_string($internationalName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($internationalName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($internationalName, true), gettype($internationalName)), __LINE__);
         }
         $this->InternationalName = $internationalName;
         return $this;
@@ -525,7 +524,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($internationalStateAndCity) && !is_string($internationalStateAndCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($internationalStateAndCity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($internationalStateAndCity, true), gettype($internationalStateAndCity)), __LINE__);
         }
         $this->InternationalStateAndCity = $internationalStateAndCity;
         return $this;
@@ -547,7 +546,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($internationalStreet) && !is_string($internationalStreet)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($internationalStreet)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($internationalStreet, true), gettype($internationalStreet)), __LINE__);
         }
         $this->InternationalStreet = $internationalStreet;
         return $this;
@@ -572,7 +571,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AddressStatusCodeType::valueIsValid($addressStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $addressStatus, implode(', ', \PayPal\EnumType\AddressStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AddressStatusCodeType', is_array($addressStatus) ? implode(', ', $addressStatus) : var_export($addressStatus, true), implode(', ', \PayPal\EnumType\AddressStatusCodeType::getValidValues())), __LINE__);
         }
         $this->AddressStatus = $addressStatus;
         return $this;
@@ -597,7 +596,7 @@ class AddressType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AddressNormalizationStatusCodeType::valueIsValid($addressNormalizationStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $addressNormalizationStatus, implode(', ', \PayPal\EnumType\AddressNormalizationStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AddressNormalizationStatusCodeType', is_array($addressNormalizationStatus) ? implode(', ', $addressNormalizationStatus) : var_export($addressNormalizationStatus, true), implode(', ', \PayPal\EnumType\AddressNormalizationStatusCodeType::getValidValues())), __LINE__);
         }
         $this->AddressNormalizationStatus = $addressNormalizationStatus;
         return $this;

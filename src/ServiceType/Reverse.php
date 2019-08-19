@@ -26,7 +26,7 @@ class Reverse extends SoapClientBase
     }
     /**
      * Method to call the operation originally named ReverseTransaction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Reverse extends SoapClientBase
     public function ReverseTransaction(\PayPal\StructType\ReverseTransactionReq $reverseTransactionRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->ReverseTransaction($reverseTransactionRequest));
+            $this->setResult($this->getSoapClient()->ReverseTransaction($reverseTransactionRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

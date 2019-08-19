@@ -13,7 +13,7 @@ class ExternalRememberMeOptOutReq extends AbstractStructBase
 {
     /**
      * The ExternalRememberMeOptOutRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:ExternalRememberMeOptOutRequest
      * @var \PayPal\StructType\ExternalRememberMeOptOutRequestType
      */

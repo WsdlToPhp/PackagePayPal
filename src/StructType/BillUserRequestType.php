@@ -13,14 +13,14 @@ class BillUserRequestType extends AbstractRequestType
 {
     /**
      * The MerchantPullPaymentDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:MerchantPullPaymentDetails
      * @var \PayPal\StructType\MerchantPullPaymentType
      */
     public $MerchantPullPaymentDetails;
     /**
      * The ReturnFMFDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: This flag indicates that the response should include FMFDetails
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -74,8 +74,8 @@ class BillUserRequestType extends AbstractRequestType
     public function setReturnFMFDetails($returnFMFDetails = null)
     {
         // validation for constraint: int
-        if (!is_null($returnFMFDetails) && !is_numeric($returnFMFDetails)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($returnFMFDetails)), __LINE__);
+        if (!is_null($returnFMFDetails) && !(is_int($returnFMFDetails) || ctype_digit($returnFMFDetails))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($returnFMFDetails, true), gettype($returnFMFDetails)), __LINE__);
         }
         $this->ReturnFMFDetails = $returnFMFDetails;
         return $this;

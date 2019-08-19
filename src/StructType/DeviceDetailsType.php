@@ -13,7 +13,7 @@ class DeviceDetailsType extends AbstractStructBase
 {
     /**
      * The DeviceID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Device ID Optional Character length and limits: 256 single-byte characters DeviceID length morethan 256 is truncated
      * - minOccurs: 0
      * @var string
@@ -46,7 +46,7 @@ class DeviceDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($deviceID) && !is_string($deviceID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($deviceID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deviceID, true), gettype($deviceID)), __LINE__);
         }
         $this->DeviceID = $deviceID;
         return $this;

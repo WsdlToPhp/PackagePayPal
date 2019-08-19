@@ -13,7 +13,7 @@ class SetExpressCheckoutRequestType extends AbstractRequestType
 {
     /**
      * The SetExpressCheckoutRequestDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:SetExpressCheckoutRequestDetails

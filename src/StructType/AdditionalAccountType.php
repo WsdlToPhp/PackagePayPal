@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for AdditionalAccountType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: The AdditionalAccount component represents historical data related to accounts that the user held with a country of residency other than the current one. eBay users can have one active account at a time. For users who change their
  * country of residency and modify their eBay registration to reflect this change, the new country of residence becomes the currently active account. Any account associated with a previous country is treated as an additional account. Because the
  * currency for these additional accounts are different than the active account, each additional account includes an indicator of the currency for that account. Users who never change their country of residence will not have any additional accounts.
@@ -17,21 +17,21 @@ class AdditionalAccountType extends AbstractStructBase
 {
     /**
      * The Balance
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:Balance
      * @var \PayPal\StructType\AmountType
      */
     public $Balance;
     /**
      * The Currency
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:Currency
      * @var string
      */
     public $Currency;
     /**
      * The AccountCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:AccountCode
      * @var string
      */
@@ -90,7 +90,7 @@ class AdditionalAccountType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CurrencyCodeType::valueIsValid($currency)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $currency, implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CurrencyCodeType', is_array($currency) ? implode(', ', $currency) : var_export($currency, true), implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
         }
         $this->Currency = $currency;
         return $this;
@@ -112,7 +112,7 @@ class AdditionalAccountType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($accountCode) && !is_string($accountCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($accountCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCode, true), gettype($accountCode)), __LINE__);
         }
         $this->AccountCode = $accountCode;
         return $this;

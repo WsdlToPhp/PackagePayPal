@@ -13,7 +13,7 @@ class GetPalDetailsReq extends AbstractStructBase
 {
     /**
      * The GetPalDetailsRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:GetPalDetailsRequest
      * @var \PayPal\StructType\GetPalDetailsRequestType
      */

@@ -13,7 +13,7 @@ class IdentificationInfoType extends AbstractStructBase
 {
     /**
      * The MobileIDInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Mobile specific buyer identification.
      * - minOccurs: 0
      * @var \PayPal\StructType\MobileIDInfoType
@@ -21,7 +21,7 @@ class IdentificationInfoType extends AbstractStructBase
     public $MobileIDInfo;
     /**
      * The RememberMeIDInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Contains login bypass information.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -30,7 +30,7 @@ class IdentificationInfoType extends AbstractStructBase
     public $RememberMeIDInfo;
     /**
      * The IdentityTokenInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Identity Access Token.
      * - maxOccurs: 1
      * - minOccurs: 0

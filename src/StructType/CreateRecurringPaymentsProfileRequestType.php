@@ -13,7 +13,7 @@ class CreateRecurringPaymentsProfileRequestType extends AbstractRequestType
 {
     /**
      * The CreateRecurringPaymentsProfileRequestDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:CreateRecurringPaymentsProfileRequestDetails
      * @var \PayPal\StructType\CreateRecurringPaymentsProfileRequestDetailsType
      */

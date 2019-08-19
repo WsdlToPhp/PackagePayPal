@@ -13,7 +13,7 @@ class GetRecurringPaymentsProfileDetailsRequestType extends AbstractRequestType
 {
     /**
      * The ProfileID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -46,7 +46,7 @@ class GetRecurringPaymentsProfileDetailsRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($profileID) && !is_string($profileID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($profileID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
         }
         $this->ProfileID = $profileID;
         return $this;

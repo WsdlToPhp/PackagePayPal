@@ -13,7 +13,7 @@ class BillAgreementUpdateReq extends AbstractStructBase
 {
     /**
      * The BAUpdateRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BAUpdateRequest
      * @var \PayPal\StructType\BAUpdateRequestType
      */

@@ -13,14 +13,14 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
 {
     /**
      * The PaymentType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of the payment Required
      * @var string
      */
     public $PaymentType;
     /**
      * The PaymentAction
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: How you want to obtain payment. Defaults to Sale. Optional Authorization indicates that this payment is a basic authorization subject to settlement with PayPal Authorization and Capture. Sale indicates that this is a final sale for
      * which you are requesting payment.
      * @var string
@@ -28,21 +28,21 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $PaymentAction;
     /**
      * The SenderPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Phone number of the user making the payment. Required
      * @var \PayPal\StructType\PhoneNumberType
      */
     public $SenderPhone;
     /**
      * The RecipientType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Type of recipient specified, i.e., phone number or email address Required
      * @var string
      */
     public $RecipientType;
     /**
      * The RecipientEmail
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Email address of the recipient
      * - minOccurs: 0
      * @var string
@@ -50,7 +50,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $RecipientEmail;
     /**
      * The RecipientPhone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Phone number of the recipipent Required
      * - minOccurs: 0
      * @var \PayPal\StructType\PhoneNumberType
@@ -58,14 +58,14 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $RecipientPhone;
     /**
      * The ItemAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Amount of item before tax and shipping
      * @var \PayPal\StructType\BasicAmountType
      */
     public $ItemAmount;
     /**
      * The Tax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The tax charged on the transactionTax Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -73,7 +73,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $Tax;
     /**
      * The Shipping
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Per-transaction shipping charge Optional
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -81,7 +81,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $Shipping;
     /**
      * The ItemName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Name of the item being ordered Optional Character length and limitations: 255 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -89,7 +89,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $ItemName;
     /**
      * The ItemNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: SKU of the item being ordered Optional Character length and limitations: 255 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -97,7 +97,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $ItemNumber;
     /**
      * The Note
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Memo entered by sender in PayPal Website Payments note field. Optional Character length and limitations: 255 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -105,7 +105,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $Note;
     /**
      * The CustomID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique ID for the order. Required for non-P2P transactions Optional Character length and limitations: 255 single-byte alphanumeric characters
      * - minOccurs: 0
      * @var string
@@ -113,7 +113,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $CustomID;
     /**
      * The SharePhoneNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the sender's phone number will be shared with recipient Optional
      * - minOccurs: 0
      * @var int
@@ -121,7 +121,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public $SharePhoneNumber;
     /**
      * The ShareHomeAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the sender's home address will be shared with recipient Optional
      * - minOccurs: 0
      * @var int
@@ -199,7 +199,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MobilePaymentCodeType::valueIsValid($paymentType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentType, implode(', ', \PayPal\EnumType\MobilePaymentCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MobilePaymentCodeType', is_array($paymentType) ? implode(', ', $paymentType) : var_export($paymentType, true), implode(', ', \PayPal\EnumType\MobilePaymentCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentType = $paymentType;
         return $this;
@@ -224,7 +224,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PaymentActionCodeType::valueIsValid($paymentAction)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $paymentAction, implode(', ', \PayPal\EnumType\PaymentActionCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \PayPal\EnumType\PaymentActionCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentAction = $paymentAction;
         return $this;
@@ -267,7 +267,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MobileRecipientCodeType::valueIsValid($recipientType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $recipientType, implode(', ', \PayPal\EnumType\MobileRecipientCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MobileRecipientCodeType', is_array($recipientType) ? implode(', ', $recipientType) : var_export($recipientType, true), implode(', ', \PayPal\EnumType\MobileRecipientCodeType::getValidValues())), __LINE__);
         }
         $this->RecipientType = $recipientType;
         return $this;
@@ -289,7 +289,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($recipientEmail) && !is_string($recipientEmail)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($recipientEmail)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientEmail, true), gettype($recipientEmail)), __LINE__);
         }
         $this->RecipientEmail = $recipientEmail;
         return $this;
@@ -383,7 +383,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemName) && !is_string($itemName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemName, true), gettype($itemName)), __LINE__);
         }
         $this->ItemName = $itemName;
         return $this;
@@ -405,7 +405,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemNumber) && !is_string($itemNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemNumber, true), gettype($itemNumber)), __LINE__);
         }
         $this->ItemNumber = $itemNumber;
         return $this;
@@ -427,7 +427,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($note) && !is_string($note)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($note)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($note, true), gettype($note)), __LINE__);
         }
         $this->Note = $note;
         return $this;
@@ -449,7 +449,7 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($customID) && !is_string($customID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($customID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customID, true), gettype($customID)), __LINE__);
         }
         $this->CustomID = $customID;
         return $this;
@@ -470,8 +470,8 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public function setSharePhoneNumber($sharePhoneNumber = null)
     {
         // validation for constraint: int
-        if (!is_null($sharePhoneNumber) && !is_numeric($sharePhoneNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($sharePhoneNumber)), __LINE__);
+        if (!is_null($sharePhoneNumber) && !(is_int($sharePhoneNumber) || ctype_digit($sharePhoneNumber))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($sharePhoneNumber, true), gettype($sharePhoneNumber)), __LINE__);
         }
         $this->SharePhoneNumber = $sharePhoneNumber;
         return $this;
@@ -492,8 +492,8 @@ class CreateMobilePaymentRequestDetailsType extends AbstractStructBase
     public function setShareHomeAddress($shareHomeAddress = null)
     {
         // validation for constraint: int
-        if (!is_null($shareHomeAddress) && !is_numeric($shareHomeAddress)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($shareHomeAddress)), __LINE__);
+        if (!is_null($shareHomeAddress) && !(is_int($shareHomeAddress) || ctype_digit($shareHomeAddress))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($shareHomeAddress, true), gettype($shareHomeAddress)), __LINE__);
         }
         $this->ShareHomeAddress = $shareHomeAddress;
         return $this;

@@ -13,7 +13,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
 {
     /**
      * The NumberCyclesCompleted
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var int
@@ -21,7 +21,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public $NumberCyclesCompleted;
     /**
      * The NumberCyclesRemaining
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var int
@@ -29,7 +29,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public $NumberCyclesRemaining;
     /**
      * The OutstandingBalance
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\BasicAmountType
@@ -37,7 +37,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public $OutstandingBalance;
     /**
      * The FailedPaymentCount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var int
@@ -45,7 +45,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public $FailedPaymentCount;
     /**
      * The NextBillingDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -53,7 +53,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public $NextBillingDate;
     /**
      * The LastPaymentDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -61,7 +61,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public $LastPaymentDate;
     /**
      * The LastPaymentAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -111,8 +111,8 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public function setNumberCyclesCompleted($numberCyclesCompleted = null)
     {
         // validation for constraint: int
-        if (!is_null($numberCyclesCompleted) && !is_numeric($numberCyclesCompleted)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($numberCyclesCompleted)), __LINE__);
+        if (!is_null($numberCyclesCompleted) && !(is_int($numberCyclesCompleted) || ctype_digit($numberCyclesCompleted))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberCyclesCompleted, true), gettype($numberCyclesCompleted)), __LINE__);
         }
         $this->NumberCyclesCompleted = $numberCyclesCompleted;
         return $this;
@@ -133,8 +133,8 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public function setNumberCyclesRemaining($numberCyclesRemaining = null)
     {
         // validation for constraint: int
-        if (!is_null($numberCyclesRemaining) && !is_numeric($numberCyclesRemaining)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($numberCyclesRemaining)), __LINE__);
+        if (!is_null($numberCyclesRemaining) && !(is_int($numberCyclesRemaining) || ctype_digit($numberCyclesRemaining))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberCyclesRemaining, true), gettype($numberCyclesRemaining)), __LINE__);
         }
         $this->NumberCyclesRemaining = $numberCyclesRemaining;
         return $this;
@@ -173,8 +173,8 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     public function setFailedPaymentCount($failedPaymentCount = null)
     {
         // validation for constraint: int
-        if (!is_null($failedPaymentCount) && !is_numeric($failedPaymentCount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($failedPaymentCount)), __LINE__);
+        if (!is_null($failedPaymentCount) && !(is_int($failedPaymentCount) || ctype_digit($failedPaymentCount))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($failedPaymentCount, true), gettype($failedPaymentCount)), __LINE__);
         }
         $this->FailedPaymentCount = $failedPaymentCount;
         return $this;
@@ -196,7 +196,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($nextBillingDate) && !is_string($nextBillingDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($nextBillingDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nextBillingDate, true), gettype($nextBillingDate)), __LINE__);
         }
         $this->NextBillingDate = $nextBillingDate;
         return $this;
@@ -218,7 +218,7 @@ class RecurringPaymentsSummaryType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($lastPaymentDate) && !is_string($lastPaymentDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lastPaymentDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastPaymentDate, true), gettype($lastPaymentDate)), __LINE__);
         }
         $this->LastPaymentDate = $lastPaymentDate;
         return $this;

@@ -13,7 +13,7 @@ class DoExpressCheckoutPaymentResponseType extends AbstractResponseType
 {
     /**
      * The DoExpressCheckoutPaymentResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * - ref: ebl:DoExpressCheckoutPaymentResponseDetails
@@ -22,7 +22,7 @@ class DoExpressCheckoutPaymentResponseType extends AbstractResponseType
     public $DoExpressCheckoutPaymentResponseDetails;
     /**
      * The FMFDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\FMFDetailsType

@@ -13,7 +13,7 @@ class GetMobileStatusResponseType extends AbstractResponseType
 {
     /**
      * The IsActivated
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the phone is activated for mobile payments
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class GetMobileStatusResponseType extends AbstractResponseType
     public $IsActivated;
     /**
      * The IsPasswordSet
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether the password is enabled for particular account
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -31,7 +31,7 @@ class GetMobileStatusResponseType extends AbstractResponseType
     public $IsPasswordSet;
     /**
      * The PaymentPending
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Indicates whether there is a payment pending from the phone
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -70,8 +70,8 @@ class GetMobileStatusResponseType extends AbstractResponseType
     public function setIsActivated($isActivated = null)
     {
         // validation for constraint: int
-        if (!is_null($isActivated) && !is_numeric($isActivated)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($isActivated)), __LINE__);
+        if (!is_null($isActivated) && !(is_int($isActivated) || ctype_digit($isActivated))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($isActivated, true), gettype($isActivated)), __LINE__);
         }
         $this->IsActivated = $isActivated;
         return $this;
@@ -92,8 +92,8 @@ class GetMobileStatusResponseType extends AbstractResponseType
     public function setIsPasswordSet($isPasswordSet = null)
     {
         // validation for constraint: int
-        if (!is_null($isPasswordSet) && !is_numeric($isPasswordSet)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($isPasswordSet)), __LINE__);
+        if (!is_null($isPasswordSet) && !(is_int($isPasswordSet) || ctype_digit($isPasswordSet))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($isPasswordSet, true), gettype($isPasswordSet)), __LINE__);
         }
         $this->IsPasswordSet = $isPasswordSet;
         return $this;
@@ -114,8 +114,8 @@ class GetMobileStatusResponseType extends AbstractResponseType
     public function setPaymentPending($paymentPending = null)
     {
         // validation for constraint: int
-        if (!is_null($paymentPending) && !is_numeric($paymentPending)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($paymentPending)), __LINE__);
+        if (!is_null($paymentPending) && !(is_int($paymentPending) || ctype_digit($paymentPending))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($paymentPending, true), gettype($paymentPending)), __LINE__);
         }
         $this->PaymentPending = $paymentPending;
         return $this;

@@ -13,7 +13,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
 {
     /**
      * The BillingAgreementID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -21,7 +21,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     public $BillingAgreementID;
     /**
      * The BillingAgreementStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var string
@@ -29,7 +29,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     public $BillingAgreementStatus;
     /**
      * The PayerInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\PayerInfoType
@@ -37,7 +37,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     public $PayerInfo;
     /**
      * The BillingAgreementDescription
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -45,7 +45,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     public $BillingAgreementDescription;
     /**
      * The BillingAgreementCustom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -53,7 +53,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     public $BillingAgreementCustom;
     /**
      * The BillingAgreementMax
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -61,7 +61,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     public $BillingAgreementMax;
     /**
      * The BillingAddress
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Customer's billing address. Optional If you have credit card mapped in your account then billing address of the credit card is returned otherwise your primary address is returned , PayPal returns this address in
      * BAUpdateResponseDetails.
      * - minOccurs: 0
@@ -70,7 +70,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     public $BillingAddress;
     /**
      * The PayeeInfo
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Information about the Merchant/Agreement Owner
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -125,7 +125,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($billingAgreementID) && !is_string($billingAgreementID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementID, true), gettype($billingAgreementID)), __LINE__);
         }
         $this->BillingAgreementID = $billingAgreementID;
         return $this;
@@ -150,7 +150,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\MerchantPullStatusCodeType::valueIsValid($billingAgreementStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $billingAgreementStatus, implode(', ', \PayPal\EnumType\MerchantPullStatusCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\MerchantPullStatusCodeType', is_array($billingAgreementStatus) ? implode(', ', $billingAgreementStatus) : var_export($billingAgreementStatus, true), implode(', ', \PayPal\EnumType\MerchantPullStatusCodeType::getValidValues())), __LINE__);
         }
         $this->BillingAgreementStatus = $billingAgreementStatus;
         return $this;
@@ -190,7 +190,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($billingAgreementDescription) && !is_string($billingAgreementDescription)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementDescription)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementDescription, true), gettype($billingAgreementDescription)), __LINE__);
         }
         $this->BillingAgreementDescription = $billingAgreementDescription;
         return $this;
@@ -212,7 +212,7 @@ class BAUpdateResponseDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($billingAgreementCustom) && !is_string($billingAgreementCustom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($billingAgreementCustom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementCustom, true), gettype($billingAgreementCustom)), __LINE__);
         }
         $this->BillingAgreementCustom = $billingAgreementCustom;
         return $this;

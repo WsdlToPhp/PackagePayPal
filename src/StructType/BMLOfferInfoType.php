@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for BMLOfferInfoType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: BMLOfferInfoType Specific information for BML.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class BMLOfferInfoType extends AbstractStructBase
 {
     /**
      * The OfferTrackingID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique identification for merchant/buyer/offer combo.
      * - minOccurs: 0
      * @var string
@@ -48,7 +48,7 @@ class BMLOfferInfoType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($offerTrackingID) && !is_string($offerTrackingID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($offerTrackingID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offerTrackingID, true), gettype($offerTrackingID)), __LINE__);
         }
         $this->OfferTrackingID = $offerTrackingID;
         return $this;

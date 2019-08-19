@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for CrossPromotionsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Merchandizing info for an Item. This contains a list of crosssell or upsell items. PrimaryScheme, PromotionMethod,SellerId,ItemId, ShippingDiscount do not have be min occur 0
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,8 +15,9 @@ class CrossPromotionsType extends AbstractStructBase
 {
     /**
      * The ItemID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item ID for the base item. Based on this item other items are promoted. | Represents the unique identifier for an item. To be used to specify the elements that represents an ItemID.
+     * - base: xs:string
      * @var string
      */
     public $ItemID;
@@ -32,21 +33,21 @@ class CrossPromotionsType extends AbstractStructBase
     public $PromotionMethod;
     /**
      * The SellerID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Id of the Seller who is promoting this item.
      * @var string
      */
     public $SellerID;
     /**
      * The ShippingDiscount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shipping Discount offered or not by the seller.
      * @var bool
      */
     public $ShippingDiscount;
     /**
      * The SellerKey
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Key of the Seller who is promoting this item.
      * - minOccurs: 0
      * @var string
@@ -54,7 +55,7 @@ class CrossPromotionsType extends AbstractStructBase
     public $SellerKey;
     /**
      * The StoreName
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Store Name for the seller.
      * - minOccurs: 0
      * @var string
@@ -62,7 +63,7 @@ class CrossPromotionsType extends AbstractStructBase
     public $StoreName;
     /**
      * The PromotedItem
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * @var \PayPal\StructType\PromotedItemType[]
      */
@@ -115,7 +116,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemID) && !is_string($itemID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemID, true), gettype($itemID)), __LINE__);
         }
         $this->ItemID = $itemID;
         return $this;
@@ -140,7 +141,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PromotionSchemeCodeType::valueIsValid($primaryScheme)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $primaryScheme, implode(', ', \PayPal\EnumType\PromotionSchemeCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PromotionSchemeCodeType', is_array($primaryScheme) ? implode(', ', $primaryScheme) : var_export($primaryScheme, true), implode(', ', \PayPal\EnumType\PromotionSchemeCodeType::getValidValues())), __LINE__);
         }
         $this->PrimaryScheme = $primaryScheme;
         return $this;
@@ -165,7 +166,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\PromotionMethodCodeType::valueIsValid($promotionMethod)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $promotionMethod, implode(', ', \PayPal\EnumType\PromotionMethodCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\PromotionMethodCodeType', is_array($promotionMethod) ? implode(', ', $promotionMethod) : var_export($promotionMethod, true), implode(', ', \PayPal\EnumType\PromotionMethodCodeType::getValidValues())), __LINE__);
         }
         $this->PromotionMethod = $promotionMethod;
         return $this;
@@ -187,7 +188,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($sellerID) && !is_string($sellerID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sellerID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sellerID, true), gettype($sellerID)), __LINE__);
         }
         $this->SellerID = $sellerID;
         return $this;
@@ -209,7 +210,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($shippingDiscount) && !is_bool($shippingDiscount)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($shippingDiscount)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($shippingDiscount, true), gettype($shippingDiscount)), __LINE__);
         }
         $this->ShippingDiscount = $shippingDiscount;
         return $this;
@@ -231,7 +232,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($sellerKey) && !is_string($sellerKey)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sellerKey)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sellerKey, true), gettype($sellerKey)), __LINE__);
         }
         $this->SellerKey = $sellerKey;
         return $this;
@@ -253,7 +254,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($storeName) && !is_string($storeName)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($storeName)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($storeName, true), gettype($storeName)), __LINE__);
         }
         $this->StoreName = $storeName;
         return $this;
@@ -267,6 +268,28 @@ class CrossPromotionsType extends AbstractStructBase
         return $this->PromotedItem;
     }
     /**
+     * This method is responsible for validating the values passed to the setPromotedItem method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setPromotedItem method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validatePromotedItemForArrayConstraintsFromSetPromotedItem(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $crossPromotionsTypePromotedItemItem) {
+            // validation for constraint: itemType
+            if (!$crossPromotionsTypePromotedItemItem instanceof \PayPal\StructType\PromotedItemType) {
+                $invalidValues[] = is_object($crossPromotionsTypePromotedItemItem) ? get_class($crossPromotionsTypePromotedItemItem) : sprintf('%s(%s)', gettype($crossPromotionsTypePromotedItemItem), var_export($crossPromotionsTypePromotedItemItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The PromotedItem property can only contain items of type \PayPal\StructType\PromotedItemType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set PromotedItem value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\PromotedItemType[] $promotedItem
@@ -274,11 +297,9 @@ class CrossPromotionsType extends AbstractStructBase
      */
     public function setPromotedItem(array $promotedItem = array())
     {
-        foreach ($promotedItem as $crossPromotionsTypePromotedItemItem) {
-            // validation for constraint: itemType
-            if (!$crossPromotionsTypePromotedItemItem instanceof \PayPal\StructType\PromotedItemType) {
-                throw new \InvalidArgumentException(sprintf('The PromotedItem property can only contain items of \PayPal\StructType\PromotedItemType, "%s" given', is_object($crossPromotionsTypePromotedItemItem) ? get_class($crossPromotionsTypePromotedItemItem) : gettype($crossPromotionsTypePromotedItemItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($promotedItemArrayErrorMessage = self::validatePromotedItemForArrayConstraintsFromSetPromotedItem($promotedItem))) {
+            throw new \InvalidArgumentException($promotedItemArrayErrorMessage, __LINE__);
         }
         $this->PromotedItem = $promotedItem;
         return $this;
@@ -293,7 +314,7 @@ class CrossPromotionsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\PromotedItemType) {
-            throw new \InvalidArgumentException(sprintf('The PromotedItem property can only contain items of \PayPal\StructType\PromotedItemType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The PromotedItem property can only contain items of type \PayPal\StructType\PromotedItemType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->PromotedItem[] = $item;
         return $this;

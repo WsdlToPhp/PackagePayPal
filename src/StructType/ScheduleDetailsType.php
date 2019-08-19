@@ -13,7 +13,7 @@ class ScheduleDetailsType extends AbstractStructBase
 {
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Schedule details for the Recurring Payment
      * - maxOccurs: 1
      * - minOccurs: 1
@@ -22,7 +22,7 @@ class ScheduleDetailsType extends AbstractStructBase
     public $Description;
     /**
      * The PaymentPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
      * @var \PayPal\StructType\BillingPeriodDetailsType
@@ -30,7 +30,7 @@ class ScheduleDetailsType extends AbstractStructBase
     public $PaymentPeriod;
     /**
      * The TrialPeriod
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Trial period of this schedule
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -39,7 +39,7 @@ class ScheduleDetailsType extends AbstractStructBase
     public $TrialPeriod;
     /**
      * The MaxFailedPayments
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The max number of payments the buyer can fail before this Recurring Payments profile is cancelled
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -48,7 +48,7 @@ class ScheduleDetailsType extends AbstractStructBase
     public $MaxFailedPayments;
     /**
      * The ActivationDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \PayPal\StructType\ActivationDetailsType
@@ -56,7 +56,7 @@ class ScheduleDetailsType extends AbstractStructBase
     public $ActivationDetails;
     /**
      * The AutoBillOutstandingAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string
@@ -104,7 +104,7 @@ class ScheduleDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;
@@ -161,8 +161,8 @@ class ScheduleDetailsType extends AbstractStructBase
     public function setMaxFailedPayments($maxFailedPayments = null)
     {
         // validation for constraint: int
-        if (!is_null($maxFailedPayments) && !is_numeric($maxFailedPayments)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($maxFailedPayments)), __LINE__);
+        if (!is_null($maxFailedPayments) && !(is_int($maxFailedPayments) || ctype_digit($maxFailedPayments))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxFailedPayments, true), gettype($maxFailedPayments)), __LINE__);
         }
         $this->MaxFailedPayments = $maxFailedPayments;
         return $this;
@@ -205,7 +205,7 @@ class ScheduleDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\AutoBillType::valueIsValid($autoBillOutstandingAmount)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $autoBillOutstandingAmount, implode(', ', \PayPal\EnumType\AutoBillType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\AutoBillType', is_array($autoBillOutstandingAmount) ? implode(', ', $autoBillOutstandingAmount) : var_export($autoBillOutstandingAmount, true), implode(', ', \PayPal\EnumType\AutoBillType::getValidValues())), __LINE__);
         }
         $this->AutoBillOutstandingAmount = $autoBillOutstandingAmount;
         return $this;

@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for GeneralPaymentMethodCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: GeneralPaymentMethodCodeType - Type declaration to be used by other schema. This code identifies the general types of payment means, e.g., used by payment service provider applications.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,31 +13,43 @@ class GeneralPaymentMethodCodeType
 {
     /**
      * Constant for value 'Other'
+     * Meta information extracted from the WSDL
+     * - documentation: Custom Code
      * @return string 'Other'
      */
     const VALUE_OTHER = 'Other';
     /**
      * Constant for value 'Echeck'
+     * Meta information extracted from the WSDL
+     * - documentation: Electronic check.
      * @return string 'Echeck'
      */
     const VALUE_ECHECK = 'Echeck';
     /**
      * Constant for value 'ACH'
+     * Meta information extracted from the WSDL
+     * - documentation: ACH.
      * @return string 'ACH'
      */
     const VALUE_ACH = 'ACH';
     /**
      * Constant for value 'Creditcard'
+     * Meta information extracted from the WSDL
+     * - documentation: Credit-card.
      * @return string 'Creditcard'
      */
     const VALUE_CREDITCARD = 'Creditcard';
     /**
      * Constant for value 'PayPalBalance'
+     * Meta information extracted from the WSDL
+     * - documentation: Pay balance.
      * @return string 'PayPalBalance'
      */
     const VALUE_PAY_PAL_BALANCE = 'PayPalBalance';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

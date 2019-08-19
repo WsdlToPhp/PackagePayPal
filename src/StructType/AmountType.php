@@ -13,7 +13,7 @@ class AmountType extends AbstractStructBase
 {
     /**
      * The currencyID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
@@ -56,7 +56,7 @@ class AmountType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\CurrencyCodeType::valueIsValid($currencyID)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $currencyID, implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\CurrencyCodeType', is_array($currencyID) ? implode(', ', $currencyID) : var_export($currencyID, true), implode(', ', \PayPal\EnumType\CurrencyCodeType::getValidValues())), __LINE__);
         }
         $this->currencyID = $currencyID;
         return $this;
@@ -76,6 +76,10 @@ class AmountType extends AbstractStructBase
      */
     public function set_($_ = null)
     {
+        // validation for constraint: float
+        if (!is_null($_) && !(is_float($_) || is_numeric($_))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($_, true), gettype($_)), __LINE__);
+        }
         $this->_ = $_;
         return $this;
     }

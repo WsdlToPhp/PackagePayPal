@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for GalleryTypeCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: GalleryTypeCodeType Specifies the codes for various properties of an item.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,16 +13,22 @@ class GalleryTypeCodeType
 {
     /**
      * Constant for value 'Featured'
+     * Meta information extracted from the WSDL
+     * - documentation: Indicates whether it is a featured item.
      * @return string 'Featured'
      */
     const VALUE_FEATURED = 'Featured';
     /**
      * Constant for value 'Gallery'
+     * Meta information extracted from the WSDL
+     * - documentation: Include in the gallery.
      * @return string 'Gallery'
      */
     const VALUE_GALLERY = 'Gallery';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

@@ -13,7 +13,7 @@ class BMSetInventoryReq extends AbstractStructBase
 {
     /**
      * The BMSetInventoryRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:BMSetInventoryRequest
      * @var \PayPal\StructType\BMSetInventoryRequestType
      */

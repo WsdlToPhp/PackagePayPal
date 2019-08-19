@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for MatchStatusCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: MatchStatusCodeType This is the PayPal (street/zip) match code
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>

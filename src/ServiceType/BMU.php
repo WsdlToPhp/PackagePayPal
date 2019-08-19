@@ -26,7 +26,7 @@ class BMU extends SoapClientBase
     }
     /**
      * Method to call the operation originally named BMUpdateButton
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class BMU extends SoapClientBase
     public function BMUpdateButton(\PayPal\StructType\BMUpdateButtonReq $bMUpdateButtonRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->BMUpdateButton($bMUpdateButtonRequest));
+            $this->setResult($this->getSoapClient()->BMUpdateButton($bMUpdateButtonRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ListingDesignerType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Identifies the Layout and the Theme template associated with the item. in case of revision - all data can be min occur = 0
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class ListingDesignerType extends AbstractStructBase
 {
     /**
      * The LayoutID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Identifies the Layout template associated with the item.
      * - minOccurs: 0
      * @var int
@@ -23,7 +23,7 @@ class ListingDesignerType extends AbstractStructBase
     public $LayoutID;
     /**
      * The OptimalPictureSize
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: A value of true for OptimalPictureSize indicates that the picture URL will be enlarged to fit description of the item.
      * - minOccurs: 0
      * @var bool
@@ -31,7 +31,7 @@ class ListingDesignerType extends AbstractStructBase
     public $OptimalPictureSize;
     /**
      * The ThemeID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Identifies the Theme template associated with the item.
      * - minOccurs: 0
      * @var int
@@ -69,8 +69,8 @@ class ListingDesignerType extends AbstractStructBase
     public function setLayoutID($layoutID = null)
     {
         // validation for constraint: int
-        if (!is_null($layoutID) && !is_numeric($layoutID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($layoutID)), __LINE__);
+        if (!is_null($layoutID) && !(is_int($layoutID) || ctype_digit($layoutID))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($layoutID, true), gettype($layoutID)), __LINE__);
         }
         $this->LayoutID = $layoutID;
         return $this;
@@ -92,7 +92,7 @@ class ListingDesignerType extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($optimalPictureSize) && !is_bool($optimalPictureSize)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($optimalPictureSize)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($optimalPictureSize, true), gettype($optimalPictureSize)), __LINE__);
         }
         $this->OptimalPictureSize = $optimalPictureSize;
         return $this;
@@ -113,8 +113,8 @@ class ListingDesignerType extends AbstractStructBase
     public function setThemeID($themeID = null)
     {
         // validation for constraint: int
-        if (!is_null($themeID) && !is_numeric($themeID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($themeID)), __LINE__);
+        if (!is_null($themeID) && !(is_int($themeID) || ctype_digit($themeID))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($themeID, true), gettype($themeID)), __LINE__);
         }
         $this->ThemeID = $themeID;
         return $this;

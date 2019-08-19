@@ -26,7 +26,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetTransactionDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Get extends SoapClientBase
     public function GetTransactionDetails(\PayPal\StructType\GetTransactionDetailsReq $getTransactionDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetTransactionDetails($getTransactionDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetTransactionDetails($getTransactionDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -50,7 +50,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetBoardingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -65,7 +65,7 @@ class Get extends SoapClientBase
     public function GetBoardingDetails(\PayPal\StructType\GetBoardingDetailsReq $getBoardingDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBoardingDetails($getBoardingDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetBoardingDetails($getBoardingDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -74,7 +74,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetMobileStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -89,7 +89,7 @@ class Get extends SoapClientBase
     public function GetMobileStatus(\PayPal\StructType\GetMobileStatusReq $getMobileStatusRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetMobileStatus($getMobileStatusRequest));
+            $this->setResult($this->getSoapClient()->GetMobileStatus($getMobileStatusRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -98,7 +98,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetBalance
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -113,7 +113,7 @@ class Get extends SoapClientBase
     public function GetBalance(\PayPal\StructType\GetBalanceReq $getBalanceRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBalance($getBalanceRequest));
+            $this->setResult($this->getSoapClient()->GetBalance($getBalanceRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -122,7 +122,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetPalDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -137,7 +137,7 @@ class Get extends SoapClientBase
     public function GetPalDetails(\PayPal\StructType\GetPalDetailsReq $getPalDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetPalDetails($getPalDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetPalDetails($getPalDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -146,7 +146,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetAuthDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -161,7 +161,7 @@ class Get extends SoapClientBase
     public function GetAuthDetails(\PayPal\StructType\GetAuthDetailsReq $getAuthDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetAuthDetails($getAuthDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetAuthDetails($getAuthDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -170,7 +170,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetAccessPermissionDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -185,7 +185,7 @@ class Get extends SoapClientBase
     public function GetAccessPermissionDetails(\PayPal\StructType\GetAccessPermissionDetailsReq $getAccessPermissionDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetAccessPermissionDetails($getAccessPermissionDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetAccessPermissionDetails($getAccessPermissionDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -194,7 +194,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetIncentiveEvaluation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -209,7 +209,7 @@ class Get extends SoapClientBase
     public function GetIncentiveEvaluation(\PayPal\StructType\GetIncentiveEvaluationReq $getIncentiveEvaluationRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetIncentiveEvaluation($getIncentiveEvaluationRequest));
+            $this->setResult($this->getSoapClient()->GetIncentiveEvaluation($getIncentiveEvaluationRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -218,7 +218,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetExpressCheckoutDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -233,7 +233,7 @@ class Get extends SoapClientBase
     public function GetExpressCheckoutDetails(\PayPal\StructType\GetExpressCheckoutDetailsReq $getExpressCheckoutDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetExpressCheckoutDetails($getExpressCheckoutDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetExpressCheckoutDetails($getExpressCheckoutDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -242,7 +242,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetBillingAgreementCustomerDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -257,7 +257,7 @@ class Get extends SoapClientBase
     public function GetBillingAgreementCustomerDetails(\PayPal\StructType\GetBillingAgreementCustomerDetailsReq $getBillingAgreementCustomerDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -266,7 +266,7 @@ class Get extends SoapClientBase
     }
     /**
      * Method to call the operation originally named GetRecurringPaymentsProfileDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -281,7 +281,7 @@ class Get extends SoapClientBase
     public function GetRecurringPaymentsProfileDetails(\PayPal\StructType\GetRecurringPaymentsProfileDetailsReq $getRecurringPaymentsProfileDetailsRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsRequest));
+            $this->setResult($this->getSoapClient()->GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

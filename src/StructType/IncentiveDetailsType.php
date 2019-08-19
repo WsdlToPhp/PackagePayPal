@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for IncentiveDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Information about the incentives that were applied from Ebay RYP page and PayPal RYP page.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class IncentiveDetailsType extends AbstractStructBase
 {
     /**
      * The UniqueIdentifier
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Unique Identifier consisting of redemption code, user friendly descripotion, incentive type, campaign code, incenitve application order and site redeemed on.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -24,7 +24,7 @@ class IncentiveDetailsType extends AbstractStructBase
     public $UniqueIdentifier;
     /**
      * The SiteAppliedOn
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Defines if the incentive has been applied on Ebay or PayPal.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -33,7 +33,7 @@ class IncentiveDetailsType extends AbstractStructBase
     public $SiteAppliedOn;
     /**
      * The TotalDiscountAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The total discount amount for the incentive, summation of discounts up across all the buckets/items.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -42,7 +42,7 @@ class IncentiveDetailsType extends AbstractStructBase
     public $TotalDiscountAmount;
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Status of incentive processing. Sussess or Error.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -51,7 +51,7 @@ class IncentiveDetailsType extends AbstractStructBase
     public $Status;
     /**
      * The ErrorCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Error code if there are any errors. Zero otherwise.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -60,7 +60,7 @@ class IncentiveDetailsType extends AbstractStructBase
     public $ErrorCode;
     /**
      * The IncentiveAppliedDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Details of incentive application on individual bucket/item.
      * - maxOccurs: unbounded
      * - minOccurs: 0
@@ -109,7 +109,7 @@ class IncentiveDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($uniqueIdentifier) && !is_string($uniqueIdentifier)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($uniqueIdentifier)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uniqueIdentifier, true), gettype($uniqueIdentifier)), __LINE__);
         }
         $this->UniqueIdentifier = $uniqueIdentifier;
         return $this;
@@ -134,7 +134,7 @@ class IncentiveDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\IncentiveSiteAppliedOnType::valueIsValid($siteAppliedOn)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $siteAppliedOn, implode(', ', \PayPal\EnumType\IncentiveSiteAppliedOnType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\IncentiveSiteAppliedOnType', is_array($siteAppliedOn) ? implode(', ', $siteAppliedOn) : var_export($siteAppliedOn, true), implode(', ', \PayPal\EnumType\IncentiveSiteAppliedOnType::getValidValues())), __LINE__);
         }
         $this->SiteAppliedOn = $siteAppliedOn;
         return $this;
@@ -177,7 +177,7 @@ class IncentiveDetailsType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\IncentiveAppliedStatusType::valueIsValid($status)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $status, implode(', ', \PayPal\EnumType\IncentiveAppliedStatusType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\IncentiveAppliedStatusType', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \PayPal\EnumType\IncentiveAppliedStatusType::getValidValues())), __LINE__);
         }
         $this->Status = $status;
         return $this;
@@ -198,8 +198,8 @@ class IncentiveDetailsType extends AbstractStructBase
     public function setErrorCode($errorCode = null)
     {
         // validation for constraint: int
-        if (!is_null($errorCode) && !is_numeric($errorCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($errorCode)), __LINE__);
+        if (!is_null($errorCode) && !(is_int($errorCode) || ctype_digit($errorCode))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->ErrorCode = $errorCode;
         return $this;
@@ -213,6 +213,28 @@ class IncentiveDetailsType extends AbstractStructBase
         return $this->IncentiveAppliedDetails;
     }
     /**
+     * This method is responsible for validating the values passed to the setIncentiveAppliedDetails method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setIncentiveAppliedDetails method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateIncentiveAppliedDetailsForArrayConstraintsFromSetIncentiveAppliedDetails(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $incentiveDetailsTypeIncentiveAppliedDetailsItem) {
+            // validation for constraint: itemType
+            if (!$incentiveDetailsTypeIncentiveAppliedDetailsItem instanceof \PayPal\StructType\IncentiveAppliedDetailsType) {
+                $invalidValues[] = is_object($incentiveDetailsTypeIncentiveAppliedDetailsItem) ? get_class($incentiveDetailsTypeIncentiveAppliedDetailsItem) : sprintf('%s(%s)', gettype($incentiveDetailsTypeIncentiveAppliedDetailsItem), var_export($incentiveDetailsTypeIncentiveAppliedDetailsItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The IncentiveAppliedDetails property can only contain items of type \PayPal\StructType\IncentiveAppliedDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set IncentiveAppliedDetails value
      * @throws \InvalidArgumentException
      * @param \PayPal\StructType\IncentiveAppliedDetailsType[] $incentiveAppliedDetails
@@ -220,11 +242,9 @@ class IncentiveDetailsType extends AbstractStructBase
      */
     public function setIncentiveAppliedDetails(array $incentiveAppliedDetails = array())
     {
-        foreach ($incentiveAppliedDetails as $incentiveDetailsTypeIncentiveAppliedDetailsItem) {
-            // validation for constraint: itemType
-            if (!$incentiveDetailsTypeIncentiveAppliedDetailsItem instanceof \PayPal\StructType\IncentiveAppliedDetailsType) {
-                throw new \InvalidArgumentException(sprintf('The IncentiveAppliedDetails property can only contain items of \PayPal\StructType\IncentiveAppliedDetailsType, "%s" given', is_object($incentiveDetailsTypeIncentiveAppliedDetailsItem) ? get_class($incentiveDetailsTypeIncentiveAppliedDetailsItem) : gettype($incentiveDetailsTypeIncentiveAppliedDetailsItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($incentiveAppliedDetailsArrayErrorMessage = self::validateIncentiveAppliedDetailsForArrayConstraintsFromSetIncentiveAppliedDetails($incentiveAppliedDetails))) {
+            throw new \InvalidArgumentException($incentiveAppliedDetailsArrayErrorMessage, __LINE__);
         }
         $this->IncentiveAppliedDetails = $incentiveAppliedDetails;
         return $this;
@@ -239,7 +259,7 @@ class IncentiveDetailsType extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \PayPal\StructType\IncentiveAppliedDetailsType) {
-            throw new \InvalidArgumentException(sprintf('The IncentiveAppliedDetails property can only contain items of \PayPal\StructType\IncentiveAppliedDetailsType, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The IncentiveAppliedDetails property can only contain items of type \PayPal\StructType\IncentiveAppliedDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->IncentiveAppliedDetails[] = $item;
         return $this;

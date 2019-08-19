@@ -13,7 +13,7 @@ class BMManageButtonStatusRequestType extends AbstractRequestType
 {
     /**
      * The HostedButtonID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Button ID of Hosted button. Required Character length and limitations: 10 single-byte numeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class BMManageButtonStatusRequestType extends AbstractRequestType
     public $HostedButtonID;
     /**
      * The ButtonStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Requested Status change for hosted button. Required Character length and limitations: 1 single-byte alphanumeric characters
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -59,7 +59,7 @@ class BMManageButtonStatusRequestType extends AbstractRequestType
     {
         // validation for constraint: string
         if (!is_null($hostedButtonID) && !is_string($hostedButtonID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($hostedButtonID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostedButtonID, true), gettype($hostedButtonID)), __LINE__);
         }
         $this->HostedButtonID = $hostedButtonID;
         return $this;
@@ -84,7 +84,7 @@ class BMManageButtonStatusRequestType extends AbstractRequestType
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\ButtonStatusType::valueIsValid($buttonStatus)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $buttonStatus, implode(', ', \PayPal\EnumType\ButtonStatusType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\ButtonStatusType', is_array($buttonStatus) ? implode(', ', $buttonStatus) : var_export($buttonStatus, true), implode(', ', \PayPal\EnumType\ButtonStatusType::getValidValues())), __LINE__);
         }
         $this->ButtonStatus = $buttonStatus;
         return $this;

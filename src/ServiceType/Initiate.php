@@ -26,7 +26,7 @@ class Initiate extends SoapClientBase
     }
     /**
      * Method to call the operation originally named InitiateRecoup
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
      * - SOAPHeaderTypes: \PayPal\StructType\CustomSecurityHeaderType
@@ -41,7 +41,7 @@ class Initiate extends SoapClientBase
     public function InitiateRecoup(\PayPal\StructType\InitiateRecoupReq $initiateRecoupRequest)
     {
         try {
-            $this->setResult(self::getSoapClient()->InitiateRecoup($initiateRecoupRequest));
+            $this->setResult($this->getSoapClient()->InitiateRecoup($initiateRecoupRequest));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

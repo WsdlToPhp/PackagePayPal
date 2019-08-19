@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for FeedbackRatingStarCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: FeedbackRatingStarCodeType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,61 +13,85 @@ class FeedbackRatingStarCodeType
 {
     /**
      * Constant for value 'None'
+     * Meta information extracted from the WSDL
+     * - documentation: No graphic displayed
      * @return string 'None'
      */
     const VALUE_NONE = 'None';
     /**
      * Constant for value 'Yellow'
+     * Meta information extracted from the WSDL
+     * - documentation: Yellow Star
      * @return string 'Yellow'
      */
     const VALUE_YELLOW = 'Yellow';
     /**
      * Constant for value 'Turquoise'
+     * Meta information extracted from the WSDL
+     * - documentation: Turquoise Star
      * @return string 'Turquoise'
      */
     const VALUE_TURQUOISE = 'Turquoise';
     /**
      * Constant for value 'Purple'
+     * Meta information extracted from the WSDL
+     * - documentation: Purple Star
      * @return string 'Purple'
      */
     const VALUE_PURPLE = 'Purple';
     /**
      * Constant for value 'Red'
+     * Meta information extracted from the WSDL
+     * - documentation: Red Star
      * @return string 'Red'
      */
     const VALUE_RED = 'Red';
     /**
      * Constant for value 'Green'
+     * Meta information extracted from the WSDL
+     * - documentation: Green Star
      * @return string 'Green'
      */
     const VALUE_GREEN = 'Green';
     /**
      * Constant for value 'YellowShooting'
+     * Meta information extracted from the WSDL
+     * - documentation: Yellow Shooting Star
      * @return string 'YellowShooting'
      */
     const VALUE_YELLOW_SHOOTING = 'YellowShooting';
     /**
      * Constant for value 'TurquoiseShooting'
+     * Meta information extracted from the WSDL
+     * - documentation: Turquoise Shooting Star
      * @return string 'TurquoiseShooting'
      */
     const VALUE_TURQUOISE_SHOOTING = 'TurquoiseShooting';
     /**
      * Constant for value 'PurpleShooting'
+     * Meta information extracted from the WSDL
+     * - documentation: Purple Shooting Star
      * @return string 'PurpleShooting'
      */
     const VALUE_PURPLE_SHOOTING = 'PurpleShooting';
     /**
      * Constant for value 'RedShooting'
+     * Meta information extracted from the WSDL
+     * - documentation: Red Shooting Star
      * @return string 'RedShooting'
      */
     const VALUE_RED_SHOOTING = 'RedShooting';
     /**
      * Constant for value 'Blue'
+     * Meta information extracted from the WSDL
+     * - documentation: Blue Star
      * @return string 'Blue'
      */
     const VALUE_BLUE = 'Blue';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

@@ -13,7 +13,7 @@ class OrderDetailsType extends AbstractStructBase
 {
     /**
      * The Description
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Description of the Order.
      * - minOccurs: 0
      * @var string
@@ -21,7 +21,7 @@ class OrderDetailsType extends AbstractStructBase
     public $Description;
     /**
      * The MaxAmount
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Expected maximum amount that the merchant may pull using DoReferenceTransaction
      * - minOccurs: 0
      * @var \PayPal\StructType\BasicAmountType
@@ -57,7 +57,7 @@ class OrderDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($description) && !is_string($description)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($description)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
         }
         $this->Description = $description;
         return $this;

@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for RefreshTokenStatusDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Response information resulting from opt-in operation or current login bypass status.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class RefreshTokenStatusDetailsType extends AbstractStructBase
 {
     /**
      * The RefreshTokenStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Required field that reports status of opt-in or login bypass attempt. 0 = Success, successful opt-in or RefreshToken corresponding to AccessToken specified in SetExpressCheckout is valid (user is still opted in). 1 = New RefreshToken
      * was generated (user is still opted in). 2 = Invalid ID, RefreshToken corresponding to AccessToken specified in SetExpressCheckout is invalid (user is opted out). -2 = Internal Error, system error or outage during opt-in or login bypass. Can retry
      * opt-in or login bypass next time. Flow will force full authentication and allow buyer to complete transaction. -1 = None, the field does not represent any valid value of the status.
@@ -26,7 +26,7 @@ class RefreshTokenStatusDetailsType extends AbstractStructBase
     public $RefreshTokenStatus;
     /**
      * The RefreshToken
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Identifier returned on external-remember-me-opt-in to allow the merchant to request bypass of PayPal login
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -35,7 +35,7 @@ class RefreshTokenStatusDetailsType extends AbstractStructBase
     public $RefreshToken;
     /**
      * The ImmutableID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The immutable_id is the user's unique value per merchant that should never ever change for that account. This would be the key used to uniquely identify the user
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -74,8 +74,8 @@ class RefreshTokenStatusDetailsType extends AbstractStructBase
     public function setRefreshTokenStatus($refreshTokenStatus = null)
     {
         // validation for constraint: int
-        if (!is_null($refreshTokenStatus) && !is_numeric($refreshTokenStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($refreshTokenStatus)), __LINE__);
+        if (!is_null($refreshTokenStatus) && !(is_int($refreshTokenStatus) || ctype_digit($refreshTokenStatus))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($refreshTokenStatus, true), gettype($refreshTokenStatus)), __LINE__);
         }
         $this->RefreshTokenStatus = $refreshTokenStatus;
         return $this;
@@ -97,7 +97,7 @@ class RefreshTokenStatusDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($refreshToken) && !is_string($refreshToken)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($refreshToken)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refreshToken, true), gettype($refreshToken)), __LINE__);
         }
         $this->RefreshToken = $refreshToken;
         return $this;
@@ -119,7 +119,7 @@ class RefreshTokenStatusDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($immutableID) && !is_string($immutableID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($immutableID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($immutableID, true), gettype($immutableID)), __LINE__);
         }
         $this->ImmutableID = $immutableID;
         return $this;

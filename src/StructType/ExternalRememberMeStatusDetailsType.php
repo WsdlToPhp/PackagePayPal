@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for ExternalRememberMeStatusDetailsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Response information resulting from opt-in operation or current login bypass status.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class ExternalRememberMeStatusDetailsType extends AbstractStructBase
 {
     /**
      * The ExternalRememberMeStatus
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Required field that reports status of opt-in or login bypass attempt. 0 = Success - successful opt-in or ExternalRememberMeID specified in SetExpressCheckout is valid. 1 = Invalid ID - ExternalRememberMeID specified in
      * SetExpressCheckout is invalid. 2 = Internal Error - System error or outage during opt-in or login bypass. Can retry opt-in or login bypass next time. Flow will force full authentication and allow buyer to complete transaction. -1 = None - the return
      * value does not signify any valid remember me status.
@@ -26,7 +26,7 @@ class ExternalRememberMeStatusDetailsType extends AbstractStructBase
     public $ExternalRememberMeStatus;
     /**
      * The ExternalRememberMeID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Identifier returned on external-remember-me-opt-in to allow the merchant to request bypass of PayPal login through external remember me on behalf of the buyer in future transactions. The ExternalRememberMeID is a 17-character
      * alphanumeric (encrypted) string. This field has meaning only to the merchant.
      * - maxOccurs: 1
@@ -63,8 +63,8 @@ class ExternalRememberMeStatusDetailsType extends AbstractStructBase
     public function setExternalRememberMeStatus($externalRememberMeStatus = null)
     {
         // validation for constraint: int
-        if (!is_null($externalRememberMeStatus) && !is_numeric($externalRememberMeStatus)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($externalRememberMeStatus)), __LINE__);
+        if (!is_null($externalRememberMeStatus) && !(is_int($externalRememberMeStatus) || ctype_digit($externalRememberMeStatus))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($externalRememberMeStatus, true), gettype($externalRememberMeStatus)), __LINE__);
         }
         $this->ExternalRememberMeStatus = $externalRememberMeStatus;
         return $this;
@@ -86,7 +86,7 @@ class ExternalRememberMeStatusDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($externalRememberMeID) && !is_string($externalRememberMeID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($externalRememberMeID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalRememberMeID, true), gettype($externalRememberMeID)), __LINE__);
         }
         $this->ExternalRememberMeID = $externalRememberMeID;
         return $this;

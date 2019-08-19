@@ -6,13 +6,13 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for TransactionType StructType
- * Meta informations extracted from the WSDL
- * - documentation: Contains information about a single transaction. A transaction contains information about the sale of a particular item. The system creates a transaction when a buyer has made a purchase (Fixed Price items) or is the winning bidder
- * (BIN and auction items). A listing can be associated with one or more transactions in these cases: Multi-Item Fixed Price Listings Dutch Auction Listings A listing is associated with a single transaction in these cases: Single-Item Fixed Price
- * Listings Single-Item Auction Listings | The amount the buyer paid for the item or agreed to pay, depending on how far into the checkout process the item is. If the seller allowed the buyer to change the item total, the buyer is able to change the
- * total until the time that the transaction's status moves to Complete. Determine whether the buyer changed the amount by calling GetSellerTransactions or GetSellerTransactions and comparing the AmountPaid value to what the seller expected. For Motors
- * items, AmountPaid is the amount paid by the buyer for the deposit. | Includes shipping payment data. | Unique identifier for a transaction. Returns 0 when Type=1 (Chinese auction). Typically, an ItemID and a TransactionID uniquely identify a checkout
- * transaction. | Unique identifier for an authorization.
+ * Meta information extracted from the WSDL
+ * - documentation: Unique identifier for an authorization. | Unique identifier for a transaction. Returns 0 when Type=1 (Chinese auction). Typically, an ItemID and a TransactionID uniquely identify a checkout transaction. | Includes shipping payment
+ * data. | The amount the buyer paid for the item or agreed to pay, depending on how far into the checkout process the item is. If the seller allowed the buyer to change the item total, the buyer is able to change the total until the time that the
+ * transaction's status moves to Complete. Determine whether the buyer changed the amount by calling GetSellerTransactions or GetSellerTransactions and comparing the AmountPaid value to what the seller expected. For Motors items, AmountPaid is the
+ * amount paid by the buyer for the deposit. | Contains information about a single transaction. A transaction contains information about the sale of a particular item. The system creates a transaction when a buyer has made a purchase (Fixed Price items)
+ * or is the winning bidder (BIN and auction items). A listing can be associated with one or more transactions in these cases: Multi-Item Fixed Price Listings Dutch Auction Listings A listing is associated with a single transaction in these cases:
+ * Single-Item Fixed Price Listings Single-Item Auction Listings
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -20,7 +20,7 @@ class TransactionType extends AbstractStructBase
 {
     /**
      * The AmountPaid
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:AmountPaid
      * @var \PayPal\StructType\AmountType
@@ -28,7 +28,7 @@ class TransactionType extends AbstractStructBase
     public $AmountPaid;
     /**
      * The Buyer
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Container for buyer data.
      * - minOccurs: 0
      * @var \PayPal\StructType\UserType
@@ -36,7 +36,7 @@ class TransactionType extends AbstractStructBase
     public $Buyer;
     /**
      * The ShippingDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:ShippingDetails
      * @var \PayPal\StructType\ShippingDetailsType
@@ -44,7 +44,7 @@ class TransactionType extends AbstractStructBase
     public $ShippingDetails;
     /**
      * The ConvertedAmountPaid
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Value returned in the Transaction/AmountPaid element, converted to the currency indicated by SiteCurrency.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -52,7 +52,7 @@ class TransactionType extends AbstractStructBase
     public $ConvertedAmountPaid;
     /**
      * The ConvertedTransactionPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Value returned in the Transaction/TransactionPrice element, converted to the currency indicated by SiteCurrency.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -60,7 +60,7 @@ class TransactionType extends AbstractStructBase
     public $ConvertedTransactionPrice;
     /**
      * The CreatedDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: For fixed-price, Stores, and BIN items indicates when the purchase (or BIN) occurred. For all other item types indicates when the transaction was created (the time when checkout was initiated).
      * - minOccurs: 0
      * @var string
@@ -68,7 +68,7 @@ class TransactionType extends AbstractStructBase
     public $CreatedDate;
     /**
      * The DepositType
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Deposit type for Motors items. If item is not a Motors item, then returns a DepositType of None. Possible values: None Other Method Fast Deposit
      * - minOccurs: 0
      * @var string
@@ -76,7 +76,7 @@ class TransactionType extends AbstractStructBase
     public $DepositType;
     /**
      * The Item
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item info associated with the transaction.
      * - minOccurs: 0
      * @var \PayPal\StructType\ItemType
@@ -84,7 +84,7 @@ class TransactionType extends AbstractStructBase
     public $Item;
     /**
      * The QuantityPurchased
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Contains the number of individual items the buyer purchased in the transaction.
      * - minOccurs: 0
      * @var int
@@ -92,7 +92,7 @@ class TransactionType extends AbstractStructBase
     public $QuantityPurchased;
     /**
      * The ShippingHandlingTotal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Shipping cost totals shown to user (for both flat and calculated rates).
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -100,7 +100,7 @@ class TransactionType extends AbstractStructBase
     public $ShippingHandlingTotal;
     /**
      * The Status
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Container node for transaction status data.
      * - minOccurs: 0
      * @var \PayPal\StructType\TransactionStatusType
@@ -108,7 +108,7 @@ class TransactionType extends AbstractStructBase
     public $Status;
     /**
      * The TransactionID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:TransactionID
      * @var string
@@ -116,7 +116,7 @@ class TransactionType extends AbstractStructBase
     public $TransactionID;
     /**
      * The AuthorizationID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - ref: ns:AuthorizationID
      * @var string
@@ -124,7 +124,7 @@ class TransactionType extends AbstractStructBase
     public $AuthorizationID;
     /**
      * The TransactionPrice
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Price of the item, before shipping and sales tax. For Motors, TransactionPrice is the deposit amount.
      * - minOccurs: 0
      * @var \PayPal\StructType\AmountType
@@ -132,7 +132,7 @@ class TransactionType extends AbstractStructBase
     public $TransactionPrice;
     /**
      * The VATPercent
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: VAT rate for the item, if the item price includes the VAT rate. Specify the VATPercent if you want include the net price in addition to the gross price in the listing. VAT rates vary depending on the item and on the user's country of
      * residence; therefore a business seller is responsible for entering the correct VAT rate (it will not be calculated by eBay).
      * - minOccurs: 0
@@ -298,7 +298,7 @@ class TransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($createdDate) && !is_string($createdDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($createdDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($createdDate, true), gettype($createdDate)), __LINE__);
         }
         $this->CreatedDate = $createdDate;
         return $this;
@@ -323,7 +323,7 @@ class TransactionType extends AbstractStructBase
     {
         // validation for constraint: enumeration
         if (!\PayPal\EnumType\DepositTypeCodeType::valueIsValid($depositType)) {
-            throw new \InvalidArgumentException(sprintf('Value "%s" is invalid, please use one of: %s', $depositType, implode(', ', \PayPal\EnumType\DepositTypeCodeType::getValidValues())), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\DepositTypeCodeType', is_array($depositType) ? implode(', ', $depositType) : var_export($depositType, true), implode(', ', \PayPal\EnumType\DepositTypeCodeType::getValidValues())), __LINE__);
         }
         $this->DepositType = $depositType;
         return $this;
@@ -362,8 +362,8 @@ class TransactionType extends AbstractStructBase
     public function setQuantityPurchased($quantityPurchased = null)
     {
         // validation for constraint: int
-        if (!is_null($quantityPurchased) && !is_numeric($quantityPurchased)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($quantityPurchased)), __LINE__);
+        if (!is_null($quantityPurchased) && !(is_int($quantityPurchased) || ctype_digit($quantityPurchased))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantityPurchased, true), gettype($quantityPurchased)), __LINE__);
         }
         $this->QuantityPurchased = $quantityPurchased;
         return $this;
@@ -421,7 +421,7 @@ class TransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($transactionID) && !is_string($transactionID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($transactionID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionID, true), gettype($transactionID)), __LINE__);
         }
         $this->TransactionID = $transactionID;
         return $this;
@@ -443,7 +443,7 @@ class TransactionType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($authorizationID) && !is_string($authorizationID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($authorizationID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizationID, true), gettype($authorizationID)), __LINE__);
         }
         $this->AuthorizationID = $authorizationID;
         return $this;
@@ -481,6 +481,10 @@ class TransactionType extends AbstractStructBase
      */
     public function setVATPercent($vATPercent = null)
     {
+        // validation for constraint: float
+        if (!is_null($vATPercent) && !(is_float($vATPercent) || is_numeric($vATPercent))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($vATPercent, true), gettype($vATPercent)), __LINE__);
+        }
         $this->VATPercent = $vATPercent;
         return $this;
     }

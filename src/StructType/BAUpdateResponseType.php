@@ -13,7 +13,7 @@ class BAUpdateResponseType extends AbstractResponseType
 {
     /**
      * The BAUpdateResponseDetails
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ebl:BAUpdateResponseDetails
      * @var \PayPal\StructType\BAUpdateResponseDetailsType
      */

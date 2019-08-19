@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for IncentiveApplyIndicationType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: Defines which bucket or item that the incentive should be applied to.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class IncentiveApplyIndicationType extends AbstractStructBase
 {
     /**
      * The PaymentRequestID
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The Bucket ID that the incentive is applied to.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -24,7 +24,7 @@ class IncentiveApplyIndicationType extends AbstractStructBase
     public $PaymentRequestID;
     /**
      * The ItemId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: The item that the incentive is applied to.
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -61,7 +61,7 @@ class IncentiveApplyIndicationType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($paymentRequestID) && !is_string($paymentRequestID)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($paymentRequestID)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRequestID, true), gettype($paymentRequestID)), __LINE__);
         }
         $this->PaymentRequestID = $paymentRequestID;
         return $this;
@@ -83,7 +83,7 @@ class IncentiveApplyIndicationType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemId) && !is_string($itemId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemId, true), gettype($itemId)), __LINE__);
         }
         $this->ItemId = $itemId;
         return $this;

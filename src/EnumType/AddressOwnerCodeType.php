@@ -4,7 +4,7 @@ namespace PayPal\EnumType;
 
 /**
  * This class stands for AddressOwnerCodeType EnumType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: AddressOwnerCodeType This code identifies the AddressOwner code types which indicates who owns the user'a address.
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -13,16 +13,22 @@ class AddressOwnerCodeType
 {
     /**
      * Constant for value 'PayPal'
+     * Meta information extracted from the WSDL
+     * - documentation: PayPal owns address.
      * @return string 'PayPal'
      */
     const VALUE_PAY_PAL = 'PayPal';
     /**
      * Constant for value 'eBay'
+     * Meta information extracted from the WSDL
+     * - documentation: eBay owns address.
      * @return string 'eBay'
      */
     const VALUE_E_BAY = 'eBay';
     /**
      * Constant for value 'CustomCode'
+     * Meta information extracted from the WSDL
+     * - documentation: Reserved for internal or future use.
      * @return string 'CustomCode'
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';

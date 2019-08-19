@@ -13,7 +13,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
 {
     /**
      * The ItemNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item Number. Required
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -22,7 +22,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     public $ItemNumber;
     /**
      * The ItemQty
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Option Quantity. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -31,7 +31,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     public $ItemQty;
     /**
      * The ItemQtyDelta
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item Quantity Delta. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -40,7 +40,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     public $ItemQtyDelta;
     /**
      * The ItemAlert
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item Alert. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -49,7 +49,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     public $ItemAlert;
     /**
      * The ItemCost
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Item Cost. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
@@ -95,7 +95,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemNumber) && !is_string($itemNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemNumber, true), gettype($itemNumber)), __LINE__);
         }
         $this->ItemNumber = $itemNumber;
         return $this;
@@ -117,7 +117,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemQty) && !is_string($itemQty)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemQty)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemQty, true), gettype($itemQty)), __LINE__);
         }
         $this->ItemQty = $itemQty;
         return $this;
@@ -139,7 +139,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemQtyDelta) && !is_string($itemQtyDelta)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemQtyDelta)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemQtyDelta, true), gettype($itemQtyDelta)), __LINE__);
         }
         $this->ItemQtyDelta = $itemQtyDelta;
         return $this;
@@ -161,7 +161,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemAlert) && !is_string($itemAlert)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemAlert)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemAlert, true), gettype($itemAlert)), __LINE__);
         }
         $this->ItemAlert = $itemAlert;
         return $this;
@@ -183,7 +183,7 @@ class ItemTrackingDetailsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($itemCost) && !is_string($itemCost)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemCost)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($itemCost, true), gettype($itemCost)), __LINE__);
         }
         $this->ItemCost = $itemCost;
         return $this;

@@ -13,7 +13,7 @@ class SetAuthFlowParamReq extends AbstractStructBase
 {
     /**
      * The SetAuthFlowParamRequest
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - ref: ns:SetAuthFlowParamRequest
      * @var \PayPal\StructType\SetAuthFlowParamRequestType
      */

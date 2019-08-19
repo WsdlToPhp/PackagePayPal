@@ -12,12 +12,6 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 class BMSetInventoryResponseType extends AbstractResponseType
 {
     /**
-     * Constructor method for BMSetInventoryResponseType
-     */
-    public function __construct()
-    {
-    }
-    /**
      * Method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
      * @see AbstractStructBase::__set_state()

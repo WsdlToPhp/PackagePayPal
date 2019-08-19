@@ -13,7 +13,7 @@ class GetMobileStatusRequestDetailsType extends AbstractStructBase
 {
     /**
      * The Phone
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: Phone number for status inquiry
      * @var \PayPal\StructType\PhoneNumberType
      */

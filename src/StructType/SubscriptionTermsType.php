@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for SubscriptionTermsType StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - documentation: SubscriptionTermsType Terms of a PayPal subscription.
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,7 +15,7 @@ class SubscriptionTermsType extends AbstractStructBase
 {
     /**
      * The period
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
@@ -55,7 +55,7 @@ class SubscriptionTermsType extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($period) && !is_string($period)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($period)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($period, true), gettype($period)), __LINE__);
         }
         $this->period = $period;
         return $this;
