@@ -11,6 +11,7 @@ This package has been generated from the [PayPal Web Services](https://www.paypa
 - [Generating again the package](#generating-again-the-package)
 - [How to use the generated package?](#how-to-use-the-generated-package)
     - [Install the project](#install-the-project)
+    - [Use the project](#use-the-project)
     - [Learn from the tutorial](#learn-from-the-tutorial)
 - [Need support or having a question?](#need-support-or-having-a-question)
 
@@ -18,8 +19,8 @@ This package has been generated from the [PayPal Web Services](https://www.paypa
 You can generate again the package's sources using the [generate.sh](generate.sh) script:
 ```bash
 $ git clone https://github.com/WsdlToPhp/PackagePayPal.git package-paypal
-$ cd package-paypal
-$ ./generate.sh
+$ docker-compose up -d
+$ docker exec -it package_paypal bash generate.sh
 ```
 To learn how to customize the generated package, please read the PackageGenerator's [README](https://github.com/WsdlToPhp/PackageGenerator/blob/master/README.md).
 
@@ -30,6 +31,11 @@ To learn how to customize the generated package, please read the PackageGenerato
 $ git clone https://github.com/WsdlToPhp/PackagePayPal.git package-paypal
 $ cd package-paypal
 $ composer update
+```
+
+## Use the project
+```bash
+$ composer require wsdltophp/package-paypal
 ```
 
 ## Learn from the tutorial
