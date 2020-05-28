@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for MobilePaymentCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class MobilePaymentCodeType
+class MobilePaymentCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'P2P'
@@ -32,16 +34,6 @@ class MobilePaymentCodeType
      */
     const VALUE_TOP_UP = 'TopUp';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_P_2_P
      * @uses self::VALUE_HARD_GOODS
@@ -57,13 +49,5 @@ class MobilePaymentCodeType
             self::VALUE_DONATION,
             self::VALUE_TOP_UP,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for CreditCardTypeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class CreditCardTypeType
+class CreditCardTypeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Visa'
@@ -47,16 +49,6 @@ class CreditCardTypeType
      */
     const VALUE_MAESTRO = 'Maestro';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_VISA
      * @uses self::VALUE_MASTER_CARD
@@ -78,13 +70,5 @@ class CreditCardTypeType
             self::VALUE_SOLO,
             self::VALUE_MAESTRO,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

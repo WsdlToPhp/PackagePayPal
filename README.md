@@ -29,7 +29,7 @@ To learn how to customize the generated package, please read the PackageGenerato
 ```bash
 $ git clone https://github.com/WsdlToPhp/PackagePayPal.git package-paypal
 $ cd package-paypal
-$ composer update
+$ docker exec -it package_paypal php-7.3 /usr/bin/composer update
 ```
 
 ## Use the project
@@ -38,7 +38,7 @@ $ composer require wsdltophp/package-paypal
 ```
 
 ## Learn from the tutorial
-Start looking into the auto-generated [tutorial.php](tutorial.php) file. This file contains the starting code to use this package. In addition it contains all the operations provided by the Exchange Web Services and the way to call them.
+Start looking into the auto-generated [tutorial.php](tutorial.php) file. This file contains the starting code to use this package. In addition, it contains all the operations provided by the PayPal Web Services and the way to call them.
 
 # Need support or having a question?
 We can help you understand how to use it and how to customize it. Feel free to contact us at contact@wsdltophp.com.

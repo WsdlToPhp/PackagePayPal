@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for APIAuthenticationType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class APIAuthenticationType
+class APIAuthenticationType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Auth-None'
@@ -27,16 +29,6 @@ class APIAuthenticationType
      */
     const VALUE_SIGN = 'Sign';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_AUTH_NONE
      * @uses self::VALUE_CERT
@@ -50,13 +42,5 @@ class APIAuthenticationType
             self::VALUE_CERT,
             self::VALUE_SIGN,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

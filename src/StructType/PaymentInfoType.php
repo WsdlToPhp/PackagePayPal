@@ -147,6 +147,22 @@ class PaymentInfoType extends AbstractStructBase
      */
     public $IsFinancing;
     /**
+     * The FinancingDiscountAmount
+     * Meta information extracted from the WSDL
+     * - documentation: Discount Amount for buyer, if paid in one installment.
+     * - minOccurs: 0
+     * @var \PayPal\StructType\BasicAmountType
+     */
+    public $FinancingDiscountAmount;
+    /**
+     * The RegularTakeFeeAmount
+     * Meta information extracted from the WSDL
+     * - documentation: Fee of Regular take rate on the transaction amount. It could be equal to FeeAmount, if not installment.
+     * - minOccurs: 0
+     * @var \PayPal\StructType\BasicAmountType
+     */
+    public $RegularTakeFeeAmount;
+    /**
      * The SettleAmount
      * Meta information extracted from the WSDL
      * - documentation: Amount deposited into the account's primary balance after a currency conversion from automatic conversion through your Payment Receiving Preferences or manual conversion through manually accepting a payment. This amount is calculated
@@ -417,6 +433,8 @@ class PaymentInfoType extends AbstractStructBase
      * @uses PaymentInfoType::setFinancingMonthlyPayment()
      * @uses PaymentInfoType::setFinancingTerm()
      * @uses PaymentInfoType::setIsFinancing()
+     * @uses PaymentInfoType::setFinancingDiscountAmount()
+     * @uses PaymentInfoType::setRegularTakeFeeAmount()
      * @uses PaymentInfoType::setSettleAmount()
      * @uses PaymentInfoType::setTaxAmount()
      * @uses PaymentInfoType::setExchangeRate()
@@ -462,6 +480,8 @@ class PaymentInfoType extends AbstractStructBase
      * @param \PayPal\StructType\BasicAmountType $financingMonthlyPayment
      * @param string $financingTerm
      * @param string $isFinancing
+     * @param \PayPal\StructType\BasicAmountType $financingDiscountAmount
+     * @param \PayPal\StructType\BasicAmountType $regularTakeFeeAmount
      * @param \PayPal\StructType\BasicAmountType $settleAmount
      * @param \PayPal\StructType\BasicAmountType $taxAmount
      * @param string $exchangeRate
@@ -492,7 +512,7 @@ class PaymentInfoType extends AbstractStructBase
      * @param string $softDescriptor
      * @param string $softDescriptorCity
      */
-    public function __construct($transactionID = null, $ebayTransactionID = null, $parentTransactionID = null, $receiptID = null, $transactionType = null, $paymentType = null, $refundSourceCodeType = null, $expectedeCheckClearDate = null, $paymentDate = null, \PayPal\StructType\BasicAmountType $grossAmount = null, \PayPal\StructType\BasicAmountType $feeAmount = null, \PayPal\StructType\BasicAmountType $financingFeeAmount = null, \PayPal\StructType\BasicAmountType $financingTotalCost = null, \PayPal\StructType\BasicAmountType $financingMonthlyPayment = null, $financingTerm = null, $isFinancing = null, \PayPal\StructType\BasicAmountType $settleAmount = null, \PayPal\StructType\BasicAmountType $taxAmount = null, $exchangeRate = null, $paymentStatus = null, $pendingReason = null, $reasonCode = null, $holdDecision = null, $shippingMethod = null, $protectionEligibility = null, $protectionEligibilityType = null, $receiptReferenceNumber = null, $pOSTransactionType = null, $shipAmount = null, $shipHandleAmount = null, $shipDiscount = null, $insuranceAmount = null, $subject = null, $storeID = null, $terminalID = null, \PayPal\StructType\SellerDetailsType $sellerDetails = null, $paymentRequestID = null, \PayPal\StructType\FMFDetailsType $fMFDetails = null, \PayPal\StructType\EnhancedPaymentInfoType $enhancedPaymentInfo = null, \PayPal\StructType\ErrorType $paymentError = null, \PayPal\StructType\InstrumentDetailsType $instrumentDetails = null, \PayPal\StructType\OfferDetailsType $offerDetails = null, $binEligibility = null, $softDescriptor = null, $softDescriptorCity = null)
+    public function __construct($transactionID = null, $ebayTransactionID = null, $parentTransactionID = null, $receiptID = null, $transactionType = null, $paymentType = null, $refundSourceCodeType = null, $expectedeCheckClearDate = null, $paymentDate = null, \PayPal\StructType\BasicAmountType $grossAmount = null, \PayPal\StructType\BasicAmountType $feeAmount = null, \PayPal\StructType\BasicAmountType $financingFeeAmount = null, \PayPal\StructType\BasicAmountType $financingTotalCost = null, \PayPal\StructType\BasicAmountType $financingMonthlyPayment = null, $financingTerm = null, $isFinancing = null, \PayPal\StructType\BasicAmountType $financingDiscountAmount = null, \PayPal\StructType\BasicAmountType $regularTakeFeeAmount = null, \PayPal\StructType\BasicAmountType $settleAmount = null, \PayPal\StructType\BasicAmountType $taxAmount = null, $exchangeRate = null, $paymentStatus = null, $pendingReason = null, $reasonCode = null, $holdDecision = null, $shippingMethod = null, $protectionEligibility = null, $protectionEligibilityType = null, $receiptReferenceNumber = null, $pOSTransactionType = null, $shipAmount = null, $shipHandleAmount = null, $shipDiscount = null, $insuranceAmount = null, $subject = null, $storeID = null, $terminalID = null, \PayPal\StructType\SellerDetailsType $sellerDetails = null, $paymentRequestID = null, \PayPal\StructType\FMFDetailsType $fMFDetails = null, \PayPal\StructType\EnhancedPaymentInfoType $enhancedPaymentInfo = null, \PayPal\StructType\ErrorType $paymentError = null, \PayPal\StructType\InstrumentDetailsType $instrumentDetails = null, \PayPal\StructType\OfferDetailsType $offerDetails = null, $binEligibility = null, $softDescriptor = null, $softDescriptorCity = null)
     {
         $this
             ->setTransactionID($transactionID)
@@ -511,6 +531,8 @@ class PaymentInfoType extends AbstractStructBase
             ->setFinancingMonthlyPayment($financingMonthlyPayment)
             ->setFinancingTerm($financingTerm)
             ->setIsFinancing($isFinancing)
+            ->setFinancingDiscountAmount($financingDiscountAmount)
+            ->setRegularTakeFeeAmount($regularTakeFeeAmount)
             ->setSettleAmount($settleAmount)
             ->setTaxAmount($taxAmount)
             ->setExchangeRate($exchangeRate)
@@ -880,6 +902,42 @@ class PaymentInfoType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($isFinancing, true), gettype($isFinancing)), __LINE__);
         }
         $this->IsFinancing = $isFinancing;
+        return $this;
+    }
+    /**
+     * Get FinancingDiscountAmount value
+     * @return \PayPal\StructType\BasicAmountType|null
+     */
+    public function getFinancingDiscountAmount()
+    {
+        return $this->FinancingDiscountAmount;
+    }
+    /**
+     * Set FinancingDiscountAmount value
+     * @param \PayPal\StructType\BasicAmountType $financingDiscountAmount
+     * @return \PayPal\StructType\PaymentInfoType
+     */
+    public function setFinancingDiscountAmount(\PayPal\StructType\BasicAmountType $financingDiscountAmount = null)
+    {
+        $this->FinancingDiscountAmount = $financingDiscountAmount;
+        return $this;
+    }
+    /**
+     * Get RegularTakeFeeAmount value
+     * @return \PayPal\StructType\BasicAmountType|null
+     */
+    public function getRegularTakeFeeAmount()
+    {
+        return $this->RegularTakeFeeAmount;
+    }
+    /**
+     * Set RegularTakeFeeAmount value
+     * @param \PayPal\StructType\BasicAmountType $regularTakeFeeAmount
+     * @return \PayPal\StructType\PaymentInfoType
+     */
+    public function setRegularTakeFeeAmount(\PayPal\StructType\BasicAmountType $regularTakeFeeAmount = null)
+    {
+        $this->RegularTakeFeeAmount = $regularTakeFeeAmount;
         return $this;
     }
     /**
@@ -1499,25 +1557,5 @@ class PaymentInfoType extends AbstractStructBase
         }
         $this->SoftDescriptorCity = $softDescriptorCity;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \PayPal\StructType\PaymentInfoType
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

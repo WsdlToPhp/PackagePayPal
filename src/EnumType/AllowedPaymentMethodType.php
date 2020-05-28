@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for AllowedPaymentMethodType EnumType
  * Meta information extracted from the WSDL
@@ -11,7 +13,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class AllowedPaymentMethodType
+class AllowedPaymentMethodType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Default'
@@ -34,16 +36,6 @@ class AllowedPaymentMethodType
      */
     const VALUE_INSTANT_FUNDING_SOURCE = 'InstantFundingSource';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_DEFAULT
      * @uses self::VALUE_INSTANT_PAYMENT_ONLY
@@ -59,13 +51,5 @@ class AllowedPaymentMethodType
             self::VALUE_ANY_FUNDING_SOURCE,
             self::VALUE_INSTANT_FUNDING_SOURCE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

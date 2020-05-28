@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for TotalType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class TotalType
+class TotalType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Total'
@@ -22,16 +24,6 @@ class TotalType
      */
     const VALUE_ESTIMATED_TOTAL = 'EstimatedTotal';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_TOTAL
      * @uses self::VALUE_ESTIMATED_TOTAL
@@ -43,13 +35,5 @@ class TotalType
             self::VALUE_TOTAL,
             self::VALUE_ESTIMATED_TOTAL,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

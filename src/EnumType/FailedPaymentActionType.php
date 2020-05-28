@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for FailedPaymentActionType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class FailedPaymentActionType
+class FailedPaymentActionType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'CancelOnFailure'
@@ -20,16 +22,6 @@ class FailedPaymentActionType
      */
     const VALUE_CONTINUE_ON_FAILURE = 'ContinueOnFailure';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_CANCEL_ON_FAILURE
      * @uses self::VALUE_CONTINUE_ON_FAILURE
@@ -41,13 +33,5 @@ class FailedPaymentActionType
             self::VALUE_CANCEL_ON_FAILURE,
             self::VALUE_CONTINUE_ON_FAILURE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

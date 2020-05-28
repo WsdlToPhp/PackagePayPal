@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ButtonCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ButtonCodeType
+class ButtonCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'HOSTED'
@@ -40,16 +42,6 @@ class ButtonCodeType
      */
     const VALUE_TOKEN = 'TOKEN';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_HOSTED
      * @uses self::VALUE_ENCRYPTED
@@ -65,13 +57,5 @@ class ButtonCodeType
             self::VALUE_CLEARTEXT,
             self::VALUE_TOKEN,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

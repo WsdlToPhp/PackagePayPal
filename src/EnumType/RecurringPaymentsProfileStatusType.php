@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for RecurringPaymentsProfileStatusType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class RecurringPaymentsProfileStatusType
+class RecurringPaymentsProfileStatusType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'ActiveProfile'
@@ -35,16 +37,6 @@ class RecurringPaymentsProfileStatusType
      */
     const VALUE_SUSPENDED_PROFILE = 'SuspendedProfile';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ACTIVE_PROFILE
      * @uses self::VALUE_PENDING_PROFILE
@@ -62,13 +54,5 @@ class RecurringPaymentsProfileStatusType
             self::VALUE_EXPIRED_PROFILE,
             self::VALUE_SUSPENDED_PROFILE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

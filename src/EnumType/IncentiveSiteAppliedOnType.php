@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for IncentiveSiteAppliedOnType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class IncentiveSiteAppliedOnType
+class IncentiveSiteAppliedOnType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'INCENTIVE-SITE-APPLIED-ON-UNKNOWN'
@@ -27,16 +29,6 @@ class IncentiveSiteAppliedOnType
      */
     const VALUE_INCENTIVE_SITE_APPLIED_ON_PAYPAL = 'INCENTIVE-SITE-APPLIED-ON-PAYPAL';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_INCENTIVE_SITE_APPLIED_ON_UNKNOWN
      * @uses self::VALUE_INCENTIVE_SITE_APPLIED_ON_MERCHANT
@@ -50,13 +42,5 @@ class IncentiveSiteAppliedOnType
             self::VALUE_INCENTIVE_SITE_APPLIED_ON_MERCHANT,
             self::VALUE_INCENTIVE_SITE_APPLIED_ON_PAYPAL,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

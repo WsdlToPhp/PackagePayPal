@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ButtonStatusType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ButtonStatusType
+class ButtonStatusType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'DELETE'
@@ -18,16 +20,6 @@ class ButtonStatusType
      * @return string 'DELETE'
      */
     const VALUE_DELETE = 'DELETE';
-    /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
     /**
      * Return allowed values
      * @uses self::VALUE_DELETE
@@ -38,13 +30,5 @@ class ButtonStatusType
         return array(
             self::VALUE_DELETE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

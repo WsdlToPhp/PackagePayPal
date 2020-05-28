@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for OptionTypeListType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class OptionTypeListType
+class OptionTypeListType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NoOptionType'
@@ -30,16 +32,6 @@ class OptionTypeListType
      */
     const VALUE_VARIABLE = 'VARIABLE';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NO_OPTION_TYPE
      * @uses self::VALUE_FULL
@@ -55,13 +47,5 @@ class OptionTypeListType
             self::VALUE_EMI,
             self::VALUE_VARIABLE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

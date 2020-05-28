@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for BankIDCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class BankIDCodeType
+class BankIDCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'CMB'
@@ -32,16 +34,6 @@ class BankIDCodeType
      */
     const VALUE_CHINA_PAY = 'ChinaPay';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_CMB
      * @uses self::VALUE_ICBC
@@ -57,13 +49,5 @@ class BankIDCodeType
             self::VALUE_CCB,
             self::VALUE_CHINA_PAY,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

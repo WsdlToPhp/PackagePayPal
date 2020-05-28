@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for EbayCheckoutType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class EbayCheckoutType
+class EbayCheckoutType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'none'
@@ -35,16 +37,6 @@ class EbayCheckoutType
      */
     const VALUE_AUTOPAY = 'Autopay';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NONE
      * @uses self::VALUE_AUCTION
@@ -62,13 +54,5 @@ class EbayCheckoutType
             self::VALUE_FIXED_PRICE_ITEM,
             self::VALUE_AUTOPAY,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

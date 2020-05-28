@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ReceiverInfoCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ReceiverInfoCodeType
+class ReceiverInfoCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'EmailAddress'
@@ -27,16 +29,6 @@ class ReceiverInfoCodeType
      */
     const VALUE_PHONE_NUMBER = 'PhoneNumber';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_EMAIL_ADDRESS
      * @uses self::VALUE_USER_ID
@@ -50,13 +42,5 @@ class ReceiverInfoCodeType
             self::VALUE_USER_ID,
             self::VALUE_PHONE_NUMBER,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

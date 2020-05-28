@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for AutoBillType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class AutoBillType
+class AutoBillType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NoAutoBill'
@@ -20,16 +22,6 @@ class AutoBillType
      */
     const VALUE_ADD_TO_NEXT_BILLING = 'AddToNextBilling';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NO_AUTO_BILL
      * @uses self::VALUE_ADD_TO_NEXT_BILLING
@@ -41,13 +33,5 @@ class AutoBillType
             self::VALUE_NO_AUTO_BILL,
             self::VALUE_ADD_TO_NEXT_BILLING,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

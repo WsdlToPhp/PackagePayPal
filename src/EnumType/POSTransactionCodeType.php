@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for POSTransactionCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class POSTransactionCodeType
+class POSTransactionCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'F'
@@ -22,16 +24,6 @@ class POSTransactionCodeType
      */
     const VALUE_S = 'S';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_F
      * @uses self::VALUE_S
@@ -43,13 +35,5 @@ class POSTransactionCodeType
             self::VALUE_F,
             self::VALUE_S,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

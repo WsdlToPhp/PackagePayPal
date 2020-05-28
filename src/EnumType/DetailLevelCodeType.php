@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for DetailLevelCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class DetailLevelCodeType
+class DetailLevelCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'ReturnAll'
@@ -33,16 +35,6 @@ class DetailLevelCodeType
      */
     const VALUE_ITEM_RETURN_ATTRIBUTES = 'ItemReturnAttributes';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_RETURN_ALL
      * @uses self::VALUE_ITEM_RETURN_DESCRIPTION
@@ -56,13 +48,5 @@ class DetailLevelCodeType
             self::VALUE_ITEM_RETURN_DESCRIPTION,
             self::VALUE_ITEM_RETURN_ATTRIBUTES,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

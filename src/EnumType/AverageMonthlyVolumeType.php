@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for AverageMonthlyVolumeType EnumType
  * Meta information extracted from the WSDL
@@ -10,7 +12,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class AverageMonthlyVolumeType
+class AverageMonthlyVolumeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'AverageMonthlyVolume-Not-Applicable'
@@ -48,16 +50,6 @@ class AverageMonthlyVolumeType
      */
     const VALUE_AVERAGE_MONTHLY_VOLUME_RANGE_6 = 'AverageMonthlyVolume-Range6';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_AVERAGE_MONTHLY_VOLUME_NOT_APPLICABLE
      * @uses self::VALUE_AVERAGE_MONTHLY_VOLUME_RANGE_1
@@ -79,13 +71,5 @@ class AverageMonthlyVolumeType
             self::VALUE_AVERAGE_MONTHLY_VOLUME_RANGE_5,
             self::VALUE_AVERAGE_MONTHLY_VOLUME_RANGE_6,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

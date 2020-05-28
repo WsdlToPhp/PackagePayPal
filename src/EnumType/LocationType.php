@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for LocationType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class LocationType
+class LocationType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Consumer'
@@ -33,16 +35,6 @@ class LocationType
      */
     const VALUE_PICKUP_DROPOFF = 'PickupDropoff';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_CONSUMER
      * @uses self::VALUE_STORE
@@ -56,13 +48,5 @@ class LocationType
             self::VALUE_STORE,
             self::VALUE_PICKUP_DROPOFF,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

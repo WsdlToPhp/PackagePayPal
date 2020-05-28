@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for BusinessSubCategoryType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class BusinessSubCategoryType
+class BusinessSubCategoryType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'SubCategory-Unspecified'
@@ -1347,16 +1349,6 @@ class BusinessSubCategoryType
      */
     const VALUE_OTHER_SUB_CATEGORIES = 'Other-SubCategories';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_SUB_CATEGORY_UNSPECIFIED
      * @uses self::VALUE_ANTIQUES_GENERAL
@@ -1898,13 +1890,5 @@ class BusinessSubCategoryType
             self::VALUE_TRAVEL_AIRLINES_SPIRIT_AIR,
             self::VALUE_OTHER_SUB_CATEGORIES,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for WalletItemType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class WalletItemType
+class WalletItemType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'MERCHANT_COUPON'
@@ -30,16 +32,6 @@ class WalletItemType
      */
     const VALUE_MERCHANT_CLOSED_LOOP_OFFER = 'MERCHANT_CLOSED_LOOP_OFFER';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_MERCHANT_COUPON
      * @uses self::VALUE_LOYALTY_CARD
@@ -55,13 +47,5 @@ class WalletItemType
             self::VALUE_MANUFACTURER_COUPON,
             self::VALUE_MERCHANT_CLOSED_LOOP_OFFER,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

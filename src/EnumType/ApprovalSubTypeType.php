@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ApprovalSubTypeType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ApprovalSubTypeType
+class ApprovalSubTypeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'None'
@@ -30,16 +32,6 @@ class ApprovalSubTypeType
      */
     const VALUE_CHANNEL_INITIATED_BILLING = 'ChannelInitiatedBilling';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NONE
      * @uses self::VALUE_MERCHANT_INITIATED_BILLING
@@ -55,13 +47,5 @@ class ApprovalSubTypeType
             self::VALUE_MERCHANT_INITIATED_BILLING_SINGLE_AGREEMENT,
             self::VALUE_CHANNEL_INITIATED_BILLING,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }
