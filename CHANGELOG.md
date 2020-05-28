@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 205.0.0
+- update generated classes using latest PackageGeneration version [3.2.7](https://github.com/WsdlToPhp/PackageGenerator/releases/tag/3.2.7)
+- update used php bin
+- update major release number due to PayPal version upgraded version number within the WSDL
+
 ## 204.3.0
 - update generated classes using latest PackageGeneration version [3.2.3](https://github.com/WsdlToPhp/PackageGenerator/releases/tag/3.2.3)
 
