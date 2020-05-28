@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for PromotionItemSelectionCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class PromotionItemSelectionCodeType
+class PromotionItemSelectionCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Manual'
@@ -33,16 +35,6 @@ class PromotionItemSelectionCodeType
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_MANUAL
      * @uses self::VALUE_AUTOMATIC
@@ -56,13 +48,5 @@ class PromotionItemSelectionCodeType
             self::VALUE_AUTOMATIC,
             self::VALUE_CUSTOM_CODE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

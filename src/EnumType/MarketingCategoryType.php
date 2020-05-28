@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for MarketingCategoryType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class MarketingCategoryType
+class MarketingCategoryType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Marketing-Category-Default'
@@ -117,16 +119,6 @@ class MarketingCategoryType
      */
     const VALUE_MARKETING_CATEGORY_20 = 'Marketing-Category20';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_MARKETING_CATEGORY_DEFAULT
      * @uses self::VALUE_MARKETING_CATEGORY_1
@@ -176,13 +168,5 @@ class MarketingCategoryType
             self::VALUE_MARKETING_CATEGORY_19,
             self::VALUE_MARKETING_CATEGORY_20,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

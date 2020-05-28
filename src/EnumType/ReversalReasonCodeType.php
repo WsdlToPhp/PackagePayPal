@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ReversalReasonCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ReversalReasonCodeType
+class ReversalReasonCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'none'
@@ -42,16 +44,6 @@ class ReversalReasonCodeType
      */
     const VALUE_OTHER = 'other';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NONE
      * @uses self::VALUE_CHARGEBACK
@@ -71,13 +63,5 @@ class ReversalReasonCodeType
             self::VALUE_REFUND,
             self::VALUE_OTHER,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

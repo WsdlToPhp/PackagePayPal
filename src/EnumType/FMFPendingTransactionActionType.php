@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for FMFPendingTransactionActionType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class FMFPendingTransactionActionType
+class FMFPendingTransactionActionType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Accept'
@@ -22,16 +24,6 @@ class FMFPendingTransactionActionType
      */
     const VALUE_DENY = 'Deny';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ACCEPT
      * @uses self::VALUE_DENY
@@ -43,13 +35,5 @@ class FMFPendingTransactionActionType
             self::VALUE_ACCEPT,
             self::VALUE_DENY,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

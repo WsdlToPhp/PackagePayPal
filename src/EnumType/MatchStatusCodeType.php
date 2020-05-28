@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for MatchStatusCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class MatchStatusCodeType
+class MatchStatusCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'None'
@@ -27,16 +29,6 @@ class MatchStatusCodeType
      */
     const VALUE_UNMATCHED = 'Unmatched';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NONE
      * @uses self::VALUE_MATCHED
@@ -50,13 +42,5 @@ class MatchStatusCodeType
             self::VALUE_MATCHED,
             self::VALUE_UNMATCHED,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

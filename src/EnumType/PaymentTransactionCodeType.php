@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for PaymentTransactionCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class PaymentTransactionCodeType
+class PaymentTransactionCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'none'
@@ -102,15 +104,15 @@ class PaymentTransactionCodeType
      */
     const VALUE_CREDIT = 'credit';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
+     * Constant for value 'refund'
+     * @return string 'refund'
      */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
+    const VALUE_REFUND = 'refund';
+    /**
+     * Constant for value 'reversal'
+     * @return string 'reversal'
+     */
+    const VALUE_REVERSAL = 'reversal';
     /**
      * Return allowed values
      * @uses self::VALUE_NONE
@@ -131,6 +133,8 @@ class PaymentTransactionCodeType
      * @uses self::VALUE_PRO_HOSTED
      * @uses self::VALUE_PRO_API
      * @uses self::VALUE_CREDIT
+     * @uses self::VALUE_REFUND
+     * @uses self::VALUE_REVERSAL
      * @return string[]
      */
     public static function getValidValues()
@@ -154,14 +158,8 @@ class PaymentTransactionCodeType
             self::VALUE_PRO_HOSTED,
             self::VALUE_PRO_API,
             self::VALUE_CREDIT,
+            self::VALUE_REFUND,
+            self::VALUE_REVERSAL,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

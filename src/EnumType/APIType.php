@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for APIType EnumType
  * Meta information extracted from the WSDL
@@ -10,7 +12,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class APIType
+class APIType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'CHECKOUT_AUTHORIZATION'
@@ -34,16 +36,6 @@ class APIType
      */
     const VALUE_REFUND_TRANSACTION = 'REFUND_TRANSACTION';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_CHECKOUT_AUTHORIZATION
      * @uses self::VALUE_CHECKOUT_SALE
@@ -57,13 +49,5 @@ class APIType
             self::VALUE_CHECKOUT_SALE,
             self::VALUE_REFUND_TRANSACTION,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

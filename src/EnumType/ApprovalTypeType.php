@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ApprovalTypeType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ApprovalTypeType
+class ApprovalTypeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'BillingAgreement'
@@ -20,16 +22,6 @@ class ApprovalTypeType
      */
     const VALUE_PROFILE = 'Profile';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_BILLING_AGREEMENT
      * @uses self::VALUE_PROFILE
@@ -41,13 +33,5 @@ class ApprovalTypeType
             self::VALUE_BILLING_AGREEMENT,
             self::VALUE_PROFILE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

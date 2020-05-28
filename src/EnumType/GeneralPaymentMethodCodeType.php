@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for GeneralPaymentMethodCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class GeneralPaymentMethodCodeType
+class GeneralPaymentMethodCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Other'
@@ -54,16 +56,6 @@ class GeneralPaymentMethodCodeType
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_OTHER
      * @uses self::VALUE_ECHECK
@@ -83,13 +75,5 @@ class GeneralPaymentMethodCodeType
             self::VALUE_PAY_PAL_BALANCE,
             self::VALUE_CUSTOM_CODE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for IncentiveAppliedStatusType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class IncentiveAppliedStatusType
+class IncentiveAppliedStatusType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'INCENTIVE-APPLIED-STATUS-SUCCESS'
@@ -22,16 +24,6 @@ class IncentiveAppliedStatusType
      */
     const VALUE_INCENTIVE_APPLIED_STATUS_ERROR = 'INCENTIVE-APPLIED-STATUS-ERROR';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_INCENTIVE_APPLIED_STATUS_SUCCESS
      * @uses self::VALUE_INCENTIVE_APPLIED_STATUS_ERROR
@@ -43,13 +35,5 @@ class IncentiveAppliedStatusType
             self::VALUE_INCENTIVE_APPLIED_STATUS_SUCCESS,
             self::VALUE_INCENTIVE_APPLIED_STATUS_ERROR,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

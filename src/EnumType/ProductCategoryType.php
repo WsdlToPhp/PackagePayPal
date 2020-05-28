@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ProductCategoryType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ProductCategoryType
+class ProductCategoryType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Other'
@@ -171,16 +173,6 @@ class ProductCategoryType
      */
     const VALUE_SOFTWARE = 'Software';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_OTHER
      * @uses self::VALUE_AIRLINES
@@ -234,13 +226,5 @@ class ProductCategoryType
             self::VALUE_MONEY_TRANSFER,
             self::VALUE_SOFTWARE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

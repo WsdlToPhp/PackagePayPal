@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for PercentageRevenueFromOnlineSalesType EnumType
  * Meta information extracted from the WSDL
@@ -10,7 +12,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class PercentageRevenueFromOnlineSalesType
+class PercentageRevenueFromOnlineSalesType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'PercentageRevenueFromOnlineSales-Not-Applicable'
@@ -38,16 +40,6 @@ class PercentageRevenueFromOnlineSalesType
      */
     const VALUE_PERCENTAGE_REVENUE_FROM_ONLINE_SALES_RANGE_4 = 'PercentageRevenueFromOnlineSales-Range4';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_PERCENTAGE_REVENUE_FROM_ONLINE_SALES_NOT_APPLICABLE
      * @uses self::VALUE_PERCENTAGE_REVENUE_FROM_ONLINE_SALES_RANGE_1
@@ -65,13 +57,5 @@ class PercentageRevenueFromOnlineSalesType
             self::VALUE_PERCENTAGE_REVENUE_FROM_ONLINE_SALES_RANGE_3,
             self::VALUE_PERCENTAGE_REVENUE_FROM_ONLINE_SALES_RANGE_4,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for HitCounterCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class HitCounterCodeType
+class HitCounterCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NoHitCounter'
@@ -47,16 +49,6 @@ class HitCounterCodeType
      */
     const VALUE_CUSTOM_CODE = 'CustomCode';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NO_HIT_COUNTER
      * @uses self::VALUE_HONESTY_STYLE
@@ -74,13 +66,5 @@ class HitCounterCodeType
             self::VALUE_HIDDEN,
             self::VALUE_CUSTOM_CODE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

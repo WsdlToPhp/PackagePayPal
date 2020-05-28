@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for AverageTransactionPriceType EnumType
  * Meta information extracted from the WSDL
@@ -11,7 +13,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class AverageTransactionPriceType
+class AverageTransactionPriceType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'AverageTransactionPrice-Not-Applicable'
@@ -69,16 +71,6 @@ class AverageTransactionPriceType
      */
     const VALUE_AVERAGE_TRANSACTION_PRICE_RANGE_10 = 'AverageTransactionPrice-Range10';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_AVERAGE_TRANSACTION_PRICE_NOT_APPLICABLE
      * @uses self::VALUE_AVERAGE_TRANSACTION_PRICE_RANGE_1
@@ -108,13 +100,5 @@ class AverageTransactionPriceType
             self::VALUE_AVERAGE_TRANSACTION_PRICE_RANGE_9,
             self::VALUE_AVERAGE_TRANSACTION_PRICE_RANGE_10,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for PaymentReasonType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class PaymentReasonType
+class PaymentReasonType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'None'
@@ -29,16 +31,6 @@ class PaymentReasonType
      */
     const VALUE_RETURN_SHIPMENT = 'ReturnShipment';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NONE
      * @uses self::VALUE_REFUND
@@ -52,13 +44,5 @@ class PaymentReasonType
             self::VALUE_REFUND,
             self::VALUE_RETURN_SHIPMENT,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

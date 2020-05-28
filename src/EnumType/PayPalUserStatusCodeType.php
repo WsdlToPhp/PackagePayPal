@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for PayPalUserStatusCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class PayPalUserStatusCodeType
+class PayPalUserStatusCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'verified'
@@ -22,16 +24,6 @@ class PayPalUserStatusCodeType
      */
     const VALUE_UNVERIFIED = 'unverified';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_VERIFIED
      * @uses self::VALUE_UNVERIFIED
@@ -43,13 +35,5 @@ class PayPalUserStatusCodeType
             self::VALUE_VERIFIED,
             self::VALUE_UNVERIFIED,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

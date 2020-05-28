@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for StoreVisibilityStatusType EnumType
  * Meta information extracted from the WSDL
@@ -10,7 +12,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class StoreVisibilityStatusType
+class StoreVisibilityStatusType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'DISABLE'
@@ -23,16 +25,6 @@ class StoreVisibilityStatusType
      */
     const VALUE_ENABLE = 'ENABLE';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_DISABLE
      * @uses self::VALUE_ENABLE
@@ -44,13 +36,5 @@ class StoreVisibilityStatusType
             self::VALUE_DISABLE,
             self::VALUE_ENABLE,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

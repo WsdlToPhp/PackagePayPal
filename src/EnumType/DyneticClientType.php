@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for DyneticClientType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class DyneticClientType
+class DyneticClientType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'none'
@@ -25,16 +27,6 @@ class DyneticClientType
      */
     const VALUE_J_2_MECLIENT = 'J2MEClient';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NONE
      * @uses self::VALUE_WAP
@@ -48,13 +40,5 @@ class DyneticClientType
             self::VALUE_WAP,
             self::VALUE_J_2_MECLIENT,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

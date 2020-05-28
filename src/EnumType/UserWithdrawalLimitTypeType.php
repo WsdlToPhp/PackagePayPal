@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for UserWithdrawalLimitTypeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class UserWithdrawalLimitTypeType
+class UserWithdrawalLimitTypeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Unknown'
@@ -27,16 +29,6 @@ class UserWithdrawalLimitTypeType
      */
     const VALUE_UNLIMITED = 'Unlimited';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_UNKNOWN
      * @uses self::VALUE_LIMITED
@@ -50,13 +42,5 @@ class UserWithdrawalLimitTypeType
             self::VALUE_LIMITED,
             self::VALUE_UNLIMITED,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

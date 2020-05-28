@@ -14,7 +14,7 @@ rm -rf  $DEST/src/ \
         $DEST/composer.lock;
 
 # package informations
-php-7.2 wsdltophp.phar generate:package \
+php-7.3 wsdltophp.phar generate:package \
     --urlorpath="https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-paypal" \
@@ -24,7 +24,7 @@ php-7.2 wsdltophp.phar generate:package \
     --namespace="PayPal";
 
 # generate package
-php-7.2 -dmemory_limit=-1 wsdltophp.phar generate:package \
+php-7.3 -dmemory_limit=-1 wsdltophp.phar generate:package \
     --urlorpath="https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-paypal" \

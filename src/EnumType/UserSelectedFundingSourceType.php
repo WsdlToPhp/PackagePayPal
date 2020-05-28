@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for UserSelectedFundingSourceType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class UserSelectedFundingSourceType
+class UserSelectedFundingSourceType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'ELV'
@@ -42,16 +44,6 @@ class UserSelectedFundingSourceType
      */
     const VALUE_QIWI = 'QIWI';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ELV
      * @uses self::VALUE_CREDIT_CARD
@@ -71,13 +63,5 @@ class UserSelectedFundingSourceType
             self::VALUE_FINANCE,
             self::VALUE_QIWI,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

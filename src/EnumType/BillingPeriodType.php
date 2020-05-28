@@ -2,12 +2,14 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for BillingPeriodType EnumType
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class BillingPeriodType
+class BillingPeriodType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'NoBillingPeriodType'
@@ -40,16 +42,6 @@ class BillingPeriodType
      */
     const VALUE_YEAR = 'Year';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_NO_BILLING_PERIOD_TYPE
      * @uses self::VALUE_DAY
@@ -69,13 +61,5 @@ class BillingPeriodType
             self::VALUE_MONTH,
             self::VALUE_YEAR,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

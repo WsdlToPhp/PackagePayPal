@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for ButtonTypeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class ButtonTypeType
+class ButtonTypeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'BUYNOW'
@@ -82,16 +84,6 @@ class ButtonTypeType
      */
     const VALUE_PAYMENT = 'PAYMENT';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_BUYNOW
      * @uses self::VALUE_CART
@@ -119,13 +111,5 @@ class ButtonTypeType
             self::VALUE_AUTOBILLING,
             self::VALUE_PAYMENT,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for RefundSourceCodeType EnumType
  * Meta information extracted from the WSDL
@@ -10,7 +12,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class RefundSourceCodeType
+class RefundSourceCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'any'
@@ -33,16 +35,6 @@ class RefundSourceCodeType
      */
     const VALUE_ECHECK = 'echeck';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ANY
      * @uses self::VALUE_DEFAULT
@@ -58,13 +50,5 @@ class RefundSourceCodeType
             self::VALUE_INSTANT,
             self::VALUE_ECHECK,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for MerchantPullPaymentCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class MerchantPullPaymentCodeType
+class MerchantPullPaymentCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Any'
@@ -27,16 +29,6 @@ class MerchantPullPaymentCodeType
      */
     const VALUE_ECHECK_ONLY = 'EcheckOnly';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ANY
      * @uses self::VALUE_INSTANT_ONLY
@@ -50,13 +42,5 @@ class MerchantPullPaymentCodeType
             self::VALUE_INSTANT_ONLY,
             self::VALUE_ECHECK_ONLY,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for PaymentCategoryType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class PaymentCategoryType
+class PaymentCategoryType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'InternationalShipping'
@@ -40,16 +42,6 @@ class PaymentCategoryType
      */
     const VALUE_PUDO = 'PUDO';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_INTERNATIONAL_SHIPPING
      * @uses self::VALUE_LOCAL_DELIVERY
@@ -65,13 +57,5 @@ class PaymentCategoryType
             self::VALUE_BOPIS,
             self::VALUE_PUDO,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

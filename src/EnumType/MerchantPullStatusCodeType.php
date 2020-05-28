@@ -2,6 +2,8 @@
 
 namespace PayPal\EnumType;
 
+use \WsdlToPhp\PackageBase\AbstractStructEnumBase;
+
 /**
  * This class stands for MerchantPullStatusCodeType EnumType
  * Meta information extracted from the WSDL
@@ -9,7 +11,7 @@ namespace PayPal\EnumType;
  * @subpackage Enumerations
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class MerchantPullStatusCodeType
+class MerchantPullStatusCodeType extends AbstractStructEnumBase
 {
     /**
      * Constant for value 'Active'
@@ -22,16 +24,6 @@ class MerchantPullStatusCodeType
      */
     const VALUE_CANCELED = 'Canceled';
     /**
-     * Return true if value is allowed
-     * @uses self::getValidValues()
-     * @param mixed $value value
-     * @return bool true|false
-     */
-    public static function valueIsValid($value)
-    {
-        return ($value === null) || in_array($value, self::getValidValues(), true);
-    }
-    /**
      * Return allowed values
      * @uses self::VALUE_ACTIVE
      * @uses self::VALUE_CANCELED
@@ -43,13 +35,5 @@ class MerchantPullStatusCodeType
             self::VALUE_ACTIVE,
             self::VALUE_CANCELED,
         );
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

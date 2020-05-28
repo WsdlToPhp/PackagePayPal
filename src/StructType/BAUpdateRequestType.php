@@ -44,23 +44,35 @@ class BAUpdateRequestType extends AbstractRequestType
      */
     public $BillingAgreementCustom;
     /**
+     * The BillingAgreementType
+     * Meta information extracted from the WSDL
+     * - documentation: Billing Agreement Type to change the billing agreement type to. ChannelInitiatedBillingAgreement is the only valid value. All other values are ignored.
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
+     */
+    public $BillingAgreementType;
+    /**
      * Constructor method for BAUpdateRequestType
      * @uses BAUpdateRequestType::setReferenceID()
      * @uses BAUpdateRequestType::setBillingAgreementDescription()
      * @uses BAUpdateRequestType::setBillingAgreementStatus()
      * @uses BAUpdateRequestType::setBillingAgreementCustom()
+     * @uses BAUpdateRequestType::setBillingAgreementType()
      * @param string $referenceID
      * @param string $billingAgreementDescription
      * @param string $billingAgreementStatus
      * @param string $billingAgreementCustom
+     * @param string $billingAgreementType
      */
-    public function __construct($referenceID = null, $billingAgreementDescription = null, $billingAgreementStatus = null, $billingAgreementCustom = null)
+    public function __construct($referenceID = null, $billingAgreementDescription = null, $billingAgreementStatus = null, $billingAgreementCustom = null, $billingAgreementType = null)
     {
         $this
             ->setReferenceID($referenceID)
             ->setBillingAgreementDescription($billingAgreementDescription)
             ->setBillingAgreementStatus($billingAgreementStatus)
-            ->setBillingAgreementCustom($billingAgreementCustom);
+            ->setBillingAgreementCustom($billingAgreementCustom)
+            ->setBillingAgreementType($billingAgreementType);
     }
     /**
      * Get ReferenceID value
@@ -154,23 +166,28 @@ class BAUpdateRequestType extends AbstractRequestType
         return $this;
     }
     /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \PayPal\StructType\BAUpdateRequestType
+     * Get BillingAgreementType value
+     * @return string|null
      */
-    public static function __set_state(array $array)
+    public function getBillingAgreementType()
     {
-        return parent::__set_state($array);
+        return $this->BillingAgreementType;
     }
     /**
-     * Method returning the class name
-     * @return string __CLASS__
+     * Set BillingAgreementType value
+     * @uses \PayPal\EnumType\BillingCodeType::valueIsValid()
+     * @uses \PayPal\EnumType\BillingCodeType::getValidValues()
+     * @throws \InvalidArgumentException
+     * @param string $billingAgreementType
+     * @return \PayPal\StructType\BAUpdateRequestType
      */
-    public function __toString()
+    public function setBillingAgreementType($billingAgreementType = null)
     {
-        return __CLASS__;
+        // validation for constraint: enumeration
+        if (!\PayPal\EnumType\BillingCodeType::valueIsValid($billingAgreementType)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \PayPal\EnumType\BillingCodeType', is_array($billingAgreementType) ? implode(', ', $billingAgreementType) : var_export($billingAgreementType, true), implode(', ', \PayPal\EnumType\BillingCodeType::getValidValues())), __LINE__);
+        }
+        $this->BillingAgreementType = $billingAgreementType;
+        return $this;
     }
 }
