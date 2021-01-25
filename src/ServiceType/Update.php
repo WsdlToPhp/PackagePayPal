@@ -41,7 +41,9 @@ class Update extends SoapClientBase
     public function UpdateAccessPermissions(\PayPal\StructType\UpdateAccessPermissionsReq $updateAccessPermissionsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->UpdateAccessPermissions($updateAccessPermissionsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('UpdateAccessPermissions', array(
+                $updateAccessPermissionsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +67,9 @@ class Update extends SoapClientBase
     public function UpdateAuthorization(\PayPal\StructType\UpdateAuthorizationReq $updateAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->UpdateAuthorization($updateAuthorizationRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('UpdateAuthorization', array(
+                $updateAuthorizationRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -89,7 +93,9 @@ class Update extends SoapClientBase
     public function UpdateRecurringPaymentsProfile(\PayPal\StructType\UpdateRecurringPaymentsProfileReq $updateRecurringPaymentsProfileRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->UpdateRecurringPaymentsProfile($updateRecurringPaymentsProfileRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('UpdateRecurringPaymentsProfile', array(
+                $updateRecurringPaymentsProfileRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

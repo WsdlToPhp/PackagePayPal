@@ -41,7 +41,9 @@ class Address extends SoapClientBase
     public function AddressVerify(\PayPal\StructType\AddressVerifyReq $addressVerifyRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->AddressVerify($addressVerifyRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('AddressVerify', array(
+                $addressVerifyRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

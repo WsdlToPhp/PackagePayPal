@@ -41,7 +41,9 @@ class Set extends SoapClientBase
     public function SetMobileCheckout(\PayPal\StructType\SetMobileCheckoutReq $setMobileCheckoutRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->SetMobileCheckout($setMobileCheckoutRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('SetMobileCheckout', array(
+                $setMobileCheckoutRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +67,9 @@ class Set extends SoapClientBase
     public function SetAuthFlowParam(\PayPal\StructType\SetAuthFlowParamReq $setAuthFlowParamRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->SetAuthFlowParam($setAuthFlowParamRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('SetAuthFlowParam', array(
+                $setAuthFlowParamRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -89,7 +93,9 @@ class Set extends SoapClientBase
     public function SetAccessPermissions(\PayPal\StructType\SetAccessPermissionsReq $setAccessPermissionsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->SetAccessPermissions($setAccessPermissionsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('SetAccessPermissions', array(
+                $setAccessPermissionsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -113,7 +119,9 @@ class Set extends SoapClientBase
     public function SetExpressCheckout(\PayPal\StructType\SetExpressCheckoutReq $setExpressCheckoutRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->SetExpressCheckout($setExpressCheckoutRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('SetExpressCheckout', array(
+                $setExpressCheckoutRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -137,7 +145,9 @@ class Set extends SoapClientBase
     public function SetCustomerBillingAgreement(\PayPal\StructType\SetCustomerBillingAgreementReq $setCustomerBillingAgreementRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->SetCustomerBillingAgreement($setCustomerBillingAgreementRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('SetCustomerBillingAgreement', array(
+                $setCustomerBillingAgreementRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

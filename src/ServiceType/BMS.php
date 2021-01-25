@@ -41,7 +41,9 @@ class BMS extends SoapClientBase
     public function BMSetInventory(\PayPal\StructType\BMSetInventoryReq $bMSetInventoryRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BMSetInventory($bMSetInventoryRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BMSetInventory', array(
+                $bMSetInventoryRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

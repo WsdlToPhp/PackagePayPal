@@ -41,7 +41,9 @@ class Complete extends SoapClientBase
     public function CompleteRecoup(\PayPal\StructType\CompleteRecoupReq $completeRecoupRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->CompleteRecoup($completeRecoupRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('CompleteRecoup', array(
+                $completeRecoupRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

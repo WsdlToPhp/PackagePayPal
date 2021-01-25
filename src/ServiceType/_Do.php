@@ -41,7 +41,9 @@ class _Do extends SoapClientBase
     public function DoMobileCheckoutPayment(\PayPal\StructType\DoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoMobileCheckoutPayment($doMobileCheckoutPaymentRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoMobileCheckoutPayment', array(
+                $doMobileCheckoutPaymentRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +67,9 @@ class _Do extends SoapClientBase
     public function DoExpressCheckoutPayment(\PayPal\StructType\DoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoExpressCheckoutPayment($doExpressCheckoutPaymentRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoExpressCheckoutPayment', array(
+                $doExpressCheckoutPaymentRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -89,7 +93,9 @@ class _Do extends SoapClientBase
     public function DoUATPExpressCheckoutPayment(\PayPal\StructType\DoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoUATPExpressCheckoutPayment($doUATPExpressCheckoutPaymentRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoUATPExpressCheckoutPayment', array(
+                $doUATPExpressCheckoutPaymentRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -113,7 +119,9 @@ class _Do extends SoapClientBase
     public function DoDirectPayment(\PayPal\StructType\DoDirectPaymentReq $doDirectPaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoDirectPayment($doDirectPaymentRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoDirectPayment', array(
+                $doDirectPaymentRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -137,7 +145,9 @@ class _Do extends SoapClientBase
     public function DoCancel(\PayPal\StructType\DoCancelReq $doCancelRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoCancel($doCancelRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoCancel', array(
+                $doCancelRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -161,7 +171,9 @@ class _Do extends SoapClientBase
     public function DoCapture(\PayPal\StructType\DoCaptureReq $doCaptureRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoCapture($doCaptureRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoCapture', array(
+                $doCaptureRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -185,7 +197,9 @@ class _Do extends SoapClientBase
     public function DoReauthorization(\PayPal\StructType\DoReauthorizationReq $doReauthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoReauthorization($doReauthorizationRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoReauthorization', array(
+                $doReauthorizationRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -209,7 +223,9 @@ class _Do extends SoapClientBase
     public function DoVoid(\PayPal\StructType\DoVoidReq $doVoidRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoVoid($doVoidRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoVoid', array(
+                $doVoidRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -233,7 +249,9 @@ class _Do extends SoapClientBase
     public function DoAuthorization(\PayPal\StructType\DoAuthorizationReq $doAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoAuthorization($doAuthorizationRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoAuthorization', array(
+                $doAuthorizationRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -257,7 +275,9 @@ class _Do extends SoapClientBase
     public function DoUATPAuthorization(\PayPal\StructType\DoUATPAuthorizationReq $doUATPAuthorizationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoUATPAuthorization($doUATPAuthorizationRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoUATPAuthorization', array(
+                $doUATPAuthorizationRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -281,7 +301,9 @@ class _Do extends SoapClientBase
     public function DoReferenceTransaction(\PayPal\StructType\DoReferenceTransactionReq $doReferenceTransactionRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoReferenceTransaction($doReferenceTransactionRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoReferenceTransaction', array(
+                $doReferenceTransactionRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -305,7 +327,9 @@ class _Do extends SoapClientBase
     public function DoNonReferencedCredit(\PayPal\StructType\DoNonReferencedCreditReq $doNonReferencedCreditRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->DoNonReferencedCredit($doNonReferencedCreditRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('DoNonReferencedCredit', array(
+                $doNonReferencedCreditRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

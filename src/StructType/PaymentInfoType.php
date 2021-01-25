@@ -108,6 +108,14 @@ class PaymentInfoType extends AbstractStructBase
      */
     public $FeeAmount;
     /**
+     * The SettlementFeeAmount
+     * Meta information extracted from the WSDL
+     * - documentation: Settlement Transaction fee associated with the payment
+     * - minOccurs: 0
+     * @var \PayPal\StructType\BasicAmountType
+     */
+    public $SettlementFeeAmount;
+    /**
      * The FinancingFeeAmount
      * Meta information extracted from the WSDL
      * - documentation: Transaction financing fee associated with the payment.
@@ -428,6 +436,7 @@ class PaymentInfoType extends AbstractStructBase
      * @uses PaymentInfoType::setPaymentDate()
      * @uses PaymentInfoType::setGrossAmount()
      * @uses PaymentInfoType::setFeeAmount()
+     * @uses PaymentInfoType::setSettlementFeeAmount()
      * @uses PaymentInfoType::setFinancingFeeAmount()
      * @uses PaymentInfoType::setFinancingTotalCost()
      * @uses PaymentInfoType::setFinancingMonthlyPayment()
@@ -475,6 +484,7 @@ class PaymentInfoType extends AbstractStructBase
      * @param string $paymentDate
      * @param \PayPal\StructType\BasicAmountType $grossAmount
      * @param \PayPal\StructType\BasicAmountType $feeAmount
+     * @param \PayPal\StructType\BasicAmountType $settlementFeeAmount
      * @param \PayPal\StructType\BasicAmountType $financingFeeAmount
      * @param \PayPal\StructType\BasicAmountType $financingTotalCost
      * @param \PayPal\StructType\BasicAmountType $financingMonthlyPayment
@@ -512,7 +522,7 @@ class PaymentInfoType extends AbstractStructBase
      * @param string $softDescriptor
      * @param string $softDescriptorCity
      */
-    public function __construct($transactionID = null, $ebayTransactionID = null, $parentTransactionID = null, $receiptID = null, $transactionType = null, $paymentType = null, $refundSourceCodeType = null, $expectedeCheckClearDate = null, $paymentDate = null, \PayPal\StructType\BasicAmountType $grossAmount = null, \PayPal\StructType\BasicAmountType $feeAmount = null, \PayPal\StructType\BasicAmountType $financingFeeAmount = null, \PayPal\StructType\BasicAmountType $financingTotalCost = null, \PayPal\StructType\BasicAmountType $financingMonthlyPayment = null, $financingTerm = null, $isFinancing = null, \PayPal\StructType\BasicAmountType $financingDiscountAmount = null, \PayPal\StructType\BasicAmountType $regularTakeFeeAmount = null, \PayPal\StructType\BasicAmountType $settleAmount = null, \PayPal\StructType\BasicAmountType $taxAmount = null, $exchangeRate = null, $paymentStatus = null, $pendingReason = null, $reasonCode = null, $holdDecision = null, $shippingMethod = null, $protectionEligibility = null, $protectionEligibilityType = null, $receiptReferenceNumber = null, $pOSTransactionType = null, $shipAmount = null, $shipHandleAmount = null, $shipDiscount = null, $insuranceAmount = null, $subject = null, $storeID = null, $terminalID = null, \PayPal\StructType\SellerDetailsType $sellerDetails = null, $paymentRequestID = null, \PayPal\StructType\FMFDetailsType $fMFDetails = null, \PayPal\StructType\EnhancedPaymentInfoType $enhancedPaymentInfo = null, \PayPal\StructType\ErrorType $paymentError = null, \PayPal\StructType\InstrumentDetailsType $instrumentDetails = null, \PayPal\StructType\OfferDetailsType $offerDetails = null, $binEligibility = null, $softDescriptor = null, $softDescriptorCity = null)
+    public function __construct($transactionID = null, $ebayTransactionID = null, $parentTransactionID = null, $receiptID = null, $transactionType = null, $paymentType = null, $refundSourceCodeType = null, $expectedeCheckClearDate = null, $paymentDate = null, \PayPal\StructType\BasicAmountType $grossAmount = null, \PayPal\StructType\BasicAmountType $feeAmount = null, \PayPal\StructType\BasicAmountType $settlementFeeAmount = null, \PayPal\StructType\BasicAmountType $financingFeeAmount = null, \PayPal\StructType\BasicAmountType $financingTotalCost = null, \PayPal\StructType\BasicAmountType $financingMonthlyPayment = null, $financingTerm = null, $isFinancing = null, \PayPal\StructType\BasicAmountType $financingDiscountAmount = null, \PayPal\StructType\BasicAmountType $regularTakeFeeAmount = null, \PayPal\StructType\BasicAmountType $settleAmount = null, \PayPal\StructType\BasicAmountType $taxAmount = null, $exchangeRate = null, $paymentStatus = null, $pendingReason = null, $reasonCode = null, $holdDecision = null, $shippingMethod = null, $protectionEligibility = null, $protectionEligibilityType = null, $receiptReferenceNumber = null, $pOSTransactionType = null, $shipAmount = null, $shipHandleAmount = null, $shipDiscount = null, $insuranceAmount = null, $subject = null, $storeID = null, $terminalID = null, \PayPal\StructType\SellerDetailsType $sellerDetails = null, $paymentRequestID = null, \PayPal\StructType\FMFDetailsType $fMFDetails = null, \PayPal\StructType\EnhancedPaymentInfoType $enhancedPaymentInfo = null, \PayPal\StructType\ErrorType $paymentError = null, \PayPal\StructType\InstrumentDetailsType $instrumentDetails = null, \PayPal\StructType\OfferDetailsType $offerDetails = null, $binEligibility = null, $softDescriptor = null, $softDescriptorCity = null)
     {
         $this
             ->setTransactionID($transactionID)
@@ -526,6 +536,7 @@ class PaymentInfoType extends AbstractStructBase
             ->setPaymentDate($paymentDate)
             ->setGrossAmount($grossAmount)
             ->setFeeAmount($feeAmount)
+            ->setSettlementFeeAmount($settlementFeeAmount)
             ->setFinancingFeeAmount($financingFeeAmount)
             ->setFinancingTotalCost($financingTotalCost)
             ->setFinancingMonthlyPayment($financingMonthlyPayment)
@@ -804,6 +815,24 @@ class PaymentInfoType extends AbstractStructBase
     public function setFeeAmount(\PayPal\StructType\BasicAmountType $feeAmount = null)
     {
         $this->FeeAmount = $feeAmount;
+        return $this;
+    }
+    /**
+     * Get SettlementFeeAmount value
+     * @return \PayPal\StructType\BasicAmountType|null
+     */
+    public function getSettlementFeeAmount()
+    {
+        return $this->SettlementFeeAmount;
+    }
+    /**
+     * Set SettlementFeeAmount value
+     * @param \PayPal\StructType\BasicAmountType $settlementFeeAmount
+     * @return \PayPal\StructType\PaymentInfoType
+     */
+    public function setSettlementFeeAmount(\PayPal\StructType\BasicAmountType $settlementFeeAmount = null)
+    {
+        $this->SettlementFeeAmount = $settlementFeeAmount;
         return $this;
     }
     /**

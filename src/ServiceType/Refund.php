@@ -41,7 +41,9 @@ class Refund extends SoapClientBase
     public function RefundTransaction(\PayPal\StructType\RefundTransactionReq $refundTransactionRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->RefundTransaction($refundTransactionRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('RefundTransaction', array(
+                $refundTransactionRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

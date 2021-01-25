@@ -41,7 +41,9 @@ class Get extends SoapClientBase
     public function GetTransactionDetails(\PayPal\StructType\GetTransactionDetailsReq $getTransactionDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetTransactionDetails($getTransactionDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetTransactionDetails', array(
+                $getTransactionDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +67,9 @@ class Get extends SoapClientBase
     public function GetBoardingDetails(\PayPal\StructType\GetBoardingDetailsReq $getBoardingDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetBoardingDetails($getBoardingDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetBoardingDetails', array(
+                $getBoardingDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -89,7 +93,9 @@ class Get extends SoapClientBase
     public function GetMobileStatus(\PayPal\StructType\GetMobileStatusReq $getMobileStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetMobileStatus($getMobileStatusRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetMobileStatus', array(
+                $getMobileStatusRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -113,7 +119,9 @@ class Get extends SoapClientBase
     public function GetBalance(\PayPal\StructType\GetBalanceReq $getBalanceRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetBalance($getBalanceRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetBalance', array(
+                $getBalanceRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -137,7 +145,9 @@ class Get extends SoapClientBase
     public function GetPalDetails(\PayPal\StructType\GetPalDetailsReq $getPalDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetPalDetails($getPalDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetPalDetails', array(
+                $getPalDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -161,7 +171,9 @@ class Get extends SoapClientBase
     public function GetAuthDetails(\PayPal\StructType\GetAuthDetailsReq $getAuthDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetAuthDetails($getAuthDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetAuthDetails', array(
+                $getAuthDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -185,7 +197,9 @@ class Get extends SoapClientBase
     public function GetAccessPermissionDetails(\PayPal\StructType\GetAccessPermissionDetailsReq $getAccessPermissionDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetAccessPermissionDetails($getAccessPermissionDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetAccessPermissionDetails', array(
+                $getAccessPermissionDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -209,7 +223,9 @@ class Get extends SoapClientBase
     public function GetIncentiveEvaluation(\PayPal\StructType\GetIncentiveEvaluationReq $getIncentiveEvaluationRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetIncentiveEvaluation($getIncentiveEvaluationRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetIncentiveEvaluation', array(
+                $getIncentiveEvaluationRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -233,7 +249,9 @@ class Get extends SoapClientBase
     public function GetExpressCheckoutDetails(\PayPal\StructType\GetExpressCheckoutDetailsReq $getExpressCheckoutDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetExpressCheckoutDetails($getExpressCheckoutDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetExpressCheckoutDetails', array(
+                $getExpressCheckoutDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -257,7 +275,9 @@ class Get extends SoapClientBase
     public function GetBillingAgreementCustomerDetails(\PayPal\StructType\GetBillingAgreementCustomerDetailsReq $getBillingAgreementCustomerDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetBillingAgreementCustomerDetails($getBillingAgreementCustomerDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetBillingAgreementCustomerDetails', array(
+                $getBillingAgreementCustomerDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -281,7 +301,9 @@ class Get extends SoapClientBase
     public function GetRecurringPaymentsProfileDetails(\PayPal\StructType\GetRecurringPaymentsProfileDetailsReq $getRecurringPaymentsProfileDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->GetRecurringPaymentsProfileDetails($getRecurringPaymentsProfileDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('GetRecurringPaymentsProfileDetails', array(
+                $getRecurringPaymentsProfileDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
