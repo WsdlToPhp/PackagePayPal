@@ -41,7 +41,9 @@ class BMM extends SoapClientBase
     public function BMManageButtonStatus(\PayPal\StructType\BMManageButtonStatusReq $bMManageButtonStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BMManageButtonStatus($bMManageButtonStatusRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BMManageButtonStatus', array(
+                $bMManageButtonStatusRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

@@ -41,7 +41,9 @@ class Reverse extends SoapClientBase
     public function ReverseTransaction(\PayPal\StructType\ReverseTransactionReq $reverseTransactionRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->ReverseTransaction($reverseTransactionRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('ReverseTransaction', array(
+                $reverseTransactionRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

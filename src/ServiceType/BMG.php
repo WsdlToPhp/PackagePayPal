@@ -41,7 +41,9 @@ class BMG extends SoapClientBase
     public function BMGetButtonDetails(\PayPal\StructType\BMGetButtonDetailsReq $bMGetButtonDetailsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BMGetButtonDetails($bMGetButtonDetailsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BMGetButtonDetails', array(
+                $bMGetButtonDetailsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +67,9 @@ class BMG extends SoapClientBase
     public function BMGetInventory(\PayPal\StructType\BMGetInventoryReq $bMGetInventoryRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BMGetInventory($bMGetInventoryRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BMGetInventory', array(
+                $bMGetInventoryRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

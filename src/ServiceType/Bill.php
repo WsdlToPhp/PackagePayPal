@@ -41,7 +41,9 @@ class Bill extends SoapClientBase
     public function BillUser(\PayPal\StructType\BillUserReq $billUserRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BillUser($billUserRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BillUser', array(
+                $billUserRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +67,9 @@ class Bill extends SoapClientBase
     public function BillAgreementUpdate(\PayPal\StructType\BillAgreementUpdateReq $billAgreementUpdateRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BillAgreementUpdate($billAgreementUpdateRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BillAgreementUpdate', array(
+                $billAgreementUpdateRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -89,7 +93,9 @@ class Bill extends SoapClientBase
     public function BillOutstandingAmount(\PayPal\StructType\BillOutstandingAmountReq $billOutstandingAmountRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BillOutstandingAmount($billOutstandingAmountRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BillOutstandingAmount', array(
+                $billOutstandingAmountRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

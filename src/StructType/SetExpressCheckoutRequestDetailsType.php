@@ -595,6 +595,15 @@ class SetExpressCheckoutRequestDetailsType extends AbstractStructBase
      */
     public $CoupledBuckets;
     /**
+     * The BillingAgreementID
+     * Meta information extracted from the WSDL
+     * - documentation: Billing agreement id for edit funding instrument which enables buyer to select given instrument for current purchase
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var string
+     */
+    public $BillingAgreementID;
+    /**
      * Constructor method for SetExpressCheckoutRequestDetailsType
      * @uses SetExpressCheckoutRequestDetailsType::setOrderTotal()
      * @uses SetExpressCheckoutRequestDetailsType::setReturnURL()
@@ -663,6 +672,7 @@ class SetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @uses SetExpressCheckoutRequestDetailsType::setDisplayControlDetails()
      * @uses SetExpressCheckoutRequestDetailsType::setExternalPartnerTrackingDetails()
      * @uses SetExpressCheckoutRequestDetailsType::setCoupledBuckets()
+     * @uses SetExpressCheckoutRequestDetailsType::setBillingAgreementID()
      * @param \PayPal\StructType\BasicAmountType $orderTotal
      * @param string $returnURL
      * @param string $cancelURL
@@ -730,8 +740,9 @@ class SetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \PayPal\StructType\DisplayControlDetailsType $displayControlDetails
      * @param \PayPal\StructType\ExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
      * @param \PayPal\StructType\CoupledBucketsType[] $coupledBuckets
+     * @param string $billingAgreementID
      */
-    public function __construct(\PayPal\StructType\BasicAmountType $orderTotal = null, $returnURL = null, $cancelURL = null, $trackingImageURL = null, $giropaySuccessURL = null, $giropayCancelURL = null, $banktxnPendingURL = null, $token = null, \PayPal\StructType\BasicAmountType $maxAmount = null, $orderDescription = null, $custom = null, $invoiceID = null, $reqConfirmShipping = null, $reqBillingAddress = null, \PayPal\StructType\AddressType $billingAddress = null, $noShipping = null, $addressOverride = null, $localeCode = null, $pageStyle = null, $cpp_header_image = null, $cpp_header_border_color = null, $cpp_header_back_color = null, $cpp_payflow_color = null, $cpp_cart_border_color = null, $cpp_logo_image = null, \PayPal\StructType\AddressType $address = null, $paymentAction = null, $solutionType = null, $landingPage = null, $buyerEmail = null, $channelType = null, array $billingAgreementDetails = array(), array $promoCodes = array(), $payPalCheckOutBtnType = null, $productCategory = null, $shippingMethod = null, $profileAddressChangeDate = null, $allowNote = null, \PayPal\StructType\FundingSourceDetailsType $fundingSourceDetails = null, $brandName = null, $callbackURL = null, \PayPal\StructType\EnhancedCheckoutDataType $enhancedCheckoutData = null, array $otherPaymentMethods = array(), \PayPal\StructType\BuyerDetailsType $buyerDetails = null, array $paymentDetails = array(), array $flatRateShippingOptions = array(), $callbackTimeout = null, $callbackVersion = null, $customerServiceNumber = null, $giftMessageEnable = null, $giftReceiptEnable = null, $giftWrapEnable = null, $giftWrapName = null, \PayPal\StructType\BasicAmountType $giftWrapAmount = null, $buyerEmailOptInEnable = null, $surveyEnable = null, $surveyQuestion = null, array $surveyChoice = array(), $totalType = null, $noteToBuyer = null, array $incentives = array(), $reqInstrumentDetails = null, \PayPal\StructType\ExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, \PayPal\StructType\FlowControlDetailsType $flowControlDetails = null, \PayPal\StructType\DisplayControlDetailsType $displayControlDetails = null, \PayPal\StructType\ExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, array $coupledBuckets = array())
+    public function __construct(\PayPal\StructType\BasicAmountType $orderTotal = null, $returnURL = null, $cancelURL = null, $trackingImageURL = null, $giropaySuccessURL = null, $giropayCancelURL = null, $banktxnPendingURL = null, $token = null, \PayPal\StructType\BasicAmountType $maxAmount = null, $orderDescription = null, $custom = null, $invoiceID = null, $reqConfirmShipping = null, $reqBillingAddress = null, \PayPal\StructType\AddressType $billingAddress = null, $noShipping = null, $addressOverride = null, $localeCode = null, $pageStyle = null, $cpp_header_image = null, $cpp_header_border_color = null, $cpp_header_back_color = null, $cpp_payflow_color = null, $cpp_cart_border_color = null, $cpp_logo_image = null, \PayPal\StructType\AddressType $address = null, $paymentAction = null, $solutionType = null, $landingPage = null, $buyerEmail = null, $channelType = null, array $billingAgreementDetails = array(), array $promoCodes = array(), $payPalCheckOutBtnType = null, $productCategory = null, $shippingMethod = null, $profileAddressChangeDate = null, $allowNote = null, \PayPal\StructType\FundingSourceDetailsType $fundingSourceDetails = null, $brandName = null, $callbackURL = null, \PayPal\StructType\EnhancedCheckoutDataType $enhancedCheckoutData = null, array $otherPaymentMethods = array(), \PayPal\StructType\BuyerDetailsType $buyerDetails = null, array $paymentDetails = array(), array $flatRateShippingOptions = array(), $callbackTimeout = null, $callbackVersion = null, $customerServiceNumber = null, $giftMessageEnable = null, $giftReceiptEnable = null, $giftWrapEnable = null, $giftWrapName = null, \PayPal\StructType\BasicAmountType $giftWrapAmount = null, $buyerEmailOptInEnable = null, $surveyEnable = null, $surveyQuestion = null, array $surveyChoice = array(), $totalType = null, $noteToBuyer = null, array $incentives = array(), $reqInstrumentDetails = null, \PayPal\StructType\ExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, \PayPal\StructType\FlowControlDetailsType $flowControlDetails = null, \PayPal\StructType\DisplayControlDetailsType $displayControlDetails = null, \PayPal\StructType\ExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, array $coupledBuckets = array(), $billingAgreementID = null)
     {
         $this
             ->setOrderTotal($orderTotal)
@@ -800,7 +811,8 @@ class SetExpressCheckoutRequestDetailsType extends AbstractStructBase
             ->setFlowControlDetails($flowControlDetails)
             ->setDisplayControlDetails($displayControlDetails)
             ->setExternalPartnerTrackingDetails($externalPartnerTrackingDetails)
-            ->setCoupledBuckets($coupledBuckets);
+            ->setCoupledBuckets($coupledBuckets)
+            ->setBillingAgreementID($billingAgreementID);
     }
     /**
      * Get OrderTotal value
@@ -2567,6 +2579,28 @@ class SetExpressCheckoutRequestDetailsType extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->CoupledBuckets)), __LINE__);
         }
         $this->CoupledBuckets[] = $item;
+        return $this;
+    }
+    /**
+     * Get BillingAgreementID value
+     * @return string|null
+     */
+    public function getBillingAgreementID()
+    {
+        return $this->BillingAgreementID;
+    }
+    /**
+     * Set BillingAgreementID value
+     * @param string $billingAgreementID
+     * @return \PayPal\StructType\SetExpressCheckoutRequestDetailsType
+     */
+    public function setBillingAgreementID($billingAgreementID = null)
+    {
+        // validation for constraint: string
+        if (!is_null($billingAgreementID) && !is_string($billingAgreementID)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingAgreementID, true), gettype($billingAgreementID)), __LINE__);
+        }
+        $this->BillingAgreementID = $billingAgreementID;
         return $this;
     }
 }

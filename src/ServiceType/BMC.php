@@ -41,7 +41,9 @@ class BMC extends SoapClientBase
     public function BMCreateButton(\PayPal\StructType\BMCreateButtonReq $bMCreateButtonRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BMCreateButton($bMCreateButtonRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BMCreateButton', array(
+                $bMCreateButtonRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

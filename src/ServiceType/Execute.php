@@ -41,7 +41,9 @@ class Execute extends SoapClientBase
     public function ExecuteCheckoutOperations(\PayPal\StructType\ExecuteCheckoutOperationsReq $executeCheckoutOperationsRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->ExecuteCheckoutOperations($executeCheckoutOperationsRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('ExecuteCheckoutOperations', array(
+                $executeCheckoutOperationsRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

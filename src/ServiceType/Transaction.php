@@ -41,7 +41,9 @@ class Transaction extends SoapClientBase
     public function TransactionSearch(\PayPal\StructType\TransactionSearchReq $transactionSearchRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->TransactionSearch($transactionSearchRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('TransactionSearch', array(
+                $transactionSearchRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

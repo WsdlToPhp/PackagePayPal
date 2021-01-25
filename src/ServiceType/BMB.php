@@ -41,7 +41,9 @@ class BMB extends SoapClientBase
     public function BMButtonSearch(\PayPal\StructType\BMButtonSearchReq $bMButtonSearchRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->BMButtonSearch($bMButtonSearchRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('BMButtonSearch', array(
+                $bMButtonSearchRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

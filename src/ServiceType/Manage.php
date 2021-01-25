@@ -41,7 +41,9 @@ class Manage extends SoapClientBase
     public function ManagePendingTransactionStatus(\PayPal\StructType\ManagePendingTransactionStatusReq $managePendingTransactionStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->ManagePendingTransactionStatus($managePendingTransactionStatusRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('ManagePendingTransactionStatus', array(
+                $managePendingTransactionStatusRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -66,7 +68,9 @@ class Manage extends SoapClientBase
     public function ManageRecurringPaymentsProfileStatus(\PayPal\StructType\ManageRecurringPaymentsProfileStatusReq $manageRecurringPaymentsProfileStatusRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->ManageRecurringPaymentsProfileStatus($manageRecurringPaymentsProfileStatusRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('ManageRecurringPaymentsProfileStatus', array(
+                $manageRecurringPaymentsProfileStatusRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

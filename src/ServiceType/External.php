@@ -41,7 +41,9 @@ class External extends SoapClientBase
     public function ExternalRememberMeOptOut(\PayPal\StructType\ExternalRememberMeOptOutReq $externalRememberMeOptOutRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->ExternalRememberMeOptOut($externalRememberMeOptOutRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('ExternalRememberMeOptOut', array(
+                $externalRememberMeOptOutRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

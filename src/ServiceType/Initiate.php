@@ -41,7 +41,9 @@ class Initiate extends SoapClientBase
     public function InitiateRecoup(\PayPal\StructType\InitiateRecoupReq $initiateRecoupRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->InitiateRecoup($initiateRecoupRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('InitiateRecoup', array(
+                $initiateRecoupRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);

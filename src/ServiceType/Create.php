@@ -41,7 +41,9 @@ class Create extends SoapClientBase
     public function CreateMobilePayment(\PayPal\StructType\CreateMobilePaymentReq $createMobilePaymentRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->CreateMobilePayment($createMobilePaymentRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('CreateMobilePayment', array(
+                $createMobilePaymentRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -65,7 +67,9 @@ class Create extends SoapClientBase
     public function CreateBillingAgreement(\PayPal\StructType\CreateBillingAgreementReq $createBillingAgreementRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->CreateBillingAgreement($createBillingAgreementRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('CreateBillingAgreement', array(
+                $createBillingAgreementRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
@@ -89,7 +93,9 @@ class Create extends SoapClientBase
     public function CreateRecurringPaymentsProfile(\PayPal\StructType\CreateRecurringPaymentsProfileReq $createRecurringPaymentsProfileRequest)
     {
         try {
-            $this->setResult($this->getSoapClient()->CreateRecurringPaymentsProfile($createRecurringPaymentsProfileRequest));
+            $this->setResult($this->getSoapClient()->__soapCall('CreateRecurringPaymentsProfile', array(
+                $createRecurringPaymentsProfileRequest,
+            ), array(), array(), $this->outputHeaders));
             return $this->getResult();
         } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
